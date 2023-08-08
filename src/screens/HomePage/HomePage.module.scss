@@ -5,8 +5,12 @@
   border: 1px solid #D9DBDF;
   background: #FFF;
   padding: 2rem;
-  background: url("../../../assets/icons/back1.png");
-  .info{
+  background: url("./../../assets/icons/back1.png");
+
+  .info {
+    margin-top: 3rem;
+    margin-left: 4rem;
+
     .title {
       color: #000;
       font-size: 46px;
@@ -14,7 +18,8 @@
       font-weight: 500;
       line-height: 86.4%;
     }
-    .sup{
+
+    .sup {
       margin-top: 2rem;
       color: #000;
       font-size: 28px;
@@ -22,9 +27,56 @@
       font-weight: 400;
       line-height: 86.4%; /* 24.192px */
     }
-    .btns{
 
+    .btns {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      gap: 20px;
+
+      .btn {
+        cursor: pointer;
+        height: 60px;
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #4DA7FF;
+        leading-trim: both;
+        text-edge: cap;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 86.4%; /* 17.28px */
+        border-radius: 7px;
+        border: 1px solid #4DA7FF;
+        background: #FFF;
+      }
     }
   }
 
+  .stock_items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7rem;
+
+  }
+}
+
+.slide {
+  margin-top: 1rem;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  .arr{
+    width: 43px;
+    height: 43px;
+    background: #7BBEFF;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 }
