@@ -1,0 +1,31 @@
+.bank_item {
+  width: 232px;
+  height: 70px;
+  display: flex;
+  padding: 17px 26px 17px 17px;
+  align-items: center;
+  gap: 11px;
+  border-radius: 16px;
+  border: 1px solid #D9DBDF;
+  background: #FFF;
+
+  .info {
+    div {
+      color: #000;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 17.362px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 86.4%; /* 15.001px */
+    }
+
+    span {
+      color: #ADADAD;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 111.9%;
+    }
+  }
+}

@@ -12,6 +12,13 @@ import ipoteka from '@/assets/icons/ipoteka.svg';
 import SlideItem from "@/Components/SlideItem/SlideItem";
 import arr from '@/assets/icons/white_arr.svg'
 import Image from "next/image";
+import Search from "@/Components/Search/Search";
+import sbi from '@/assets/icons/banki_icon/sbi.svg';
+import absolut from '@/assets/icons/banki_icon/absolut.svg';
+import agrogress from '@/assets/icons/banki_icon/agrogress.svg';
+import bars from '@/assets/icons/banki_icon/bars.svg';
+import BankiItem from "@/Components/BankiItem/BankiItem";
+import searchI from '@/assets/icons/search.svg';
 
 type ItemsActionT = {
     title: string
@@ -22,6 +29,12 @@ type iconsSlideT = {
     img: string
     name: string
     w: number
+}
+
+type bankiT = {
+    img: string,
+    name: string
+    rating: number
 }
 
 const iconsSlide: iconsSlideT[] = [
@@ -41,6 +54,25 @@ const data: ItemsActionT[] = [
     {title: 'Заголовок для акции для клиентов', sup: 'Подзаголовок для будущей акции'},
 ]
 const dataItems = data.map((el, index) => <StockItem key={index} title={el.title} sup={el.sup}/>);
+const banki: bankiT[] = [
+    {img: sbi, name: 'SBI Банк', rating: 4.2},
+    {img: sbi, name: 'SBI Банк', rating: 4.2},
+    {img: sbi, name: 'SBI Банк', rating: 4.2},
+    {img: absolut, name: 'Абсолют Банк', rating: 4.2},
+    {img: absolut, name: 'Абсолют Банк', rating: 4.2},
+    {img: absolut, name: 'Абсолют Банк', rating: 4.2},
+    {img: agrogress, name: 'Агророс Банк', rating: 4.2},
+    {img: agrogress, name: 'Агророс Банк', rating: 4.2},
+    {img: agrogress, name: 'Агророс Банк', rating: 4.2},
+    {img: bars, name: 'Ак Барс Банк', rating: 4.2},
+    {img: bars, name: 'Ак Барс Банк', rating: 4.2},
+    {img: bars, name: 'Ак Барс Банк', rating: 4.2},
+    {img: bars, name: 'Ак Барс Банк', rating: 4.2},
+    {img: bars, name: 'Ак Барс Банк', rating: 4.2},
+    {img: bars, name: 'Ак Барс Банк', rating: 4.2},
+]
+const bankiMap = banki.map((el, index) => <BankiItem key={index} img={el.img} name={el.name} rating={el.rating}/>)
+
 
 const HomePage = () => {
 
@@ -61,6 +93,25 @@ const HomePage = () => {
                 {slideItems}
                 <div className={s.arr}>
                     <Image src={arr} alt={'arr'}/>
+                </div>
+            </div>
+            <Search placeholder={'Найти необходимую услугу...'}/>
+            <div className={s.banks}>
+                <div className={s.title}>Все банки <span>в России</span></div>
+                <div className={s.bank_map_cont}>
+                    <div className={s.picture}/>
+                    <div className={s.bank_map}>
+                        <div className={s.banK_mWrap}>
+                            {bankiMap}
+                        </div>
+                        <div className={s.nav_search}>
+                            <BlueBtn text={'Весь список банков'} width={273}/>
+                            <div className={s.search}>
+                                <Image height={32} width={32} src={searchI} alt={'icon'} />
+                                <input type="text" placeholder={'Введите название банка...'}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
