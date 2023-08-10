@@ -1,25 +1,22 @@
 import React from 'react';
 import s from './Feedback.module.scss';
-import ChoiseItem from "@/components/ChoiseItem/ChoiseItem";
 import FeedbackItem from "@/components/FeedbackItem/FeedbackItem";
 import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import TitleMarkLast from "@/components/TitleMarkLast/TitleMarkLast";
+import ChoiseItemsMap from "@/components/ChoiseItemsMap/ChoiseItemsMap";
 
-const chois = [
-    {name: 'Все', active: true},
-    {name: 'МФО', active: false},
-    {name: 'Страховые компании', active: false},
-    {name: 'Инвестиции', active: false},
-]
-const choiseItems = chois.map((el, index) => <ChoiseItem key={index} name={el.name} active={el.active}/>)
 
-const Feedback = () => {
+const Feedback = ({title, sub, chois}) => {
     return (
         <div className={s.feedback}>
-            <div className={s.title}>
+            {(!title || !sub) ? <div className={s.title}>
                 <mark>Что говорят</mark>
                 наши клиенты
-            </div>
-            <div className={s.choise_items}>{choiseItems}</div>
+            </div> : <TitleMarkLast title={'Отзывы'} sub={'о вкладах'}/>
+            }
+            {(chois && chois.length !== 0) && <div className={s.choise_items}>
+                <ChoiseItemsMap choiseItems={chois}/>
+            </div>}
             <div className={s.feedback_cont}>
                 <FeedbackItem/>
                 <FeedbackItem/>

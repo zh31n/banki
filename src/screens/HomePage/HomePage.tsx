@@ -28,6 +28,7 @@ import OfferItem from "@/components/OfferItem/OfferItem";
 import OfferMoth from "@/components/OfferMoth/OfferMoth";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/Feedback/Feedback";
+import PageWrapper from "@/components/PageWrapper/PageWrapper";
 
 type ItemsActionT = {
     title: string
@@ -105,6 +106,29 @@ const offers: offersT[] = [
     {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10},
     {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10}
 ]
+const choiseItemss: choiseItemsT[] = [
+    {name: 'Вклады', active: true},
+    {name: 'Накопительные счета', active: false},
+    {name: 'Кредиты', active: false},
+    {name: 'Дебетовые карты', active: false},
+    {name: 'Ипотека', active: false},
+    {name: 'Микрозаймы', active: false},
+    {name: 'РКО', active: false},
+    {name: 'Инвестиции', active: false},
+    {name: 'Ипотека от ПИК', active: false},
+]
+const offerss: offersT[] = [
+    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10},
+    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10},
+    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10},
+    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10}
+]
+const choisFeedback:choiseItemsT[] = [
+    {name: 'Все', active: true},
+    {name: 'МФО', active: false},
+    {name: 'Страховые компании', active: false},
+    {name: 'Инвестиции', active: false},
+]
 
 const slideItems = iconsSlide.map((el, index) => <SlideItem width={el.w} key={index} img={el.img} name={el.name}/>)
 const dataItems = data.map((el, index) => <StockItem key={index} title={el.title} sup={el.sup}/>);
@@ -114,10 +138,12 @@ const offerItems = offers.map((el, index) => <OfferItem key={index} img={el.img}
                                                         time={el.time} year_money={el.year_money}/>)
 
 
+
+
 const HomePage = () => {
 
     return (
-        <main style={{marginTop: '20px'}} className='container'>
+        <PageWrapper>
             <div className={s.stock}>
                 <div className={s.info}>
                     <div className={s.title}>Заголовок для акции<br/> для клиентов</div>
@@ -155,10 +181,10 @@ const HomePage = () => {
                 </div>
             </div>
             <Calculate/>
-            <OfferMoth/>
+            <OfferMoth offers={offerss} choiseItems={choiseItemss}/>
             <LatestNews/>
-            <Feedback/>
-        </main>
+            <Feedback chois={choisFeedback}/>
+        </PageWrapper>
     );
 };
 

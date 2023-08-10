@@ -1,0 +1,27 @@
+.deposits{
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    span{
+      mark{
+        background: transparent;
+        color: #4DA7FF;
+      }
+      color: #121212;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 86.4%;
+    }
+  }
+  .deposit_offers{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

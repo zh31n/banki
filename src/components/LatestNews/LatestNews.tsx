@@ -5,6 +5,7 @@ import new_1 from '@/assets/icons/new_1.png';
 import new_2 from '@/assets/icons/new_2.png';
 import NewsItem from "@/components/NewsItem/NewsItem";
 import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import ChoiseItemsMap from "@/components/ChoiseItemsMap/ChoiseItemsMap";
 
 type choisesT = {
     name: string
@@ -88,7 +89,9 @@ const LatestNews = () => {
     return (
         <div className={s.news}>
             <div className={s.title}>Свежие <span>новости</span></div>
-            <div className={s.choises_cont}>{choiseItems}</div>
+            <div className={s.choises_cont}>
+                <ChoiseItemsMap choiseItems={choises} />
+            </div>
             <div className={s.news_cont}>{newsItems}</div>
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все новости'} width={300}/>
