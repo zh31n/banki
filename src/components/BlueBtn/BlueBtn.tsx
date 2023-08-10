@@ -2,15 +2,18 @@ import React from 'react';
 import s from './BlueBtn.module.scss';
 
 type Props = {
-    text:string,
-    width:number
+    text: string,
+    width: number
+    height?: number
+    fSize?: number
 }
 
-const BlueBtn = ({text,width}:Props) => {
+const BlueBtn = ({text, width, height, fSize}: Props) => {
     return (
-        <div className={s.btn} style={{width:`${width}px`}}>
+        <button className={s.btn}
+             style={{width: `${width}px`, height: height ? `${height}px` : '', fontSize: fSize ? `${fSize}px` : ''}}>
             {text}
-        </div>
+        </button>
     );
 };
 
