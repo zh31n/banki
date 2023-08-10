@@ -2,6 +2,8 @@ import React from 'react';
 import s from './Calculate.module.scss'
 import ChoiseItem from "@/components/ChoiseItem/ChoiseItem";
 import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import MoneySelect from "@/components/MoneySelect/MoneySelect";
+import CustomWhiteSelectTitle from "@/components/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
 
 type choiseItemsT = {
     name: string
@@ -26,29 +28,12 @@ const Calculate = () => {
             <div className={s.choises_items}>{choiseItems}</div>
             <div className={s.calc_i}>
                 <div className={s.calc_inps}>
-                    <div className={s.summa}>
-                        <div className={s.sum_info}>
-                            <div>Cумма</div>
-                            <input type="text"/>
-                        </div>
-                        <div className={s.select}>
-                            <select>
-                                <option value="">₽</option>
-                            </select>
-                        </div>
-                    </div>
+                    <MoneySelect/>
                     <div className={s.stavka}>
                         <span>Ставка:</span>
                         <span>От 10%</span>
                     </div>
-                    <div className={s.years}>
-                        <div>Срок в годах</div>
-                        <select>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
-                    </div>
+                    <CustomWhiteSelectTitle title={'Срок в годах'} options={['1','2','3']}/>
                     <div className={s.stavka}>
                         <span>Платеж:</span>
                         <span>7 998 ₽</span>

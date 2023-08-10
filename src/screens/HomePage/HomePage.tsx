@@ -28,7 +28,7 @@ import OfferItem from "@/components/OfferItem/OfferItem";
 import OfferMoth from "@/components/OfferMoth/OfferMoth";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/Feedback/Feedback";
-import HomePageWrapper from "./layout/HomePageWrapper";
+import PageWrapper from "@/components/PageWrapper/PageWrapper";
 
 type ItemsActionT = {
   title: string;
@@ -167,7 +167,7 @@ const offerItems = offers.map((el, index) => (
 
 const HomePage = () => {
   return (
-    <HomePageWrapper>
+    <PageWrapper>
       <div className={s.stock}>
         <div className={s.info}>
           <div className={s.title}>
@@ -208,10 +208,10 @@ const HomePage = () => {
         </div>
       </div>
       <Calculate />
-      <OfferMoth />
+      <OfferMoth offers={offerss} choiseItems={choiseItemss} />
       <LatestNews />
-      <Feedback />
-    </HomePageWrapper>
+      <Feedback chois={choisFeedback} />
+    </PageWrapper>
   );
 };
 
