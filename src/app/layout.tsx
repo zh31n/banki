@@ -1,6 +1,11 @@
-import AppContainer from "@/containers/AppContainer";
 import "./globals.scss";
+import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
+
+export const metadata: Metadata = {
+  title: "Главная",
+  description: "Главная страница банков",
+};
 
 export default function RootLayout({
   children,
@@ -10,10 +15,8 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <AppContainer>
-          <Header />
-          {children}
-        </AppContainer>
+        <Header />
+        {children}
       </body>
     </html>
   );
