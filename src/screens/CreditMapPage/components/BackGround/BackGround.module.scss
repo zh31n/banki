@@ -1,0 +1,23 @@
+.main_container {
+  position: absolute;
+  border-radius: 14px;
+  height: 376px;
+  width: 1220px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  overflow: hidden;
+  .bg {
+    border-radius: 14px;
+    width: 808px;
+    height: 100%;
+    position: absolute;
+  }
+  .image {
+    width: 828px;
+    height: 376px;
+    z-index: 1;
+    position: absolute;
+    margin-bottom: -30px;
+  }
+}
