@@ -9,15 +9,16 @@ import BlueBtn from "@/components/BlueBtn/BlueBtn";
 type Props = {
     name: string
     sub: string
-    stavka: number
+    stavka: string
     time: string
     money: string
     img: string
     charcs: string[]
+    btn?: string
 }
 
 
-const DepositOfferItem = ({name,charcs,sub,money,time,img,stavka}:Props) => {
+const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn}: Props) => {
     return (
         <div className={s.item}>
             <div className={s.up}>
@@ -39,13 +40,13 @@ const DepositOfferItem = ({name,charcs,sub,money,time,img,stavka}:Props) => {
                             <div className={s.title}>
                                 Срок
                             </div>
-                            <span>{time} дн.</span>
+                            <span>{time}</span>
                         </div>
                         <div className={s.info_item}>
                             <div className={s.title}>
                                 Сумма
                             </div>
-                            <span>{money}</span>
+                            <span>{money} ₽</span>
                         </div>
                     </div>
 
@@ -64,7 +65,7 @@ const DepositOfferItem = ({name,charcs,sub,money,time,img,stavka}:Props) => {
                         if (el !== '') return <BlueBtn key={index} text={el} width={147} height={36} fSize={14}/>
                     })}
                 </div>
-                <BlueBtn text={'Открыть вклад'} width={222} fSize={20}/>
+                <BlueBtn text={!btn ? 'Открыть вклад' : btn} width={222} fSize={20}/>
             </div>
         </div>
     );

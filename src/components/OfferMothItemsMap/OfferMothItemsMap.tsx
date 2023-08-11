@@ -1,7 +1,11 @@
 import React from 'react';
 import OfferItem from "@/components/OfferItem/OfferItem";
 
-const OfferMothItemsMap = ({offers}) => {
+type Props = {
+    offers: object[]
+}
+
+const OfferMothItemsMap = ({offers}: Props) => {
     return (
         <>
             {offers.map((el, index) => <OfferItem key={index} img={el.img} name={el.name} subtitle={el.subtitle}

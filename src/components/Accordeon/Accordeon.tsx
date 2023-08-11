@@ -1,0 +1,19 @@
+import React from 'react';
+import s from './Accordeon.module.scss';
+import arr from "@/assets/icons/arr_d_spec.svg";
+import Image from "next/image";
+import AccordeonItem from "@/components/Accordeon/components/AccordeonItem/AccordeonItem";
+
+type Props = {
+    items: object[]
+}
+
+const Accordeon = ({items}:Props) => {
+    return (
+        <div className={s.acc_items}>
+            {items.map((el,index) => <AccordeonItem numb={el.numb} key={index} sub={el.sub} text={el.text}/>)}
+        </div>
+    );
+};
+
+export default Accordeon;

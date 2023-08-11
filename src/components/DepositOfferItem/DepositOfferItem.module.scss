@@ -105,7 +105,10 @@
     }
 
     .blue_charc {
-
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

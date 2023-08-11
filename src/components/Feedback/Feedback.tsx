@@ -12,7 +12,7 @@ const Feedback = ({title, sub, chois}) => {
             {(!title || !sub) ? <div className={s.title}>
                 <mark>Что говорят</mark>
                 наши клиенты
-            </div> : <TitleMarkLast title={'Отзывы'} sub={'о вкладах'}/>
+            </div> : <TitleMarkLast title={title} sub={sub}/>
             }
             {(chois && chois.length !== 0) && <div className={s.choise_items}>
                 <ChoiseItemsMap choiseItems={chois}/>

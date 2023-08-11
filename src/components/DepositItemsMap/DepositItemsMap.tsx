@@ -6,7 +6,7 @@ const DepositItemsMap = ({deposits}) => {
         <>
             {deposits.map((el, index) => <DepositOfferItem name={el.name} sub={el.sub} stavka={el.stavka} time={el.time}
                                                            money={el.money} img={el.img} charcs={el.charcs}
-                                                           key={index}/>)}
+                                                           key={index} btn={el.btn} />)}
         </>
     );
 };

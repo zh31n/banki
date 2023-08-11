@@ -2,9 +2,14 @@ import React from 'react';
 import s from './FrequentQuestions.module.scss';
 import QuestionItem from "@/components/QuestionItem/QuestionItem";
 
+type ItemT = {
+    title:string
+    text:string
+}
+
 type Props = {
     title: string
-    items: object[]
+    items: ItemT[]
 }
 
 const FrequentQuestions = ({title, items}: Props) => {
