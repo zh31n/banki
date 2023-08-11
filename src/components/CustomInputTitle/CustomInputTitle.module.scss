@@ -9,6 +9,7 @@
   padding: 10px 20px;
 
   div {
+    white-space: nowrap;
     color: #A3A3A3;
     font-size: 14px;
     font-style: normal;
@@ -16,14 +17,12 @@
     line-height: 86.4%; /* 12.096px */
   }
 
-  select {
+  input {
     appearance: none;
     margin-top: 5px;
     width: 100%;
     background: transparent;
     outline: 0;
-    background: url('../../assets/icons/arr_small.svg') no-repeat right;
-    background-position-y: calc(100% - 12px);
     font-variant-numeric: lining-nums proportional-nums;
   }
 }
