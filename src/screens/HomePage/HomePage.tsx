@@ -111,6 +111,13 @@ const choiseItems: choiseItemsT[] = [
   { name: "Инвестиции", active: false },
   { name: "Ипотека от ПИК", active: false },
 ];
+// Рома,объект ниже это спецом для отзывов,не трогай его
+const choisFeedback: choiseItemsT[] = [
+  { name: "Банки", active: true },
+  { name: "МФО", active: false },
+  { name: "Страховые компании", active: false },
+  { name: "Инвестиции", active: false }
+];
 const offers: offersT[] = [
   {
     name: "Локо-Банк",
@@ -208,7 +215,7 @@ const HomePage = () => {
         </div>
       </div>
       <Calculate />
-      <OfferMoth offers={offerss} choiseItems={choiseItemss} />
+      <OfferMoth offers={offers} choiseItems={choiseItems} />
       <LatestNews />
       <Feedback chois={choisFeedback} />
     </PageWrapper>
