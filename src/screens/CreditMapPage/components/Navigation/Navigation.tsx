@@ -26,7 +26,6 @@ const Navigation = (props: Props) => {
         </div>
         <Parametrs />
       </div>
-      <BackGround />
     </div>
   );
 };
