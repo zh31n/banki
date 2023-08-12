@@ -1,0 +1,40 @@
+.main_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+
+  .text_container {
+    display: flex;
+
+    .blue_text {
+      color: var(--blu-main, #4DA7FF);
+      text-align: center;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: Raleway, serif;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 86.4%;
+      margin-right: 8px;
+    }
+
+    .text {
+      color: #000;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: Raleway, serif;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 86.4%;
+    }
+  }
+}
+
+.items_container {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}

@@ -10,6 +10,7 @@ import absolut from "@/assets/icons/banki_icon/absolut.svg";
 import agrogress from "@/assets/icons/banki_icon/agrogress.svg";
 import bars from "@/assets/icons/banki_icon/bars.svg";
 import loc_bank from "@/assets/icons/banki_icon/loco.svg";
+import loco from "@/assets/icons/banki_icon/loco.svg";
 import ruble from "@/assets/icons/banki_icon/Ruble.svg";
 import linesI from "@/assets/icons/banki_icon/3-line.svg";
 import img_1 from "@/assets/icons/offer_img1.png";
@@ -19,7 +20,6 @@ import img_3 from "@/assets/icons/offer_img3.png";
 import europe from "@/assets/icons/banki_icon/europe.svg";
 import img_4 from "@/assets/icons/offer_img4.png";
 import norvik from "@/assets/icons/banki_icon/norvik.svg";
-import loco from "@/assets/icons/banki_icon/loco.svg";
 import sber from "@/assets/icons/banki_icon/sber.svg";
 import ekspo from "@/assets/icons/banki_icon/ekspo.svg";
 import spm from "@/assets/icons/banki_icon/spm.svg";
@@ -500,18 +500,56 @@ const data = {
             {title: 'Задать вопрос о кредитах', text: ''},
         ]
     },
-    RefinancingCredits:{
-        sliderItems:[ekspo, spm, psb, sber, tinkoff, norvik, norvik],
+    RefinancingCredits: {
+        sliderItems: [ekspo, spm, psb, sber, tinkoff, norvik, norvik],
         ourData: [
-            {img: w_1, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
-            {img: w_2, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
-            {img: w_3, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
-            {img: w_4, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
+            {
+                img: w_1,
+                title: 'Этап 1',
+                sub: 'Заполнить анкету',
+                text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'
+            },
+            {
+                img: w_2,
+                title: 'Этап 1',
+                sub: 'Заполнить анкету',
+                text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'
+            },
+            {
+                img: w_3,
+                title: 'Этап 1',
+                sub: 'Заполнить анкету',
+                text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'
+            },
+            {
+                img: w_4,
+                title: 'Этап 1',
+                sub: 'Заполнить анкету',
+                text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'
+            },
         ],
         questData: [
             {title: 'Как я могу снизить плетеж с помощью рефинансирования?', text: ''},
             {title: 'Какие кредиты я могу рефинансировать?', text: ''},
             {title: 'Какие документы мне понадобятся?', text: ''},
+        ]
+    },
+    CreditCardsPage: {
+        compilationData: [
+            {img: smar, name: 'Онлайн заявка на карту'},
+            {img: sprav, name: 'Без справок'},
+            {img: home_i, name: 'Льготный период до 1100 дней'},
+            {img: swit, name: 'Карты с доставкой'},
+            {img: smar, name: 'Union Pay'},
+            {img: flame, name: 'Ставка от 0%'},
+            {img: wheel, name: 'Сash Back до 10%'},
+            {img: prot, name: 'Большой лимит'},
+            {img: prot, name: 'Для путешествий'},
+            {img: prot, name: 'Бонусные карты'},
+            {img: prot, name: 'Бесплатные карты'},
+        ],
+        info: [
+            {title: 'Оформление кредитной карты онлайн', text: ''},
         ]
     }
 }
