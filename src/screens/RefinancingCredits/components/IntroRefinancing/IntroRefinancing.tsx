@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './IntroRefinancing.module.scss';
-import CustomWhiteSelectTitle from "@/components/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
-import MoneySelect from "@/components/MoneySelect/MoneySelect";
-import CustomInputTitle from "@/components/CustomInputTitle/CustomInputTitle";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
+import MoneySelect from "@/UI/MoneySelect/MoneySelect";
+import CustomInputTitle from "@/UI/CustomInputTitle/CustomInputTitle";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 const IntroRefinancing = () => {
     return (

@@ -2,12 +2,12 @@ import React from 'react';
 import s from './OfferMoth.module.scss';
 import arr_l from "@/assets/icons/banki_icon/Стрелка_left.svg";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
-import ChoiseItem from "@/components/ChoiseItem/ChoiseItem";
-import OfferItem from "@/components/OfferItem/OfferItem";
+import ChoiseItem from "@/components/Choise/ChoiseItem/ChoiseItem";
+import OfferItem from "@/components/Offers/OfferItem/OfferItem";
 import loc_bank from "@/assets/icons/banki_icon/loco.svg";
 import Image from "next/image";
-import OfferMothItemsMap from "@/components/OfferMothItemsMap/OfferMothItemsMap";
-import ChoiseItemsMap from "@/components/ChoiseItemsMap/ChoiseItemsMap";
+import OfferMothItemsMap from "@/components/Offers/OfferMothItemsMap/OfferMothItemsMap";
+import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
 
 

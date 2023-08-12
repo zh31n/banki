@@ -1,5 +1,5 @@
 import React from 'react';
-import ChoiseItem from "@/components/ChoiseItem/ChoiseItem";
+import ChoiseItem from "@/components/Choise/ChoiseItem/ChoiseItem";
 
 const ChoiseItemsMap = ({choiseItems}) => {
     return (

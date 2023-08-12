@@ -6,7 +6,6 @@ type ItemT = {
     title:string
     text:string
 }
-
 type Props = {
     title: string
     items: ItemT[]

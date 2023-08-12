@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './SpecialOfferItem.module.scss';
 import Image from "next/image";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 
 type Props = {

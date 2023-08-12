@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './Banks.module.scss';
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import searchI from "@/assets/icons/search.svg";
-import BankiItem from "@/components/BankiItem/BankiItem";
+import BankiItem from "@/components/Banki/BankiItem/BankiItem";
 import Image from "next/image";
 
 type bankiT = {

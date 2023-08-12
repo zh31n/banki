@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Mailing.module.scss'
 import mail from '@/assets/icons/rassilka.svg';
 import Image from "next/image";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 const Mailing = () => {
     return (

@@ -12,8 +12,8 @@ type banksT = {
 }
 type Props = {
     fz?: number
-    title: string
-    sub: string
+    title?: string
+    sub?: string
     banks: banksT[]
 }
 

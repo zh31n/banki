@@ -1,5 +1,5 @@
 import React from 'react';
-import OfferItem from "@/components/OfferItem/OfferItem";
+import OfferItem from "@/components/Offers/OfferItem/OfferItem";
 
 type Props = {
     offers: object[]

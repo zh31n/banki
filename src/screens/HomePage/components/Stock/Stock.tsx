@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./Stock.module.scss";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import StockItem from "@/components/StockItem/StockItem";
 
 type ItemsActionT = {

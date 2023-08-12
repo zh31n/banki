@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './IntroConsumer.module.scss';
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 const IntroConsumer = () => {
     return (

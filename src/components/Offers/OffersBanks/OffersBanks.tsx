@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './OffersBanks.module.scss';
-import CustomSelect from "@/components/CustomSelect/CustomSelect";
+import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
-import DepositItemsMap from "@/components/DepositItemsMap/DepositItemsMap";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import DepositItemsMap from "@/components/Deposit/DepositItemsMap/DepositItemsMap";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 
 const OffersBanks = ({deposits,options,title,sub}) => {

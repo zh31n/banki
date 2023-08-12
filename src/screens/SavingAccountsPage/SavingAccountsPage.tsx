@@ -1,12 +1,12 @@
 import React from 'react';
-import PageWrapper from "@/components/PageWrapper/PageWrapper";
+import PageWrapper from "@/containers/PageWrapper";
 import Intro from "@/screens/SavingAccountsPage/components/Intro/Intro";
 import s from './SavingAccountsPage.module.scss';
 import Bonus from "@/components/Bonus/Bonus";
-import OffersBanks from "@/components/OffersBanks/OffersBanks";
-import OfferMoth from "@/components/OfferMoth/OfferMoth";
+import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
+import OfferMoth from "@/components/Offers/OfferMoth/OfferMoth";
 import loc_bank from "@/assets/icons/banki_icon/loco.svg";
-import Feedback from "@/components/Feedback/Feedback";
+import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopBanks from "@/components/TopBanks/TopBanks";
 import loco from "@/assets/icons/banki_icon/loco.svg";
@@ -22,7 +22,7 @@ type offersT = {
 }
 type questT = {
     title: string
-    items: object[]
+    items: ItemT[]
 }
 type banksT = {
     title: string
@@ -41,87 +41,30 @@ type depositsT = {
     img: string
     charcs: string[]
 }
-
-
-
-const deposits: depositsT[] = [
-    {
-        name: 'Локо-Банк',
-        sub: 'Добро Пожаловать. Локо',
-        stavka: '10.10',
-        time: '370 дн.',
-        money: '5000 — 5 млн.',
-        img: loco,
-        charcs: ['Партнер раздела']
-    },
-    {
-        name: 'Сбербанк',
-        sub: 'Накопительный счет',
-        stavka: '6.8',
-        time: '30 — 1460 дн.',
-        money: '3 000 — 1 млн',
-        img: sber,
-        charcs: ['']
-    },
-    {
-        name: 'Сбербанк',
-        sub: 'Накопительный счет',
-        stavka: '6.8',
-        time: '30 — 1460 дн.',
-        money: '3 000 — 1 млн',
-        img: sber,
-        charcs: ['']
-    },
-    {
-        name: 'Сбербанк',
-        sub: 'Накопительный счет',
-        stavka: '6.8',
-        time: '30 — 1460 дн.',
-        money: '3 000 — 1 млн',
-        img: sber,
-        charcs: ['']
-    },
-]
-const questions: questT = {
-    title: 'Частые вопросы',
-    items: [
-        {title: 'Каталоги', text: ''},
-        {title: 'Подробнее', text: ''},
-        {title: 'Эксперты направления вклады и депозиты', text: ''},
-        {title: 'Накопительные счета в городах', text: ''},
-        {title: 'Предложения в банках', text: ''},
-        {title: 'Задать вопрос о вкладах', text: ''},
-    ]
+type ItemT = {
+    title: string
+    text: string
 }
-const offers: offersT[] = [
-    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10},
-    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10},
-    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10},
-    {name: 'Локо-Банк', subtitle: 'Добро Пожаловать. Локо', img: loc_bank, time: 370, year_money: 10.10}
-]
-const banks: banksT[] = [
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-    {title: 'Локо-Банк', stavka: 10.1, sub: 'Добро Пожаловать. Локо', money: '5000 — 5 млн.', osob: 'онлайн', time: 370},
-]
+type Props = {
+    data: {
+        deposits: depositsT[]
+        questions: questT
+        offers: offersT[]
+        banks: banksT[]
+    }
+}
 
-const SavingAccountsPage = () => {
+
+const SavingAccountsPage = ({data}: Props) => {
     return (
         <PageWrapper>
             <Intro/>
             <Bonus/>
-            <OffersBanks deposits={deposits} options={['По популярности']} title={'943 вклада'} sub={'подобрано'} />
-            <OfferMoth offers={offers}/>
+            <OffersBanks deposits={data.deposits} options={['По популярности']} title={'943 вклада'} sub={'подобрано'}/>
+            <OfferMoth offers={data.offers}/>
             <Feedback title={'Отзывы'} sub={'о вкладах'}/>
-            <FrequentQuestions title={'Частые вопросы'} items={questions.items}/>
-            <TopBanks banks={banks} />
+            <FrequentQuestions title={'Частые вопросы'} items={data.questions.items}/>
+            <TopBanks banks={data.banks}/>
         </PageWrapper>
     );
 };

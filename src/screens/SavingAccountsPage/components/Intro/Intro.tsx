@@ -1,9 +1,9 @@
 import React from 'react';
 import s from "./Intro.module.scss";
-import MoneySelect from "@/components/MoneySelect/MoneySelect";
+import MoneySelect from "@/UI/MoneySelect/MoneySelect";
 import cust from "@/assets/icons/Tuning_icon.svg";
-import CustomWhiteSelectTitle from "@/components/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import Image from "next/image";
 
 const Intro = () => {

@@ -4,7 +4,7 @@ import Image from "next/image";
 import ques_I from '@/assets/icons/banki_icon/Question_i.svg';
 import dang_i from '@/assets/icons/banki_icon/Danger_i.svg';
 import arr_d from '@/assets/icons/Arrow_d.svg';
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 type Props = {
     name: string

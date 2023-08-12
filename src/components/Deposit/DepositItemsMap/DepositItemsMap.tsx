@@ -1,5 +1,5 @@
 import React from 'react';
-import DepositOfferItem from "@/components/DepositOfferItem/DepositOfferItem";
+import DepositOfferItem from "@/components/Deposit/DepositOfferItem/DepositOfferItem";
 
 const DepositItemsMap = ({deposits}) => {
     return (

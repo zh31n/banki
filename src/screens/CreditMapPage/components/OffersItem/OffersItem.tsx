@@ -4,7 +4,7 @@ import cart from "../../../../assets/icons/card.png";
 import Arrow from "./Image";
 import CheckImage from "@/screens/CreditMapPage/components/OffersItem/CheckImage";
 import Image from "next/image";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import warningImg from "@/assets/icons/warning_icon.png"
 
 const OffersItem = () => {

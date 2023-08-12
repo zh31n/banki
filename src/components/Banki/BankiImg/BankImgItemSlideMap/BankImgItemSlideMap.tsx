@@ -1,5 +1,5 @@
 import React from 'react';
-import BankImgItemSlide from "@/components/BankImgItemSlide/BankImgItemSlide";
+import BankImgItemSlide from "@/components/Banki/BankiImg/BankImgItemSlide/BankImgItemSlide";
 
 type Props = {
     images: string[]

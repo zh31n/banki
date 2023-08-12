@@ -1,6 +1,5 @@
 import React from 'react';
-import s from './RefinancingCredits.module.scss';
-import PageWrapper from "@/components/PageWrapper/PageWrapper";
+import PageWrapper from "@/containers/PageWrapper";
 import IntroRefinancing from "@/screens/RefinancingCredits/components/IntroRefinancing/IntroRefinancing";
 import SliderBanksCons from "@/screens/ConsumerCreditsPage/Components/SliderBanksCons/SliderBanksCons";
 import ekspo from "@/assets/icons/banki_icon/ekspo.svg";
@@ -27,28 +26,23 @@ type quesT = {
     title: string
     text: string
 }
+type Props = {
+    data: {
+        sliderItems: string[]
+        ourData: itemT[]
+        questData: quesT[]
+    }
+}
 
-const data: string[] = [ekspo, spm, psb, sber, tinkoff, norvik, norvik]
-const ourData: itemT[] = [
-    {img: w_1, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
-    {img: w_2, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
-    {img: w_3, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
-    {img: w_4, title: 'Этап 1', sub: 'Заполнить анкету', text: 'Вы заполняете единую анкету – нужно всего 3 минуты.'},
-]
-const questData: quesT[] = [
-    {title: 'Как я могу снизить плетеж с помощью рефинансирования?', text: ''},
-    {title: 'Какие кредиты я могу рефинансировать?', text: ''},
-    {title: 'Какие документы мне понадобятся?', text: ''},
-]
 
-const RefinancingCredits = () => {
+const RefinancingCredits = ({data}: Props) => {
     return (
         <PageWrapper>
             <IntroRefinancing/>
-            <SliderBanksCons data={data}/>
+            <SliderBanksCons data={data.sliderItems}/>
             <OurStrongs/>
-            <HowItWorks title={'Как работает '} sub={'сервис'} items={ourData}/>
-            <FrequentQuestions title={'Важные вопросы'} items={questData}/>
+            <HowItWorks title={'Как работает '} sub={'сервис'} items={data.ourData}/>
+            <FrequentQuestions title={'Важные вопросы'} items={data.questData}/>
         </PageWrapper>
     );
 };

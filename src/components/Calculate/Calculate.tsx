@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './Calculate.module.scss'
-import ChoiseItem from "@/components/ChoiseItem/ChoiseItem";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
-import MoneySelect from "@/components/MoneySelect/MoneySelect";
-import CustomWhiteSelectTitle from "@/components/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
+import ChoiseItem from "@/components/Choise/ChoiseItem/ChoiseItem";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import MoneySelect from "@/UI/MoneySelect/MoneySelect";
+import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
 
 type choiseItemsT = {
     name: string

@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './LatestNews.module.scss';
-import ChoiseItem from "@/components/ChoiseItem/ChoiseItem";
+import ChoiseItem from "@/components/Choise/ChoiseItem/ChoiseItem";
 import new_1 from '@/assets/icons/new_1.png';
 import new_2 from '@/assets/icons/new_2.png';
 import NewsItem from "@/components/NewsItem/NewsItem";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
-import ChoiseItemsMap from "@/components/ChoiseItemsMap/ChoiseItemsMap";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
 type choisesT = {
     name: string

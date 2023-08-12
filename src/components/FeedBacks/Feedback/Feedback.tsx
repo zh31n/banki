@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './Feedback.module.scss';
-import FeedbackItem from "@/components/FeedbackItem/FeedbackItem";
-import BlueBtn from "@/components/BlueBtn/BlueBtn";
+import FeedbackItem from "@/components/FeedBacks/FeedbackItem/FeedbackItem";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import TitleMarkLast from "@/components/TitleMarkLast/TitleMarkLast";
-import ChoiseItemsMap from "@/components/ChoiseItemsMap/ChoiseItemsMap";
+import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
 
 const Feedback = ({title, sub, chois}) => {

@@ -8,7 +8,6 @@ type itemT = {
     img: string
     text: string
 }
-
 type Props = {
     title: string
     sub: string
