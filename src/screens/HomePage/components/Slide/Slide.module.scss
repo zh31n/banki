@@ -1,0 +1,17 @@
+.slide {
+  margin-top: 1rem;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  .arr {
+    width: 43px;
+    height: 43px;
+    background: #7BBEFF;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
