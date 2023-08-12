@@ -1,11 +1,16 @@
 import CreditMapPage from "@/screens/CreditMapPage/CreditMapPage";
+import {Metadata} from "next";
 
 type Props = {
-  params: {
-    id: string;
-  };
+    params: {
+        id: string;
+    };
 };
 
-export default function CreditMap({ params: { id } }: Props) {
-  return <CreditMapPage />;
+export const metadata: Metadata = {
+    title: 'Кредитные карты'
+}
+
+export default function CreditMap({params: {id}}: Props) {
+    return <CreditMapPage/>;
 }
