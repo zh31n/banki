@@ -2,9 +2,8 @@ import React from "react";
 import styles from "./Navigation.module.scss";
 import Parametrs from "./Parametrs/Parametrs";
 
-type Props = {};
 
-const Navigation = (props: Props) => {
+const Navigation = () => {
     return (
         <div className={styles.main_container}>
             <div className={styles.text_container}>
@@ -27,6 +26,7 @@ const Navigation = (props: Props) => {
             </div>
         </div>
     );
+
 };
 
 export default Navigation;
