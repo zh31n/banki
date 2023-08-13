@@ -39,7 +39,6 @@ const OffersBanks = ({deposits, options, title, sub}: Props) => {
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все'} width={235}/>
             </div>
-
         </div>
     );
 };

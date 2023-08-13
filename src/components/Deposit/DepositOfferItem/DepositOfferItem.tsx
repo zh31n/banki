@@ -37,12 +37,12 @@ const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn, cou
                             </div>
                             <span>{stavka}%</span>
                         </div>
-                        <div className={s.info_item}>
+                        {time !== '' && <div className={s.info_item}>
                             <div className={s.title}>
                                 Срок
                             </div>
                             <span>{time}</span>
-                        </div>
+                        </div>}
                         <div className={s.info_item}>
                             <div className={s.title}>
                                 Сумма
