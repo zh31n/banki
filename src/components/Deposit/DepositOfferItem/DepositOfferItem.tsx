@@ -14,11 +14,12 @@ type Props = {
     money: string
     img: string
     charcs: string[]
-    btn?: string
+    btn?: string | undefined
+    count?: string | undefined
 }
 
 
-const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn}: Props) => {
+const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn, count}: Props) => {
     return (
         <div className={s.item}>
             <div className={s.up}>
@@ -57,7 +58,7 @@ const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn}: Pr
             </div>
             <div className={s.down}>
                 <div className={s.count}>
-                    Ещё 12 вкладов
+                    {!count ? 'Ещё 12 вкладов' : count}
                     <Image src={arr_d} alt={'иконка стрелочки вниз'}/>
                 </div>
                 <div className={s.blue_charc}>
