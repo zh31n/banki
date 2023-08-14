@@ -4,8 +4,11 @@ import BankImgItemSlideMap from "@/components/Banki/BankiImg/BankImgItemSlideMap
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
 import Image from "next/image";
 
+type Props = {
+    data: string[]
+}
 
-const SliderBanksCons = ({data}) => {
+const SliderBanksCons = ({data}:Props) => {
     return (
         <div className={s.slider}>
             <BankImgItemSlideMap images={data}/>

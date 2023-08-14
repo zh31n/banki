@@ -2,7 +2,12 @@ import React from 'react';
 import s from "./CatalogItem.module.scss";
 import Image from "next/image";
 
-const CatalogItem = ({name,img}) => {
+type Props = {
+    name:string
+    img:string
+}
+
+const CatalogItem = ({name,img}:Props) => {
     return (
         <div className={s.catalog_item}>
             <Image src={img} />

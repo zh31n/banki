@@ -35,12 +35,15 @@ type iconsSlideT = {
     w: number;
 };
 type Props = {
-    iconsSlide: iconsSlideT[]
-    stock: ItemsActionT[]
-    banki: bankiT[]
-    choiseOffer: choiseItemsT[]
-    offersMoth: offersT[]
-    choiseFeedback: choiseItemsT[]
+    data: {
+        iconsSlide: iconsSlideT[]
+        stock: ItemsActionT[]
+        banki: bankiT[]
+        choiseOffer: choiseItemsT[]
+        offersMoth: offersT[]
+        choiseFeedback: choiseItemsT[]
+    }
+
 }
 
 

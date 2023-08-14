@@ -2,18 +2,28 @@ import React from 'react';
 import s from './OfferMoth.module.scss';
 import arr_l from "@/assets/icons/banki_icon/Стрелка_left.svg";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
-import ChoiseItem from "@/components/Choise/ChoiseItem/ChoiseItem";
-import OfferItem from "@/components/Offers/OfferItem/OfferItem";
-import loc_bank from "@/assets/icons/banki_icon/loco.svg";
 import Image from "next/image";
 import OfferMothItemsMap from "@/components/Offers/OfferMothItemsMap/OfferMothItemsMap";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
-
-
+type offers = {
+    img: string
+    name: string
+    subtitle: string
+    time?: number | undefined
+    year_money?: number | undefined
+    title_1?: string | undefined
+    title1_key?: string | undefined
+    title2?: string | undefined
+    title2_key?: string | undefined
+}
+type ItemT = {
+    name: string
+    active: boolean
+}
 type Props = {
-    choiseItems?: object[]
-    offers: object[]
+    choiseItems?: ItemT[]
+    offers: offers[]
 }
 
 

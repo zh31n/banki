@@ -5,18 +5,22 @@ import Image from "next/image";
 import loc_bank from "@/assets/icons/banki_icon/loco.svg";
 
 type Props = {
-    img:string
-    name:string
-    subtitle:string
-    time:number
-    year_money:number
+    img: string
+    name: string
+    subtitle: string
+    time?: number | undefined
+    year_money?: number | undefined
+    title_1?: string | undefined
+    title1_key?: string | undefined
+    title2?: string | undefined
+    title2_key?: string | undefined
 }
 
-const OfferItem = ({img,name,subtitle,time,year_money}:Props) => {
+const OfferItem = ({img, name, subtitle, time, year_money, title_1, title1_key, title2, title2_key}: Props) => {
     return (
         <div className={s.offer_item}>
             <div className={s.inf}>
-                <Image src={img} />
+                <Image src={img}/>
                 <div className={s.info}>
                     <div className={s.name}>{name}</div>
                     <div className={s.subtitle}>{subtitle}</div>
@@ -25,12 +29,14 @@ const OfferItem = ({img,name,subtitle,time,year_money}:Props) => {
             <div className={s.line}></div>
             <div className={s.tarifs}>
                 <div className={s.years}>
-                    <div className={s.title}>Годовых</div>
-                    <span>до {year_money}%</span>
+                    <div className={s.title}>{title_1 ? title_1 : 'Годовых'}</div>
+                    <span>
+                        {title1_key ? title1_key : 'до ' + year_money + ' %'}
+                    </span>
                 </div>
                 <div className={s.years}>
-                    <div className={s.title}>Срок</div>
-                    <span>{time} дн.</span>
+                    <div className={s.title}>{title2 ? title2 : 'Срок'}</div>
+                    <span>{title2_key ? title2_key : time + 'дн.'}</span>
                 </div>
             </div>
         </div>
