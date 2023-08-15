@@ -56,6 +56,22 @@ import w_4 from "@/assets/icons/w_4.svg";
 import scooter from "@/assets/icons/Scooter.svg"
 import template from "@/assets/icons/template.svg"
 import heart from "@/assets/icons/Hearts.svg"
+import sber_full from '@/assets/icons/banki_icon/sber_text.svg'
+import ifk from '@/assets/icons/banki_icon/ifk_solid.svg';
+import mic1 from '@/assets/icons/banki_icon/orgs_1.svg';
+import mic2 from '@/assets/icons/banki_icon/orgs_2.svg';
+import ic1 from '@/assets/icons/catalogIcons/Wallet Money.svg';
+import ic2 from '@/assets/icons/catalogIcons/Clipboard Check.svg';
+import ic3 from '@/assets/icons/catalogIcons/Banknote.svg';
+import ic4 from '@/assets/icons/catalogIcons/Star.svg';
+import ic5 from '@/assets/icons/catalogIcons/Card Send.svg';
+import ic6 from '@/assets/icons/catalogIcons/procent.svg';
+import ic7 from '@/assets/icons/catalogIcons/Smartphone.svg';
+import ic8 from '@/assets/icons/catalogIcons/Flame.svg';
+import ic9 from '@/assets/icons/catalogIcons/Wheel.svg';
+import ic10 from '@/assets/icons/catalogIcons/WadOfMoney.svg';
+import ic11 from '@/assets/icons/catalogIcons/protect.svg';
+
 
 const data = {
   HomePage: {
@@ -375,8 +391,7 @@ const data = {
         time: 370
       },
     ]
-  },
-  ConsumerCredits: {
+  }, ConsumerCredits: {
     deposits: [
       {
         name: 'Локо-Банк',
@@ -514,6 +529,7 @@ const data = {
       {title: 'Задать вопрос о кредитах', text: ''},
     ]
   },
+
   RefinancingCredits: {
     sliderItems: [ekspo, spm, psb, sber, tinkoff, norvik, norvik],
     ourData: [
@@ -789,6 +805,175 @@ const data = {
       {title: 'Каталоги', text: ''},
       {title: 'Вопрос об ипотеке эксперту ', text: ''},
     ]
+  },
+ 
+  CalculateCredit: {
+    offers: [
+      {
+        name: 'Локо-Банк',
+        sub: 'Добро Пожаловать. Локо',
+        stavka: '8,8 - 36',
+        time: '',
+        money: 'от 8 620',
+        img: loco,
+        charcs: ['Партнер раздела', 'Без залога', 'На любые цели'],
+        btn: 'Онлайн заявка',
+        count: 'Ещё 12 кредитов'
+      },
+      {
+        name: 'Сбербанк',
+        sub: 'Накопительный счет',
+        stavka: '7 - 31,6',
+        time: '',
+        money: 'от 8 620',
+        img: sber,
+        charcs: ['На любые цели'],
+        btn: 'Онлайн заявка',
+        count: 'Ещё 12 кредитов'
+      },
+      {
+        name: 'Сбербанк',
+        sub: 'Накопительный счет',
+        stavka: '11,9 — 27,9',
+        time: '',
+        money: 'от 8 620',
+        img: sber,
+        charcs: ['Без залога', 'На любые цели'],
+        btn: 'Онлайн заявка',
+        count: 'Ещё 12 кредитов'
+      },
+      {
+        name: 'Сбербанк',
+        sub: 'Накопительный счет',
+        stavka: '8,8 — 30',
+        time: '',
+        money: 'от 8 620',
+        img: sber,
+        charcs: [],
+        btn: 'Онлайн заявка',
+        count: 'Ещё 12 кредитов'
+      },
+
+    ],
+    questData: [
+      {title: 'Что нужно знать о кредитном калькуляторе, чтобы рассчитать кредит?', text: ''}
+    ]
+  },
+  MicroLoans: {
+    chooseIntro: [
+      {name: 'Не важна сумма', active: true},
+      {name: '5 000 — 15 000 ₽', active: false},
+      {name: '15 000 — 30 000 ₽', active: false},
+      {name: '30 000 — 100 000 ₽', active: false},
+    ],
+    slideItems: [ekspo, spm, psb, sber_full, tinkoff, norvik, norvik],
+    webloans: [
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+      {sum: '1 500 - 30 000', days: '5 - 21 день', stavka: '0', titleBtn: 'Получить деньги'},
+    ],
+    offersMoth: [
+      {
+        img: tinkoff_i,
+        subtitle: '-5% при оформлении на ...',
+        name: 'Тинькофф Банк',
+        title_1: 'Ставка в день',
+        title1_key: '0%',
+        title2: 'Сумма',
+        title2_key: 'до 30 000 ₽'
+      },
+      {
+        img: alfa, subtitle: 'Наличными', name: 'Альфа-банк', title_1: 'Ставка в день',
+        title1_key: '0%',
+        title2: 'Сумма',
+        title2_key: 'до 30 000 ₽'
+      },
+      {
+        img: otkr, subtitle: 'Наличными', name: 'Банк «Открытие» ', title_1: 'Ставка в день',
+        title1_key: '0%',
+        title2: 'Сумма',
+        title2_key: 'до 30 000 ₽'
+      },
+      {
+        img: vtb, subtitle: 'Наличными', name: 'ВТБ', title_1: 'Ставка в день',
+        title1_key: '0%',
+        title2: 'Сумма',
+        title2_key: 'до 30 000 ₽'
+      },
+    ],
+    loans: [
+      {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
+      {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+      {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+    ],
+    catalogData: [
+      {name: 'До зарплаты', img: ic1},
+      {name: 'Деньги по паспорту', img: ic2},
+      {name: 'Наличными', img: ic3},
+      {name: 'С промокодами', img: ic4},
+      {name: 'На карту', img: ic5},
+      {name: 'Без процентов', img: ic6},
+      {name: 'Займ онлайн', img: ic7},
+      {name: 'Экспресс-займ', img: ic8},
+      {name: 'Под залог авто', img: ic9},
+      {name: 'На большую сумму', img: ic10},
+      {name: 'На карту онлайн', img: ic11},
+    ],
+    banks: [
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+      {title: 'Локо-Банк', stavka: 0, sub: 'Добро Пожаловать. Локо', money: '300 000 — 1 300 000', time: '1 - 7'},
+    ],
+    questData: [
+      {title: 'Где взять микрозайм на карту онлайн', text: ''},
+      {title: 'Эксперты направления микрозаймов', text: ''},
+      {title: 'Задать вопрос о микрозаймах', text: ''},
+    ]
+  },
+  GetLoan: {
+    worksData: [
+      {
+        img: w_1,
+        title: 'Этап 1',
+        sub: 'Заполнить анкету',
+        text: 'Определитесь с суммой кредита на авто и заполните единую анкету – нужно всего 3 минуты.'
+      },
+      {
+        img: w_2,
+        title: 'Этап 2',
+        sub: 'Выберите лучшее',
+        text: 'Мы бесплатно подберем банки, на основе вашего кредитного рейтинга.'
+      },
+      {
+        img: w_3,
+        title: 'Этап 3',
+        sub: 'Заявка в один клик',
+        text: 'Вы выбираете предложения, отправляете заявки и получаете решение онлайн.'
+      },
+      {
+        img: w_4,
+        title: 'Этап 4',
+        sub: 'Деньги у вас на карте',
+        text: 'МФО перечислит деньги на вашу карту через 5 минут.'
+      },
+    ],
   }
 }
 

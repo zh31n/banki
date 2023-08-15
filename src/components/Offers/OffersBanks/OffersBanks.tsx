@@ -5,13 +5,31 @@ import lines from "@/assets/icons/banki_icon/3-line.svg";
 import DepositItemsMap from "@/components/Deposit/DepositItemsMap/DepositItemsMap";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
+type dep = {
+    name: string
+    sub: string
+    stavka: string
+    time: string
+    money: string
+    img: string
+    charcs: string[]
+    btn?: string | undefined
+    count?: string | undefined
+}
+type Props = {
+    deposits: dep[]
+    title: string
+    sub: string
+    options: string[]
+}
 
-const OffersBanks = ({deposits,options,title,sub}) => {
+const OffersBanks = ({deposits, options, title, sub}: Props) => {
     return (
         <div className={s.deposits}>
             <div className={s.title}>
                     <span>
-                        <mark>{title}</mark> {sub}
+                        <mark>{title}</mark>
+                        {sub}
                     </span>
                 <CustomSelect img={lines} options={options}/>
             </div>
@@ -21,7 +39,6 @@ const OffersBanks = ({deposits,options,title,sub}) => {
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все'} width={235}/>
             </div>
-
         </div>
     );
 };
