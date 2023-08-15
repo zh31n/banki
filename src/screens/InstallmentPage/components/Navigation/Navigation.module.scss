@@ -1,0 +1,195 @@
+.main_container {
+  margin-top: 32px;
+  height: 626px;
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #D9DBDF;
+  padding-top: 38px;
+  padding-left: 88px;
+  background: url("../../../../assets/icons/installment.jpg") no-repeat white right bottom;
+  background-size: 540px 495px;
+}
+
+
+.top_container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .text {
+    color: #121212;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 86.4%;
+  }
+
+  .grey_text {
+    color: var(--2, #B4B4B4);
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 86.4%;
+  }
+}
+
+.text_container {
+  margin-top: 32px;
+
+  .text_cont {
+    width: 670px;
+
+    .text {
+      color: #121212;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: Raleway, serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: 22px;
+    }
+
+    .blue_text {
+      color: var(--stroke-3, #4DA7FF);
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: Raleway, serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  .main_text_container {
+    display: flex;
+    align-items: center;
+
+    .main_text {
+      color: var(--main, #121212);
+      font-family: Raleway, sans-serif;
+      font-size: 46px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 86.4%;
+    }
+
+    .blue_text {
+      color: var(--stroke-3, #4DA7FF);
+      font-family: Raleway, sans-serif;
+      font-size: 46px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 86.4%;
+      margin-left: 8px;
+    }
+  }
+}
+
+.limit_container {
+  width: 690px;
+  padding: 24px;
+  height: 197px;
+  margin-top: 32px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--stroke-3, #4DA7FF);
+  background: var(--unnamed, rgba(217, 231, 250, 0.40));
+  backdrop-filter: blur(9.973308563232422px);
+
+  .right_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .button {
+      width: 241px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      border-radius: 7px;
+      border: 1px solid var(--stroke-2, #E0EAFF);
+      background: #FFF;
+      color: var(--main, #121212);
+      leading-trim: both;
+      text-edge: cap;
+      font-family: Raleway, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 86.4%;
+    }
+  }
+
+  .left_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+
+    .period_cont {
+      width: 385px;
+      height: 60px;
+      padding: 14.645px 21.968px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 35px;
+
+      div {
+        .period_text {
+          color: #A3A3A3;
+          font-family: Raleway, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 86.4%;
+        }
+
+        .text {
+          color: var(--accent, #212121);
+          font-variant-numeric: lining-nums proportional-nums;
+          font-family: Raleway, sans-serif;
+          font-size: 16px;
+          margin-top: 8px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 86.4%;
+        }
+      }
+    }
+
+    .text_cont {
+      width: 341px;
+      height: 52px;
+      padding: 14px 22px 14px 22px;
+
+      .grey_text {
+        color: #A3A3A3;
+        font-family: Raleway, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 86.4%;
+        margin-bottom: 8px;
+      }
+
+      .text {
+        color: var(--accent, #212121);
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 86.4%;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

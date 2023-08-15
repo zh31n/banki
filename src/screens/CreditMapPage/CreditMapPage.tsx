@@ -2,7 +2,7 @@ import Wrapper from "@/containers/Wrapper";
 import Navigation from "./components/Navigation/Navigation";
 import Bonus from "../../components/Bonus/Bonus";
 import Offers from "./components/Offers/Offers";
-import OffersMonth from "@/screens/CreditMapPage/components/OffersMonth/OffersMonth";
+import OffersMonth from "@/components/OffersMonth/OffersMonth";
 import Mailing from "@/components/Mailing/Mailing";
 import Сompilations from "@/screens/CreditMapPage/components/Сompilations/Сompilations";
 import LatestNews from "@/components/LatestNews/LatestNews";

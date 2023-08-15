@@ -11,6 +11,6 @@ export const metadata: Metadata = {
     title: 'Кредитные карты'
 }
 
-export default function CreditMap({params: {id}}: Props) {
+export default function CreditMap() {
     return <CreditMapPage/>;
 }

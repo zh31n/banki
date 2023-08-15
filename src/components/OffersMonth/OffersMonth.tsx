@@ -5,7 +5,7 @@ import alfa_bank from "@/assets/icons/bank_icons/alfa_bank.svg"
 import open_bank from "@/assets/icons/bank_icons/open_bank.svg"
 import ros_bank from "@/assets/icons/bank_icons/ros_bank.svg"
 import vtb_bank from "@/assets/icons/bank_icons/vtb_bank.svg"
-import BankItems from "@/screens/CreditMapPage/components/OffersMonth/BankItems/BankItems";
+import BankItems from "@/components/OffersMonth/BankItems/BankItems";
 
 const data = [
     {img: alfa_bank, procent_text: 'от 0%', value: '«Платинум»'},
