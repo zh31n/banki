@@ -3,8 +3,8 @@ import s from './FrequentQuestions.module.scss';
 import QuestionItem from "@/components/QuestionItem/QuestionItem";
 
 type ItemT = {
-    title:string
-    text:string
+    title: string
+    text: string
 }
 type Props = {
     title: string
@@ -13,7 +13,7 @@ type Props = {
 
 const FrequentQuestions = ({title, items}: Props) => {
 
-    const questItems = items.map((el,index) => <QuestionItem key={index} item={el}/>)
+    const questItems = items.map((el, index) => <QuestionItem key={index} item={el}/>)
 
     return (
         <div className={s.quests}>
