@@ -391,7 +391,8 @@ const data = {
         time: 370
       },
     ]
-  }, ConsumerCredits: {
+  },
+  ConsumerCredits: {
     deposits: [
       {
         name: 'Локо-Банк',
@@ -529,7 +530,6 @@ const data = {
       {title: 'Задать вопрос о кредитах', text: ''},
     ]
   },
-
   RefinancingCredits: {
     sliderItems: [ekspo, spm, psb, sber, tinkoff, norvik, norvik],
     ourData: [
@@ -806,7 +806,6 @@ const data = {
       {title: 'Вопрос об ипотеке эксперту ', text: ''},
     ]
   },
- 
   CalculateCredit: {
     offers: [
       {
