@@ -3,9 +3,16 @@ import styles from './OffersBanks.module.scss'
 import data from "@/core/data";
 import Items from "@/screens/SpecialCardsOfffersPage/components/OffersBanks/Items/Items";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import {StaticImageData} from "next/image";
 
-const OffersBanks = () => {
-  const dataMap = data.SpecialOffersCards.offers
+type offerT = {
+    img: StaticImageData
+}
+type Props = {
+    dataMap: offerT[]
+}
+const OffersBanks = ({dataMap}:Props) => {
+
   return (
     <div className={styles.container}>
       <div className={styles.map_cont}>

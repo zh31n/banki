@@ -11,7 +11,7 @@ type InpPropsT = {
 const Search = ({placeholder}:InpPropsT) => {
     return (
         <div className={s.search}>
-            <Image src={lupa} height={40} width={40} />
+            <Image alt={'lupa'} src={lupa} height={40} width={40} />
             <input type="text" placeholder={placeholder}/>
             <button>Найти</button>
         </div>

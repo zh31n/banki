@@ -18,12 +18,12 @@ const WebLoanItem = ({sum, days, stavka, titleBtn}: Props) => {
     return (
         <div className={s.wrapper}>
             <div className={s.header}>
-                <Image src={sq}/>
+                <Image alt={''} src={sq}/>
                 <div className={s.info}>
                     <div className={s.title}>Веб-займ</div>
                     <div className={s.sub}>Онлайн для новых клиентов</div>
                     <div className={s.star}>
-                        <Image src={star}/>
+                        <Image alt={'star'} src={star}/>
                         4,3
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const WebLoanItem = ({sum, days, stavka, titleBtn}: Props) => {
             <div className={s.btn_cont}>
                 <BlueLikeBtn title={'Узнать вероятность одобрения'}/>
                 <div className={s.warn}>
-                    <Image src={warn}/>
+                    <Image alt={'warning'} src={warn}/>
                 </div>
                 <BlueBtn text={titleBtn} height={40} width={183} fSize={16}/>
             </div>

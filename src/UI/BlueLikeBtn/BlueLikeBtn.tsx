@@ -10,7 +10,7 @@ type Props = {
 const BlueLikeBtn = ({title}: Props) => {
     return (
         <div className={s.likeBtn}>
-            <Image src={like}/>
+            <Image alt='like' src={like}/>
             {title}
         </div>
     );

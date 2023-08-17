@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './SpecialOfferItem.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 
 type Props = {
     name: string
-    img: string
-    bankImg: string
+    img: StaticImageData
+    bankImg: StaticImageData
     bonus: string
     bet: number
     days: string

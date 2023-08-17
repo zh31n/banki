@@ -6,9 +6,9 @@ import TitleMarkLast from "@/components/TitleMarkLast/TitleMarkLast";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
 type Props = {
-    title: string
-    sub: string
-    chois: ItemT[]
+    title?: string
+    sub?: string
+    chois?: ItemT[]
 }
 type ItemT = {
     name: string

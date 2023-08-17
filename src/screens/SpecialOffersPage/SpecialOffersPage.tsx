@@ -16,6 +16,7 @@ import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import PageWrapper from "@/containers/PageWrapper";
 import IntroSpecialOffer from "@/screens/SpecialOffersPage/components/IntroSpecialOffer/IntroSpecialOffer";
+import {StaticImageData} from "next/image";
 
 type choisesT = {
     name: string
@@ -27,8 +28,8 @@ type selectDataT = {
 }
 type offerDataT = {
     name: string
-    img: string
-    bankImg: string
+    img: StaticImageData
+    bankImg: StaticImageData
     bonus: string
     bet: number
     days: string

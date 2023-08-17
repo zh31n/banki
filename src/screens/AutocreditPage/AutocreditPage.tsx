@@ -4,9 +4,10 @@ import IntroAuto from "@/screens/AutocreditPage/components/IntroAuto/IntroAuto";
 import OurStrongAuto from "@/screens/AutocreditPage/components/OurStrongAuto/OurStrongAuto";
 import HowItWorks from "@/components/HowItWorks/HowItWorks";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {StaticImageData} from "next/image";
 
 type ItemT = {
-    img: string,
+    img: StaticImageData,
     title: string,
     sub: string,
     text: string

@@ -5,11 +5,12 @@ import SliderBanksCons from "@/screens/ConsumerCreditsPage/Components/SliderBank
 import OurStrongs from "@/components/OurStrongs/OurStrongs";
 import HowItWorks from "@/components/HowItWorks/HowItWorks";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {StaticImageData} from "next/image";
 
 type itemT = {
     title: string
     sub: string
-    img: string
+    img: StaticImageData
     text: string
 }
 type quesT = {

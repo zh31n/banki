@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Items.module.scss'
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import gazprom from "@/assets/icons/gasprom.svg"
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 type Props = {
-  img: string
+  img: StaticImageData
 }
 
 const Items = ({img}: Props) => {

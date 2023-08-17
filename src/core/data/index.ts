@@ -730,7 +730,7 @@ const data = {
       {title: 'Вклады по специальным предложениям застрахованы?', text: ''},
     ],
     offers: [
-      {img: img_1,}
+      {img: img_1}
     ]
   },
   CreditsIpotekaPage: {

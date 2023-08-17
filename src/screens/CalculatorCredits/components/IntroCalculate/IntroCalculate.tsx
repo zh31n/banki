@@ -21,7 +21,7 @@ const IntroCalculate = () => {
                 <div className={s.calc}>
                     <MoneySelect width={385} />
                     <div className={s.optionBtn}>
-                        <Image src={opt} />
+                        <Image alt={'opt'} src={opt} />
                         График платежей
                     </div>
                     <CustomWhiteSelectTitle title={'Срок'} options={['1 год']} width={385}/>

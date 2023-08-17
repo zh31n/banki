@@ -11,7 +11,7 @@ type Props = {
 const LoanOrgItem = ({img,title,sub}:Props) => {
     return (
         <div className={s.loan_org}>
-            <Image src={img}/>
+            <Image alt={'icon'} src={img}/>
             <div className={s.info}>
                 <div>{title}</div>
                 <span>{sub}</span>

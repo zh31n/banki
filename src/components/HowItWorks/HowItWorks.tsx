@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './HowItWorks.module.scss';
 import HowItWorksItemsMap from "@/components/HowItWorks/HowItWorksItemsMap/HowItWorksItemsMap";
+import {StaticImageData} from "next/image";
 
 type itemT = {
     title: string
     sub: string
-    img: string
+    img: StaticImageData
     text: string
 }
 type Props = {

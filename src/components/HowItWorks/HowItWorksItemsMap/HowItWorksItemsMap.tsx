@@ -1,11 +1,12 @@
 import React from 'react';
 import HowItWorksItem from "@/components/HowItWorks/HowItWorksItem/HowItWorksItem";
+import {StaticImageData} from "next/image";
 
 
 type itemT = {
     title: string
     sub: string
-    img: string
+    img: StaticImageData
     text: string
 }
 type Props = {

@@ -2,7 +2,7 @@ import React from 'react';
 import s from './CreditRating.module.scss';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroCreditRating from "@/screens/CreditRating/components/IntroCreditRating/IntroCreditRating";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import for_what from '@/assets/icons/for_what_2.svg';
 import for_what_2 from '@/assets/icons/for_what_1.svg';
 import ForWhat from "@/screens/CreditRating/components/ForWhat/ForWhat";
@@ -11,7 +11,7 @@ import w_3 from "@/assets/icons/w_3.svg";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 
 type workT = {
-    img: string
+    img: StaticImageData
     title: string
     sub: string
     text: string
