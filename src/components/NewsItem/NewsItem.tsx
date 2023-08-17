@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './NewsItem.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import smile from '@/assets/icons/Smile.svg';
 
 type newsT = {
     title: string
-    img: string
+    img: StaticImageData
     subtitle: string
     text: string
     date: string
@@ -19,7 +19,7 @@ type newsT = {
 const NewsItem = ({title, img, subtitle, views, date, text, date_t, views_t, title_t, text_t}: newsT) => {
     return (
         <div className={s.item}>
-            <Image src={img}/>
+            <Image alt={'icon'} src={img}/>
             <div className={s.info}>
                 <div className={s.date}>{date}</div>
                 <span>

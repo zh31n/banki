@@ -1,8 +1,6 @@
 import React from 'react';
 import s from './OfferItem.module.scss';
-import bam from '@/assets/icons/banki_icon/loco.svg';
 import Image from "next/image";
-import loc_bank from "@/assets/icons/banki_icon/loco.svg";
 
 type Props = {
     img: string
@@ -20,7 +18,7 @@ const OfferItem = ({img, name, subtitle, time, year_money, title_1, title1_key, 
     return (
         <div className={s.offer_item}>
             <div className={s.inf}>
-                <Image src={img}/>
+                <Image alt={'icon'} src={img}/>
                 <div className={s.info}>
                     <div className={s.name}>{name}</div>
                     <div className={s.subtitle}>{subtitle}</div>

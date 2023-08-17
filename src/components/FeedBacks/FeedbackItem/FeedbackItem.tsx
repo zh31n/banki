@@ -11,10 +11,10 @@ const FeedbackItem = () => {
             <div className={s.date}>29.07.2023</div>
             <div className={s.title}>Отличное обслуживание</div>
             <div className={s.stars}>
-                <Image src={star}/>
-                <Image src={star}/>
-                <Image src={star}/>
-                <Image src={star}/>
+                <Image alt={'star icon'} src={star}/>
+                <Image alt={'star icon'} src={star}/>
+                <Image alt={'star icon'} src={star}/>
+                <Image alt={'star icon'} src={star}/>
             </div>
             <div className={s.text}>
                 Прежде всего, современная методология разработки однозначно определяет каждого участника как способного.

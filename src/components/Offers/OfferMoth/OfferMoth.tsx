@@ -35,9 +35,9 @@ const OfferMoth = ({choiseItems, offers}: Props) => {
                 <ChoiseItemsMap choiseItems={choiseItems}/>
             </div>}
             <div className={s.offer_cont}>
-                <Image src={arr_l}/>
+                <Image alt={'icon'} src={arr_l}/>
                 <OfferMothItemsMap offers={offers}/>
-                <Image src={arr_r}/>
+                <Image alt={'icon'} src={arr_r}/>
             </div>
         </div>
     );

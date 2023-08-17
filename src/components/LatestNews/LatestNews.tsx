@@ -6,6 +6,7 @@ import new_2 from '@/assets/icons/new_2.png';
 import NewsItem from "@/components/NewsItem/NewsItem";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
+import {StaticImageData} from "next/image";
 
 type choisesT = {
     name: string
@@ -13,7 +14,7 @@ type choisesT = {
 }
 type newsT = {
     title: string
-    img: string
+    img: StaticImageData
     subtitle: string
     text: string
     date: string

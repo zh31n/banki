@@ -4,8 +4,13 @@ import arr from "@/assets/icons/arr_d_spec.svg";
 import Image from "next/image";
 import AccordeonItem from "@/components/Accordeon/components/AccordeonItem/AccordeonItem";
 
+type Itew = {
+    numb:string
+    sub:string
+    text:string
+}
 type Props = {
-    items: object[]
+    items: Itew[]
 }
 
 const Accordeon = ({items}:Props) => {

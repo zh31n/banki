@@ -10,7 +10,7 @@ type Props = {
 const CatalogItem = ({name, img}: Props) => {
   return (
     <div className={s.catalog_item}>
-      <Image src={img} width={35} height={35}/>
+      <Image alt={'catalog image'} src={img} width={35} height={35}/>
       <span>{name}</span>
     </div>
   );

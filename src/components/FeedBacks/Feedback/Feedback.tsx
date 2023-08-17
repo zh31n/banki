@@ -5,8 +5,17 @@ import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import TitleMarkLast from "@/components/TitleMarkLast/TitleMarkLast";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
+type Props = {
+    title: string
+    sub: string
+    chois: ItemT[]
+}
+type ItemT = {
+    name: string
+    active: boolean
+}
 
-const Feedback = ({title, sub, chois}) => {
+const Feedback = ({title, sub, chois}: Props) => {
     return (
         <div className={s.feedback}>
             {(!title || !sub) ? <div className={s.title}>

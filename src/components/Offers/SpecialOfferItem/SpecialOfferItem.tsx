@@ -16,9 +16,9 @@ type Props = {
 const SpecialOfferItem = ({name, bet, days, bankImg, img, bonus}: Props) => {
     return (
         <div className={s.item}>
-            <Image className={s.img} src={img}/>
+            <Image alt={'icon'} className={s.img} src={img}/>
             <div className={s.item_info}>
-                <Image src={bankImg}/>
+                <Image alt={'icon'} src={bankImg}/>
                 <div className={s.name}>{name}</div>
                 <div className={s.bonus} style={{height:'12px'}}>{bonus}</div>
                 <div className={s.line}></div>

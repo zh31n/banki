@@ -3,7 +3,7 @@ import styles from './Nav.module.scss'
 import navigate from "@/core/data/navigate";
 import Link from "next/link";
 
-const Nav = ({path, setActive}: { path: string, setActive: React.SetStateAction<React.Dispatch<boolean>> }) => {
+const Nav = ({path, setActive}: { path: string, setActive: React.Dispatch<React.SetStateAction<boolean>> }) => {
 
     const DepositMap = navigate.deposits.map(el => {
         return <div className={styles.column}>
