@@ -1,7 +1,7 @@
 const navigation = {
   deposits: [
     [
-      {text: 'Вклады', link: ''},
+      {text: 'Вклады', link: '/deposits'},
       {text: 'Специальные предложения', link: '/deposits/special-offers'},
     ],
     [

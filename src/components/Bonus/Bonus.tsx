@@ -1,16 +1,20 @@
 import React from 'react';
 import s from './Bonus.module.scss';
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
     title?: string | undefined
+    img?: StaticImageData
 }
 
-const Bonus = ({title}: Props) => {
+const Bonus = ({title, img}: Props) => {
     return (
         <div className={s.bonus}>
-            <div className={s.logo}>Логотип</div>
+            {img
+                ? <Image src={img} alt={'logo bank'}/>
+                : <div className={s.logo}>Логотип</div>
+            }
             <div className={s.info}>
                 <div className={s.title}>{title ? title : 'Бонус до 2000 рублей за открытие вклада!'}</div>
                 <p>

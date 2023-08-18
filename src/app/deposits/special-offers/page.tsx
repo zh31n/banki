@@ -6,8 +6,6 @@ export const metadata: Metadata = {
     title: 'Специальные предложения',
 }
 
-const SpecialOffers = () => {
-    return <SpecialOffersPage data={data.SpecialOffer}/>
-};
+const SpecialOffers = () => <SpecialOffersPage data={data.SpecialOffer}/>
 
 export default SpecialOffers;
