@@ -1074,7 +1074,7 @@ const data = {
             {title: 'Эксперты направления вклады и депозиты', text: ''},
             {title: 'Задать вопрос о вкладах', text: ''},
         ],
-        specialOffers:[
+        specialOffers: [
             {
                 name: 'Вклад Мой Дом',
                 img: img_1,
@@ -1176,7 +1176,69 @@ const data = {
                 time: 370
             },
         ]
-    }
+    },
+    MortgagePage: {
+        choises: [
+            {name: 'Ипотека', active: true},
+            {name: 'Рефинансирование', active: false},
+            {name: 'Страхование', active: false}
+        ],
+        offersBanks: [
+            {
+                name: 'Локо-Банк',
+                sub: 'Добро Пожаловать. Локо',
+                stavka: '10,10',
+                time: '',
+                money: '14 875',
+                img: loco,
+                charcs: ['Ставка указана со скидкой'],
+                btn: 'Отправить заявку',
+                count: 'Ещё 12'
+            },
+            {
+                name: 'Сбербанк',
+                sub: 'Накопительный счет',
+                stavka: '6,80',
+                time: '',
+                money: '16 401',
+                img: sber,
+                charcs: [''],
+                btn: 'Отправить заявку',
+                count: 'Ещё 12'
+            },
+            {
+                name: 'Сбербанк',
+                sub: 'Накопительный счет',
+                stavka: '6,80',
+                time: '',
+                money: '16 401',
+                img: sber,
+                charcs: [''],
+                btn: 'Отправить заявку',
+                count: 'Ещё 12'
+            },
+            {
+                name: 'Сбербанк',
+                sub: 'Накопительный счет',
+                stavka: '6,80',
+                time: '',
+                money: '16 401',
+                img: sber,
+                charcs: [''],
+                btn: 'Отправить заявку',
+                count: 'Ещё 12'
+            },
+        ],
+        questData: [
+            {title: 'Эксперты об ипотеке', text: ''},
+            {title: 'Ипотека', text: ''},
+            {title: 'Ипотечные кредиты в городах', text: ''},
+            {title: 'Предложения в банках', text: ''},
+            {title: 'Каталоги', text: ''},
+            {title: 'Эксперты направления ипотечных кредитов', text: ''},
+            {title: 'Задать вопрос об ипотеке', text: ''},
+        ]
+    },
 }
 
 export default data;

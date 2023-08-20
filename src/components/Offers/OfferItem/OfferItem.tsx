@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './OfferItem.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
-    img: string
+    img: StaticImageData
     name: string
     subtitle: string
     time?: number | undefined

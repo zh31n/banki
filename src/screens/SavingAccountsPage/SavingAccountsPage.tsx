@@ -11,12 +11,13 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import TopBanks from "@/components/TopBanks/TopBanks";
 import loco from "@/assets/icons/banki_icon/loco.svg";
 import sber from "@/assets/icons/banki_icon/sber.svg";
+import {StaticImageData} from "next/image";
 
 
 type offersT = {
     name: string
     subtitle: string
-    img: string
+    img: StaticImageData
     time: number
     year_money: number
 }
@@ -38,7 +39,7 @@ type depositsT = {
     stavka: string
     time: string
     money: string
-    img: string
+    img: StaticImageData
     charcs: string[]
 }
 type ItemT = {

@@ -1,10 +1,10 @@
 import React from 'react';
 import s from "./CatalogItem.module.scss";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
   name: string
-  img: string
+  img: StaticImageData
 }
 
 const CatalogItem = ({name, img}: Props) => {

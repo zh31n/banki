@@ -3,7 +3,7 @@ import styles from './Сompilations.module.scss'
 import CatalogItemsMap from "@/components/Catalog/CatalogItemsMap/CatalogItemsMap";
 import data from "@/core/data";
 
-const Сompilations = () => {
+const Compilations = () => {
   const dataMap = data.CreditsIpotekaPage.compilationData
   return (
     <div className={styles.main_container}>
@@ -15,4 +15,4 @@ const Сompilations = () => {
   );
 };
 
-export default Сompilations;
+export default Compilations;

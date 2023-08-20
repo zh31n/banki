@@ -18,7 +18,7 @@ const SpecialOffersDeposit = ({items}:Props) => {
     return (
         <div className={s.wrapper}>
             <div className={s.title}>
-                <mark>Специальные</mark>
+                <mark>Специальные </mark>
                 предложения
             </div>
             <div className={s.itemsCont}>

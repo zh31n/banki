@@ -22,7 +22,7 @@ type offerT = {
     stavka: string
     time: string
     money: string
-    img: string
+    img: StaticImageData
     charcs: string[]
     btn?: string | undefined
     count?: string | undefined
@@ -34,7 +34,7 @@ type OfferItem = {
     sub: string
 }
 type OfferMoths = {
-    img: string
+    img: StaticImageData
     name: string
     subtitle: string
     time?: number | undefined
@@ -78,7 +78,7 @@ const DepositsPage = ({data}: Props) => {
     return (
         <PageWrapper>
             <IntroDeposits/>
-            <Bonus title={'Вклад 10% на 3 года'} img={absolut}/>\
+            <Bonus title={'Вклад 10% на 3 года'} img={absolut}/>
             <OffersBanks deposits={data.offersBanks} title={'943 вклада'} sub={' подобрано'}
                          options={['По популярности']}/>
             <PopularOffers data={data.PopularOffers}/>

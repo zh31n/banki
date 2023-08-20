@@ -1,8 +1,9 @@
 import React from 'react';
 import OfferItem from "@/components/Offers/OfferItem/OfferItem";
+import {StaticImageData} from "next/image";
 
 type offer = {
-    img: string
+    img: StaticImageData
     name: string
     subtitle: string
     time?: number | undefined

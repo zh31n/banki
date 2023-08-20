@@ -2,12 +2,12 @@ import React from 'react';
 import s from './OfferMoth.module.scss';
 import arr_l from "@/assets/icons/banki_icon/Стрелка_left.svg";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import OfferMothItemsMap from "@/components/Offers/OfferMothItemsMap/OfferMothItemsMap";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
 type offers = {
-    img: string
+    img: StaticImageData
     name: string
     subtitle: string
     time?: number | undefined

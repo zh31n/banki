@@ -17,7 +17,7 @@ const PopularOffers = ({data}:Props) => {
     return (
         <div className={s.wrapper}>
             <div className={s.title}>
-                <mark>Популярные</mark>
+                <mark>Популярные </mark>
                 предложения
             </div>
             <div className={s.itemsCont}>

@@ -8,6 +8,7 @@ import pointImg from '@/assets/icons/Map Point.svg'
 import searchImg from '@/assets/icons/search.svg'
 import Nav from "@/components/Header/Nav/Nav";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 type navItemsT = {
     name: string,
@@ -16,14 +17,15 @@ type navItemsT = {
 }
 
 const Header = () => {
-    const onMouseNav = (name:string) => {
+    const pathName = usePathname();
+    const onMouseNav = (name: string) => {
         setCurrentLink(name)
         setVis(true)
     }
     const [currentLink, setCurrentLink] = useState<string>('')
     const [vis, setVis] = useState<boolean>(false)
     const navItems: navItemsT[] = [
-        {name: 'Вклады', id: 1, link: '/contribution'},
+        {name: 'Вклады', id: 1, link: '/deposits'},
         {name: 'Кредиты', id: 2, link: '/credits'},
         {name: 'Ипотека', id: 3, link: '/mortgage'},
         {name: 'Страхование', id: 4, link: '/insurance'},
@@ -33,7 +35,7 @@ const Header = () => {
         {name: 'Новости', id: 8, link: '/news'},
         {name: 'Ещё', id: 9, link: '/more'}
     ];
-    const navMap = navItems.map(el => <p key={el.id} className={s.nav_item}
+    const navMap = navItems.map(el => <p key={el.id} className={pathName.includes(el.link) ? s.nav_item_active : s.nav_item}
                                          onMouseEnter={() => onMouseNav(el.name)}>{el.name}</p>)
 
     return (

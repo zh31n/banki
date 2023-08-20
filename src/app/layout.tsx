@@ -1,6 +1,7 @@
 import "./globals.scss";
 import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Главная",

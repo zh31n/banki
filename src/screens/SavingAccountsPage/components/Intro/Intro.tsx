@@ -5,6 +5,7 @@ import cust from "@/assets/icons/Tuning_icon.svg";
 import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import Image from "next/image";
+import CustomBtnChange from "@/UI/CustomBtnChange/CustomBtnChange";
 
 const Intro = () => {
     return (
@@ -22,10 +23,7 @@ const Intro = () => {
                 </p>
                 <div className={s.calculate}>
                     <MoneySelect width={385}/>
-                    <div className={s.btnChange}>
-                        <Image alt={'иконка настройки'} src={cust} />
-                        Фильтр
-                    </div>
+                    <CustomBtnChange title={'Фильтр'}/>
                     <CustomWhiteSelectTitle title={'Банк'} options={['Любой']} width={385}/>
                     <BlueBtn text={'Показать'} count={245} width={173}/>
                 </div>

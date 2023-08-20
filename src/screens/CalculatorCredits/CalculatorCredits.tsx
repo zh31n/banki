@@ -4,6 +4,7 @@ import IntroCalculate from "@/screens/CalculatorCredits/components/IntroCalculat
 import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {StaticImageData} from "next/image";
 
 type ItemT = {
     title: string
@@ -21,7 +22,7 @@ type dep = {
     stavka: string
     time: string
     money: string
-    img: string
+    img: StaticImageData
     charcs: string[]
     btn?: string | undefined
     count?: string | undefined

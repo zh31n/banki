@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './SlideItem.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
-    img: string
+    img: StaticImageData
     name: string
     width: number
 }

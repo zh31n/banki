@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './BankiItem.module.scss';
 import sbi from "@/assets/icons/banki_icon/sbi.svg";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type bankiPropsT = {
-    img:string,
+    img:StaticImageData,
     name:string,
     rating:number
 }

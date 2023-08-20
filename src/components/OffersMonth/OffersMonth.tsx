@@ -20,7 +20,8 @@ const OffersMonth = () => {
             <div className={styles.main_container}>
                 <p className={styles.text}>Предложение месяца</p>
                 <div className={styles.banks_container}>
-                    {data.map(el => <BankItems img={el.img} procent_text={el.procent_text} value={el.value}/>)}
+                    {data.map(el => <BankItems img={el.img} procent_text={el.procent_text}
+                                               value={el.value}/>)}
                 </div>
             </div>
         </Wrapper>

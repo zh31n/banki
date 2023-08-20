@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './LoanOrgItem.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
-    img:string
+    img:StaticImageData
     title:string
     sub:string
 }

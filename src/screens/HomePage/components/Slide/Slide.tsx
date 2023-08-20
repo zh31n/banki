@@ -2,10 +2,10 @@ import React from 'react';
 import s from './Slide.module.scss';
 import arr from "@/assets/icons/white_arr.svg";
 import SlideItem from "@/components/SlideItem/SlideItem";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type iconsSlideT = {
-    img: string;
+    img: StaticImageData;
     name: string;
     w: number;
 };

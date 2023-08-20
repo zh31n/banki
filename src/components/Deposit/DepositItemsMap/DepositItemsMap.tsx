@@ -1,5 +1,6 @@
 import React from 'react';
 import DepositOfferItem from "@/components/Deposit/DepositOfferItem/DepositOfferItem";
+import {StaticImageData} from "next/image";
 
 type dep = {
     name: string
@@ -7,7 +8,7 @@ type dep = {
     stavka: string
     time: string
     money: string
-    img: string
+    img: StaticImageData
     charcs: string[]
     btn?: string | undefined
     count?: string | undefined

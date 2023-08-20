@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './MicroLoansOrgs.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import arr_l from '@/assets/icons/banki_icon/Стрелка_left.svg';
 import arr_r from '@/assets/icons/banki_icon/Стрелка_right.svg';
 import LoanOrgItem from "@/screens/MicroLoans/components/LoanOrgItem/LoanOrgItem";
 
 type itemT = {
-    img: string
+    img: StaticImageData
     title: string
     sub: string
 }

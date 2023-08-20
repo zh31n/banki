@@ -32,6 +32,7 @@ import Communicate from "@/components/Communicate/Communicate";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import TopBanks from "@/components/TopBanks/TopBanks";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {StaticImageData} from "next/image";
 
 
 type depositsT = {
@@ -40,19 +41,19 @@ type depositsT = {
     stavka: string
     time: string
     money: string
-    img: string
+    img: StaticImageData
     charcs: string[]
     btn?: string
 }
 type offersT = {
-    img: string
+    img: StaticImageData
     name: string
     subtitle: string
     time: number
     year_money: number
 }
 type catalogT = {
-    img: string
+    img: StaticImageData
     name: string
 }
 type banksT = {

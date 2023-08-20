@@ -1,9 +1,10 @@
 import React from 'react';
 import CatalogItem from "@/components/Catalog/CatalogItem/CatalogItem";
+import {StaticImageData} from "next/image";
 
 type catalogT = {
     name:string
-    img:string
+    img:StaticImageData
 }
 type Props = {
     items:catalogT[]

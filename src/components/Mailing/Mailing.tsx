@@ -3,6 +3,7 @@ import s from './Mailing.module.scss'
 import mail from '@/assets/icons/rassilka.svg';
 import Image from "next/image";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import CustomCheckboxAround from "@/UI/CustomCheckboxAround/CustomCheckboxAround";
 
 const Mailing = () => {
     return (
@@ -16,11 +17,11 @@ const Mailing = () => {
                         <BlueBtn text={'Подписаться'} width={170}/>
                     </div>
                     <div className={s.inp_label}>
-                        <div><input type={'checkbox'} className={s.inp}/></div>
+                        <div><CustomCheckboxAround/></div>
                         <span>Предоставляю своё <a href={''}>согласие</a> на обработку персональных данных</span>
                     </div>
                     <div className={s.inp_label}>
-                        <div><input type={'checkbox'} className={s.inp}/></div>
+                        <div><CustomCheckboxAround/></div>
                         <span>Предоставляю своё <a href={''}>согласие</a> на получение рекламы и информационных сообщений</span>
                     </div>
                 </div>

@@ -1,10 +1,11 @@
 import React from 'react';
 import s from './CatalogItems.module.scss';
 import CatalogItemsMap from "@/components/Catalog/CatalogItemsMap/CatalogItemsMap";
+import {StaticImageData} from "next/image";
 
 type catalogT = {
     name:string
-    img:string
+    img:StaticImageData
 }
 type Props = {
     title: string

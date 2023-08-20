@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './BankItems.module.scss'
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
-    img: string
+    img: StaticImageData
     procent_text: string
     value: string
 }

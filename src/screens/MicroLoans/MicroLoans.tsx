@@ -11,6 +11,7 @@ import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import TopBanks from "@/components/TopBanks/TopBanks";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {StaticImageData} from "next/image";
 
 type chooseT = {
     name: string
@@ -23,7 +24,7 @@ type WebLoan = {
     titleBtn: string
 }
 type offers = {
-    img: string
+    img: StaticImageData
     name: string
     subtitle: string
     time?: number | undefined
@@ -34,13 +35,13 @@ type offers = {
     title2_key?: string | undefined
 }
 type loanT = {
-    img: string
+    img: StaticImageData
     title: string
     sub: string
 }
 type catalogT = {
     name: string
-    img: string
+    img: StaticImageData
 }
 type banksT = {
     title: string

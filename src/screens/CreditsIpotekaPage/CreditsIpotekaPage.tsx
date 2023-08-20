@@ -7,7 +7,7 @@ import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import Communicate from "@/components/Communicate/Communicate";
 import Banks from "@/screens/CreditsIpotekaPage/components/Banks/Banks";
-import Сompilations from "@/screens/CreditsIpotekaPage/components/Сompilations/Сompilations";
+import Compilations from "@/screens/CreditsIpotekaPage/components/Сompilations/Compilations";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import React from "react";
 import data from "@/core/data";
@@ -19,7 +19,7 @@ export default function CreditsIpotekaPage() {
     <Bonus/>
     <Banks/>
     <Mailing/>
-    <Сompilations/>
+    <Compilations/>
     <OffersMonth/>
     <LatestNews/>
     <Communicate/>

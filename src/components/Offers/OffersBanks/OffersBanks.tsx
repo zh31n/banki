@@ -4,6 +4,7 @@ import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
 import DepositItemsMap from "@/components/Deposit/DepositItemsMap/DepositItemsMap";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import {StaticImageData} from "next/image";
 
 type dep = {
     name: string
@@ -11,9 +12,9 @@ type dep = {
     stavka: string
     time: string
     money: string
-    img: string
+    img: StaticImageData
     charcs: string[]
-    btn?: string | undefined
+    btn?:  string | undefined
     count?: string | undefined
 }
 type Props = {

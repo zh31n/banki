@@ -8,13 +8,14 @@ import PageWrapper from "@/containers/PageWrapper";
 import Stock from "@/screens/HomePage/components/Stock/Stock";
 import Slide from "@/screens/HomePage/components/Slide/Slide";
 import Banks from "@/screens/HomePage/components/Banks/Banks";
+import {StaticImageData} from "next/image";
 
 type ItemsActionT = {
     title: string;
     sup: string;
 };
 type bankiT = {
-    img: string;
+    img: StaticImageData;
     name: string;
     rating: number;
 };
@@ -25,12 +26,12 @@ type choiseItemsT = {
 type offersT = {
     name: string;
     subtitle: string;
-    img: string;
+    img: StaticImageData;
     time: number;
     year_money: number;
 };
 type iconsSlideT = {
-    img: string;
+    img: StaticImageData;
     name: string;
     w: number;
 };
