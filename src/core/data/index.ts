@@ -71,6 +71,7 @@ import ic8 from '@/assets/icons/catalogIcons/Flame.svg';
 import ic9 from '@/assets/icons/catalogIcons/Wheel.svg';
 import ic10 from '@/assets/icons/catalogIcons/WadOfMoney.svg';
 import ic11 from '@/assets/icons/catalogIcons/protect.svg';
+import lines from '@/assets/icons/banki_icon/orange_bank.svg';
 
 
 const data = {
@@ -1239,6 +1240,54 @@ const data = {
             {title: 'Задать вопрос об ипотеке', text: ''},
         ]
     },
+    InsurancePage: {
+        introChoose: [
+            {name: 'ОСАГО', active: true},
+            {name: 'Каско', active: false},
+            {name: 'Страхование ипотеки', active: false},
+            {name: 'Путешествие', active: false},
+            {name: 'Жизнь', active: false},
+        ],
+        banksSlideItems: [ekspo, spm, psb, sber_full, tinkoff, norvik],
+        specialOffers: [
+            {
+                name: 'Кэшбэк 20% за страхование ипотеки',
+                img: img_2,
+                bankImg: lines,
+                bonus: 'Оформите страхование ипотеки и получите кэшбэк 20%',
+                title_1: 'Кэшбек от',
+                count1: '20%',
+                title_2: 'Кэшбек до',
+                count2: '4000 руб.',
+            },
+            {
+                name: 'Получите 1000 рублей на топливо',
+                img: img_2,
+                bankImg: lines,
+                bonus: 'Купите ОСАГО с выгодой до 74%',
+                title_1: 'На топливо',
+                count1: '1000 руб.',
+                title_2: 'Срок акции',
+                count2: 'до 31.07.2023',
+            },
+            {
+                name: '4 000 ₽ для вашего авто',
+                img: img_2,
+                bankImg: lines,
+                bonus: 'Оформите каско с выгодой до 90%',
+                title_1: 'Срок действия акции',
+                count1: 'до 31.09.2023',
+                title_2: '',
+                count2: '',
+            },
+        ],
+        questData:[
+            {title:'Туристическая страховка по виду',text:''},
+            {title:'Виды ипотечного страхования',text:''},
+            {title:'Каско по виду',text:''},
+            {title:'Виды ОСАГО:',text:''},
+        ]
+    }
 }
 
 export default data;

@@ -58,7 +58,7 @@ type ItemT = {
 type Props = {
     data: {
         chooseIntro: chooseT[],
-        slideItems: string[],
+        slideItems: StaticImageData[],
         webloans: WebLoan[],
         offersMoth: offers[],
         loans: loanT[]

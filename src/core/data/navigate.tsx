@@ -46,6 +46,19 @@ const navigation = {
       {text: 'Новостройки', link: '/ipoteka/refinance'},
       {text: 'Выбрать недвижимость', link: '/ipoteka/refinance'},
     ]
+  ],
+  insurance: [
+    [
+      {text: 'ОСАГО', link: '/insurance/osago'},
+      {text: 'КАСКО', link: '/insurance/kasko'},
+      {text: 'Путешествие', link: '/insurance/travel'},
+      {text: 'Жизнь и здоровье', link: '/insurance/life'},
+    ],
+    [
+      {text: 'Ипотечное страхование', link: '/insurance/ip-insurance'},
+      {text: 'ДМС', link: '/insurance/dms'},
+      {text: 'Все предложения', link: '/insurance'}
+    ]
   ]
 }
 

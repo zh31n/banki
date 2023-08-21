@@ -7,13 +7,13 @@ type ItemT = {
     active: boolean
 }
 type Props = {
-    choiseItems: ItemT[]
+    choiseItems?: ItemT[]
 }
 
 const ChoiseItemsMap = ({choiseItems}: Props) => {
     return (
         <>
-            {choiseItems.map((el, index) => <ChoiseItem name={el.name} active={el.active} key={index}/>)}
+            {  choiseItems?.map((el, index) => <ChoiseItem name={el.name} active={el.active} key={index}/>)}
         </>
     );
 };

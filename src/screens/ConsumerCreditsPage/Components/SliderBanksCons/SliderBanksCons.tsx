@@ -2,10 +2,10 @@ import React from 'react';
 import s from "./SliderBanksCons.module.scss";
 import BankImgItemSlideMap from "@/components/Banki/BankiImg/BankImgItemSlideMap/BankImgItemSlideMap";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
-    data: string[]
+    data: StaticImageData[]
 }
 
 const SliderBanksCons = ({data}:Props) => {

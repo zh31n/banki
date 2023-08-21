@@ -1,8 +1,9 @@
 import React from 'react';
 import BankImgItemSlide from "@/components/Banki/BankiImg/BankImgItemSlide/BankImgItemSlide";
+import {StaticImageData} from "next/image";
 
 type Props = {
-    images: string[]
+    images: StaticImageData[]
 }
 
 const BankImgItemSlideMap = ({images}: Props) => {

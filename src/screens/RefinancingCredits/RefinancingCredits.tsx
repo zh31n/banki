@@ -19,7 +19,7 @@ type quesT = {
 }
 type Props = {
     data: {
-        sliderItems: string[]
+        sliderItems: StaticImageData[]
         ourData: itemT[]
         questData: quesT[]
     }

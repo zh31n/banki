@@ -71,7 +71,7 @@ type ItemT = {
 type Props = {
     data: {
         deposits: depositsT[]
-        sliderBanks: string[]
+        sliderBanks: StaticImageData[]
         offersMoth: offersT[]
         catalogData: catalogT[]
         banks: banksT[]

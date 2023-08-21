@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './BankImgItemSlide.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 type Props = {
-    img:string
+    img:StaticImageData
 }
 
 const BankImgItemSlide = ({img}:Props) => {
