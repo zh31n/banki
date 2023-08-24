@@ -30,6 +30,11 @@ const Nav = ({path, setActive}: { path: string, setActive: React.Dispatch<React.
             {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
         </div>
     });
+    const InvestmentMap = navigate.investment.map(el => {
+        return <div className={styles.column}>
+            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    });
 
     return (
         <div className={styles.main_container} onMouseEnter={(e) => e.stopPropagation()}
@@ -39,6 +44,7 @@ const Nav = ({path, setActive}: { path: string, setActive: React.Dispatch<React.
             {path === 'Ипотека' && IpotekaMap}
             {path === 'Карты' && CardsMap}
             {path === 'Страхование' && InsuranceMap}
+            {path === 'Инвестиции' && InvestmentMap}
         </div>
     );
 };

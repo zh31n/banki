@@ -72,6 +72,8 @@ import ic9 from '@/assets/icons/catalogIcons/Wheel.svg';
 import ic10 from '@/assets/icons/catalogIcons/WadOfMoney.svg';
 import ic11 from '@/assets/icons/catalogIcons/protect.svg';
 import lines from '@/assets/icons/banki_icon/orange_bank.svg';
+import sfk from '@/assets/icons/sfk_icon_stock.svg';
+import c from '@/assets/icons/banki_icon/c.svg';
 
 
 const data = {
@@ -1281,11 +1283,59 @@ const data = {
                 count2: '',
             },
         ],
+        questData: [
+            {title: 'Туристическая страховка по виду', text: ''},
+            {title: 'Виды ипотечного страхования', text: ''},
+            {title: 'Каско по виду', text: ''},
+            {title: 'Виды ОСАГО:', text: ''},
+        ]
+    },
+    InvestPage: {
+        introChoose: [
+            {name: 'С чего начать', active: true},
+            {name: 'Подобрать брокера', active: false},
+            {name: 'Что купить', active: false},
+            {name: 'Аналитика', active: false},
+            {name: 'Специальные предложения', active: false},
+            {name: 'Обучение', active: false},
+            {name: 'Избранное', active: false},
+        ],
+        lastRecommends: [
+            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
+            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
+            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
+            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
+        ],
+        bankItems: [ekspo, spm, psb, sber_full, tinkoff, norvik],
+        stocks: [
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+        ],
+        bonds: [
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+        ],
+        offersMoth: [
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+        ],
+        loans: [
+            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
+            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+        ],
         questData:[
-            {title:'Туристическая страховка по виду',text:''},
-            {title:'Виды ипотечного страхования',text:''},
-            {title:'Каско по виду',text:''},
-            {title:'Виды ОСАГО:',text:''},
+            {title:'Подробнее',text:''},
+            {title:'Инвестиции для физических лиц',text:''},
         ]
     }
 }
