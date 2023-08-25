@@ -74,8 +74,10 @@ import ic11 from '@/assets/icons/catalogIcons/protect.svg';
 import lines from '@/assets/icons/banki_icon/orange_bank.svg';
 import sfk from '@/assets/icons/sfk_icon_stock.svg';
 import c from '@/assets/icons/banki_icon/c.svg';
+import sbi_big from '@/assets/icons/bank_icons/sbi_big.png';
 
 
+// @ts-ignore
 const data = {
     HomePage: {
         iconsSlide: [
@@ -1333,9 +1335,9 @@ const data = {
             {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
             {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
         ],
-        questData:[
-            {title:'Подробнее',text:''},
-            {title:'Инвестиции для физических лиц',text:''},
+        questData: [
+            {title: 'Подробнее', text: ''},
+            {title: 'Инвестиции для физических лиц', text: ''},
         ]
     },
     DiscountIpotekaPage: {
@@ -1369,8 +1371,46 @@ const data = {
                 text: 'Электронный полис придет на почту через несколько минут после оплаты – его можно сразу отправить в банк.'
             },
         ],
-
-    }
+    },
+    BanksPage: {
+        banksItems: [
+            {
+                title: 'SBI Банк',
+                sub: '8 800 700-65-12 / Москва / Лицензия №3185',
+                img: sbi_big,
+                m1: 35,
+                m2: 288,
+                chars: [{name: 'Вклады', count: 2}, {name: 'Вклады', count: 2}]
+            },
+            {
+                title: 'SBI Банк',
+                sub: '8 800 700-65-12 / Москва / Лицензия №3185',
+                img: sbi_big,
+                m1: 35,
+                m2: 288,
+                chars: [{name: 'Вклады', count: 2}, {name: 'Вклады', count: 2}]
+            },
+            {
+                title: 'SBI Банк',
+                sub: '8 800 700-65-12 / Москва / Лицензия №3185',
+                img: sbi_big,
+                m1: 35,
+                m2: 288,
+                chars: [{name: 'Вклады', count: 2}, {name: 'Вклады', count: 2}]
+            },
+            {
+                title: 'SBI Банк',
+                sub: '8 800 700-65-12 / Москва / Лицензия №3185',
+                img: sbi_big,
+                m1: 35,
+                m2: 288,
+                chars: [{name: 'Вклады', count: 2}, {name: 'Вклады', count: 2}]
+            },
+        ],
+    },
+    CreditsPage:{
+        sliderItems: [ekspo, spm, psb, sber_full, tinkoff, norvik]
+    },
 }
 
-export default data;
+export default data

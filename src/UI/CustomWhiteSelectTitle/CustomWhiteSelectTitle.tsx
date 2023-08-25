@@ -2,7 +2,7 @@ import React from 'react';
 import s from "./CustomWhiteSelectTitle.module.scss";
 
 type Props = {
-    title: string
+    title?: string
     options: string[]
     width?: number
 }
@@ -10,7 +10,7 @@ type Props = {
 const CustomWhiteSelectTitle = ({title, options, width}: Props) => {
     return (
         <div className={s.years} style={{width: width ? `${width}px` : ''}}>
-            <div>{title}</div>
+            { title && <div>{title}</div>}
             <select>
                 {options.map((el, index) => <option key={index}>{el}</option>)}
             </select>
