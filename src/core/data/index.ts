@@ -1374,6 +1374,9 @@ const data = {
                 chars: [{name: 'Вклады', count: 2}, {name: 'Вклады', count: 2}]
             },
         ]
+    },
+    CreditsPage:{
+        sliderItems: [ekspo, spm, psb, sber_full, tinkoff, norvik]
     }
 }
 
