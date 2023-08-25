@@ -3,11 +3,12 @@ import s from './CustomCheckboxAround.module.scss';
 
 type Props = {
     type?: string
+    checked:boolean
 }
-const CustomCheckboxAround = ({type}: Props) => {
+const CustomCheckboxAround = ({type,checked}: Props) => {
     return (
         <>
-            <input type={type ? type : 'checkbox'} className={s.inp}/>
+            <input type={type ? type : 'checkbox'} checked={checked} className={s.inp}/>
         </>
     );
 };
