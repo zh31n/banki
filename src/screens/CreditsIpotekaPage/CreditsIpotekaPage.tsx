@@ -6,18 +6,18 @@ import OffersMonth from "@/components/OffersMonth/OffersMonth";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import Communicate from "@/components/Communicate/Communicate";
-import Banks from "@/screens/CreditsIpotekaPage/components/Banks/Banks";
 import Compilations from "@/screens/CreditsIpotekaPage/components/Сompilations/Compilations";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import React from "react";
 import data from "@/core/data";
+import Banks from "@/components/Banks/Banks";
 
 export default function CreditsIpotekaPage() {
   const dataMap = data.CreditsIpotekaPage.questData
   return <Wrapper>
     <Navigation/>
     <Bonus/>
-    <Banks/>
+    <Banks />
     <Mailing/>
     <Compilations/>
     <OffersMonth/>

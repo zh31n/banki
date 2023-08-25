@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LastBuy.module.scss'
-import Item from "@/screens/InsuranceIpotekaPage/components/LastBuy/Item/Item";
+import Item from "./Item/Item";
 
 const LastBuy = () => {
   return (

@@ -42,9 +42,9 @@ const navigation = {
         ],
         [
             {text: 'Рефинансирование', link: '/ipoteka/refinance'},
-            {text: 'Вторичное жильё', link: '/ipoteka/refinance'},
-            {text: 'Новостройки', link: '/ipoteka/refinance'},
-            {text: 'Выбрать недвижимость', link: '/ipoteka/refinance'},
+            {text: 'Вторичное жильё', link: '/ipoteka/secondary'},
+            {text: 'Новостройки', link: '/ipoteka/new-building'},
+            {text: 'Выбрать недвижимость', link: '/ipoteka/discount'},
         ]
     ],
     insurance: [
@@ -70,7 +70,7 @@ const navigation = {
             {text: 'Кредиты для ИП', link: '/investment/ip'},
             {text: 'Страхование бизнеса', link: '/investment/ins-business'},
         ]
-    ]
+    ],
 }
 
 

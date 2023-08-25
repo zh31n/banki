@@ -8,8 +8,8 @@ import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import React from "react";
 import Navigation from "@/screens/InsuranceIpotekaPage/components/Navigation/Navigation";
-import Company from "@/screens/InsuranceIpotekaPage/components/Company/Company";
-import LastBuy from "@/screens/InsuranceIpotekaPage/components/LastBuy/LastBuy";
+import Company from "@/components/Company/Company";
+import LastBuy from "@/components/LastBuy/LastBuy";
 
 export default function InsuranceIpotekaPage() {
   const dataMap = data.InsuranceIpoteka.ourData
@@ -17,7 +17,7 @@ export default function InsuranceIpotekaPage() {
   return <Wrapper>
     <Navigation/>
     <Bonus/>
-    <Company/>
+    <Company />
     <LastBuy/>
     <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap}/>
     <OurStrongs/>
