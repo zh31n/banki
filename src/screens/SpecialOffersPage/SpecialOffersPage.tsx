@@ -14,7 +14,7 @@ type choisesT = {
     active: boolean
 }
 type selectDataT = {
-    img: string
+    img: StaticImageData
     options: string[]
 }
 type offerDataT = {

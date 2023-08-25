@@ -1,10 +1,13 @@
 import React from 'react';
 import s from './CustomCheckboxAround.module.scss';
 
-const CustomCheckboxAround = () => {
+type Props = {
+    type?: string
+}
+const CustomCheckboxAround = ({type}: Props) => {
     return (
         <>
-            <input type={'checkbox'} className={s.inp}/>
+            <input type={type ? type : 'checkbox'} className={s.inp}/>
         </>
     );
 };

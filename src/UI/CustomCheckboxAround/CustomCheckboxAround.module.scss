@@ -1,4 +1,4 @@
-.inp[type="checkbox"] {
+.inp {
   transition: all 0.5s;
   appearance: none;
   -webkit-appearance: none;
@@ -10,6 +10,6 @@
   border: 2px solid #4DA7FF;
 }
 
-.inp[type="checkbox"]:checked {
+.inp:checked {
   border-width: 6px;
 }

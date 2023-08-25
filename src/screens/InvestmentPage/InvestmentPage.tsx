@@ -39,7 +39,13 @@ type offerT = {
     info: string
 }
 type LoanT = {
-
+    img: StaticImageData
+    title: string
+    sub: string
+}
+type questT = {
+    title: string
+    text: string
 }
 type Props = {
     data: {
@@ -48,8 +54,8 @@ type Props = {
         bankItems: StaticImageData[],
         bonds: InvestT[],
         offersMoth: offerT[],
-        loans:[],
-        questData:[]
+        loans:LoanT[],
+        questData:questT[]
     }
 }
 
