@@ -13,7 +13,7 @@ const navigation = {
             {text: 'Мастер подбора кредитов', link: '/credits/autocredit'},
             {text: 'Потребительские кредиты', link: '/credits/consumer-credits'},
             {text: 'Рефинансирование', link: '/credits/refinancing-credits'},
-            {text: 'Кредитный рейтинг', link: '/credits/raiting'},
+            {text: 'Кредитный рейтинг', link: '/credits/rating'},
         ],
         [
             {text: 'Микрозаймы', link: '/credits/microloans'},
@@ -50,7 +50,7 @@ const navigation = {
     insurance: [
         [
             {text: 'ОСАГО', link: '/insurance/osago'},
-            {text: 'КАСКО', link: '/insurance/kasko'},
+            {text: 'КАСКО', link: '/insurance/kasco'},
             {text: 'Путешествие', link: '/insurance/travel'},
             {text: 'Жизнь и здоровье', link: '/insurance/life'},
         ],

@@ -1,18 +1,18 @@
 import Wrapper from "@/containers/Wrapper";
-import Navigation from "@/screens/InsuranceOSAGO/components/Navigation/Navigation";
+import data from "@/core/data";
 import Company from "@/components/Company/Company";
 import LastBuy from "@/components/LastBuy/LastBuy";
 import HowItWorks from "@/components/HowItWorks/HowItWorks";
-import React from "react";
-import data from "@/core/data";
-import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import LatestNews from "@/components/LatestNews/LatestNews";
+import Feedback from "@/components/FeedBacks/Feedback/Feedback";
+import CalculateOSAGO from "@/components/CalculateOSAGO/CalculateOSAGO";
+import OSAGORating from "@/components/OSAGORating/OSAGORating";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import Question from "@/components/Question/Question";
-import OSAGORating from "@/components/OSAGORating/OSAGORating";
-import CalculateOSAGO from "@/components/CalculateOSAGO/CalculateOSAGO";
+import React from "react";
+import Navigation from "@/screens/CalculateKASCOPage/components/Navigation/Navigation";
 
-export default function InsuranceOSAGOPage(){
+export default function CalculateKASCOPage(){
 
     const dataMap = data.OSAGO.worksData
     const question = data.OSAGO.favouritesQuestion

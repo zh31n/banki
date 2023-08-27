@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Navigation.module.scss'
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import Link from "next/link";
 
 const Navigation = () => {
   return (
@@ -17,7 +18,9 @@ const Navigation = () => {
         <p className={styles.text}>Подберите дебетовую или кредитную карту по вашим параметрам на (НАЗВАНИЕ
           СЕРВИСА) </p>
       </div>
-      <BlueBtn text={'Подобрать карту'} width={245} height={60} fSize={20}/>
+        <Link href={'/cards/select-steps'}>
+            <BlueBtn text={'Подобрать карту'} width={245} height={60} fSize={20}/>
+        </Link>
     </div>
   );
 };

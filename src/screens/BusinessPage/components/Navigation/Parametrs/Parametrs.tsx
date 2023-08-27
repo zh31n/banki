@@ -5,25 +5,22 @@ import ParametrsItem from "./ParametrsItem/ParametrsItem";
 type Props = {};
 
 const Parametrs = (props: Props) => {
+
   const data = [
     {
-      text: "ОСАГО",
+      text: "Все продукты",
       active: true,
     },
     {
-      text: "Каско",
+      text: "Расчетный счет (РКО)",
       active: false,
     },
     {
-      text: "Страхование ипотеки",
+      text: "Кредиты",
       active: false,
     },
     {
-      text: "Путешествие",
-      active: false,
-    },
-    {
-      text: "Жизнь",
+      text: "Бизнес карты",
       active: false,
     },
   ];
@@ -31,7 +28,7 @@ const Parametrs = (props: Props) => {
   return (
     <div className={styles.main_container}>
       {data.map(el => (
-        <ParametrsItem text={el.text} active={el.active}/>
+        <ParametrsItem text={el.text} active={el.active} />
       ))}
     </div>
   );

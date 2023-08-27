@@ -97,7 +97,6 @@ const LatestNews = () => {
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все новости'} width={300}/>
             </div>
-
         </div>
     );
 };

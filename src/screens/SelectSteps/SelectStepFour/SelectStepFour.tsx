@@ -26,7 +26,7 @@ const SelectStepFour = () => {
                     </div>
                 </div>
                 <div className={s.btn_cont}>
-                    <Link href={'/'}>
+                    <Link href={'/cards/select-steps/final'}>
                         <BlueBtn text={'Продолжить'} width={240}/>
                     </Link>
                     <Link href={'/cards/select-steps/three'}>
