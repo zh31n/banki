@@ -17,11 +17,11 @@ const Mailing = () => {
                         <BlueBtn text={'Подписаться'} width={170}/>
                     </div>
                     <div className={s.inp_label}>
-                        <div><CustomCheckboxAround/></div>
+                        <div><CustomCheckboxAround checked={false}/></div>
                         <span>Предоставляю своё <a href={''}>согласие</a> на обработку персональных данных</span>
                     </div>
                     <div className={s.inp_label}>
-                        <div><CustomCheckboxAround/></div>
+                        <div><CustomCheckboxAround checked={false}/></div>
                         <span>Предоставляю своё <a href={''}>согласие</a> на получение рекламы и информационных сообщений</span>
                     </div>
                 </div>

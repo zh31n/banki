@@ -22,11 +22,11 @@ const IntroBanks = () => {
                     <Search placeholder={'Введите название или номер лицензии банка..'} margin={0}/>
                     <div className={s.inps}>
                         <div className={s.con}>
-                            <CustomCheckboxAround/>
+                            <CustomCheckboxAround checked={false}/>
                             По названию
                         </div>
                         <div className={s.con}>
-                            <CustomCheckboxAround/>
+                            <CustomCheckboxAround checked={false}/>
                             По лицензии
                         </div>
                         <CustomSelect fz={16} options={['выбрать']}/>

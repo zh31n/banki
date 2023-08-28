@@ -71,6 +71,29 @@ const navigation = {
             {text: 'Страхование бизнеса', link: '/investment/ins-business'},
         ]
     ],
+    business: [
+        [
+            {text: 'Все продукты', link: '/business'},
+            {text: 'Расчётно-кассовое обслуживание', link: '/business'},
+            {text: 'Бизнес-карты', link: '/business'},
+        ],
+        [
+            {text: 'Кредиты для ИП', link: '/business'},
+            {text: 'Страхование бизнеса', link: '/business'},
+        ],
+    ],
+    news: [
+        [
+            {text: 'Все события дня', link: '/news'},
+            {text: 'Лента новостей', link: '/news'},
+            {text: 'Тема дня', link: '/news'},
+            {text: 'Мнение', link: '/news'},
+        ],
+        [
+            {text: 'Аналитические исследования', link: '/news'},
+            {text: 'Банковский словарь', link: '/news'},
+        ],
+    ]
 }
 
 

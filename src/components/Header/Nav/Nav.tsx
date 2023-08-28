@@ -36,6 +36,18 @@ const Nav = ({path, setActive}: { path: string, setActive: React.Dispatch<React.
         </div>
     });
 
+    const BusunesMap = navigate.business.map(el => {
+        return <div className={styles.column}>
+            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    })
+
+    const NewsMap = navigate.news.map(el => {
+        return <div className={styles.column}>
+            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    })
+
     return (
         <div className={styles.main_container} onMouseEnter={(e) => e.stopPropagation()}
              onMouseLeave={() => setActive(false)}>
@@ -45,6 +57,8 @@ const Nav = ({path, setActive}: { path: string, setActive: React.Dispatch<React.
             {path === 'Карты' && CardsMap}
             {path === 'Страхование' && InsuranceMap}
             {path === 'Инвестиции' && InvestmentMap}
+            {path === 'Бизнес' && BusunesMap}
+            {path === 'Новости' && NewsMap}
         </div>
     );
 };

@@ -14,11 +14,11 @@ const HaveQues = () => {
                     <BlueBtn text={'Отправить'} width={171}/>
                 </div>
                 <div className={s.check}>
-                    <CustomCheckboxAround/>
+                    <CustomCheckboxAround checked={false}/>
                     Предоставляю своё<mark>согласие</mark>на обработку персональных данных
                 </div>
                 <div className={s.check}>
-                    <CustomCheckboxAround/>
+                    <CustomCheckboxAround checked={true}/>
                     <span> Предоставляю своё <mark>согласие</mark> на получение рекламы
                     и<br/> информационных сообщений</span>
                 </div>
