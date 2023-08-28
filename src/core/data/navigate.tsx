@@ -51,24 +51,24 @@ const navigation = {
         [
             {text: 'ОСАГО', link: '/insurance/osago'},
             {text: 'КАСКО', link: '/insurance/kasco'},
-            {text: 'Путешествие', link: '/insurance/travel'},
-            {text: 'Жизнь и здоровье', link: '/insurance/life'},
+            {text: 'Путешествие', link: '/insurance'},
+            {text: 'Жизнь и здоровье', link: '/insurance'},
         ],
         [
-            {text: 'Ипотечное страхование', link: '/insurance/ip-insurance'},
-            {text: 'ДМС', link: '/insurance/dms'},
+            {text: 'Ипотечное страхование', link: '/insurance'},
+            {text: 'ДМС', link: '/insurance'},
             {text: 'Все предложения', link: '/insurance'}
         ]
     ],
     investment: [
         [
             {text: 'Все продукты', link: '/investment'},
-            {text: 'Расчётно-кассовое обслуживание', link: '/investment/service'},
-            {text: 'Бизнес-карты', link: '/investment/business'},
+            {text: 'Расчётно-кассовое обслуживание', link: '/investment'},
+            {text: 'Бизнес-карты', link: '/investment'},
         ],
         [
-            {text: 'Кредиты для ИП', link: '/investment/ip'},
-            {text: 'Страхование бизнеса', link: '/investment/ins-business'},
+            {text: 'Кредиты для ИП', link: '/investment'},
+            {text: 'Страхование бизнеса', link: '/investment'},
         ]
     ],
     business: [
