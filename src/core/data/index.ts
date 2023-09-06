@@ -78,7 +78,6 @@ import sbi_big from '@/assets/icons/bank_icons/sbi_big.png';
 import alfa_i from '@/assets/icons/banki_icon/alfa.svg';
 
 
-
 const data = {
     HomePage: {
         iconsSlide: [
@@ -1620,7 +1619,7 @@ const data = {
         ],
 
     },
-    DmsPage:{
+    DmsPage: {
         questData: [
             {title: 'Как получить медицинскую помощь по ДМС?', text: ''},
             {title: 'От чего зависит цена продукта?', text: ''},
@@ -1632,6 +1631,21 @@ const data = {
             {title: 'Виды страхования', text: ''},
             {title: 'Страхование жизни и здоровья', text: ''},
         ]
+    },
+    MortgageDiscount: {
+        deposits: [
+            {
+                name: 'Локо-Банк',
+                sub: 'Добро Пожаловать. Локо',
+                stavka: '8,8 - 36',
+                time: '',
+                money: '6 898',
+                img: loco,
+                btn: 'Отправить заявку',
+                count: 'Ещё 12 кредитов',
+                charcs: ['Партнер раздела', 'Без залога']
+            },
+        ],
     }
 }
 

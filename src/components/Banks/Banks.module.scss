@@ -61,3 +61,22 @@
     margin-top: 32px;
   }
 }
+
+@media (max-width: 480px) {
+  .main_container {
+    .top_cont {
+      padding: 0;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+      text-align: center;
+      flex-wrap: wrap;
+
+      .text {
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

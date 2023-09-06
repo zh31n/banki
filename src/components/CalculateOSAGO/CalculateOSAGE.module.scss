@@ -144,3 +144,28 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .container{
+    margin: 0;
+    padding: 10px;
+    height: auto;
+    .main_text{
+      font-size: 25px;
+      text-align: center;
+    }
+    .text{
+      text-align: center;
+
+    }
+    .form_container{
+      margin-top: 1rem;
+      input{
+        width: 100% !important;
+      }
+    }
+    .input_container{
+      flex-wrap: wrap !important;
+    }
+  }
+}

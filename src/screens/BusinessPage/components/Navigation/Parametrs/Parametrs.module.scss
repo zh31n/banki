@@ -4,3 +4,10 @@
   gap: 8px;
   flex-wrap: wrap;
 }
+
+@media (max-width: 480px){
+  .main_container{
+    width: 100%;
+    justify-content: center;
+  }
+}

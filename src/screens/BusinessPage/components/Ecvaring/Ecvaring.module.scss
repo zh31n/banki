@@ -31,3 +31,10 @@
     margin-top: 40px;
   }
 }
+@media (max-width: 480px){
+  .items_container{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}

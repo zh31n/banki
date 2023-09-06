@@ -6,29 +6,25 @@
   margin-top: 100px;
 
   .text_container {
-    display: flex;
-
-    .blue_text {
+    mark {
+      background: transparent;
       color: var(--blu-main, #4DA7FF);
-      text-align: center;
       font-variant-numeric: lining-nums proportional-nums;
       font-family: Raleway, serif;
-      font-size: 36px;
       font-style: normal;
       font-weight: 500;
       line-height: 86.4%;
       margin-right: 8px;
     }
 
-    .text {
-      color: #000;
-      font-variant-numeric: lining-nums proportional-nums;
-      font-family: Raleway, serif;
-      font-size: 36px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 86.4%;
-    }
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway, serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 86.4%;
+    text-align: center;
   }
 }
 
@@ -37,4 +33,12 @@
   display: flex;
   width: 100%;
   gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .main_container {
+    .text_container {
+      font-size: 25px;
+    }
+  }
 }

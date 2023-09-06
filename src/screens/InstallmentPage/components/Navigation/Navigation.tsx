@@ -2,21 +2,17 @@ import React from 'react';
 import styles from './Navigation.module.scss'
 import Slider from '@mui/material/Slider';
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
 
 const Navigation = () => {
     return (
         <div className={styles.main_container}>
             <div className={styles.top_container}>
-                <p className={styles.text}>Главная</p>
-                <p>/</p>
-                <p>Карты</p>
-                <p>/</p>
-                <p className={styles.grey_text}>Карты рассрочки</p>
+                Главная / Карты / <mark>Карты рассрочки</mark>
             </div>
             <div className={styles.text_container}>
                 <div className={styles.main_text_container}>
-                    <p className={styles.main_text}>Кредитные карты с рассрочкой</p>
-                    <p className={styles.blue_text}>в Москве</p>
+                    Кредитные карты с рассрочкой <mark> в Москве </mark>
                 </div>
                 <div className={styles.text_cont}>
                     <p className={styles.text}>Кредитные карты с рассрочкой позволяют оплачивать товары и услуги
@@ -35,25 +31,9 @@ const Navigation = () => {
                     <div className={styles.text_cont}>
                         <p className={styles.grey_text}>Кредитный лимит</p>
                         <p className={styles.text}>800 000</p>
-                        <Slider size="small"
-                                sx={{color: '#4DA7FF', width: '341px'}}
-                                defaultValue={70}
-                                aria-label="Small"
-                        />
+                        <input type="range"/>
                     </div>
-                    <div className={styles.period_cont}>
-                        <div>
-                            <p className={styles.period_text}>Льготный период</p>
-                            <p className={styles.text}>Любой</p>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16"
-                                 fill="none">
-                                <path d="M13.6361 6L8.9694 10L7.80273 9M4.30273 6L5.85829 7.33333" stroke="#212121"
-                                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
+                    <CustomWhiteSelectTitle width={385} options={['Любой']} title={'Льготный период'}/>
                 </div>
                 <div className={styles.right_container}>
                     <button className={styles.button}>

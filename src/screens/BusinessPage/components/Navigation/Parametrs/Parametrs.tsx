@@ -22,7 +22,7 @@ const Parametrs = (props: Props) => {
     {
       text: "Бизнес карты",
       active: false,
-    },
+    }
   ];
 
   return (

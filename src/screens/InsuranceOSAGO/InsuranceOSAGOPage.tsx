@@ -11,6 +11,8 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import Question from "@/components/Question/Question";
 import OSAGORating from "@/components/OSAGORating/OSAGORating";
 import CalculateOSAGO from "@/components/CalculateOSAGO/CalculateOSAGO";
+import IntroInsurance from "@/screens/InsurancePage/components/IntroInsurance/IntroInsurance";
+import InsuranceCompanys from "@/screens/InsurancePage/components/InsuranceCompanys/InsuranceCompanys";
 
 export default function InsuranceOSAGOPage(){
 
@@ -19,8 +21,8 @@ export default function InsuranceOSAGOPage(){
     const info = data.OSAGO.info
 
     return <Wrapper>
-        <Navigation />
-        <Company />
+        <IntroInsurance/>
+        <InsuranceCompanys data={data.InsurancePage.banksSlideItems} />
         <LastBuy />
         <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap}/>
         <LatestNews />

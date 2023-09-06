@@ -13,9 +13,9 @@ const CalculateOSAGO = () => {
                 <p className={styles.text}>Автомобиль</p>
                 <div className={styles.input_container}>
                     <input className={styles.input} placeholder={'Город регистрации'} style={{width: '327px'}} />
-                    <input className={styles.input} placeholder={'Город регистрации'} style={{width: '212px'}} disabled={true} />
-                    <input className={styles.input} placeholder={'Город регистрации'} style={{width: '223px'}} disabled={true} />
-                    <input className={styles.input} placeholder={'Город регистрации'} style={{width: '371px'}} disabled={true} />
+                    <input className={styles.input} placeholder={'Модель'} style={{width: '212px'}} disabled={true} />
+                    <input className={styles.input} placeholder={'Год выпуска'} style={{width: '223px'}} disabled={true} />
+                    <input className={styles.input} placeholder={'Мощность, л. с.'} style={{width: '371px'}} disabled={true} />
                 </div>
                 <p className={styles.text}>Водители</p>
                 <div className={styles.input_container}>

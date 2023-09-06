@@ -35,3 +35,17 @@
     }
   }
 }
+@media (max-width: 480px){
+  .container{
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow: auto;
+    div{
+      flex-shrink: 0;
+    }
+    svg{
+      display: none;
+    }
+  }
+}

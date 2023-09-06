@@ -14,7 +14,7 @@ import data from "@/core/data";
 import BanksWithButton from "@/components/BanksWithButton/BanksWithButton";
 
 export default function CreditMapPage() {
-    const dataMap = data.CreditCardsPage.info
+    const dataMap = data.CreditCardsPage.info;
     return (
         <Wrapper>
             <Navigation/>
@@ -25,7 +25,7 @@ export default function CreditMapPage() {
             <Сompilations/>
             <LatestNews/>
             <Communicate/>
-            <Feedback title={'Отзывы '} sub={'о кредитных картах'} />
+            <Feedback title={'Отзывы '} sub={'о кредитных картах'}/>
             <BanksWithButton text={'Кредитные карты в Москве '} sub_value={'- ТОП 10 лучших в 2023 году'}/>
             <FrequentQuestions title={'Важная информация'} items={dataMap}/>
         </Wrapper>

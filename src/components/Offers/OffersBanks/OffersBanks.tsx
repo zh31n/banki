@@ -14,8 +14,8 @@ type dep = {
     money: string
     img: StaticImageData
     charcs: string[]
-    btn?:  string | undefined
-    count?: string | undefined
+    btn?:  string
+    count?: string
 }
 type Props = {
     deposits: dep[]

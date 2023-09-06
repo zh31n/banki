@@ -11,7 +11,7 @@ const Kassa = () => {
             <p className={styles.text}>Рассчетно-кассовое обслуживание</p>
             <div className={styles.items_container}>
                 <div className={styles.item}>
-                    <Image src={alfa} alt={'bank'} />
+                    <Image src={alfa} alt={'bank'}/>
                     <p className={styles.text}>«Ноль за обслуживание»</p>
                     <div className={styles.button_container}>
                         <div>
@@ -20,8 +20,9 @@ const Kassa = () => {
                         </div>
                         <button className={styles.button}>Подробнее</button>
                     </div>
-                </div><div className={styles.item}>
-                    <Image src={vtb} alt={'bank'} width={125} height={50} />
+                </div>
+                <div className={styles.item}>
+                    <Image src={vtb} alt={'bank'} width={125} height={50}/>
                     <p className={styles.text}>«На старте»</p>
                     <div className={styles.button_container}>
                         <div>

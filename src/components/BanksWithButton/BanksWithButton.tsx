@@ -11,8 +11,7 @@ const BanksWithButton = ({text, sub_value}: Props) => {
     return (
         <div className={styles.main_container}>
             <div className={styles.text_container}>
-                <p className={styles.blue_text}>{text}</p>
-                <p className={styles.text}>{sub_value}</p>
+                <mark>{text}</mark> {sub_value}
             </div>
             <div className={styles.items_container}>
                 <Items/>

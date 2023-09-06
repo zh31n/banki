@@ -26,3 +26,10 @@
     line-height: normal;
   }
 }
+@media (max-width: 480px){
+  .main_container{
+    .text{
+      width: 100%;
+    }
+  }
+}

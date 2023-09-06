@@ -5,3 +5,9 @@
   flex-wrap: wrap;
   margin-top: 32px;
 }
+@media (max-width: 480px){
+  .main_container{
+    width: 100% !important;
+    justify-content: center;
+  }
+}

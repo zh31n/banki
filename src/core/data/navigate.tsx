@@ -37,7 +37,7 @@ const navigation = {
         [
             {text: 'Мастер подбора кредитов', link: '/ipoteka'},
             {text: 'Ипотечные кредиты', link: '/ipoteka/credits'},
-            {text: 'Ипотечное страхование', link: '/ipoteka/insurance'},
+            {text: 'Ипотечное страхование', link: '/insurance'},
             {text: 'Спецпредложения', link: '/ipoteka/special-offers'},
         ],
         [

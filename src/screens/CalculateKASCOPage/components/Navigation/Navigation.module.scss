@@ -174,3 +174,48 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .main_container {
+    padding: 10px;
+    height: auto;
+    background-image: none;
+
+    .nav {
+      justify-content: center;
+    }
+
+    .main_text_container {
+      .blue {
+        text-align: center;
+        justify-content: center !important;
+        font-size: 25px !important;
+      }
+
+      div {
+        width: 100%;
+      }
+    }
+
+    .bottom_blocks_container {
+      .left_block {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        flex-wrap: wrap;
+        backdrop-filter: none;
+
+        .main_text {
+          width: 100%;
+          font-size: 20px;
+          text-align: center;
+        }
+
+        .text_container {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

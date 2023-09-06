@@ -147,3 +147,9 @@
     }
   }
 }
+@media (max-width: 480px){
+  .main_container{
+    height: auto;
+    flex-wrap: wrap;
+  }
+}

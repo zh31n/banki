@@ -4,14 +4,12 @@
   margin-top: 32px;
   border-radius: 14px;
   border: 1px solid #D9DBDF;
-  background: #FFF;
   padding-top: 38px;
   padding-left: 88px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  background: url("../../../../assets/icons/business_bg.jpg") right white no-repeat;
-  background-size: 600px 424px ;
+  background: url("../../../../assets/icons/business_back.png") right white no-repeat;
 }
 
 .navigation_container {
@@ -60,5 +58,24 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+}
+@media (max-width: 480px){
+  .main_container{
+    height: auto;
+    padding: 10px;
+    background-image: none;
+  }
+  .navigation_container{
+    justify-content: center;
+  }
+  .text_container{
+    justify-content: center;
+    .blue_text{
+      text-align: center;
+    }
+    .text{
+      width: 100%;
+    }
   }
 }

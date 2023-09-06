@@ -11,16 +11,18 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import Question from "@/components/Question/Question";
 import React from "react";
 import Navigation from "@/screens/CalculateKASCOPage/components/Navigation/Navigation";
+import InsuranceCompanys from "@/screens/InsurancePage/components/InsuranceCompanys/InsuranceCompanys";
 
 export default function CalculateKASCOPage(){
 
     const dataMap = data.OSAGO.worksData
     const question = data.OSAGO.favouritesQuestion
     const info = data.OSAGO.info
+    const companys = data.InsurancePage.banksSlideItems;
 
     return <Wrapper>
         <Navigation />
-        <Company />
+        <InsuranceCompanys data={companys} />
         <LastBuy />
         <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap}/>
         <LatestNews />

@@ -6,8 +6,8 @@ const Items = () => {
     return (
         <div className={styles.main_container}>
             <div className={styles.text_container}>
-                <p className={styles.main_text}>Лого-Банк</p>
-                <p className={styles.little_text}>Добро пожаловать. Локо</p>
+                Лого-Банк
+                <span>Добро пожаловать. Локо</span>
             </div>
             <div className={styles.period_container}>
                 <p className={styles.blue_text}>Льготный период</p>

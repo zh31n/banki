@@ -17,6 +17,7 @@
   display: flex;
   gap: 8px;
   align-items: center;
+
   .black_text {
     color: #121212;
     font-size: 16px;
@@ -24,7 +25,9 @@
     font-weight: 400;
     line-height: 86.4%;
   }
-  .grey_text {
+
+  mark {
+    background: transparent;
     color: #b4b4b4;
     font-size: 16px;
     font-style: normal;
@@ -34,25 +37,24 @@
 }
 
 .middle_container {
-  display: flex;
+  font-size: 46px;
   margin-top: 32px;
-  align-items: center;
+  line-height: normal;
+
   .bold_text {
     color: var(--main, #121212);
     font-family: "Raleway";
-    font-size: 46px;
     font-style: normal;
     font-weight: 500;
     line-height: 86.4%;
   }
-  .blue_text {
+
+  mark {
+    background: transparent;
     color: var(--stroke-3, #4da7ff);
-    font-family: "Raleway";
-    font-size: 46px;
     font-style: normal;
     font-weight: 500;
     line-height: 86.4%;
-    margin-left: 10px;
   }
 }
 
@@ -66,4 +68,28 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+@media (max-width: 480px) {
+  .top_container{
+    display: block;
+    text-align: center;
+  }
+  .main_container {
+    padding: 10px;
+    margin: 0;
+    height: auto;
+    background-image: none;
+  }
+  .text_container {
+    padding: 10px;
+    margin: 0;
+  }
+  .bottom_container {
+    width: 100%;
+  }
+  .middle_container {
+    font-size: 25px;
+    text-align: center;
+  }
 }

@@ -8,15 +8,10 @@ const Navigation = () => {
         <div className={styles.main_container}>
             <div className={styles.text_container}>
                 <div className={styles.top_container}>
-                    <p className={styles.black_text}>Главная</p>
-                    <p className={styles.black_text}>/</p>
-                    <p className={styles.black_text}>Карты</p>
-                    <p className={styles.black_text}>/</p>
-                    <p className={styles.grey_text}>Кредитные карты</p>
+                    Главная / Карты / <mark>Кредитные карты</mark>
                 </div>
                 <div className={styles.middle_container}>
-                    <p className={styles.bold_text}>Кредитные карты</p>
-                    <p className={styles.blue_text}>в Москве</p>
+                    Кредитные карты <mark>в Москве</mark>
                 </div>
                 <div className={styles.bottom_container}>
                     В данном разделе можно найти предложения банков, сравнить условия,
