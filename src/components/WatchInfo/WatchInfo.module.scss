@@ -32,3 +32,24 @@
     }
   }
 }
+@media (max-width: 480px) {
+  .wrapper{
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding: 10px;
+    .info{
+      margin-bottom: 10px;
+      .title{
+        text-align: center;
+      }
+      .text{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

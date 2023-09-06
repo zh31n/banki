@@ -40,3 +40,28 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .bonus {
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto !important;
+    justify-content: center;
+    padding: 10px;
+
+    .info {
+      margin-bottom: 10px;
+
+      .title {
+        text-align: center;
+      }
+
+      p {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

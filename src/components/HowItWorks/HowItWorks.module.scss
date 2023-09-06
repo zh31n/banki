@@ -1,6 +1,5 @@
 .howWorks {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 6rem 0;
 
   .title {
     text-align: center;
@@ -22,5 +21,17 @@
     justify-content: center;
     gap: 10px;
     align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .howWorks {
+    .title {
+      font-size: 25px;
+    }
+
+    .work_items {
+      flex-wrap: wrap;
+    }
   }
 }

@@ -24,3 +24,13 @@
     justify-content: space-between;
   }
 }
+
+@media (max-width: 480px) {
+  .main_container{
+    .items_container{
+      overflow: auto;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  }
+}

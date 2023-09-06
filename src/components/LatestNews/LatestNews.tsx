@@ -79,7 +79,6 @@ const news: newsT[] = [
     },
 ]
 
-const choiseItems = choises.map((el, index) => <ChoiseItem key={index} name={el.name} active={el.active}/>)
 const newsItems = news.map((el, index) => <NewsItem key={index} title={el.title} img={el.img} subtitle={el.subtitle}
                                                     text={el.text}
                                                     date={el.date} views={el.views} date_t={el.down_new.date}

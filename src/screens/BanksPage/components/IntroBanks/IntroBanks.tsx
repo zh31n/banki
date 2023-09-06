@@ -34,7 +34,10 @@ const IntroBanks = () => {
                     <div className={s.letters}>
                         <div className={s.alph}>
                             <Image src={arr_l} alt={'arr left'}/>
-                            {letters.map((el, index) => <div className={s.letter} key={index}>{el}</div>)}
+                            <div className={s.let_cont}>
+                                {letters.map((el, index) => <div className={s.letter}
+                                                                 key={index}>{el}</div>)}
+                            </div>
                             <Image src={arr_r} alt={'arr right'}/>
                         </div>
                         <span>Все банки</span>

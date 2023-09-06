@@ -2,6 +2,9 @@ import React from 'react';
 import styles from './Navigation.module.scss'
 import Parametrs from "@/screens/CreditsIpotekaPage/components/Navigation/Parametrs/Parametrs";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import CustomCheckboxAround from "@/UI/CustomCheckboxAround/CustomCheckboxAround";
+import CustomInputTitle from "@/UI/CustomInputTitle/CustomInputTitle";
+import CustomBtnChange from "@/UI/CustomBtnChange/CustomBtnChange";
 
 const Navigation = () => {
   return (
@@ -27,38 +30,17 @@ const Navigation = () => {
       <div className={styles.choose_container}>
         <div className={styles.inputs}>
           <div className={styles.input_cont}>
-            <input type={'checkbox'} className={styles.input}/>
+            <CustomCheckboxAround checked={true}/>
             Есть 1 ребёнок после 2018 года
           </div>
           <div className={styles.input_cont}>
-            <input type={'checkbox'} className={styles.input}/>
+            <CustomCheckboxAround checked={true}/>
             2 ребёнка младше 18 лет
           </div>
         </div>
         <div className={styles.text_container}>
-          <div className={styles.item_cont}>
-            <div className={styles.item}>
-              <p className={styles.grey_text_item}>Стоимость жилья, ₽</p>
-              <p className={styles.text_item}>4 000 000</p>
-            </div>
-            <button className={styles.button}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                <path
-                  d="M9.99609 14C11.6529 14 12.9961 15.3431 12.9961 17C12.9961 18.6568 11.6529 20 9.99609 20C8.33924 20 6.99609 18.6568 6.99609 17C6.99609 15.3431 8.33924 14 9.99609 14Z"
-                  stroke="#121212" stroke-width="1.5"/>
-                <path
-                  d="M14.9961 3.99998C13.3392 3.99998 11.9961 5.34312 11.9961 6.99998C11.9961 8.65683 13.3392 9.99998 14.9961 9.99998C16.6529 9.99998 17.9961 8.65683 17.9961 6.99998C17.9961 5.34312 16.6529 3.99998 14.9961 3.99998Z"
-                  stroke="#121212" stroke-width="1.5"/>
-                <path d="M11.4962 7.00001L6.49619 7M3.49611 7.00001L2.49609 7.00001" stroke="#121212" stroke-width="1.5"
-                      stroke-linecap="round"/>
-                <path d="M13.4961 17L18.4961 17M21.4961 17L22.4962 17" stroke="#121212" stroke-width="1.5"
-                      stroke-linecap="round"/>
-                <path d="M2.49609 17L6.49609 17" stroke="#121212" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M22.4961 7L18.4961 7" stroke="#121212" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-              Параметры
-            </button>
-          </div>
+            <CustomInputTitle width={385} title={'Стоимость жилья, ₽'}/>
+            <CustomBtnChange title={'Параметры'}/>
           <div className={styles.item_cont}>
             <div className={styles.item}>
               <p className={styles.grey_text_item}>Первоначальный взнос, ₽</p>

@@ -23,3 +23,11 @@
     gap: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .wrapper{
+    .itemsCont{
+      flex-wrap: wrap;
+    }
+  }
+}

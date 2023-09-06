@@ -5,7 +5,7 @@
   border: 1px solid #D9DBDF;
   background: #FFF;
   padding: 2rem;
-  background: url("../../../../assets/icons/back1.png");
+  background: url("../../../../assets/icons/back1.png") right;
 
   .info {
     margin-top: 3rem;
@@ -62,4 +62,43 @@
     margin-top: 7rem;
 
   }
+}
+
+@media (max-width: 1024px) {
+  .stock {
+    height: auto;
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    .info {
+      margin-top: 1rem;
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .title {
+        text-align: center;
+      }
+      .sup{
+        text-align: center;
+      }
+      .btns{
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    .stock_items {
+      width: 70%;
+      margin-right: auto;
+      margin-left: auto;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
 }

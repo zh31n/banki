@@ -50,7 +50,6 @@ const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn, cou
                             <span>{money} ₽</span>
                         </div>
                     </div>
-
                 </div>
                 <button className={s.btn_dung}>
                     <Image src={dang_i} alt='иконка опасности'/>

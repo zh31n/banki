@@ -53,7 +53,7 @@
       }
     }
 
-    .ch_cont{
+    .ch_cont {
       margin-top: 2rem;
       display: flex;
       justify-content: flex-start;
@@ -64,4 +64,42 @@
     }
   }
 
+}
+
+@media (max-width: 480px) {
+  .intro {
+    background: none;
+    border: none;
+    height: auto;
+
+    .info_cont {
+      margin: 0;
+
+      .title {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .breadCrumbs {
+        text-align: center;
+      }
+
+      p {
+        width: auto;
+        text-align: justify;
+
+        br {
+          display: none;
+        }
+      }
+
+      .ch_cont {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+
+  }
 }

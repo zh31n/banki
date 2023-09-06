@@ -1,6 +1,18 @@
-.slider{
+.slider {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 480px) {
+  .slider {
+    width: 100%;
+    gap: 5px;
+    overflow: auto;
+
+    .arr {
+      display: none;
+    }
+  }
 }

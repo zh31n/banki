@@ -20,10 +20,10 @@ const OffersInvest = ({items}: Props) => {
         <div className={s.wrap}>
             <div className={s.title}>Предложения <mark>месяца</mark></div>
             <div className={s.cont}>
-                <Image src={arr_l} alt={'arrow left'}/>
+                <Image src={arr_l} className={s.arr} alt={'arrow left'}/>
                 {items.map((el, index) => <OffersInvestItem
                     img={el.img} name={el.name} info={el.info} title={el.title} sub={el.sub} key={index}/>)}
-                <Image src={arr_r} alt={'arrow right'}/>
+                <Image src={arr_r} className={s.arr} alt={'arrow right'}/>
             </div>
         </div>
     );

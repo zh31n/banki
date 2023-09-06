@@ -1,5 +1,8 @@
 .container {
   padding: 16px;
+  border-radius: 7px;
+  border: 1px solid var(--stroke-1, #D9DBDF);
+  background: #FFF;
 
   .top_container {
     display: flex;

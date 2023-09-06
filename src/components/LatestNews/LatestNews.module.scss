@@ -18,6 +18,7 @@
 
   .choises_cont {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -38,5 +39,20 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+  }
+}
+@media (max-width: 1220px){
+  .news{
+    .news_cont{
+      width: auto;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: auto;
+      margin-left: auto;
+      align-items: center;
+      background: none;
+      border: none;
+      gap: 40px;
+    }
   }
 }

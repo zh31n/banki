@@ -33,7 +33,7 @@ const CalculatorCredits = ({data}: Props) => {
         <PageWrapper>
             <IntroCalculate/>
             <OffersBanks deposits={data.offers} title={'223'} sub={' предложения'} options={['По популярности']}/>
-            <Feedback title={'Отзывы'} sub={'о кредитах'}/>
+            <Feedback title={'Отзывы'} sub={' о кредитах'}/>
             <FrequentQuestions title={'Важная информация'} items={data.questData}/>
         </PageWrapper>
     );

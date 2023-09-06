@@ -1,5 +1,3 @@
-import Wrapper from "@/containers/Wrapper";
-import Navigation from "@/screens/CreditsIpotekaPage/components/Navigation/Navigation";
 import Bonus from "@/components/Bonus/Bonus";
 import Mailing from "@/components/Mailing/Mailing";
 import OffersMonth from "@/components/OffersMonth/OffersMonth";
@@ -11,19 +9,22 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import React from "react";
 import data from "@/core/data";
 import Banks from "@/components/Banks/Banks";
+import IntroMortgage from "@/screens/MortgagePage/components/IntroMortgage/IntroMortgage";
+import PageWrapper from "@/containers/PageWrapper";
 
 export default function CreditsIpotekaPage() {
-  const dataMap = data.CreditsIpotekaPage.questData
-  return <Wrapper>
-    <Navigation/>
-    <Bonus/>
-    <Banks />
-    <Mailing/>
-    <Compilations/>
-    <OffersMonth/>
-    <LatestNews/>
-    <Communicate/>
-    <Feedback title={'Отзывы'} sub={'об ипотеке'}/>
-    <FrequentQuestions title={''} items={dataMap}/>
-  </Wrapper>
+    const dataMap = data.CreditsIpotekaPage.questData
+    const items = data.MortgagePage.choises;
+    return <PageWrapper>
+        <IntroMortgage items={items}/>
+        <Bonus/>
+        <Banks/>
+        <Mailing/>
+        <Compilations/>
+        <OffersMonth/>
+        <LatestNews/>
+        <Communicate/>
+        <Feedback title={'Отзывы'} sub={'об ипотеке'}/>
+        <FrequentQuestions title={''} items={dataMap}/>
+    </PageWrapper>
 }

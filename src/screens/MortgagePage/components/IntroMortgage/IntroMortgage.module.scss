@@ -74,23 +74,26 @@
     border: 1px solid var(--stroke-3, #4DA7FF);
     background: var(--unnamed, rgba(217, 231, 250, 0.40));
     backdrop-filter: blur(9.973308563232422px);
-    .radioCont{
+
+    .radioCont {
       display: flex;
       align-items: center;
       gap: 20px;
-      input{
+
+      input {
         transition: all .2s;
         appearance: none;
         border: 1px solid #4da7ff;
         width: 20px;
         height: 20px;
         border-radius: 12px;
-        &:checked{
+
+        &:checked {
           border-width: 6px;
         }
       }
 
-      div{
+      div {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -102,7 +105,8 @@
         line-height: 86.4%; /* 13.824px */
       }
     }
-    .inpCont{
+
+    .inpCont {
       margin-top: 1rem;
       display: flex;
       gap: 15px;
@@ -111,4 +115,93 @@
     }
   }
 
+}
+
+@media (max-width: 480px) {
+  .intro {
+    background: none;
+    border: none;
+    height: auto;
+
+    .info_cont {
+      width: auto;
+      margin: 0;
+
+      p {
+        br {
+          display: none;
+        }
+      }
+
+      .title {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .breadCrumbs {
+        text-align: center;
+      }
+
+      .sub {
+        width: auto;
+        text-align: justify;
+
+        br {
+          display: none;
+        }
+      }
+
+      .ch_cont {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .find {
+        width: auto;
+        height: auto;
+      }
+
+      .letters {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .alph {
+          .let_cont {
+            width: 90vw;
+          }
+        }
+      }
+
+      .inps {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .info {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+
+        .radioCont {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    }
+
+    .inpCont {
+      div {
+        width: 100% !important;
+      }
+
+      button {
+        width: 100% !important;
+      }
+    }
+
+  }
 }

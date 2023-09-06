@@ -52,7 +52,8 @@
       font-weight: 500;
       line-height: 86.4%; /* 17.28px */
     }
-    .page_item_a{
+
+    .page_item_a {
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -60,7 +61,7 @@
       width: 34px;
       height: 34px;
       border-radius: 4px;
-      background:  #4DA7FF;
+      background: #4DA7FF;
       color: #FFF;
       font-variant-numeric: lining-nums proportional-nums;
       font-size: 20px;
@@ -69,6 +70,19 @@
       line-height: 86.4%; /* 17.28px */
     }
   }
+}
 
+@media (max-width: 480px) {
+  .wrap {
+    .info {
+      display: block;
+      padding: 10px;
+      padding-left: 0;
+      text-align: center;
+      height: auto;
+    }
+    .cont{
 
+    }
+  }
 }

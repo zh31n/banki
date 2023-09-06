@@ -86,7 +86,7 @@ const ConsumerCreditsPage = ({data}: Props) => {
             <IntroConsumer/>
             <Bonus/>
             <SliderBanksCons data={data.sliderBanks}/>
-            <OffersBanks sub={'предложения'} title={'223'} deposits={data.deposits} options={['По популярности']}/>
+            <OffersBanks sub={' предложения'} title={'223'} deposits={data.deposits} options={['По популярности']}/>
             <OfferMoth offers={data.offersMoth}/>
             <CatalogItems title={'Каталог кредитов'} items={data.catalogData}/>
             <LatestNews/>

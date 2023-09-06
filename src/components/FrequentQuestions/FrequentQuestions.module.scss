@@ -17,3 +17,11 @@
     margin-bottom: 2rem;
   }
 }
+
+@media (max-width: 480px){
+  .quests{
+    .title{
+      font-size: 20px;
+    }
+  }
+}

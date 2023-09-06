@@ -53,9 +53,6 @@
       background: #F5F5F5;
       padding: 15px;
 
-      .inps {
-
-      }
     }
 
     .inps {
@@ -84,10 +81,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 10px;
 
       .alph {
         display: flex;
-        gap: 8.5px;
+        gap: 5px;
+
+        .let_cont {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          width: 100%;
+          overflow: auto;
+        }
 
         .letter {
           color: #121212;
@@ -112,5 +118,72 @@
       }
     }
   }
+}
 
+@media (max-width: 480px) {
+  .wrapper {
+    background: none;
+    border: none;
+    height: auto;
+
+    .info {
+      width: auto;
+      margin: 0;
+
+      p {
+        br {
+          display: none;
+        }
+      }
+
+      .title {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .breadCrumbs {
+        text-align: center;
+      }
+
+      .sub {
+        width: auto;
+        text-align: justify;
+
+        br {
+          display: none;
+        }
+      }
+
+      .ch_cont {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .find {
+        width: auto;
+        height: auto;
+      }
+
+      .letters {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .alph {
+          .let_cont {
+            width: 90vw;
+          }
+        }
+      }
+
+      .inps {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+
+
+  }
 }

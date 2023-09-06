@@ -54,11 +54,11 @@ const Header = () => {
                 <nav className={s.nav}>
                     {navMap}
                 </nav>
-                <div className={s.icons}>
+                <nav className={s.icons}>
                     <Image alt={'icon'} priority src={userImg} width={24} height={24}/>
                     <Image alt={'icon'} priority src={pointImg} width={24} height={24}/>
                     <Image alt={'icon'} priority src={searchImg} width={24} height={24}/>
-                </div>
+                </nav>
             </header>
             {vis && <Nav path={currentLink} setActive={setVis}/>}
         </div>

@@ -56,3 +56,13 @@
     }
   }
 }
+@media (max-width: 480px){
+  .forWhat{
+    .title{
+      font-size: 25px;
+    }
+    .items_cont{
+      flex-wrap: wrap;
+    }
+  }
+}

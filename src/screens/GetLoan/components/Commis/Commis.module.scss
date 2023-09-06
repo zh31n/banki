@@ -24,3 +24,21 @@
     }
   }
 }
+@media (max-width: 480px){
+  .coomis{
+    margin: 2rem 0;
+    height: auto;
+    background-image: none;
+    .info{
+      margin: 15px;
+      .title{
+        font-size: 25px;
+        text-align: center;
+      }
+      p{
+        width: auto;
+        text-align: justify;
+      }
+    }
+  }
+}

@@ -1,26 +1,33 @@
-.wrapper{
+.wrapper {
   margin: 6rem 0;
-  .title{
+
+  .title {
     text-align: center;
     color: #121212;
     font-size: 46px;
     font-style: normal;
     font-weight: 500;
     line-height: 86.4%;
-    mark{
+
+    mark {
       background: transparent;
       color: #4DA7FF;
     }
   }
-  .cont{
+
+  .cont {
     display: flex;
     justify-content: center;
     gap: 1rem;
     align-items: center;
 
-    .item{
+    .item {
       margin-top: 2rem;
-      .main{
+      br{
+        display: none;
+      }
+
+      .main {
         border-radius: 14px;
         border: 1px solid #D9DBDF;
         background: #FFF;
@@ -30,7 +37,8 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        .text{
+
+        .text {
           margin-top: 1rem;
           color: #121212;
           text-align: center;
@@ -39,13 +47,15 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
-          mark{
+
+          mark {
             background: transparent;
             color: #4DA7FF;
           }
         }
       }
-      .info{
+
+      .info {
         margin-top: 1rem;
         width: 571px;
         height: 78px;
@@ -59,6 +69,30 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    .title {
+      font-size: 25px;
+    }
+
+    .cont {
+      flex-wrap: wrap;
+
+      .item {
+        .main {
+          width: 100%;
+          height: auto;
+        }
+
+        .info {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }

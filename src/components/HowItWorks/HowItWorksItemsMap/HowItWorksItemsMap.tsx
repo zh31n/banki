@@ -4,10 +4,12 @@ import {StaticImageData} from "next/image";
 
 
 type itemT = {
+    img: StaticImageData
     title: string
     sub: string
-    img: StaticImageData
     text: string
+    w_text?: number
+    height?: number
 }
 type Props = {
     items: itemT[]
@@ -16,7 +18,7 @@ type Props = {
 const HowItWorksItemsMap = ({items}: Props) => {
     return (
         <>
-            {items.map((el, index) => <HowItWorksItem key={index} img={el.img} title={el.title} sub={el.sub} text={el.text}/>)}
+            {items.map((el, index) => <HowItWorksItem height={el.height} w_text={el.w_text} key={index} img={el.img} title={el.title} sub={el.sub} text={el.text}/>)}
         </>
     );
 };

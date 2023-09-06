@@ -49,3 +49,8 @@
     }
   }
 }
+@media (max-width: 480px){
+  .bank_container{
+    flex-shrink: 0;
+  }
+}

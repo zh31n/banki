@@ -47,3 +47,60 @@
     }
   }
 }
+@media (max-width: 480px) {
+  .page_info {
+    background: none;
+    border: none;
+    height: auto;
+
+    .page_info_i {
+      width: 100%;
+      margin: 0;
+      .choiseItems{
+        justify-content: center;
+
+      }
+      .title{
+        font-size: 20px;
+        text-align: center;
+      }
+      .pageName{
+        text-align: center;
+      }
+      .subtitle {
+        width: auto;
+        text-align: justify;
+
+        br {
+          display: none;
+        }
+      }
+
+      .calculate {
+        padding: 10px;
+        backdrop-filter: none;
+        width: 100%;
+        height: auto;
+
+        div {
+          width: 100% !important;
+          backdrop-filter: none;
+          input {
+            width: 100% !important;
+
+          }
+
+          div {
+            width: 20% !important;
+          }
+
+        }
+
+        button {
+          width: 100% !important;
+        }
+      }
+    }
+
+  }
+}

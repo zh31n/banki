@@ -85,3 +85,40 @@
   }
 
 }
+@media (max-width: 1220px){
+  .banks{
+    .bank_map_cont{
+      justify-content: center;
+      .picture{
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 768px){
+  .banks{
+    .bank_map_cont{
+      height: auto;
+      .bank_map{
+
+        height: auto;
+        .banK_mWrap{
+          margin-right: auto;
+          margin-left: auto;
+          width: 100%;
+          height: auto;
+          max-height: 100%;
+          justify-content: center;
+        }
+        .nav_search{
+          margin-top: 1rem;
+          flex-wrap: wrap;
+          justify-content: center;
+          .search{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

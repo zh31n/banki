@@ -13,11 +13,27 @@
       background: transparent;
     }
   }
-  .cont{
+
+  .cont {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    .cont {
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      overflow: auto;
+
+      .arr {
+        display: none;
+      }
+    }
   }
 }

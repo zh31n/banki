@@ -22,4 +22,13 @@
   justify-content: center;
   gap: 16px;
 }
+@media (max-width: 480px){
+  .banks_container{
+    padding-left: 10px;
+    gap: 10px;
+    justify-content: flex-start;
+    width: 100%;
+    overflow: auto;
+  }
+}
 

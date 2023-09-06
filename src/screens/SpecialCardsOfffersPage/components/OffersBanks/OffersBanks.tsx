@@ -3,24 +3,39 @@ import styles from './OffersBanks.module.scss'
 import data from "@/core/data";
 import Items from "@/screens/SpecialCardsOfffersPage/components/OffersBanks/Items/Items";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
-import {StaticImageData} from "next/image";
+import Image, {StaticImageData} from "next/image";
+import image from "@/assets/icons/image.png"
 
 type offerT = {
     img: StaticImageData
+    imgBank?: StaticImageData
+    name?: string
+    sub?: string
+    info?: string
+    t1?: string
+    t2?: string
+    c1?: string
+    c2?: string
+    btntxt?: string
 }
 type Props = {
     dataMap: offerT[]
 }
-const OffersBanks = ({dataMap}:Props) => {
+const OffersBanks = ({dataMap}: Props) => {
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.map_cont}>
-        {dataMap.map(el => <Items img={el.img}/>)}
-      </div>
-      <BlueBtn text={'Показать еще'} width={236} fSize={20} height={60}/>
-    </div>
-  );
+    return (
+        <div className={styles.container}>
+            <div className={styles.map_cont}>
+                {dataMap.map(el => <Items
+                    img={el.img} sub={el.sub} name={el.name} imgBank={el.imgBank} t2={el.t2}
+                                          t1={el.t1} info={el.info} c2={el.c2}
+                                          c1={el.c1} btntxt={el.btntxt}/>)}
+                <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
+                <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
+            </div>
+            <BlueBtn text={'Показать еще'} width={236} fSize={20} height={60}/>
+        </div>
+    );
 };
 
 export default OffersBanks;

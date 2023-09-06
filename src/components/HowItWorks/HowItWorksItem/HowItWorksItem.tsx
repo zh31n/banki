@@ -7,11 +7,13 @@ type Props = {
     title: string
     sub: string
     text: string
+    w_text?: number
+    height?: number
 }
 
-const HowItWorksItem = ({img, title, sub, text}: Props) => {
+const HowItWorksItem = ({img, title, sub, text, w_text, height}: Props) => {
     return (
-        <div className={s.work_item}>
+        <div className={s.work_item} style={{height: `${height}px`}}>
             <div className={s.info}>
                 <div className={s.img}>
                     <Image src={img} alt={'иконка наших сторон'}/>
@@ -22,7 +24,7 @@ const HowItWorksItem = ({img, title, sub, text}: Props) => {
                     {sub}
                 </div>
             </div>
-            <p>
+            <p style={{width: `${w_text}px`}}>
                 {text}
             </p>
         </div>

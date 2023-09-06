@@ -8,7 +8,7 @@ const HowWorks = () => {
     return (
         <div className={s.wrapper}>
             <div className={s.title}>
-                <mark>Как работает</mark>
+                <mark>Как работает </mark>
                 наш сервис
             </div>
             <div className={s.cont}>

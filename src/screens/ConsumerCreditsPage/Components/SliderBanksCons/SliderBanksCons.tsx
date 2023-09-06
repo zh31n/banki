@@ -12,7 +12,7 @@ const SliderBanksCons = ({data}:Props) => {
     return (
         <div className={s.slider}>
             <BankImgItemSlideMap images={data}/>
-            <Image src={arr_r} alt={'стрелка вправо'}/>
+            <Image src={arr_r} className={s.arr} alt={'стрелка вправо'}/>
         </div>
     );
 };

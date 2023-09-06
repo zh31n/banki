@@ -35,3 +35,8 @@
     transition: all ease-in-out .3s;
   }
 }
+@media (max-width: 1220px){
+  .main_container{
+    width: 1024px;
+  }
+}

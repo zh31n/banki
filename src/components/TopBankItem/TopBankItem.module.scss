@@ -51,3 +51,29 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .item {
+    height: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .title {
+      width: 100%;
+      text-align: center;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      div {
+        margin: 0;
+
+      }
+    }
+  }
+}

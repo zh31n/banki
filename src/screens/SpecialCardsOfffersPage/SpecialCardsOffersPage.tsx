@@ -23,6 +23,6 @@ export default function SpecialCardsOffersPage({data}: Props) {
     return <Wrapper>
         <Navigation/>
         <OffersBanks dataMap={data.offers}/>
-        <FrequentQuestions title={'Важная информация'} items={data.questData}/>
+        <FrequentQuestions title={'Частые вопросы'} items={data.questData}/>
     </Wrapper>
 }

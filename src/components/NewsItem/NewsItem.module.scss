@@ -70,3 +70,11 @@
     margin-top: 1rem;
   }
 }
+@media (max-width: 376px) {
+  .item{
+    width: 100%;
+    .subtitle{
+      width: 100%;
+    }
+  }
+}

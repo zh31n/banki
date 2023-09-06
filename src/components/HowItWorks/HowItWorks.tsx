@@ -4,10 +4,12 @@ import HowItWorksItemsMap from "@/components/HowItWorks/HowItWorksItemsMap/HowIt
 import {StaticImageData} from "next/image";
 
 type itemT = {
+    img: StaticImageData
     title: string
     sub: string
-    img: StaticImageData
     text: string
+    w_text?: number
+    height?: number
 }
 type Props = {
     title: string

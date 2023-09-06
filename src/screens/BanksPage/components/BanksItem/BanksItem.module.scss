@@ -85,3 +85,33 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .item {
+    height: auto;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .info {
+      width: 100%;
+      text-align: center;
+
+      .chars {
+        justify-content: center;
+      }
+    }
+
+    .btn {
+      width: 100%;
+
+      span {
+        text-align: center;
+      }
+
+      button {
+        width: 100% !important;
+      }
+    }
+  }
+}

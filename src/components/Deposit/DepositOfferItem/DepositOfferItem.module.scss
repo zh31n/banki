@@ -112,3 +112,48 @@
     }
   }
 }
+
+@media (max-width: 480px){
+  .item{
+    height: auto;
+    padding: 10px;
+    .up{
+      flex-wrap: wrap;
+      width: 100%;
+      .btn_dung{
+        display: none;
+      }
+      .info{
+        flex-wrap: wrap;
+        .about_b{
+          width: 100%;
+          flex-direction: column;
+          margin: 0;
+          gap: 10px;
+          .info_item{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+    .down{
+      flex-wrap: wrap;
+      gap: 10px;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+      .blue_charc{
+        flex-wrap: wrap;
+        button{
+          width: 147px !important;
+        }
+      }
+      button{
+        width: 100% !important;
+      }
+    }
+  }
+}

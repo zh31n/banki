@@ -38,16 +38,34 @@
       }
     }
   }
-  .map{
+
+  .map {
     width: 530px;
     height: 275px;
   }
-  .link{
+
+  .link {
     cursor: pointer;
     color: #4DA7FF;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 86.4%; /* 13.824px */
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .banks:first-child {
+      height: auto;
+      width: 100%;
+
+      div {
+        width: 100% !important;
+      }
+    }
   }
 }

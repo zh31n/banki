@@ -88,3 +88,34 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .wrapp{
+    flex-wrap: wrap;
+    gap: 20px;
+    .title{
+      font-size: 25px;
+      br{
+        display: none;
+      }
+    }
+    .l{
+      width: 100%;
+      button{
+        width: 100% !important;
+      }
+      .info_items{
+        flex-wrap: wrap;
+      }
+    }
+    .line{
+      display: none;
+    }
+    .r{
+      width: 100%;
+      button{
+        width: 100% !important;
+      }
+    }
+  }
+}

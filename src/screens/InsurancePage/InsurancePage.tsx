@@ -30,14 +30,14 @@ type OfferI = {
     count2?: string
 }
 type questT = {
-    title:string
-    text:string
+    title: string
+    text: string
 }
 type Props = {
     data: {
         introChoose: ChooseT[],
         banksSlideItems: StaticImageData[],
-        specialOffers:OfferI[],
+        specialOffers: OfferI[],
         questData: questT[]
     }
 }
@@ -51,7 +51,7 @@ const InsurancePage = ({data}: Props) => {
                        text={'Будьте уверенны в своем выборе: клиенты делятся опытом,' +
                            ' а мы ежедневно проверяем отзывы и обновляем рейтинги.'}
             />
-            <SpecialOffersInsurance items={data.specialOffers} />
+            <SpecialOffersInsurance items={data.specialOffers}/>
             <LatestNews/>
             <Mailing/>
             <Communicate/>

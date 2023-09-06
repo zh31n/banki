@@ -28,11 +28,34 @@
       width: 503px;
     }
   }
-  .items{
+
+  .items {
     width: 648px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    flex-wrap: wrap;
+
+    .info {
+      p {
+        width: 100%;
+      }
+
+      button {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }
+
+    .items {
+      width: 100%;
+      justify-content: center;
+    }
   }
 }

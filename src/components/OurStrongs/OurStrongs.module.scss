@@ -9,6 +9,7 @@
   .info {
     margin-top: 6rem;
     margin-left: 6rem;
+
     .title {
       margin-bottom: 2rem;
       color: #121212;
@@ -64,5 +65,44 @@
         line-height: normal;
       }
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .our_strongs {
+    background-image: none;
+    height: auto;
+
+
+    .info {
+      margin: 10px;
+      margin-top: 2rem;
+
+      .title {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .strong_item {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+
+        .title {
+          justify-content: center;
+          span {
+            text-align: start;
+            font-size: 17px !important;
+          }
+
+        }
+
+        p {
+          text-align: center;
+        }
+
+      }
+    }
+
   }
 }

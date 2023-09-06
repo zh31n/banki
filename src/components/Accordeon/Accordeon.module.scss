@@ -4,3 +4,8 @@
   flex-direction: column;
   gap: 10px;
 }
+@media (max-width: 375px){
+  .acc_items{
+    margin-top: 1rem;
+  }
+}

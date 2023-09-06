@@ -40,3 +40,22 @@
     line-height: normal;
   }
 }
+
+@media (max-width: 480px) {
+  .strong_item {
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    .title {
+      justify-content: center;
+      span {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}

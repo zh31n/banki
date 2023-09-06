@@ -79,3 +79,36 @@
   }
 
 }
+
+@media (max-width: 480px) {
+  .mailing {
+    img{
+      display: none;
+    }
+    .info{
+      .title{
+        width: 100%;
+        font-size: 25px;
+        word-wrap: break-word;
+        white-space: normal;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .mailing_i{
+        width: 100%;
+        height: auto;
+        backdrop-filter: none;
+        .mail_cont{
+          flex-wrap: wrap;
+          gap: 10px;
+          button{
+            width: 100% !important;
+          }
+          input{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

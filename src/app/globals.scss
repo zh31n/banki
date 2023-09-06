@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "../assets/styles/global.scss"; * {
+@import "../assets/styles/global.scss";
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,4 +12,11 @@
 body {
   background: rgb(245, 245, 245);
   padding-top: 20px;
+}
+
+@media (max-width: 769px) {
+  body {
+    padding: 0;
+  }
+
 }

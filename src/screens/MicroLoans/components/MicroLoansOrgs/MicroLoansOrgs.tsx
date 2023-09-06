@@ -20,11 +20,11 @@ const MicroLoansOrgs = ({title, items}: Props) => {
         <div className={s.wrapper}>
             <div className={s.title}>{title}</div>
             <div className={s.item_cont}>
-                <Image alt={'arrow'} src={arr_l}/>
+                <Image alt={'arrow'} className={s.arr} src={arr_l}/>
                 <div className={s.wrap}>
                     {items.map((el, index) => <LoanOrgItem img={el.img} title={el.title} sub={el.sub} key={index}/>)}
                 </div>
-                <Image alt={'arrow'} src={arr_r}/>
+                <Image alt={'arrow'} className={s.arr} src={arr_r}/>
             </div>
         </div>
     );

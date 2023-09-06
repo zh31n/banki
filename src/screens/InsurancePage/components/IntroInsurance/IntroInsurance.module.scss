@@ -150,3 +150,62 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .intro {
+    background: none;
+    border: none;
+    height: auto;
+
+    .info_cont {
+      width: auto;
+      margin: 0;
+
+      .title {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .breadCrumbs {
+        text-align: center;
+      }
+
+      .sub {
+        width: auto;
+        text-align: justify;
+
+        br {
+          display: none;
+        }
+      }
+
+      .ch_cont {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    .infoCont {
+      flex-wrap: wrap;
+
+      .l {
+        height: auto;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .inp {
+        gap: 10px !important;
+      }
+
+      .right {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+  }
+}

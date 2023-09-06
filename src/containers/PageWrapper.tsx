@@ -1,11 +1,11 @@
 import React from 'react';
 
 type Props = {
-    children:React.ReactNode
+    children: React.ReactNode
 }
-const PageWrapper = ({children}:Props) => {
+const PageWrapper = ({children}: Props) => {
     return (
-        <main className={'container'} style={{paddingTop:'20px'}}>{children}</main>
+        <main className={'container'} style={{paddingTop: '20px', overflowX: 'hidden'}}>{children}</main>
     );
 };
 

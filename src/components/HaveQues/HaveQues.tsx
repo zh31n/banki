@@ -15,7 +15,9 @@ const HaveQues = () => {
                 </div>
                 <div className={s.check}>
                     <CustomCheckboxAround checked={false}/>
-                    Предоставляю своё<mark>согласие</mark>на обработку персональных данных
+                    <span>
+                        Предоставляю своё <mark>согласие</mark> на обработку персональных данных
+                    </span>
                 </div>
                 <div className={s.check}>
                     <CustomCheckboxAround checked={true}/>
