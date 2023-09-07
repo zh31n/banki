@@ -38,7 +38,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     mark{
       background: transparent;
@@ -70,7 +70,7 @@
     margin-top: 1rem;
   }
 }
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .item{
     width: 100%;
     .subtitle{

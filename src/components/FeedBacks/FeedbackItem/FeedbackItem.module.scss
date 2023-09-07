@@ -71,9 +71,12 @@
     margin-top: 15px;
   }
 }
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .feedback_item{
     width: 100%;
     height: auto;
+    .text{
+      height: auto;
+    }
   }
 }
