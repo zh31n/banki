@@ -59,3 +59,42 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .top_container {
+    display: block;
+    text-align: center;
+  }
+  .main_container {
+    padding: 10px;
+    margin: 0;
+    height: auto;
+    background-image: none;
+  }
+  .nav_container {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+  .text_container {
+    padding: 10px;
+    margin: 0;
+  }
+  .bottom_container {
+    width: 100%;
+  }
+  .main_cont {
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    justify-content: center;
+
+    p {
+      font-size: 25px !important;
+      text-align: center;
+
+    }
+
+  }
+  .little_text_cont {
+    width: 100% !important;
+  }
+}

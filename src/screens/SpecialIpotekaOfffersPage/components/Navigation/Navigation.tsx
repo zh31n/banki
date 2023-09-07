@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Navigation.module.scss'
-import Parametrs from "@/screens/SpecialOffersIpotekaPage/components/Navigation/Parametrs/Parametrs";
+import Parametrs from "@/screens/SpecialCardsOfffersPage/components/Navigation/Parametrs/Parametrs";
 
 const Navigation = () => {
   return (
@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className={styles.nav_container}>
         <p>Главная</p>
         <p>/</p>
-        <p>Карты</p>
+        <p>Ипотека</p>
         <p>/</p>
         <p className={styles.grey_text}>Специальные предложения</p>
       </div>

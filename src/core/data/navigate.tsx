@@ -10,6 +10,7 @@ const navigation = {
     ],
     credits: [
         [
+            {text: 'Кредиты', link: '/credits'},
             {text: 'Мастер подбора кредитов', link: '/credits/autocredit'},
             {text: 'Потребительские кредиты', link: '/credits/consumer-credits'},
             {text: 'Рефинансирование', link: '/credits/refinancing-credits'},
@@ -24,6 +25,7 @@ const navigation = {
     ],
     cards: [
         [
+
             {text: 'Кредитные карты', link: '/cards/credit-cards'},
             {text: 'Карты рассрочки', link: '/cards/installment'},
             {text: 'Дебетовые карты', link: '/cards/debit-cards'},
@@ -35,7 +37,8 @@ const navigation = {
     ],
     ipoteka: [
         [
-            {text: 'Мастер подбора кредитов', link: '/ipoteka'},
+            {text: 'Ипотека', link: '/ipoteka'},
+            {text: 'Мастер подбора кредитов', link: '/ipoteka/offers'},
             {text: 'Ипотечные кредиты', link: '/ipoteka/credits'},
             {text: 'Ипотечное страхование', link: '/insurance'},
             {text: 'Спецпредложения', link: '/ipoteka/special-offers'},
@@ -49,19 +52,21 @@ const navigation = {
     ],
     insurance: [
         [
+            {text: 'Страхование', link: '/insurance'},
             {text: 'ОСАГО', link: '/insurance/osago'},
             {text: 'КАСКО', link: '/insurance/kasco'},
-            {text: 'Путешествие', link: '/insurance'},
-            {text: 'Жизнь и здоровье', link: '/insurance'},
+            {text: 'Путешествие', link: '/insurance/travel'},
+            {text: 'Жизнь и здоровье', link: '/insurance/health'},
         ],
         [
-            {text: 'Ипотечное страхование', link: '/insurance'},
-            {text: 'ДМС', link: '/insurance'},
+            {text: 'Ипотечное страхование', link: '/insurance/ipot-ins'},
+            {text: 'ДМС', link: '/insurance/dms'},
             {text: 'Все предложения', link: '/insurance'}
         ]
     ],
     investment: [
         [
+            // {text: 'Инвестиции', link: '/investment'},
             {text: 'Все продукты', link: '/investment'},
             {text: 'Расчётно-кассовое обслуживание', link: '/investment'},
             {text: 'Бизнес-карты', link: '/investment'},

@@ -37,7 +37,7 @@ const navigation = {
         [
             {text: 'Мастер подбора кредитов', link: '/ipoteka'},
             {text: 'Ипотечные кредиты', link: '/ipoteka/credits'},
-            {text: 'Ипотечное страхование', link: '/insurance/ipot-ins'},
+            {text: 'Ипотечное страхование', link: '/insurance'},
             {text: 'Спецпредложения', link: '/ipoteka/special-offers'},
         ],
         [
@@ -51,12 +51,12 @@ const navigation = {
         [
             {text: 'ОСАГО', link: '/insurance/osago'},
             {text: 'КАСКО', link: '/insurance/kasco'},
-            {text: 'Путешествие', link: '/insurance/travel'},
-            {text: 'Жизнь и здоровье', link: '/insurance/health'},
+            {text: 'Путешествие', link: '/insurance'},
+            {text: 'Жизнь и здоровье', link: '/insurance'},
         ],
         [
-            {text: 'Ипотечное страхование', link: '/insurance/ipot-ins'},
-            {text: 'ДМС', link: '/insurance/dms'},
+            {text: 'Ипотечное страхование', link: '/insurance'},
+            {text: 'ДМС', link: '/insurance'},
             {text: 'Все предложения', link: '/insurance'}
         ]
     ],
@@ -97,4 +97,4 @@ const navigation = {
 }
 
 
-export default navigation;
+export default navigation

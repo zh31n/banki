@@ -5,6 +5,7 @@
   border-radius: 7px;
   border: 1px solid #D9DBDF;
   background: #FFF;
+  flex-shrink: 0;
 
   .header {
     display: flex;
@@ -85,7 +86,9 @@
     flex-wrap: wrap;
     display: flex;
     gap: 5px;
-
+    button{
+      width: 180px !important;
+    }
     .warn {
       cursor: pointer;
       display: flex;

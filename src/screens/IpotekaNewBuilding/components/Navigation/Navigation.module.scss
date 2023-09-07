@@ -56,3 +56,39 @@
     }
   }
 }
+@media (max-width: 480px) {
+  .main_container {
+    height: auto;
+    background-image: none;
+    padding: 10px;
+
+    .navigation {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+
+    }
+
+    p {
+      br {
+        display: none;
+      }
+    }
+
+    .text_container {
+      .text {
+        text-align: center;
+        font-size: 20px !important;
+        width: 100%;
+
+        span {
+          font-size: 20px !important;
+        }
+      }
+
+      .little_text {
+        width: 100%;
+      }
+    }
+  }
+}

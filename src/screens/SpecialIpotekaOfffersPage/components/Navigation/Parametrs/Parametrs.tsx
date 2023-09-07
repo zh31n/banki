@@ -16,7 +16,7 @@ const Parametrs = (props: Props) => {
     },
     {
       text: "Ипотека",
-      active: true,
+      active: false,
     },
     {
       text: "Кредитные карты",
@@ -24,7 +24,7 @@ const Parametrs = (props: Props) => {
     },
     {
       text: "Дебетовые карты",
-      active: false,
+      active: true,
     },
     {
       text: "Инвестиции",

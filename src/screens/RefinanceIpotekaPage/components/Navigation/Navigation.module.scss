@@ -4,10 +4,9 @@
   height: 416px;
   border-radius: 14px;
   border: 1px solid #D9DBDF;
-  background: #FFF;
   padding-top: 38px;
   padding-left: 88px;
-  background: url('../../../../assets/icons/refinance_ipoteka_bg.png') no-repeat white right;
+  background: url('../../../../assets/icons/special_offers_ip_back.png') no-repeat white right;
 
   .nav_cont {
     display: flex;
@@ -66,6 +65,37 @@
       line-height: normal;
       margin-top: 16px;
       margin-bottom: 32px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main_container {
+    height: auto;
+    background-image: none;
+    padding: 10px;
+
+    .nav_cont {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+
+    }
+
+    .main_text_container {
+      .text {
+        text-align: center;
+        font-size: 20px !important;
+        width: 100%;
+
+        span {
+          font-size: 20px !important;
+        }
+      }
+
+      .little_text {
+        width: 100%;
+      }
     }
   }
 }

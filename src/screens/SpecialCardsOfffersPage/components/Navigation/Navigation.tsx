@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className={styles.nav_container}>
         <p>Главная</p>
         <p>/</p>
-        <p>Карты</p>
+        <p>Ипотека</p>
         <p>/</p>
         <p className={styles.grey_text}>Специальные предложения</p>
       </div>

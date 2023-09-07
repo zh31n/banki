@@ -7,7 +7,7 @@ const IntroConsumer = () => {
         <div className={s.intro}>
             <div className={s.info_cont}>
                 <div className={s.breadCrumbs}>
-                    Главная / Вклады / <mark>Накопительные счета</mark>
+                    Главная / Кредиты / <mark>Потребительские кредиты</mark>
                 </div>
                 <div className={s.title}>Потребительские кредиты</div>
                 <p>

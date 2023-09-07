@@ -9,7 +9,7 @@ const IntroAuto = () => {
         <div className={s.intro}>
             <div className={s.info_cont}>
                 <div className={s.breadCrumbs}>
-                    Главная / Вклады / <mark>Автокредиты</mark>
+                    Главная / Кредиты / <mark>Автокредиты</mark>
                 </div>
                 <div className={s.title}>Подобрать кредит на автомобиль</div>
                 <p>
