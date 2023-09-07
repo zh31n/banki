@@ -7,7 +7,7 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import PageWrapper from "@/containers/PageWrapper";
 import IntroSpecialOffer from "@/screens/SpecialOffersPage/components/IntroSpecialOffer/IntroSpecialOffer";
 import {StaticImageData} from "next/image";
-import SpecialOffersMap from "@/components/Offers/SpecialOffersMap/SpecialOffersMap";
+import {DepositCardInterface} from "@/core/api/Deposits";
 
 type choisesT = {
     name: string
@@ -37,31 +37,48 @@ type questT = {
     title: string
     items: questItemT[]
 }
-type Props = {
-    data: {
+
+interface SpecialOfferPageProps {
+    staticData: {
         questions: questT
-        choises: choisesT[]
+        choices: choisesT[]
         selectData: selectDataT[]
         offerData: offerDataT[]
-    }
+    },
+    deposits: DepositCardInterface[];
 }
 
-const SpecialOffersPage = ({data}: Props) => {
-    const selectItems = data.selectData.map((elm, index) => <CustomSelect img={elm.img} options={elm.options}
-                                                                          key={index}/>)
+const SpecialOffersPage = (props: SpecialOfferPageProps) => {
+    const {
+        staticData,
+        deposits,
+    } = props;
 
     return (
         <PageWrapper>
-            <IntroSpecialOffer choises={data.choises}/>
+            <IntroSpecialOffer choises={staticData.choices}/>
             <div className={s.page_i}>
-                <div className={s.select_cont}>{selectItems}</div>
+                <div className={s.select_cont}>
+                    {staticData.selectData
+                        .map((elm, index) => (
+                            <CustomSelect
+                                img={elm.img}
+                                options={elm.options}
+                                key={index}
+                            />
+                        ))}
+                </div>
                 <div className={s.offers_item_cont}>
-                    <SpecialOffersMap items={data.offerData}/>
+                    {deposits.map((item) => {
+                        return (
+                            <SpecialOfferItem item={item} key={item.id}/>
+                        )
+                    })}
                 </div>
                 <div className={s.btnCont}>
                     <BlueBtn text={'Показать еще'} width={235}/>
                 </div>
-                <FrequentQuestions title={'Частые вопросы'} items={data.questions.items}/>
+                <FrequentQuestions title={'Частые вопросы'} items={staticData.questions.items}/>
             </div>
         </PageWrapper>
     );

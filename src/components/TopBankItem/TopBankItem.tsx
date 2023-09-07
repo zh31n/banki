@@ -1,39 +1,53 @@
 import React from 'react';
 import s from './TopBankItem.module.scss';
+import {DepositCardInterface} from "@/core/api/Deposits";
 
-type Props = {
-    item: {
-        title: string
-        sub: string
-        stavka: number
-        time: number | string
-        money: string
-        osob?: string
-    }
+
+interface TopBankItemProps {
+    item: DepositCardInterface;
 }
 
-const TopBankItem = ({item}: Props) => {
+const features = 'онлайн';
+
+const TopBankItem = (props: TopBankItemProps) => {
+    const {
+        item: {
+            id,
+            bank_id,
+            name,
+            rating,
+            rate,
+            min_amount,
+            max_amount,
+            timeframe_min,
+            timeframe_max,
+            description,
+        }
+    } = props;
+
     return (
         <div className={s.item}>
             <div className={s.title}>
-                <div>{item.title}</div>
-                <span>{item.sub}</span>
+                {/* TODO bank name instead deposit name*/}
+                <div>{name}</div>
+                <span>{description}</span>
             </div>
             <div className={s.info}>
                 <div>Эффективная ставка</div>
-                <span>{item.stavka === 0 ? '' : 'до'} {item.stavka} %</span>
+                <span>до {rate} %</span>
             </div>
             <div className={s.info}>
                 <div>Срок</div>
-                <span>{item.time} дн.</span>
+                <span>{timeframe_min} дн.</span>
             </div>
             <div className={s.info}>
                 <div>Сумма</div>
-                <span>{item.money} ₽</span>
+                <span>{min_amount} ₽</span>
             </div>
             <div className={s.info}>
-                <div>{item.osob ? 'Особенности' : ''}</div>
-                <span>{item.osob}</span>
+                {/* TODO features when api is ready*/}
+                <div>{features ? 'Особенности' : ''}</div>
+                <span>{features}</span>
             </div>
         </div>
 

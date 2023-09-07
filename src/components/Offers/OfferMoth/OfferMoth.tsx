@@ -3,8 +3,9 @@ import s from './OfferMoth.module.scss';
 import arr_l from "@/assets/icons/banki_icon/Стрелка_left.svg";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
 import Image, {StaticImageData} from "next/image";
-import OfferMothItemsMap from "@/components/Offers/OfferMothItemsMap/OfferMothItemsMap";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
+import OfferItem from "@/components/Offers/OfferItem/OfferItem";
+import {DepositCardInterface} from "@/core/api/Deposits";
 
 type offers = {
     img: StaticImageData
@@ -21,26 +22,31 @@ type ItemT = {
     name: string
     active: boolean
 }
-type Props = {
-    choiseItems?: ItemT[]
-    offers: offers[]
+type OfferMonthProps = {
+    choiceItems?: ItemT[]
+    offers: DepositCardInterface[]
 }
 
 
-const OfferMoth = ({choiseItems, offers}: Props) => {
+const OfferMonth = (props: OfferMonthProps) => {
+    const {
+        choiceItems,
+        offers,
+    } = props;
+
     return (
         <div className={s.offer_month}>
             <div className={s.title}>Предложения <span>месяца</span></div>
-            {(choiseItems && choiseItems.length !== 0) && <div className={s.select_items}>
-                <ChoiseItemsMap choiseItems={choiseItems}/>
-            </div>}
+            {/*{(choiseItems && choiseItems.length !== 0) && <div className={s.select_items}>*/}
+            {/*    <ChoiseItemsMap choiseItems={choiseItems}/>*/}
+            {/*</div>}*/}
             <div className={s.offer_cont}>
                 <Image className={s.arr} alt={'icon'} src={arr_l}/>
-                <OfferMothItemsMap offers={offers}/>
+                {offers.map((item) => <OfferItem item={item} key={item.id}/>)}
                 <Image className={s.arr} alt={'icon'} src={arr_r}/>
             </div>
         </div>
     );
 };
 
-export default OfferMoth;
+export default OfferMonth;

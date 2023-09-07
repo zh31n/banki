@@ -5,29 +5,37 @@ import ques_I from '@/assets/icons/banki_icon/Question_i.svg';
 import dang_i from '@/assets/icons/banki_icon/Danger_i.svg';
 import arr_d from '@/assets/icons/Arrow_d.svg';
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import {DepositCardInterface} from "@/core/api/Deposits";
+import mockBankImage from "@/assets/icons/banki_icon/loco.svg";
 
-type Props = {
-    name: string
-    sub: string
-    stavka: string
-    time: string
-    money: string
-    img: StaticImageData
-    charcs: string[]
-    btn?: string
-    count?: string
+interface DepositOfferItemProps {
+    item: DepositCardInterface;
 }
 
+const DepositOfferItem = (props: DepositOfferItemProps) => {
+    const {
+        item: {
+            id,
+            bank_id,
+            name,
+            rating,
+            rate,
+            min_amount,
+            max_amount,
+            timeframe_min,
+            timeframe_max,
+            description,
+        }
+    } = props;
 
-const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn, count}: Props) => {
     return (
         <div className={s.item}>
             <div className={s.up}>
                 <div className={s.info}>
-                    <Image src={img} alt={'иконка банка'}/>
+                    <Image src={mockBankImage} alt={'иконка банка'}/>
                     <div className={s.name}>
                         <div>{name}</div>
-                        <span>{sub}</span>
+                        <span>{description}</span>
                     </div>
                     <div className={s.about_b}>
                         <div className={s.info_item}>
@@ -35,19 +43,19 @@ const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn, cou
                                 Ставка
                                 <Image src={ques_I} alt={'иконка вопроса'}/>
                             </div>
-                            <span>{stavka}%</span>
+                            <span>{rate}%</span>
                         </div>
-                        {time !== '' && <div className={s.info_item}>
+                        <div className={s.info_item}>
                             <div className={s.title}>
                                 Срок
                             </div>
-                            <span>{time}</span>
-                        </div>}
+                            <span>{timeframe_min} — {timeframe_max} дн.</span>
+                        </div>
                         <div className={s.info_item}>
                             <div className={s.title}>
                                 Сумма
                             </div>
-                            <span>{money} ₽</span>
+                            <span>{min_amount} — {max_amount} ₽</span>
                         </div>
                     </div>
                 </div>
@@ -57,15 +65,15 @@ const DepositOfferItem = ({name, charcs, sub, money, time, img, stavka, btn, cou
             </div>
             <div className={s.down}>
                 <div className={s.count}>
-                    {!count ? 'Ещё 12 вкладов' : count}
+                    Ещё {12} вкладов
                     <Image src={arr_d} alt={'иконка стрелочки вниз'}/>
                 </div>
                 <div className={s.blue_charc}>
-                    {charcs.map((el, index) => {
+                    {['Партнер раздела'].map((el, index) => {
                         if (el !== '') return <BlueBtn key={index} text={el} width={147} height={36} fSize={14}/>
                     })}
                 </div>
-                <BlueBtn text={!btn ? 'Открыть вклад' : btn} width={222} fSize={20}/>
+                <BlueBtn text={'Открыть вклад'} width={222} fSize={20}/>
             </div>
         </div>
     );

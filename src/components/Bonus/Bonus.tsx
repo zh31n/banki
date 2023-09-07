@@ -3,14 +3,14 @@ import s from './Bonus.module.scss';
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
 import Image, {StaticImageData} from "next/image";
 
-type Props = {
+interface BonusProps {
     title?: string
     img?: StaticImageData
     text?: string
     height?: number
 }
 
-const Bonus = ({title, img, text, height}: Props) => {
+const Bonus = ({title, img, text, height}: BonusProps) => {
     return (
         <div className={s.bonus} style={{height: `${height}px`}}>
             {img

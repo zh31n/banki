@@ -1,20 +1,12 @@
 import React from 'react';
 import s from './SpecialOffersDeposit.module.scss';
 import SpecialOfferItem from "@/components/Offers/SpecialOfferItem/SpecialOfferItem";
-import {StaticImageData} from "next/image";
+import {DepositCardInterface} from "@/core/api/Deposits";
 
-type offerI = {
-    name: string
-    img: StaticImageData
-    bankImg: StaticImageData
-    bonus: string
-    bet: number
-    days: string
+interface SpecialOffersDepositProps {
+    deposits: DepositCardInterface[]
 }
-type Props = {
-    items:offerI[]
-}
-const SpecialOffersDeposit = ({items}:Props) => {
+const SpecialOffersDeposit = ({deposits}: SpecialOffersDepositProps) => {
     return (
         <div className={s.wrapper}>
             <div className={s.title}>
@@ -22,8 +14,7 @@ const SpecialOffersDeposit = ({items}:Props) => {
                 предложения
             </div>
             <div className={s.itemsCont}>
-                {items.map((el, index:number) => <SpecialOfferItem name={el.name} img={el.img} bankImg={el.bankImg}
-                                                            bonus={el.bonus} bet={el.bet} days={el.days} key={index}/>)}
+                {deposits.map((item) => <SpecialOfferItem item={item} key={item.id}/>)}
             </div>
         </div>
     );

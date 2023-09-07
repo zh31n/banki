@@ -6,8 +6,7 @@ import absolut from '@/assets/icons/absolute_big.svg';
 import {StaticImageData} from "next/image";
 import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
 import PopularOffers from "@/screens/DepositsPage/components/PopularOffers/PopularOffers";
-import OfferMoth from "@/components/Offers/OfferMoth/OfferMoth";
-import offerMoth from "@/components/Offers/OfferMoth/OfferMoth";
+import OfferMonth from "@/components/Offers/OfferMoth/OfferMoth";
 import Mailing from "@/components/Mailing/Mailing";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import SpecialOffersDeposit from "@/screens/DepositsPage/components/SpecialOffersDeposit/SpecialOffersDeposit";
@@ -15,6 +14,7 @@ import Communicate from "@/components/Communicate/Communicate";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopBanks from "@/components/TopBanks/TopBanks";
+import {DepositCardInterface} from "@/core/api/Deposits";
 
 type offerT = {
     name: string
@@ -64,8 +64,9 @@ type banksT = {
     money: string
     osob?: string
 }
-type Props = {
-    data: {
+interface DepositsPageProps {
+    deposits: DepositCardInterface[];
+    staticData: {
         offersBanks: offerT[],
         PopularOffers: OfferItem[],
         offersMoth: OfferMoths[],
@@ -74,22 +75,34 @@ type Props = {
         Topbanks: banksT[]
     }
 }
-const DepositsPage = ({data}: Props) => {
+const DepositsPage = (props: DepositsPageProps) => {
+    const {
+        deposits,
+        staticData,
+    } = props;
+    const bonus = deposits[0];
+
     return (
         <PageWrapper>
             <IntroDeposits/>
-            <Bonus title={'Вклад 10% на 3 года'} img={absolut}/>
-            <OffersBanks deposits={data.offersBanks} title={'943 вклада'} sub={' подобрано'}
+            {bonus && (
+                <Bonus
+                    title={`Вклад ${bonus.rate}% на ${Math.floor(bonus.timeframe_max/365)} года`}
+                    text={bonus.description}
+                    img={absolut}
+                />
+            )}
+            <OffersBanks deposits={deposits} title={'943 вклада'} sub={' подобрано'}
                          options={['По популярности']}/>
-            <PopularOffers data={data.PopularOffers}/>
-            <OfferMoth offers={data.offersMoth}/>
+            <PopularOffers data={staticData.PopularOffers}/>
+            <OfferMonth offers={deposits}/>
             <Mailing/>
             <LatestNews/>
-            <SpecialOffersDeposit items={data.specialOffers}/>
+            <SpecialOffersDeposit deposits={deposits}/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о вкладах'}/>
-            <FrequentQuestions title={'Частые вопросы'} items={data.questData}/>
-            <TopBanks banks={data.Topbanks} title={''} sub={''}/>
+            <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
+            <TopBanks banks={deposits}/>
         </PageWrapper>
     );
 };

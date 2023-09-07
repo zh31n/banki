@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 
 
-export default function RootLayout({children}: { children: React.ReactNode; }) {
+function RootLayout({children}: { children: React.ReactNode; }) {
     return (
         <html lang="ru">
         <body>
@@ -23,3 +23,12 @@ export default function RootLayout({children}: { children: React.ReactNode; }) {
         </html>
     );
 }
+
+RootLayout.getInitialProps = async (appContext) => {
+    // calls page's `getInitialProps` and fills `appProps.pageProps`
+    const appProps = await RootLayout.getInitialProps(appContext);
+
+    return { ...appProps };
+};
+
+export default RootLayout;

@@ -187,7 +187,7 @@ const data = {
                 {title: 'Вклады по специальным предложениям застрахованы?', text: ''},
             ]
         },
-        choises: [
+        choices: [
             {name: 'Все', active: true},
             {name: 'Вклады', active: false},
             {name: 'Потребительские кредиты', active: false},

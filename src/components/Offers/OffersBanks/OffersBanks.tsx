@@ -2,29 +2,25 @@ import React from 'react';
 import s from './OffersBanks.module.scss';
 import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
-import DepositItemsMap from "@/components/Deposit/DepositItemsMap/DepositItemsMap";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
-import {StaticImageData} from "next/image";
+import DepositOfferItem from "@/components/Deposit/DepositOfferItem/DepositOfferItem";
+import {DepositCardInterface} from "@/core/api/Deposits";
 
-type dep = {
-    name: string
-    sub: string
-    stavka: string
-    time: string
-    money: string
-    img: StaticImageData
-    charcs: string[]
-    btn?:  string
-    count?: string
-}
-type Props = {
-    deposits: dep[]
+interface OfferBanksProps {
+    deposits: DepositCardInterface[]
     title: string
     sub: string
     options: string[]
 }
 
-const OffersBanks = ({deposits, options, title, sub}: Props) => {
+const OffersBanks = (props: OfferBanksProps) => {
+    const {
+        deposits,
+        options,
+        title,
+        sub,
+    } = props;
+
     return (
         <div className={s.deposits}>
             <div className={s.title}>
@@ -35,7 +31,7 @@ const OffersBanks = ({deposits, options, title, sub}: Props) => {
                 <CustomSelect img={lines} options={options}/>
             </div>
             <div className={s.deposit_offers}>
-                <DepositItemsMap deposits={deposits}/>
+                {deposits.map((item) => <DepositOfferItem item={item} key={item.id} />)}
             </div>
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все'} width={235}/>
