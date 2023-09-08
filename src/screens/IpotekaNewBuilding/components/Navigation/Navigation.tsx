@@ -13,7 +13,7 @@ const Navigation = () => {
                 <p className={styles.text_grey}>Новостройки</p>
             </div>
             <div className={styles.text_container}>
-                <p className={styles.text}>Ипотека на новостройку<br/><span>в Москве</span></p>
+                <p className={styles.text}>Ипотека на новостройку<br/> <span>в Москве</span></p>
                 <p className={styles.little_text}>Получите одобрение ипотеки и самую выгодную ставку. <br/> Заполните
                     анкету, чтобы получить предложения банков и отправить заявку <br/> на одобрение в один клик.</p>
             </div>
