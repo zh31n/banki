@@ -12,7 +12,7 @@ const MobileHeader = () => {
     const [visible, setVisible] = useState<boolean>(false);
     const setVisNav = () => setVisible(!visible)
     useEffect(() => {
-        visible && setTimeout(setVisNav, 20000)
+        visible && setTimeout(setVisNav, 5000)
     }, [visible])
 
     return (
