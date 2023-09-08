@@ -74,7 +74,7 @@ const navigation = {
     business: [
         [
             {text: 'Все продукты', link: '/business'},
-            {text: 'Расчётно-кассовое обслуживание', link: '/business'},
+            {text: 'Расчётно-кассовое обслуживание', link: '/business/service'},
             {text: 'Бизнес-карты', link: '/business'},
         ],
         [
@@ -93,7 +93,7 @@ const navigation = {
             {text: 'Аналитические исследования', link: '/news'},
             {text: 'Банковский словарь', link: '/news'},
         ],
-    ]
+    ],
 }
 
 

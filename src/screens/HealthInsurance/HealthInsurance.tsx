@@ -44,7 +44,7 @@ const HealthInsurance = ({data}: Props) => {
         <PageWrapper>
             <IntroHealth items={data.chooseIntro}/>
             <Bonus title={'Кэшбэк 20% за страхование ипотеки'} text={'Получите до 4000 рублей на карту'}/>
-            <InsuranceCompanys data={data.sliderItems}/>
+            <InsuranceCompanys isTitle={true} data={data.sliderItems}/>
             <OffersBanks dataMap={data.offersItems}/>
             <LatestNews/>
             <Feedback sub={' о страховании жизни'} title={'Отзывы'}/>

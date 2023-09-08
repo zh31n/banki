@@ -20,7 +20,7 @@ export default function InsuranceOSAGOPage(){
 
     return <PageWrapper>
         <IntroInsuranceOsago/>
-        <InsuranceCompanys data={data.InsurancePage.banksSlideItems} />
+        <InsuranceCompanys isTitle={true} data={data.InsurancePage.banksSlideItems} />
         <LastBuy />
         <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap}/>
         <LatestNews />

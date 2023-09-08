@@ -66,7 +66,6 @@ const navigation = {
     ],
     investment: [
         [
-            // {text: 'Инвестиции', link: '/investment'},
             {text: 'Все продукты', link: '/investment'},
             {text: 'Расчётно-кассовое обслуживание', link: '/investment'},
             {text: 'Бизнес-карты', link: '/investment'},
@@ -79,7 +78,7 @@ const navigation = {
     business: [
         [
             {text: 'Все продукты', link: '/business'},
-            {text: 'Расчётно-кассовое обслуживание', link: '/business'},
+            {text: 'Расчётно-кассовое обслуживание', link: '/business/service'},
             {text: 'Бизнес-карты', link: '/business'},
         ],
         [
