@@ -51,12 +51,12 @@ const navigation = {
         [
             {text: 'ОСАГО', link: '/insurance/osago'},
             {text: 'КАСКО', link: '/insurance/kasco'},
-            {text: 'Путешествие', link: '/insurance'},
-            {text: 'Жизнь и здоровье', link: '/insurance'},
+            {text: 'Путешествие', link: '/insurance/travel'},
+            {text: 'Жизнь и здоровье', link: '/insurance/health'},
         ],
         [
-            {text: 'Ипотечное страхование', link: '/insurance'},
-            {text: 'ДМС', link: '/insurance'},
+            {text: 'Ипотечное страхование', link: '/insurance/ipot-ins'},
+            {text: 'ДМС', link: '/insurance/dms'},
             {text: 'Все предложения', link: '/insurance'}
         ]
     ],

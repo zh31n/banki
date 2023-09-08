@@ -20,7 +20,7 @@ const Header = () => {
     const pathName = usePathname();
     const onMouseNav = (name: string) => {
         setCurrentLink(name)
-        name === 'Ещё' ? setVis(false) :setVis(true)
+        name === 'Ещё' ? setVis(false) : setVis(true)
     }
     const [currentLink, setCurrentLink] = useState<string>('')
     const [vis, setVis] = useState<boolean>(false)
@@ -36,13 +36,13 @@ const Header = () => {
         {name: 'Ещё', id: 9, link: '/more'}
     ];
     const navMap = navItems.map(el => {
-            return <p
-                key={el.id}
-                className={pathName.includes(el.link) ? s.nav_item_active : s.nav_item}
-                onMouseEnter={() => onMouseNav(el.name)}
-            >
-                {el.name}
-            </p>
+        return <p
+            key={el.id}
+            className={pathName.includes(el.link) ? s.nav_item_active : s.nav_item}
+            onMouseEnter={() => onMouseNav(el.name)}
+        >
+            {el.name}
+        </p>
     })
 
     return (
