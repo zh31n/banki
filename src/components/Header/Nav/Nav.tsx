@@ -4,47 +4,46 @@ import navigate from "@/core/data/navigate";
 import Link from "next/link";
 
 const Nav = ({path, setActive}: { path: string, setActive: React.Dispatch<React.SetStateAction<boolean>> }) => {
+    const DepositMap = navigate.deposits.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    });
+    const CreditsMap = navigate.credits.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    });
+    const IpotekaMap = navigate.ipoteka.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    });
+    const CardsMap = navigate.cards.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    });
+    const InsuranceMap = navigate.insurance.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    });
+    const InvestmentMap = navigate.investment.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
+        </div>
+    });
 
-    const DepositMap = navigate.deposits.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
-        </div>
-    });
-    const CreditsMap = navigate.credits.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
-        </div>
-    });
-    const IpotekaMap = navigate.ipoteka.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
-        </div>
-    });
-    const CardsMap = navigate.cards.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
-        </div>
-    });
-    const InsuranceMap = navigate.insurance.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
-        </div>
-    });
-    const InvestmentMap = navigate.investment.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
-        </div>
-    });
-
-    const BusunesMap = navigate.business.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
+    const BusunesMap = navigate.business.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
         </div>
     })
 
-    const NewsMap = navigate.news.map(el => {
-        return <div className={styles.column}>
-            {el.map(el => <Link href={el.link} className={styles.link}>{el.text}</Link>)}
+    const NewsMap = navigate.news.map((el, index) => {
+        return <div key={index} className={styles.column}>
+            {el.map((el, index) => <Link key={index} href={el.link} className={styles.link}>{el.text}</Link>)}
         </div>
     })
 

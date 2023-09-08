@@ -13,12 +13,12 @@ type Props = {
 
 const FrequentQuestions = ({title, items}: Props) => {
 
-    const questItems = items.map((el, index) => <QuestionItem key={index} item={el}/>)
-
     return (
         <div className={s.quests}>
             <div className={s.title}>{title}</div>
-            <div className={s.questItems}>{questItems}</div>
+            <div className={s.questItems}>
+                {items.map((el, index) => <QuestionItem key={index} item={el}/>)}
+            </div>
         </div>
     );
 };

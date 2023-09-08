@@ -4,31 +4,24 @@ import {ApiResponseInterface} from "./interface";
 
 const NEWS_API_URL = 'news';
 
-export interface GetDepositsParams {
-    amount?: number;
-    bank?: string;
-    timeframe?: number;
+export interface GetNewsParams {
+    search?: string;
 }
 
-export interface DepositCardInterface {
+export interface NewsInterface {
+    title: string;
+    text: string;
+    image: string;
     id: number;
-    bank_id: number;
-    name: string;
-    rating: number;
-    rate: number;
-    min_amount: number;
-    max_amount: number;
-    timeframe_min: number;
-    timeframe_max: number;
-    description: string;
+    subtitle: string;
 }
 
-export interface DepositsResponseInterface extends ApiResponseInterface {
-    cards: DepositCardInterface[];
+export interface NewsResponseInterface extends ApiResponseInterface {
+    cards: NewsInterface[];
 }
 
-export const GET_DEPOSITS = (params: GetDepositsParams = {}): Promise<DepositsResponseInterface> => {
-    return Api.get<any, DepositsResponseInterface>(`${DEPOSITS_API_URL}`, {
+export const GET_NEWS = (params: GetNewsParams = {}): Promise<NewsResponseInterface> => {
+    return Api.get<any, NewsResponseInterface>(`${NEWS_API_URL}`, {
         params: {
             ...params,
         }

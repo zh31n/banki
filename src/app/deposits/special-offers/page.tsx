@@ -1,30 +1,32 @@
-"use client"
-
+import React from "react";
 import {Metadata} from "next";
 import SpecialOffersPage from "@/screens/SpecialOffersPage/SpecialOffersPage";
 import data from "@/core/data";
-import {DepositsResponseInterface, GET_DEPOSITS} from "../../../core/api/Deposits";
-import {useEffect, useState} from "react";
+import {DepositCardInterface, DepositsResponseInterface, GET_DEPOSITS} from "@/core/api/Deposits";
 
 export const metadata: Metadata = {
     title: 'Специальные предложения',
 }
 
-const SpecialOffers = (props) => {
-    const [deposits, setDeposits] = useState([]);
+interface Data {
+    deposits: DepositCardInterface[];
+}
 
-    const getDeposits = async () => {
-        const deposits: DepositsResponseInterface = (await GET_DEPOSITS());
-        setDeposits(deposits.cards)
+const getData = async (): Promise<Data> => {
+    const deposits: DepositsResponseInterface = (await GET_DEPOSITS());
+
+    return {
+        deposits: deposits.cards,
     }
+}
 
-    useEffect(() => {
-        getDeposits();
-    }, [])
+
+export default async function SpecialOffers() {
+    const {
+        deposits,
+    } = await getData();
 
     return (
         <SpecialOffersPage deposits={deposits} staticData={data.SpecialOffer}/>
     )
 }
-
-export default SpecialOffers;

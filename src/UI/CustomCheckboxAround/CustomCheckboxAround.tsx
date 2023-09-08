@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import s from './CustomCheckboxAround.module.scss';
 
@@ -8,7 +10,7 @@ type Props = {
 const CustomCheckboxAround = ({type,checked}: Props) => {
     return (
         <>
-            <input type={type ? type : 'checkbox'} checked={checked} className={s.inp}/>
+            <input type={type ? type : 'checkbox'} checked={checked} onChange={() => {}} className={s.inp}/>
         </>
     );
 };

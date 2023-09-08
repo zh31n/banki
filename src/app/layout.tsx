@@ -1,4 +1,3 @@
-
 import "./globals.scss";
 import type {Metadata} from "next";
 import Header from "@/components/Header/Header";
@@ -9,8 +8,6 @@ export const metadata: Metadata = {
     title: "Главная",
     description: "Главная страница банков",
 };
-
-
 
 function RootLayout({children}: { children: React.ReactNode; }) {
     return (
@@ -23,12 +20,5 @@ function RootLayout({children}: { children: React.ReactNode; }) {
         </html>
     );
 }
-
-RootLayout.getInitialProps = async (appContext) => {
-    // calls page's `getInitialProps` and fills `appProps.pageProps`
-    const appProps = await RootLayout.getInitialProps(appContext);
-
-    return { ...appProps };
-};
 
 export default RootLayout;

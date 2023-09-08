@@ -15,6 +15,8 @@ import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopBanks from "@/components/TopBanks/TopBanks";
 import {DepositCardInterface} from "@/core/api/Deposits";
+import {NewsInterface} from "@/core/api/News";
+import {GetServerSideProps} from "next";
 
 type offerT = {
     name: string
@@ -66,6 +68,7 @@ type banksT = {
 }
 interface DepositsPageProps {
     deposits: DepositCardInterface[];
+    news: NewsInterface[];
     staticData: {
         offersBanks: offerT[],
         PopularOffers: OfferItem[],
@@ -78,6 +81,7 @@ interface DepositsPageProps {
 const DepositsPage = (props: DepositsPageProps) => {
     const {
         deposits,
+        news,
         staticData,
     } = props;
     const bonus = deposits[0];
@@ -97,7 +101,7 @@ const DepositsPage = (props: DepositsPageProps) => {
             <PopularOffers data={staticData.PopularOffers}/>
             <OfferMonth offers={deposits}/>
             <Mailing/>
-            <LatestNews/>
+            <LatestNews news={news}/>
             <SpecialOffersDeposit deposits={deposits}/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о вкладах'}/>

@@ -12,7 +12,10 @@ import TopBanks from "@/components/TopBanks/TopBanks";
 import loco from "@/assets/icons/banki_icon/loco.svg";
 import sber from "@/assets/icons/banki_icon/sber.svg";
 import {StaticImageData} from "next/image";
-
+import IntroDeposits from "@/screens/DepositsPage/components/IntroDeposits/IntroDeposits";
+import absolut from "@/assets/icons/absolute_big.svg";
+import {DepositCardInterface} from "@/core/api/Deposits";
+import {NewsInterface} from "@/core/api/News";
 
 type offersT = {
     name: string
@@ -33,39 +36,41 @@ type banksT = {
     money: string
     osob: string
 }
-type depositsT = {
-    name: string
-    sub: string
-    stavka: string
-    time: string
-    money: string
-    img: StaticImageData
-    charcs: string[]
-}
 type ItemT = {
     title: string
     text: string
 }
-type Props = {
-    data: {
-        deposits: depositsT[]
+
+interface SavingAccountsPageProps {
+    deposits: DepositCardInterface[];
+    staticData: {
         questions: questT
         offers: offersT[]
         banks: banksT[]
     }
 }
 
+const SavingAccountsPage = (props: SavingAccountsPageProps) => {
+    const {
+        deposits,
+        staticData,
+    } = props;
+    const bonus = deposits[0];
 
-const SavingAccountsPage = ({data}: Props) => {
     return (
         <PageWrapper>
             <Intro/>
-            <Bonus/>
-            <OffersBanks deposits={data.deposits} options={['По популярности']} title={'943 вклада'} sub={' подобрано'}/>
-            <OfferMoth offers={data.offers}/>
+            {bonus && (
+                <Bonus
+                    title={`Бонус до ${bonus.min_amount} рублей за открытие вклада!`}
+                    text={bonus.description}
+                />
+            )}
+            <OffersBanks deposits={deposits} options={['По популярности']} title={'943 вклада'} sub={' подобрано'}/>
+            <OfferMoth offers={deposits}/>
             <Feedback title={'Отзывы'} sub={' о вкладах'}/>
-            <FrequentQuestions title={'Частые вопросы'} items={data.questions.items}/>
-            <TopBanks banks={data.banks}/>
+            <FrequentQuestions title={'Частые вопросы'} items={staticData.questions.items}/>
+            <TopBanks banks={deposits}/>
         </PageWrapper>
     );
 };
