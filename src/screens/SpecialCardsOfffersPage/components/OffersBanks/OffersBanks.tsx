@@ -20,16 +20,18 @@ type offerT = {
 }
 type Props = {
     dataMap: offerT[]
+    title?: string
 }
-const OffersBanks = ({dataMap}: Props) => {
+const OffersBanks = ({dataMap, title}: Props) => {
 
     return (
         <div className={styles.container}>
+            {title ? <div className={styles.title}>{title}</div> : ''}
             <div className={styles.map_cont}>
                 {dataMap.map(el => <Items
                     img={el.img} sub={el.sub} name={el.name} imgBank={el.imgBank} t2={el.t2}
-                                          t1={el.t1} info={el.info} c2={el.c2}
-                                          c1={el.c1} btntxt={el.btntxt}/>)}
+                    t1={el.t1} info={el.info} c2={el.c2}
+                    c1={el.c1} btntxt={el.btntxt}/>)}
                 <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
                 <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
             </div>

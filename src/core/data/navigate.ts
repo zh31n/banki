@@ -75,11 +75,11 @@ const navigation = {
         [
             {text: 'Все продукты', link: '/business'},
             {text: 'Расчётно-кассовое обслуживание', link: '/business/service'},
-            {text: 'Бизнес-карты', link: '/business'},
+            {text: 'Бизнес-карты', link: '/business/slips'},
         ],
         [
-            {text: 'Кредиты для ИП', link: '/business'},
-            {text: 'Страхование бизнеса', link: '/business'},
+            {text: 'Кредиты для ИП', link: '/business/payments'},
+            {text: 'Страхование бизнеса', link: '/business/assurance'},
         ],
     ],
     news: [

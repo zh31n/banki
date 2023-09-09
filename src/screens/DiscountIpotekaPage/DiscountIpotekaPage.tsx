@@ -23,7 +23,7 @@ const DiscountIpotekaPage = () => {
         <IntroMortgageDiscount items={chooseItems}/>
         <Items />
         <Bonus />
-        <OffersBanks deposits={deposits} sub={' предложения'}  title={'223'} options={['Ставка']}/>
+        <OffersBanks isSelect={true} deposits={deposits} sub={' предложения'}  title={'223'} options={['Ставка']}/>
         <OffersMonth />
         <Feedback title={'Отзывы '} sub={'об ипотеке'} />
         <FrequentQuestions title={'Важная информация'} items={dataMap} />

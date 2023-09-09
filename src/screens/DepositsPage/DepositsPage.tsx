@@ -79,7 +79,7 @@ const DepositsPage = ({data}: Props) => {
         <PageWrapper>
             <IntroDeposits/>
             <Bonus title={'Вклад 10% на 3 года'} img={absolut}/>
-            <OffersBanks deposits={data.offersBanks} title={'943 вклада'} sub={' подобрано'}
+            <OffersBanks isSelect={true} deposits={data.offersBanks} title={'943 вклада'} sub={' подобрано'}
                          options={['По популярности']}/>
             <PopularOffers data={data.PopularOffers}/>
             <OfferMoth offers={data.offersMoth}/>

@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React, {useEffect} from 'react';
 import s from './OffersBanks.module.scss';
 import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
@@ -22,9 +24,12 @@ type Props = {
     title: string
     sub: string
     options: string[]
+    isSelect: boolean
 }
 
-const OffersBanks = ({deposits, options, title, sub}: Props) => {
+const OffersBanks = ({deposits, options, title, sub,isSelect}: Props) => {
+
+
     return (
         <div className={s.deposits}>
             <div className={s.title}>
@@ -32,7 +37,7 @@ const OffersBanks = ({deposits, options, title, sub}: Props) => {
                         <mark>{title}</mark>
                         {sub}
                     </span>
-                <CustomSelect img={lines} options={options}/>
+                {isSelect && <CustomSelect img={lines} options={options}/>}
             </div>
             <div className={s.deposit_offers}>
                 <DepositItemsMap deposits={deposits}/>

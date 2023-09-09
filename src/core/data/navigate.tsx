@@ -10,7 +10,6 @@ const navigation = {
     ],
     credits: [
         [
-            {text: 'Кредиты', link: '/credits'},
             {text: 'Мастер подбора кредитов', link: '/credits/autocredit'},
             {text: 'Потребительские кредиты', link: '/credits/consumer-credits'},
             {text: 'Рефинансирование', link: '/credits/refinancing-credits'},
@@ -25,7 +24,6 @@ const navigation = {
     ],
     cards: [
         [
-
             {text: 'Кредитные карты', link: '/cards/credit-cards'},
             {text: 'Карты рассрочки', link: '/cards/installment'},
             {text: 'Дебетовые карты', link: '/cards/debit-cards'},
@@ -37,8 +35,7 @@ const navigation = {
     ],
     ipoteka: [
         [
-            {text: 'Ипотека', link: '/ipoteka'},
-            {text: 'Мастер подбора кредитов', link: '/ipoteka/offers'},
+            {text: 'Мастер подбора кредитов', link: '/ipoteka'},
             {text: 'Ипотечные кредиты', link: '/ipoteka/credits'},
             {text: 'Ипотечное страхование', link: '/insurance'},
             {text: 'Спецпредложения', link: '/ipoteka/special-offers'},
@@ -52,7 +49,6 @@ const navigation = {
     ],
     insurance: [
         [
-            {text: 'Страхование', link: '/insurance'},
             {text: 'ОСАГО', link: '/insurance/osago'},
             {text: 'КАСКО', link: '/insurance/kasco'},
             {text: 'Путешествие', link: '/insurance/travel'},
@@ -79,11 +75,11 @@ const navigation = {
         [
             {text: 'Все продукты', link: '/business'},
             {text: 'Расчётно-кассовое обслуживание', link: '/business/service'},
-            {text: 'Бизнес-карты', link: '/business'},
+            {text: 'Бизнес-карты', link: '/business/slips'},
         ],
         [
-            {text: 'Кредиты для ИП', link: '/business'},
-            {text: 'Страхование бизнеса', link: '/business'},
+            {text: 'Кредиты для ИП', link: '/business/payments'},
+            {text: 'Страхование бизнеса', link: '/business/assurance'},
         ],
     ],
     news: [
@@ -97,8 +93,8 @@ const navigation = {
             {text: 'Аналитические исследования', link: '/news'},
             {text: 'Банковский словарь', link: '/news'},
         ],
-    ]
+    ],
 }
 
 
-export default navigation
+export default navigation;
