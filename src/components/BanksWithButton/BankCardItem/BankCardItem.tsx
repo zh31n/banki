@@ -1,13 +1,25 @@
 import React from 'react';
-import styles from './Items.module.scss'
+import styles from './BankCardItem.module.scss'
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import {CardInterface} from "@/core/api/Cards";
 
-const Items = () => {
+interface BankCardItemProps {
+    item: CardInterface;
+}
+
+const BankCardItem = (props: BankCardItemProps) => {
+    const {
+        item: {
+            name,
+            form,
+        }
+    } = props;
+
     return (
         <div className={styles.main_container}>
             <div className={styles.text_container}>
-                Лого-Банк
-                <span>Добро пожаловать. Локо</span>
+                {name}
+                <span>{form}</span>
             </div>
             <div className={styles.period_container}>
                 <p className={styles.blue_text}>Льготный период</p>
@@ -26,4 +38,4 @@ const Items = () => {
     );
 };
 
-export default Items;
+export default BankCardItem;

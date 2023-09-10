@@ -2,7 +2,7 @@ import React from 'react';
 import {Metadata} from "next";
 import DepositsPage from "@/screens/DepositsPage/DepositsPage";
 import data from "@/core/data";
-import {DepositCardInterface, DepositsResponseInterface, GET_DEPOSITS} from "../../core/api/Deposits";
+import {DepositCardInterface, DepositsResponseInterface, GET_DEPOSITS} from "@/core/api/Deposits";
 import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/api/News";
 
 export const metadata: Metadata = {
@@ -23,7 +23,6 @@ const getData = async (): Promise<Data> => {
         news: news.cards,
     }
 }
-
 
 export default async function Deposits() {
     const {

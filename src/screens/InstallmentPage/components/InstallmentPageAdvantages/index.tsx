@@ -1,12 +1,21 @@
 import React from 'react';
-import styles from './Info.module.scss'
-import data from "@/core/data";
+import styles from './index.module.scss'
 
-const Info = () => {
-    const mapData = data.InstallmentPage.info
+interface InstallmentPageAdvantagesProps {
+    advantages: {
+        title: string;
+        text: string;
+    }[];
+}
+
+const InstallmentPageAdvantages = (props: InstallmentPageAdvantagesProps) => {
+    const {
+        advantages,
+    } = props;
+
     return (
         <div className={styles.container}>
-            {mapData.map(el => <div>
+            {advantages.map(el => <div>
                 <p className={styles.bold_text}>{el.title}</p>
                 <p className={styles.text}>{el.text}</p>
             </div>)}
@@ -20,4 +29,4 @@ const Info = () => {
     );
 };
 
-export default Info;
+export default InstallmentPageAdvantages;

@@ -6,20 +6,29 @@ import CheckImage from '@/screens/CreditMapPage/components/OffersItem/CheckImage
 import Image from 'next/image'
 import BlueBtn from '@/UI/BlueBtn/BlueBtn'
 import warningImg from '@/assets/icons/warning_icon.png'
+import {CardInterface} from "@/core/api/Cards";
 
-const OffersItem = () => {
+interface OffersItemProps {
+    item: CardInterface;
+}
+
+const OffersItem = (props: OffersItemProps) => {
+    const {
+        item,
+    } = props;
+
     return (
         <div className={styles.main_container}>
             <div>
-                <Image src={cart} alt="Карта"/>
+                <Image src={item.image || cart} alt="Карта"/>
                 <div className={styles.count_cart}>
                     <p>Еще 2 карты</p>
                     <Arrow/>
                 </div>
             </div>
             <div className={styles.bank_container}>
-                <p className={styles.bold_text}>Промсвязьбанк</p>
-                <p className={styles.grey_text}>Твой банк</p>
+                <p className={styles.bold_text}>{item.name}</p>
+                <p className={styles.grey_text}>{item.form}</p>
             </div>
             <div className={styles.types_container}>
                 <div className={styles.top_container}>

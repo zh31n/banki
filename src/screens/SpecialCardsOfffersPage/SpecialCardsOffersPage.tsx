@@ -4,6 +4,7 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import React from "react";
 import OffersBanks from './components/OffersBanks/OffersBanks'
 import {StaticImageData} from "next/image";
+import {CardInterface} from "@/core/api/Cards";
 
 type questItem = {
     title: string
@@ -12,17 +13,24 @@ type questItem = {
 type offerT = {
     img: StaticImageData
 }
-type Props = {
-    data: {
+
+interface SpecialCardsOffersPageProps {
+    cards: CardInterface[];
+    staticData: {
         questData: questItem[]
         offers: offerT[]
     }
-
 }
-export default function SpecialCardsOffersPage({data}: Props) {
+
+export default function SpecialCardsOffersPage(props: SpecialCardsOffersPageProps) {
+    const {
+        cards,
+        staticData,
+    } = props;
+
     return <Wrapper>
         <Navigation/>
-        <OffersBanks dataMap={data.offers}/>
-        <FrequentQuestions title={'Частые вопросы'} items={data.questData}/>
+        <OffersBanks cards={cards}/>
+        <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
     </Wrapper>
 }

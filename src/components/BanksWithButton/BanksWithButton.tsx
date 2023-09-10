@@ -1,20 +1,28 @@
 import React from 'react';
 import styles from './BanksWithButton.module.scss'
-import Items from "@/components/BanksWithButton/Items/Items";
+import BankCardItem from "@/components/BanksWithButton/BankCardItem/BankCardItem";
+import {CardInterface} from "@/core/api/Cards";
 
-type Props = {
-    text: string
-    sub_value: string
+interface BanksWithButtonProps {
+    text: string;
+    sub_value: string;
+    cards: CardInterface[];
 }
 
-const BanksWithButton = ({text, sub_value}: Props) => {
+const BanksWithButton = (props: BanksWithButtonProps) => {
+    const {
+        text,
+        sub_value,
+        cards,
+    } = props;
+
     return (
         <div className={styles.main_container}>
             <div className={styles.text_container}>
                 <mark>{text}</mark> {sub_value}
             </div>
             <div className={styles.items_container}>
-                <Items/>
+                {cards.map((item) => <BankCardItem item={item}/>)}
             </div>
         </div>
     );

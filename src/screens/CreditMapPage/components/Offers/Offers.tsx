@@ -2,10 +2,17 @@ import React from "react";
 import styles from "./Offers.module.scss";
 import Image from "./Image";
 import OfferItem from "../OffersItem/OffersItem";
+import {CardInterface} from "@/core/api/Cards";
 
-type Props = {};
+interface OffersProps {
+    cards: CardInterface[];
+}
 
-const Offers = (props: Props) => {
+const Offers = (props: OffersProps) => {
+    const {
+        cards,
+    } = props;
+
   return (
     <div className={styles.main_container}>
       <div className={styles.count_container}>
@@ -18,7 +25,11 @@ const Offers = (props: Props) => {
           <p>Сравнение</p>
         </div>
       </div>
-      <OfferItem />
+        {cards.map((item) => {
+            return (
+                <OfferItem item={item}/>
+            )
+        })}
     </div>
   );
 };

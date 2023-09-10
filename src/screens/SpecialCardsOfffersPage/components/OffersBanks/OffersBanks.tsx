@@ -1,35 +1,23 @@
 import React from 'react';
 import styles from './OffersBanks.module.scss'
-import data from "@/core/data";
 import Items from "@/screens/SpecialCardsOfffersPage/components/OffersBanks/Items/Items";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
-import Image, {StaticImageData} from "next/image";
+import Image from "next/image";
 import image from "@/assets/icons/image.png"
+import {CardInterface} from "@/core/api/Cards";
 
-type offerT = {
-    img: StaticImageData
-    imgBank?: StaticImageData
-    name?: string
-    sub?: string
-    info?: string
-    t1?: string
-    t2?: string
-    c1?: string
-    c2?: string
-    btntxt?: string
+interface OffersBanksProps {
+    cards: CardInterface[];
 }
-type Props = {
-    dataMap: offerT[]
-}
-const OffersBanks = ({dataMap}: Props) => {
+const OffersBanks = (props: OffersBanksProps) => {
+    const {
+        cards,
+    } = props;
 
     return (
         <div className={styles.container}>
             <div className={styles.map_cont}>
-                {dataMap.map(el => <Items
-                    img={el.img} sub={el.sub} name={el.name} imgBank={el.imgBank} t2={el.t2}
-                                          t1={el.t1} info={el.info} c2={el.c2}
-                                          c1={el.c1} btntxt={el.btntxt}/>)}
+                {cards.map(item => <Items key={item.id} item={item}/>)}
                 <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
                 <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
             </div>

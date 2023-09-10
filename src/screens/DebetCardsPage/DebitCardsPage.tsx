@@ -10,20 +10,34 @@ import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import Communicate from "@/components/Communicate/Communicate";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import data from "@/core/data";
-import Сompilations from "@/screens/DebetCardsPage/components/Сompilations/Сompilations";
+import Compilations from "@/screens/DebetCardsPage/components/Сompilations/Сompilations";
+import {CardInterface} from "@/core/api/Cards";
+import {NewsInterface} from "@/core/api/News";
 
-export default function DebitCardsPage() {
-  const dataMap = data.DebitCardsPage.questData
-  return <Wrapper>
-    <Navigation/>
-    <Bonus/>
-    <Offers/>
-    <OffersMonth/>
-    <Mailing/>
-    <Сompilations/>
-    <LatestNews/>
-    <Communicate/>
-    <Feedback title={'Отзывы '} sub={'о дебетовых картах'}/>
-    <FrequentQuestions title={'Важная информация'} items={dataMap}/>
-  </Wrapper>
+interface DebitCardsPageProps {
+    cards: CardInterface[];
+    news: NewsInterface[];
+}
+
+export default function DebitCardsPage(props: DebitCardsPageProps) {
+    const {
+        cards,
+        news,
+    } = props;
+
+    const dataMap = data.DebitCardsPage.questData
+    return (
+        <Wrapper>
+            <Navigation/>
+            <Bonus/>
+            <Offers cards={cards}/>
+            <OffersMonth/>
+            <Mailing/>
+            <Compilations/>
+            <LatestNews news={news}/>
+            <Communicate/>
+            <Feedback title={'Отзывы '} sub={'о дебетовых картах'}/>
+            <FrequentQuestions title={'Важная информация'} items={dataMap}/>
+        </Wrapper>
+    )
 }
