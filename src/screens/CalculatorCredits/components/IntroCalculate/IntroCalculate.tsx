@@ -11,7 +11,7 @@ const IntroCalculate = () => {
         <div className={s.intro}>
             <div className={s.info_cont}>
                 <div className={s.breadCrumbs}>
-                    Главная / Вклады / <mark>Кредитный калькулятор</mark>
+                    Главная / Кредиты / <mark>Кредитный калькулятор</mark>
                 </div>
                 <div className={s.title}>Кредитный калькулятор</div>
                 <p>

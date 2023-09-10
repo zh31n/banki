@@ -19,7 +19,7 @@ const IntroMicroloans = ({items}: Props) => {
         <div className={s.intro}>
             <div className={s.info_cont}>
                 <div className={s.breadCrumbs}>
-                    Главная / Вклады / <mark>Микрозаймы</mark>
+                    Главная / Кредиты / <mark>Микрозаймы</mark>
                 </div>
                 <div className={s.title}>
                     Микрозаймы <mark>в Москве</mark>

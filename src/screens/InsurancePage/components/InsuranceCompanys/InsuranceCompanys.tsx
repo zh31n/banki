@@ -6,11 +6,13 @@ import {StaticImageData} from "next/image";
 
 type Props = {
     data: StaticImageData[]
+    title?: string
+    isTitle: boolean
 }
-const InsuranceCompanys = ({data}:Props) => {
+const InsuranceCompanys = ({data, title, isTitle}: Props) => {
     return (
         <div className={s.wrapper}>
-            <div className={s.title}>Страховые компании</div>
+            {isTitle ? <div className={s.title}>{title || 'Страховые компании'}</div> : ''}
             <Search placeholder={'Введите название компании'}/>
             <SliderBanksCons data={data}/>
         </div>

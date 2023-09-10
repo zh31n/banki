@@ -51,12 +51,12 @@ const navigation = {
         [
             {text: 'ОСАГО', link: '/insurance/osago'},
             {text: 'КАСКО', link: '/insurance/kasco'},
-            {text: 'Путешествие', link: '/insurance'},
-            {text: 'Жизнь и здоровье', link: '/insurance'},
+            {text: 'Путешествие', link: '/insurance/travel'},
+            {text: 'Жизнь и здоровье', link: '/insurance/health'},
         ],
         [
-            {text: 'Ипотечное страхование', link: '/insurance'},
-            {text: 'ДМС', link: '/insurance'},
+            {text: 'Ипотечное страхование', link: '/insurance/ipot-ins'},
+            {text: 'ДМС', link: '/insurance/dms'},
             {text: 'Все предложения', link: '/insurance'}
         ]
     ],
@@ -74,12 +74,12 @@ const navigation = {
     business: [
         [
             {text: 'Все продукты', link: '/business'},
-            {text: 'Расчётно-кассовое обслуживание', link: '/business'},
-            {text: 'Бизнес-карты', link: '/business'},
+            {text: 'Расчётно-кассовое обслуживание', link: '/business/service'},
+            {text: 'Бизнес-карты', link: '/business/slips'},
         ],
         [
-            {text: 'Кредиты для ИП', link: '/business'},
-            {text: 'Страхование бизнеса', link: '/business'},
+            {text: 'Кредиты для ИП', link: '/business/payments'},
+            {text: 'Страхование бизнеса', link: '/business/assurance'},
         ],
     ],
     news: [
@@ -93,8 +93,8 @@ const navigation = {
             {text: 'Аналитические исследования', link: '/news'},
             {text: 'Банковский словарь', link: '/news'},
         ],
-    ]
+    ],
 }
 
 
-export default navigation
+export default navigation;

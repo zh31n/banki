@@ -10,7 +10,7 @@ const IntroRefinancing = () => {
         <div className={s.intro}>
             <div className={s.info_cont}>
                 <div className={s.breadCrumbs}>
-                    Главная / Вклады / <mark>Накопительные счета</mark>
+                    Главная / Кредиты / <mark>Рефинансирование кредитов</mark>
                 </div>
                 <div className={s.title}>
                     <mark>Рефинансирование кредитов</mark>

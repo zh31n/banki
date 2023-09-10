@@ -7,10 +7,11 @@ import DepositOfferItem from "@/components/Deposit/DepositOfferItem/DepositOffer
 import {DepositCardInterface} from "@/core/api/Deposits";
 
 interface OfferBanksProps {
-    deposits: DepositCardInterface[]
-    title: string
-    sub: string
-    options: string[]
+    deposits: DepositCardInterface[];
+    title: string;
+    sub: string;
+    options: string[];
+    isSelect: boolean;
 }
 
 const OffersBanks = (props: OfferBanksProps) => {
@@ -19,6 +20,7 @@ const OffersBanks = (props: OfferBanksProps) => {
         options,
         title,
         sub,
+        isSelect,
     } = props;
 
     return (
@@ -28,7 +30,7 @@ const OffersBanks = (props: OfferBanksProps) => {
                         <mark>{title}</mark>
                         {sub}
                     </span>
-                <CustomSelect img={lines} options={options}/>
+                {isSelect && <CustomSelect img={lines} options={options}/>}
             </div>
             <div className={s.deposit_offers}>
                 {deposits.map((item) => <DepositOfferItem item={item} key={item.id} />)}

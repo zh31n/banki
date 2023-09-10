@@ -37,7 +37,7 @@ const navigation = {
         [
             {text: 'Мастер подбора кредитов', link: '/ipoteka'},
             {text: 'Ипотечные кредиты', link: '/ipoteka/credits'},
-            {text: 'Ипотечное страхование', link: '/insurance/ipot-ins'},
+            {text: 'Ипотечное страхование', link: '/insurance'},
             {text: 'Спецпредложения', link: '/ipoteka/special-offers'},
         ],
         [
@@ -74,12 +74,12 @@ const navigation = {
     business: [
         [
             {text: 'Все продукты', link: '/business'},
-            {text: 'Расчётно-кассовое обслуживание', link: '/business'},
-            {text: 'Бизнес-карты', link: '/business'},
+            {text: 'Расчётно-кассовое обслуживание', link: '/business/service'},
+            {text: 'Бизнес-карты', link: '/business/slips'},
         ],
         [
-            {text: 'Кредиты для ИП', link: '/business'},
-            {text: 'Страхование бизнеса', link: '/business'},
+            {text: 'Кредиты для ИП', link: '/business/payments'},
+            {text: 'Страхование бизнеса', link: '/business/assurance'},
         ],
     ],
     news: [
@@ -93,8 +93,8 @@ const navigation = {
             {text: 'Аналитические исследования', link: '/news'},
             {text: 'Банковский словарь', link: '/news'},
         ],
-    ]
+    ],
 }
 
 
-export default navigation;
+export default navigation

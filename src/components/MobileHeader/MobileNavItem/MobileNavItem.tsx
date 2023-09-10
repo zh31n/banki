@@ -12,11 +12,13 @@ type Props = {
     setCurrent: React.Dispatch<React.SetStateAction<string>>
     current: string
     name: string
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
     navs?: ItemT[][]
 }
-const MobileNavItem = ({setCurrent, current, name, navs}: Props) => {
+const MobileNavItem = ({setCurrent, current, name, navs,setVisible}: Props) => {
 
     const setVis = () => setCurrent(name);
+    const onLink = () => setVisible(false);
 
     return (
         <div className={current === name ? s.item_a : s.item} onClick={setVis}>
@@ -27,11 +29,11 @@ const MobileNavItem = ({setCurrent, current, name, navs}: Props) => {
             <div className={s.items}>
                 <div>
                     {navs && navs[0].map((el, index) =>
-                        <Link key={index} href={el.link}>{el.text}</Link>)}
+                        <Link onClick={onLink} key={index} href={el.link}>{el.text}</Link>)}
                 </div>
                 <div>
                     {navs && navs[1].map((el, index) =>
-                        <Link key={index} href={el.link}>{el.text}</Link>)}
+                        <Link onClick={onLink} key={index} href={el.link}>{el.text}</Link>)}
                 </div>
 
             </div>

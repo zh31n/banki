@@ -22,7 +22,7 @@ export default function CalculateKASCOPage(){
 
     return <Wrapper>
         <Navigation />
-        <InsuranceCompanys data={companys} />
+        <InsuranceCompanys isTitle={true} data={companys} />
         <LastBuy />
         <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap}/>
         <LatestNews />

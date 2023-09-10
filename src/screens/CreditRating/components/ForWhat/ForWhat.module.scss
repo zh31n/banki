@@ -63,6 +63,11 @@
     }
     .items_cont{
       flex-wrap: wrap;
+      .item{
+        width: 100%;
+        padding: 20px;
+        height: auto;
+      }
     }
   }
 }

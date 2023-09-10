@@ -10,7 +10,7 @@ const Navigation = () => {
                 <p className={styles.text}>/</p>
                 <p className={styles.text}>Ипотека</p>
                 <p className={styles.text}>/</p>
-                <p className={styles.text_grey}>Рефинансирование</p>
+                <p className={styles.text_grey}>Вторичное жильё</p>
             </div>
             <div className={styles.text_container}>
                 <p className={styles.text}>Ипотека на вторичном рынке <br/> жилья <span>в Москве</span></p>

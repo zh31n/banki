@@ -28,7 +28,7 @@ const MortgageInsurancePage = ({data}: Props) => {
         <PageWrapper>
             <IntroInsuranceMort/>
             <Bonus height={147} title={'Кэшбэк 20% за страхование ипотеки'} text={'Получите до 4000 рублей на карту'}/>
-            <InsuranceCompanys data={data.sliderItems}/>
+            <InsuranceCompanys isTitle={true} data={data.sliderItems}/>
             <LastBuy/>
             <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={data.worksData}/>
             <OurStrongsMort/>

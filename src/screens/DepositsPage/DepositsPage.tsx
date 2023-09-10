@@ -96,7 +96,7 @@ const DepositsPage = (props: DepositsPageProps) => {
                     img={absolut}
                 />
             )}
-            <OffersBanks deposits={deposits} title={'943 вклада'} sub={' подобрано'}
+            <OffersBanks isSelect={true} deposits={deposits} title={'943 вклада'} sub={' подобрано'}
                          options={['По популярности']}/>
             <PopularOffers data={staticData.PopularOffers}/>
             <OfferMonth offers={deposits}/>

@@ -66,7 +66,7 @@ const SavingAccountsPage = (props: SavingAccountsPageProps) => {
                     text={bonus.description}
                 />
             )}
-            <OffersBanks deposits={deposits} options={['По популярности']} title={'943 вклада'} sub={' подобрано'}/>
+            <OffersBanks isSelect={true} deposits={deposits} options={['По популярности']} title={'943 вклада'} sub={' подобрано'}/>
             <OfferMoth offers={deposits}/>
             <Feedback title={'Отзывы'} sub={' о вкладах'}/>
             <FrequentQuestions title={'Частые вопросы'} items={staticData.questions.items}/>

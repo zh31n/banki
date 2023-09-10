@@ -8,14 +8,17 @@ import {CardInterface} from "@/core/api/Cards";
 
 interface OffersBanksProps {
     cards: CardInterface[];
+    title?: string;
 }
 const OffersBanks = (props: OffersBanksProps) => {
     const {
         cards,
+        title,
     } = props;
 
     return (
         <div className={styles.container}>
+            {title ? <div className={styles.title}>{title}</div> : ''}
             <div className={styles.map_cont}>
                 {cards.map(item => <Items key={item.id} item={item}/>)}
                 <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>

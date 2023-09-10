@@ -45,7 +45,7 @@ const MortgagePage = ({data}: Props) => {
         <PageWrapper>
             <IntroMortgage items={data.choises}/>
             <Bonus title={'Мастер подбора ипотеки'}/>
-            <OffersBanks deposits={data.offersBanks} title={'943 кредитов '} sub={'подобрано'}
+            <OffersBanks isSelect={true} deposits={data.offersBanks} title={'943 кредитов '} sub={'подобрано'}
                          options={['По популярности']}
             />
             <Mailing/>
