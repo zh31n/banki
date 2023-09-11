@@ -1934,6 +1934,456 @@ const data = {
                 btntxt: 'Купить онлайн'
             }
         ]
+    },
+    BrokerInvPage: {
+        introChoose: [
+            {name: 'С чего начать', active: false},
+            {name: 'Подобрать брокера', active: true},
+            {name: 'Что купить', active: false},
+            {name: 'Аналитика', active: false},
+            {name: 'Специальные предложения', active: false},
+            {name: 'Обучение', active: false},
+        ],
+        chooseCalc: [
+            {name: 'Премиальный тариф', active: false},
+            {name: 'Демо-счет', active: false},
+            {name: 'Без комиссий', active: false},
+        ],
+        brokerOffers: [
+            {
+                name: 'ВТБ Мои Инвестиции',
+                sub: 'Мой онлайн',
+                comm: '10,10',
+                serv: 'от 0',
+                img: loc_bank,
+                charcs: ['Партнер раздела'],
+                btn: 'Открыть счет',
+                count: 'Ещё 12 тарифов'
+            },
+            {
+                name: 'ВТБ Мои Инвестиции',
+                sub: 'Мой онлайн',
+                comm: '10,10',
+                serv: 'от 0',
+                img: loc_bank,
+                charcs: ['Партнер раздела'],
+                btn: 'Открыть счет',
+                count: 'Ещё 12 тарифов'
+            },
+            {
+                name: 'ВТБ Мои Инвестиции',
+                sub: 'Мой онлайн',
+                comm: '10,10',
+                serv: 'от 0',
+                img: loc_bank,
+                charcs: ['Партнер раздела'],
+                btn: 'Открыть счет',
+                count: 'Ещё 12 тарифов'
+            },
+            {
+                name: 'ВТБ Мои Инвестиции',
+                sub: 'Мой онлайн',
+                comm: '10,10',
+                serv: 'от 0',
+                img: loc_bank,
+                charcs: ['Партнер раздела'],
+                btn: 'Открыть счет',
+                count: 'Ещё 12 тарифов'
+            },
+            {
+                name: 'ВТБ Мои Инвестиции',
+                sub: 'Мой онлайн',
+                comm: '10,10',
+                serv: 'от 0',
+                img: loc_bank,
+                charcs: ['Партнер раздела'],
+                btn: 'Открыть счет',
+                count: 'Ещё 12 тарифов'
+            },
+        ],
+        brokerCompany: [
+            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
+            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+        ],
+        questions: [
+            {title: 'Зачем нужен брокер?', text: ''},
+            {title: 'За что нужно платить комиссию?', text: ''},
+            {title: 'Как выбрать брокера?', text: ''},
+        ],
+        TopBrokers: [
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Брокер',
+                comm: '0,04',
+                serv: '0'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Брокер',
+                comm: '0,04',
+                serv: '0'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Брокер',
+                comm: '0,04',
+                serv: '0'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Брокер',
+                comm: '0,04',
+                serv: '0'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Брокер',
+                comm: '0,04',
+                serv: '0'
+            },
+        ],
+        questionsD: [
+            {title: 'Подробнее', text: ''},
+            {title: 'Инвестиции для физических лиц', text: ''},
+        ],
+    },
+    StockInvest: {
+        chooseIntro: [
+            {name: 'С чего начать', active: false},
+            {name: 'Подобрать брокера', active: false},
+            {name: 'Что купить', active: true},
+            {name: 'Аналитика', active: false},
+            {name: 'Специальные предложения', active: false},
+            {name: 'Обучение', active: false},
+        ],
+        calc_choose_up: [
+            {name: 'Акции', active: true},
+            {name: 'Облигации', active: false},
+            {name: 'Фонды', active: false},
+            {name: 'Криптовалюта', active: false},
+        ],
+        calc_choose_d: [
+            {name: 'Все рынки', active: false},
+            {name: 'Любой отрасли', active: false},
+            {name: 'Все', active: true},
+            {name: 'Популярные', active: false},
+            {name: 'Лидеры роста', active: false},
+            {name: 'Лидеры падения', active: false},
+            {name: 'Дивидендные', active: false},
+        ],
+        stockOffersItem: [
+            {
+                name: 'Contextlogic',
+                sub: 'WISH-RM',
+                img: loc_bank,
+                price: '40,02 $',
+                change: '37,81 $ (1 710,86%)',
+                subPrice: '3 855,57 ₽'
+            },
+            {
+                name: 'Липецкая энергосбытовая компания',
+                sub: 'LPSB',
+                img: loc_bank,
+                price: '58,35 ₽',
+                change: '30 ₽ (105,82%)'
+            },
+        ],
+        offersMoth: [
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+        ],
+        loans: [
+            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
+            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+        ],
+        frequentQuests: [
+            {title: 'Что такое акции?', text: ''},
+            {title: 'Зачем нужен брокер?', text: ''},
+            {title: 'Как купить акцию?', text: ''},
+            {title: 'За что нужно платить комиссию?', text: ''},
+            {title: 'Как научиться торговать акциями?', text: ''},
+        ],
+        questions: [
+            {title: 'Как приобрести бумаги на нашем сайте', text: ''},
+            {title: 'Предложения', text: ''},
+            {title: 'Каталог акций', text: ''},
+            {title: 'Акции по сферам', text: ''},
+        ]
+    },
+    ObligationsPage: {
+        chooseIntro: [
+            {name: 'С чего начать', active: false},
+            {name: 'Подобрать брокера', active: false},
+            {name: 'Что купить', active: true},
+            {name: 'Аналитика', active: false},
+            {name: 'Специальные предложения', active: false},
+            {name: 'Обучение', active: false},
+        ],
+        obligationOffers: [
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                price: '865 ₽',
+                change: '294,89%',
+                subPrice: 'Номинал 1000 ₽',
+                subChange: 'Погашение 26.03.2028'
+            },
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                price: '865 ₽',
+                change: '294,89%',
+                subPrice: 'Номинал 1000 ₽',
+                subChange: 'Погашение 26.03.2028'
+            },
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                price: '865 ₽',
+                change: '294,89%',
+                subPrice: 'Номинал 1000 ₽',
+                subChange: 'Погашение 26.03.2028'
+            },
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                price: '865 ₽',
+                change: '294,89%',
+                subPrice: 'Номинал 1000 ₽',
+                subChange: 'Погашение 26.03.2028'
+            }
+        ],
+        offersMoth: [
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+            {
+                img: c,
+                title: 'Управление инвестициями',
+                sub: 'Conomy Terminal',
+                name: 'Доходность до 49,7%',
+                info: '120 дней бесплатного обслуживания'
+            },
+        ],
+        loans: [
+            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
+            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
+        ],
+        frequentQuests: [
+            {title: 'Что такое облигации?', text: ''},
+            {title: 'Как можно заработать на облигациях?', text: ''},
+            {title: 'Как купить облигации?', text: ''},
+            {title: 'За что нужно платить комиссию?', text: ''},
+            {title: 'Как научиться торговать облигациями?', text: ''},
+        ],
+        TopObligationItems: [
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                price: '864,20 ₽',
+                profit: '818,38%'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                price: '864,20 ₽',
+                profit: '818,38%'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                price: '864,20 ₽',
+                profit: '818,38%'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                price: '864,20 ₽',
+                profit: '818,38%'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                price: '864,20 ₽',
+                profit: '818,38%'
+            },
+        ],
+        questions: [
+            {title: 'Купить облигации онлайн', text: ''},
+            {title: 'Предложения облигаций', text: ''},
+            {title: 'Каталог акций', text: ''},
+            {title: 'Облигации по отраслям', text: ''},
+            {title: 'Компании', text: ''}
+        ],
+        calc_choose_d: [
+            {name: 'В рублях', active: false},
+            {name: 'Любой отрасли', active: false},
+            {name: 'Все', active: true},
+            {name: 'Муниципальные', active: false},
+            {name: 'Городские', active: false},
+        ],
+    },
+    FondsPage: {
+        chooseIntro: [
+            {name: 'С чего начать', active: false},
+            {name: 'Подобрать брокера', active: false},
+            {name: 'Что купить', active: true},
+            {name: 'Аналитика', active: false},
+            {name: 'Специальные предложения', active: false},
+            {name: 'Обучение', active: false},
+        ],
+        calc_choose_d: [
+            {name: 'Любой', active: false},
+            {name: 'Не важно', active: false},
+            {name: 'Все', active: true},
+            {name: 'ПИФ', active: false},
+            {name: 'ETF/БПИФ', active: false},
+        ],
+        FondsOfferItems: [
+            {
+                name: 'БПИФ «Альфа-Капитал Управляемые Российские Акции»',
+                sub: 'Альфа-капитал',
+                img: loc_bank,
+                comm: '1,50%',
+                profit: '79,93%'
+            },
+            {
+                name: 'БПИФ «Альфа-Капитал Управляемые Российские Акции»',
+                sub: 'Альфа-капитал',
+                img: loc_bank,
+                comm: '1,50%',
+                profit: '79,93%'
+            },
+            {
+                name: 'БПИФ «Альфа-Капитал Управляемые Российские Акции»',
+                sub: 'Альфа-капитал',
+                img: loc_bank,
+                comm: '1,50%',
+                profit: '79,93%'
+            },
+            {
+                name: 'БПИФ «Альфа-Капитал Управляемые Российские Акции»',
+                sub: 'Альфа-капитал',
+                img: loc_bank,
+                comm: '1,50%',
+                profit: '79,93%'
+            },
+            {
+                name: 'БПИФ «Альфа-Капитал Управляемые Российские Акции»',
+                sub: 'Альфа-капитал',
+                img: loc_bank,
+                comm: '1,50%',
+                profit: '79,93%'
+            },
+        ],
+        frequentQuests:[
+            {title: 'Что такое фонды?', text: ''},
+            {title: 'Как можно заработать на фонде?', text: ''},
+            {title: 'Как купить фонды?', text: ''},
+            {title: 'За что нужно платить комиссию?', text: ''},
+            {title: 'Какие есть риски?', text: ''},
+        ],
+        TopFondsItems:[
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                comm: '818,38%',
+                profit: '864,20 ₽'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                comm: '818,38%',
+                profit: '864,20 ₽'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                comm: '818,38%',
+                profit: '864,20 ₽'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                comm: '818,38%',
+                profit: '864,20 ₽'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                comm: '818,38%',
+                profit: '864,20 ₽'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                comm: '818,38%',
+                profit: '864,20 ₽'
+            },
+            {
+                title: 'Совкомбанк — Халва',
+                sub: 'Облигация',
+                comm: '818,38%',
+                profit: '864,20 ₽'
+            },
+        ],
+        questions:[
+            {title: 'Паевые инвестиционные фонды (ПИФы)', text: ''},
+            {title: 'Предложения', text: ''},
+            {title: 'ПИФы компаний', text: ''},
+            {title: 'Популярные брокерские компании', text: ''},
+        ]
     }
 }
 

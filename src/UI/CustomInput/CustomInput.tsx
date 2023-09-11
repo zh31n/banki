@@ -5,10 +5,14 @@ type Props = {
     width?: number
     height?: number
     place?: string
+    border?: string
 }
-const CustomInput = ({width, height, place}: Props) => {
+const CustomInput = ({width, height, place, border}: Props) => {
     return (
-        <div className={s.cont} style={{width: `${width}px`, height: `${height}px`}}>
+        <div className={s.cont}
+             style={{width: `${width}px`,
+                 height: `${height}px`, borderColor: `${border}`}}
+        >
             <input className={s.inp} placeholder={place} type="text"/>
         </div>
     );

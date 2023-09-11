@@ -62,13 +62,18 @@ const navigation = {
     ],
     investment: [
         [
-            {text: 'Все продукты', link: '/investment'},
-            {text: 'Расчётно-кассовое обслуживание', link: '/investment'},
-            {text: 'Бизнес-карты', link: '/investment'},
+            {text: 'С чего начать', link: '/investment'},
+            {text: 'Акции', link: '/investment/stocks'},
+            {text: 'Подбор брокера', link: '/investment/select-broker'},
+            {text: 'Специальные предложения', link: '/investment'},
+            {text: 'Криптовалюта', link: '/investment'},
         ],
         [
-            {text: 'Кредиты для ИП', link: '/investment'},
-            {text: 'Страхование бизнеса', link: '/investment'},
+            {text: 'Обучение', link: '/investment'},
+            {text: 'Фонды', link: '/investment'},
+            {text: 'Облигации', link: '/investment'},
+            {text: 'Аналитика', link: '/investment'},
+            {text: 'Избранное', link: '/investment'},
         ]
     ],
     business: [

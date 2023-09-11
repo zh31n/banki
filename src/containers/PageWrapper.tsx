@@ -5,7 +5,9 @@ type Props = {
 }
 const PageWrapper = ({children}: Props) => {
     return (
-        <main className={'container'} style={{paddingTop: '20px', overflowX: 'hidden'}}>{children}</main>
+        <main className={'container'} style={{paddingTop: '20px', overflowX: 'hidden', paddingBottom: '2rem'}}>
+            {children}
+        </main>
     );
 };
 
