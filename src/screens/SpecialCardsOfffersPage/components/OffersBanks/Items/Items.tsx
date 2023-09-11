@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Items.module.scss'
 import Image from "next/image";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 import mockOfferImage from "@/assets/icons/offer_img1.png";
 import mockBankImage from "@/assets/icons/gasprom.svg"
 

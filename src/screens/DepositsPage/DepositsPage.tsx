@@ -14,8 +14,8 @@ import Communicate from "@/components/Communicate/Communicate";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopBanks from "@/components/TopBanks/TopBanks";
-import {DepositCardInterface} from "@/core/api/Deposits";
-import {NewsInterface} from "@/core/api/News";
+import {DepositCardInterface} from "@/core/services/Deposits";
+import {NewsInterface} from "@/core/services/News";
 import {GetServerSideProps} from "next";
 
 type offerT = {

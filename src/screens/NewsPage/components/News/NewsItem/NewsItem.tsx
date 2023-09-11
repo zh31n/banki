@@ -3,7 +3,7 @@ import s from './NewsItem.module.scss';
 import Image from "next/image";
 import smile from '@/assets/icons/Smile.svg';
 import mockNewsImage from "@/assets/icons/bank_icons/img.svg"
-import {NewsInterface} from "@/core/api/News";
+import {NewsInterface} from "@/core/services/News";
 
 interface NewsItemProps {
     item: NewsInterface;

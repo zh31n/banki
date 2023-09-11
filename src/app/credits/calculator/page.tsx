@@ -2,7 +2,7 @@ import React from 'react';
 import CalculatorCredits from "@/screens/CalculatorCredits/CalculatorCredits";
 import {Metadata} from "next";
 import data from "@/core/data";
-import {CreditInterface, CreditsResponseInterface, GET_CREDITS} from "@/core/api/Credits";
+import {CreditInterface, CreditsResponseInterface, GET_CREDITS} from "@/core/services/Credits";
 
 export const metadata:Metadata = {
     title:'Кредитный калькулятор'

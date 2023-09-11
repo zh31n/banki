@@ -1,7 +1,7 @@
 import {
   ACTION_SET_NEWS,
 } from './actions';
-import {NewsInterface} from "@/core/api/News";
+import {NewsInterface} from "@/core/services/News";
 
 interface StateInterface {
   list: NewsInterface[];

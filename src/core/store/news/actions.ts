@@ -1,4 +1,4 @@
-import {GetNewsParams, NewsInterface} from "@/core/api/News";
+import {GetNewsParams, NewsInterface} from "@/core/services/News";
 
 export const ACTION_SET_NEWS: string = 'ACTION_SET_NEWS';
 

@@ -11,8 +11,8 @@ import Communicate from "@/components/Communicate/Communicate";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import data from "@/core/data";
 import Compilations from "@/screens/DebetCardsPage/components/Сompilations/Сompilations";
-import {CardInterface} from "@/core/api/Cards";
-import {NewsInterface} from "@/core/api/News";
+import {CardInterface} from "@/core/services/Cards";
+import {NewsInterface} from "@/core/services/News";
 
 interface DebitCardsPageProps {
     cards: CardInterface[];

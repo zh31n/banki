@@ -1,7 +1,7 @@
 import SpecialCardsOffersPage from "@/screens/SpecialCardsOfffersPage/SpecialCardsOffersPage";
 import {Metadata} from "next";
 import data from "@/core/data";
-import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/api/Cards";
+import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/services/Cards";
 import React from "react";
 
 export const metadata: Metadata = {

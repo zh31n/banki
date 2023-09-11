@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Offers.module.scss";
 import Image from "./Image";
 import OfferItem from "../OffersItem/OffersItem";
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 interface OffersProps {
     cards: CardInterface[];

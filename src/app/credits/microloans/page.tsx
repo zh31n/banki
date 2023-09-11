@@ -2,8 +2,8 @@ import React from 'react';
 import MicroloansPage from "@/screens/MicroLoans";
 import {Metadata} from "next";
 import data from "@/core/data";
-import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/api/News";
-import {CreditInterface, CreditsResponseInterface, GET_CREDITS} from "@/core/api/Credits";
+import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/services/News";
+import {CreditInterface, CreditsResponseInterface, GET_CREDITS} from "@/core/services/Credits";
 
 export const metadata: Metadata = {
     title: 'Микрозаймы'

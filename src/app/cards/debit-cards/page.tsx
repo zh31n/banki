@@ -1,8 +1,8 @@
 import {Metadata} from "next";
 import DebitCardsPage from "@/screens/DebetCardsPage/DebitCardsPage";
-import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/api/Cards";
+import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/services/Cards";
 import React from "react";
-import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/api/News";
+import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/services/News";
 
 export const metadata: Metadata = {
     title: 'Дебетовые карты'

@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './index.module.scss';
-import {CreditInterface} from "@/core/api/Credits";
+import {CreditInterface} from "@/core/services/Credits";
 import CreditTopBankItem from "@/components/credits/CreditTopBankItem";
 
 interface CreditTopBankListProps {

@@ -1,7 +1,7 @@
 import CreditMapPage from "@/screens/CreditMapPage/CreditMapPage";
 import {Metadata} from "next";
-import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/api/News";
-import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/api/Cards";
+import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/services/News";
+import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/services/Cards";
 import React from "react";
 
 export const metadata: Metadata = {

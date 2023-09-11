@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './TopBanks.module.scss';
 import TopBankItem from "@/components/TopBankItem/TopBankItem";
-import {DepositCardInterface} from "@/core/api/Deposits";
+import {DepositCardInterface} from "@/core/services/Deposits";
 
 interface TopBanksProps {
     fz?: number

@@ -4,7 +4,7 @@ import Items from "@/screens/SpecialCardsOfffersPage/components/OffersBanks/Item
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import Image from "next/image";
 import image from "@/assets/icons/image.png"
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 interface OffersBanksProps {
     cards: CardInterface[];

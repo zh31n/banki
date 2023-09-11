@@ -3,7 +3,7 @@ import s from './LatestNews.module.scss';
 import NewsItem from "@/components/NewsItem/NewsItem";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
-import {NewsInterface} from "@/core/api/News";
+import {NewsInterface} from "@/core/services/News";
 
 interface ChoicesInterface {
     name: string;

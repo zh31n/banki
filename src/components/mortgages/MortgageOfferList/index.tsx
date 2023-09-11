@@ -3,32 +3,36 @@ import s from './index.module.scss';
 import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
-import {CreditInterface} from "src/core/services/Credits";
-import CreditCalculatorBankItem from "@/components/credits/CreditCalculatorBankItem";
+import {MortgageInterface} from "@/core/services/Mortgages";
+import MortgageOfferItem from "@/components/mortgages/MortgageOfferItem";
 
-interface CreditCalculatorBankListProps {
-    credits: CreditInterface[];
+interface MortgageOfferListProps {
+    mortgages: MortgageInterface[];
+    title?: string;
     subtitle?: string;
     options?: string[];
+    isSelect?: boolean;
 }
 
-const CreditCalculatorBankList = (props: CreditCalculatorBankListProps) => {
+const MortgageOfferList = (props: MortgageOfferListProps) => {
     const {
-        credits,
+        mortgages,
         options = ['По популярности'],
-        subtitle = 'предложения',
+        title = '943 кредитов',
+        subtitle = 'подобрано',
+        isSelect = true,
     } = props;
 
     return (
         <div className={s.deposits}>
             <div className={s.title}>
                     <span>
-                        <mark>{credits.length}</mark> {subtitle}
+                        <mark>{title}</mark> {subtitle}
                     </span>
-                <CustomSelect img={lines} options={options}/>
+                {isSelect && <CustomSelect img={lines} options={options}/>}
             </div>
             <div className={s.deposit_offers}>
-                {credits.map((item) => <CreditCalculatorBankItem item={item} key={item.id}/>)}
+                {mortgages.map((item) => <MortgageOfferItem item={item} key={item.id} />)}
             </div>
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все'} width={235}/>
@@ -37,4 +41,4 @@ const CreditCalculatorBankList = (props: CreditCalculatorBankListProps) => {
     );
 };
 
-export default CreditCalculatorBankList;
+export default MortgageOfferList;

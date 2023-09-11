@@ -4,7 +4,7 @@ import arr_l from "@/assets/icons/banki_icon/Стрелка_left.svg";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
 import Image from "next/image";
 import ChoiceItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
-import {CreditInterface} from "@/core/api/Credits";
+import {CreditInterface} from "@/core/services/Credits";
 import CreditOfferItem from "@/components/credits/CreditOfferItem";
 
 type ItemT = {

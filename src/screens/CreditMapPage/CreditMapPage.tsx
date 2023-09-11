@@ -12,8 +12,8 @@ import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import data from "@/core/data";
 import BanksWithButton from "@/components/BanksWithButton/BanksWithButton";
-import {NewsInterface} from "@/core/api/News";
-import {CardInterface} from "@/core/api/Cards";
+import {NewsInterface} from "@/core/services/News";
+import {CardInterface} from "@/core/services/Cards";
 
 interface CreditMapPageProps {
     cards: CardInterface[];

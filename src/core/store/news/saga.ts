@@ -8,7 +8,7 @@ import {
 import {
     GET_NEWS,
     NewsResponseInterface,
-} from "@/core/api/News";
+} from "@/core/services/News";
 
 function* getNews(action: DefaultAction<NewsGetRequestedPayload>) {
     try {

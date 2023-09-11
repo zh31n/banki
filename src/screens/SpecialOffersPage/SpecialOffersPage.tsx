@@ -7,7 +7,7 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import PageWrapper from "@/containers/PageWrapper";
 import IntroSpecialOffer from "@/screens/SpecialOffersPage/components/IntroSpecialOffer/IntroSpecialOffer";
 import {StaticImageData} from "next/image";
-import {DepositCardInterface} from "@/core/api/Deposits";
+import {DepositCardInterface} from "@/core/services/Deposits";
 
 type choisesT = {
     name: string

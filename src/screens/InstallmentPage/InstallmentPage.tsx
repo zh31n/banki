@@ -10,7 +10,7 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import data from "@/core/data";
 import Bonus from "@/components/Bonus/Bonus";
 import InstallmentPageAdvantages from "@/screens/InstallmentPage/components/InstallmentPageAdvantages";
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 interface InstallmentPageProps {
     cards: CardInterface[];

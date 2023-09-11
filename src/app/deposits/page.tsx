@@ -2,8 +2,8 @@ import React from 'react';
 import {Metadata} from "next";
 import DepositsPage from "@/screens/DepositsPage/DepositsPage";
 import data from "@/core/data";
-import {DepositCardInterface, DepositsResponseInterface, GET_DEPOSITS} from "@/core/api/Deposits";
-import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/api/News";
+import {DepositCardInterface, DepositsResponseInterface, GET_DEPOSITS} from "@/core/services/Deposits";
+import {GET_NEWS, NewsInterface, NewsResponseInterface} from "@/core/services/News";
 
 export const metadata: Metadata = {
     title: 'Вклады',

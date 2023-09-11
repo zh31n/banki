@@ -831,7 +831,7 @@ const data = {
         ]
     },
     MortgagePage: {
-        choises: [
+        choices: [
             {name: 'Ипотека', active: true},
             {name: 'Рефинансирование', active: false},
             {name: 'Страхование', active: false}

@@ -4,7 +4,7 @@ import IntroCalculate from "@/screens/CalculatorCredits/components/IntroCalculat
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import CreditCalculatorBankList from "@/components/credits/CreditCalculatorBankList";
-import {CreditInterface} from "@/core/api/Credits";
+import {CreditInterface} from "@/core/services/Credits";
 
 type ItemT = {
     title: string

@@ -6,7 +6,7 @@ import CheckImage from '@/screens/CreditMapPage/components/OffersItem/CheckImage
 import Image from 'next/image'
 import BlueBtn from '@/UI/BlueBtn/BlueBtn'
 import warningImg from '@/assets/icons/warning_icon.png'
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 interface OffersItemProps {
     item: CardInterface;

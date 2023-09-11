@@ -1,5 +1,5 @@
 import SelectStepsFinal from "@/screens/SelectSteps/SelectStepsFinal/SelectStepsFinal";
-import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/api/Cards";
+import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/services/Cards";
 import React from "react";
 
 interface Data {

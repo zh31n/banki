@@ -3,7 +3,7 @@ import Wrapper from "@/containers/Wrapper";
 import Navigation from "@/screens/SelectSteps/SelectStepsFinal/Navigation/Navigation";
 import styles from './SelectStepsFinal.module.scss'
 import SelectStepsFinalCard from "@/screens/SelectSteps/SelectStepsFinal/SelectStepsFinalCard";
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 interface SelectStepsFinalProps {
     cards: CardInterface[];

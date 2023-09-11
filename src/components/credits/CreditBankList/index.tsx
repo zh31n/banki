@@ -3,7 +3,7 @@ import s from './index.module.scss';
 import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
-import {CreditInterface} from "src/core/api/Credits";
+import {CreditInterface} from "src/core/services/Credits";
 import CreditBankItem from "@/components/credits/CreditBankItem";
 
 interface CreditBankListProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './OfferItem.module.scss';
 import Image from "next/image";
-import {DepositCardInterface} from "@/core/api/Deposits";
+import {DepositCardInterface} from "@/core/services/Deposits";
 import mockBankIcon from "@/assets/icons/banki_icon/loco.svg";
 
 interface OfferItemProps {

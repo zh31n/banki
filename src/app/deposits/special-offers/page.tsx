@@ -2,7 +2,7 @@ import React from "react";
 import {Metadata} from "next";
 import SpecialOffersPage from "@/screens/SpecialOffersPage/SpecialOffersPage";
 import data from "@/core/data";
-import {DepositCardInterface, DepositsResponseInterface, GET_DEPOSITS} from "@/core/api/Deposits";
+import {DepositCardInterface, DepositsResponseInterface, GET_DEPOSITS} from "@/core/services/Deposits";
 
 export const metadata: Metadata = {
     title: 'Специальные предложения',

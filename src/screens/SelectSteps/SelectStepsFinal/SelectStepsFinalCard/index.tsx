@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import card from "@/assets/icons/card.png"
 import Image from "next/image";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 interface SelectStepsFinalCardProps {
     card: CardInterface;

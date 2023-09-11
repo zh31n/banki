@@ -10,8 +10,8 @@ import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import {StaticImageData} from "next/image";
-import {NewsInterface} from "@/core/api/News";
-import {CreditInterface} from "@/core/api/Credits";
+import {NewsInterface} from "@/core/services/News";
+import {CreditInterface} from "@/core/services/Credits";
 import CreditTopBankList from "@/components/credits/CreditTopBankList";
 import CreditOfferList from "@/components/credits/CreditOfferList";
 

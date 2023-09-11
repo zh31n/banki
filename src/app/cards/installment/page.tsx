@@ -1,6 +1,6 @@
 import {Metadata} from "next";
 import InstallmentPage from "@/screens/InstallmentPage/InstallmentPage";
-import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/api/Cards";
+import {CardInterface, CardsResponseInterface, GET_CARDS} from "@/core/services/Cards";
 import React from "react";
 
 export const metadata: Metadata = {

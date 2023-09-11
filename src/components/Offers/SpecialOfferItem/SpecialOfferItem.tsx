@@ -4,7 +4,7 @@ import Image, {StaticImageData} from "next/image";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import mockOfferImage from "@/assets/icons/offer_img1.png";
 import mockBankImage from "@/assets/icons/banki_icon/dom.svg";
-import {DepositCardInterface} from "@/core/api/Deposits";
+import {DepositCardInterface} from "@/core/services/Deposits";
 
 interface SpecialOfferItemProps {
     item: DepositCardInterface;

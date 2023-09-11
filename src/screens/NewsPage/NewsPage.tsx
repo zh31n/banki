@@ -3,7 +3,7 @@
 import Wrapper from "@/containers/Wrapper";
 import Navigation from "@/screens/NewsPage/components/Navigation/Navigation";
 import News from "@/screens/NewsPage/components/News/News";
-import {NewsInterface} from "@/core/api/News";
+import {NewsInterface} from "@/core/services/News";
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {NewsListSelector} from "@/core/store/news/selectors";

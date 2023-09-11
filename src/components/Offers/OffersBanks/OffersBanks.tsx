@@ -4,7 +4,7 @@ import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import DepositOfferItem from "@/components/Deposit/DepositOfferItem/DepositOfferItem";
-import {DepositCardInterface} from "@/core/api/Deposits";
+import {DepositCardInterface} from "@/core/services/Deposits";
 
 interface OfferBanksProps {
     deposits: DepositCardInterface[];

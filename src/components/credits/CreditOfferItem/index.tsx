@@ -2,7 +2,7 @@ import React from 'react';
 import s from './index.module.scss';
 import Image from "next/image";
 import mockBankIcon from "@/assets/icons/banki_icon/loco.svg";
-import {CreditInterface} from "@/core/api/Credits";
+import {CreditInterface} from "@/core/services/Credits";
 
 interface CreditOfferItemProps {
     item: CreditInterface;

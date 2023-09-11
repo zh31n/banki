@@ -1,28 +1,23 @@
 import React from 'react';
 import s from './index.module.scss';
 import Image from "next/image";
+import ques_I from '@/assets/icons/banki_icon/Question_i.svg';
 import dang_i from '@/assets/icons/banki_icon/Danger_i.svg';
 import arr_d from '@/assets/icons/Arrow_d.svg';
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import mockBankImage from "@/assets/icons/banki_icon/loco.svg";
-import {CreditInterface} from "@/core/services/Credits";
+import {MortgageInterface} from "@/core/services/Mortgages";
 
-interface CreditCalculatorBankItemProps {
-    item: CreditInterface;
+interface MortgageOfferItemProps {
+    item: MortgageInterface;
 }
 
-const CreditCalculatorBankItem = (props: CreditCalculatorBankItemProps) => {
+const MortgageOfferItem = (props: MortgageOfferItemProps) => {
     const {
         item: {
-            id,
-            bank_id,
             name,
-            rating,
             rate,
-            min_amount,
-            max_amount,
-            timeframe_min,
-            timeframe_max,
+            monthly_payment,
             description,
         }
     } = props;
@@ -40,6 +35,7 @@ const CreditCalculatorBankItem = (props: CreditCalculatorBankItemProps) => {
                         <div className={s.info_item}>
                             <div className={s.title}>
                                 Ставка
+                                <Image src={ques_I} alt={'иконка вопроса'}/>
                             </div>
                             <span>{rate}%</span>
                         </div>
@@ -47,7 +43,7 @@ const CreditCalculatorBankItem = (props: CreditCalculatorBankItemProps) => {
                             <div className={s.title}>
                                 Платеж
                             </div>
-                            <span>от {(min_amount/100) * rate} ₽</span>
+                            <span>{monthly_payment} ₽</span>
                         </div>
                     </div>
                 </div>
@@ -57,7 +53,7 @@ const CreditCalculatorBankItem = (props: CreditCalculatorBankItemProps) => {
             </div>
             <div className={s.down}>
                 <div className={s.count}>
-                    Ещё {12} кредитов
+                    Ещё {12}
                     <Image src={arr_d} alt={'иконка стрелочки вниз'}/>
                 </div>
                 <div className={s.blue_charc}>
@@ -65,10 +61,10 @@ const CreditCalculatorBankItem = (props: CreditCalculatorBankItemProps) => {
                         if (el !== '') return <BlueBtn key={index} text={el} width={147} height={36} fSize={14}/>
                     })}
                 </div>
-                <BlueBtn text={'Открыть вклад'} width={222} fSize={20}/>
+                <BlueBtn text={'Отправить заявку'} width={222} fSize={20}/>
             </div>
         </div>
     );
 };
 
-export default CreditCalculatorBankItem;
+export default MortgageOfferItem;

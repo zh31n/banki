@@ -4,7 +4,7 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import React from "react";
 import OffersBanks from './components/OffersBanks/OffersBanks'
 import {StaticImageData} from "next/image";
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 type questItem = {
     title: string

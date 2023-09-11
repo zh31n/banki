@@ -1,59 +1,64 @@
-import React from 'react';
-import s from './MortgagePage.module.scss';
+"use client";
+
+import React, {useEffect} from 'react';
+import s from './index.module.scss';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroMortgage from "@/screens/MortgagePage/components/IntroMortgage/IntroMortgage";
 import Bonus from "@/components/Bonus/Bonus";
-import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
 import Mailing from "@/components/Mailing/Mailing";
 import Compilations from "@/screens/CreditsIpotekaPage/components/Сompilations/Compilations";
-import loco from "@/assets/icons/banki_icon/loco.svg";
-import {StaticImageData} from "next/image";
 import OffersMonth from "@/components/OffersMonth/OffersMonth";
 import Communicate from "@/components/Communicate/Communicate";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {useDispatch, useSelector} from "react-redux";
+import {MortgageInterface} from "@/core/services/Mortgages";
+import {MortgagesListSelector} from "@/core/store/mortgages/selectors";
+import {mortgagesGetRequestedAction} from "@/core/store/mortgages/actions";
+import MortgageOfferList from "@/components/mortgages/MortgageOfferList";
 
 type ChoiseT = {
     active: boolean
     name: string
 };
-type OfferT = {
-    name: string
-    sub: string
-    stavka: string
-    time: string
-    money: string
-    img: StaticImageData
-    charcs: string[]
-    btn?: string | undefined
-    count?: string | undefined
-};
 type questT = {
     title: string
     text: string
 }
-type Props = {
-    data: {
-        choises: ChoiseT[],
-        offersBanks: OfferT[],
+
+interface MortgagePageProps {
+    staticData: {
+        choices: ChoiseT[],
         questData: questT[]
     }
-};
+}
 
-const MortgagePage = ({data}: Props) => {
+const MortgagePage = (props: MortgagePageProps) => {
+    const {
+        staticData,
+    } = props;
+    const mortgages: MortgageInterface[] = useSelector(MortgagesListSelector);
+    const dispatch = useDispatch();
+    console.log(mortgages);
+
+    useEffect(() => {
+        dispatch(mortgagesGetRequestedAction());
+    }, [])
+
     return (
         <PageWrapper>
-            <IntroMortgage items={data.choises}/>
+            <IntroMortgage items={staticData.choices}/>
             <Bonus title={'Мастер подбора ипотеки'}/>
-            <OffersBanks isSelect={true} deposits={data.offersBanks} title={'943 кредитов '} sub={'подобрано'}
-                         options={['По популярности']}
+            <MortgageOfferList
+                mortgages={mortgages}
+                title={`${mortgages.length} кредитов `}
             />
             <Mailing/>
             <Compilations/>
             <OffersMonth/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'об ипотеке'}/>
-            <FrequentQuestions title={''} items={data.questData}/>
+            <FrequentQuestions title={''} items={staticData.questData}/>
         </PageWrapper>
     );
 };

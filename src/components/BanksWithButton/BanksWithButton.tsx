@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './BanksWithButton.module.scss'
 import BankCardItem from "@/components/BanksWithButton/BankCardItem/BankCardItem";
-import {CardInterface} from "@/core/api/Cards";
+import {CardInterface} from "@/core/services/Cards";
 
 interface BanksWithButtonProps {
     text: string;

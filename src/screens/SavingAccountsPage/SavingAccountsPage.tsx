@@ -14,8 +14,8 @@ import sber from "@/assets/icons/banki_icon/sber.svg";
 import {StaticImageData} from "next/image";
 import IntroDeposits from "@/screens/DepositsPage/components/IntroDeposits/IntroDeposits";
 import absolut from "@/assets/icons/absolute_big.svg";
-import {DepositCardInterface} from "@/core/api/Deposits";
-import {NewsInterface} from "@/core/api/News";
+import {DepositCardInterface} from "@/core/services/Deposits";
+import {NewsInterface} from "@/core/services/News";
 
 type offersT = {
     name: string
