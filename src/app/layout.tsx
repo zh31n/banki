@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import Header from "@/components/Header/Header";
 import React from "react";
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import {StoreProvider} from "@/core/store/provider";
 
 export const metadata: Metadata = {
     title: "Главная",
@@ -13,9 +14,11 @@ function RootLayout({children}: { children: React.ReactNode; }) {
     return (
         <html lang="ru">
         <body>
-        <Header/>
-        <MobileHeader/>
-        {children}
+        <StoreProvider>
+            <Header/>
+            <MobileHeader/>
+            {children}
+        </StoreProvider>
         </body>
         </html>
     );
