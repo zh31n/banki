@@ -8,6 +8,7 @@ import {margin} from "@mui/system";
 type InpPropsT = {
     placeholder: string
     margin?: number
+    lupa?:boolean
 }
 
 const Search = ({placeholder,margin}: InpPropsT) => {
