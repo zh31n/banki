@@ -1,26 +1,25 @@
 import React from 'react';
-import s from './OfferMoth.module.scss';
+import s from './index.module.scss';
 import arr_l from "@/assets/icons/banki_icon/Стрелка_left.svg";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
 import Image from "next/image";
 import ChoiceItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
-import OfferItem from "@/components/Offers/OfferItem/OfferItem";
-import {DepositCardInterface} from "@/core/api/Deposits";
+import {CreditInterface} from "@/core/api/Credits";
+import CreditOfferItem from "@/components/credits/CreditOfferItem";
 
 type ItemT = {
     name: string
     active: boolean
 }
-type OfferMonthProps = {
+interface CreditOfferListProps {
     choiceItems?: ItemT[]
-    offers: DepositCardInterface[]
+    credits: CreditInterface[]
 }
 
-
-const OfferMonth = (props: OfferMonthProps) => {
+const CreditOfferList = (props: CreditOfferListProps) => {
     const {
         choiceItems,
-        offers,
+        credits,
     } = props;
 
     return (
@@ -31,11 +30,11 @@ const OfferMonth = (props: OfferMonthProps) => {
             </div>}
             <div className={s.offer_cont}>
                 <Image className={s.arr} alt={'icon'} src={arr_l}/>
-                {offers.map((item) => <OfferItem item={item} key={item.id}/>)}
+                {credits.map((item) => <CreditOfferItem item={item} key={item.id}/>)}
                 <Image className={s.arr} alt={'icon'} src={arr_r}/>
             </div>
         </div>
     );
 };
 
-export default OfferMonth;
+export default CreditOfferList;

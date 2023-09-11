@@ -1,10 +1,21 @@
 import Wrapper from "@/containers/Wrapper";
 import Navigation from "@/screens/NewsPage/components/Navigation/Navigation";
 import News from "@/screens/NewsPage/components/News/News";
+import {NewsInterface} from "@/core/api/News";
+import React from "react";
 
-export default function NewsPage() {
+
+interface NewsPageProps {
+    news: NewsInterface[];
+}
+
+export default function NewsPage(props: NewsPageProps) {
+    const {
+        news,
+    } = props;
+
     return <Wrapper>
         <Navigation />
-        <News />
+        <News news={news} />
     </Wrapper>
 }

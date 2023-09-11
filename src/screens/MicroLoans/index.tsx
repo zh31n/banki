@@ -3,25 +3,21 @@ import PageWrapper from "@/containers/PageWrapper";
 import IntroMicroloans from "@/screens/MicroLoans/components/IntroMicroloans/IntroMicroloans";
 import Bonus from "@/components/Bonus/Bonus";
 import SliderBanksCons from "@/screens/ConsumerCreditsPage/Components/SliderBanksCons/SliderBanksCons";
-import WebLoans from "@/screens/MicroLoans/components/WebLoans/WebLoans";
-import OfferMoth from "@/components/Offers/OfferMoth/OfferMoth";
+import WebLoans from "@/screens/MicroLoans/components/WebLoans";
 import MicroLoansOrgs from "@/screens/MicroLoans/components/MicroLoansOrgs/MicroLoansOrgs";
 import CatalogItems from "@/components/Catalog/CatalogItems/CatalogItems";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
-import TopBanks from "@/components/TopBanks/TopBanks";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import {StaticImageData} from "next/image";
+import {NewsInterface} from "@/core/api/News";
+import {CreditInterface} from "@/core/api/Credits";
+import CreditTopBankList from "@/components/credits/CreditTopBankList";
+import CreditOfferList from "@/components/credits/CreditOfferList";
 
 type chooseT = {
     name: string
     active: boolean
-}
-type WebLoan = {
-    sum: string
-    days: string
-    stavka: string | number
-    titleBtn: string
 }
 type offers = {
     img: StaticImageData
@@ -55,11 +51,12 @@ type ItemT = {
     title: string
     text: string
 }
-type Props = {
-    data: {
+interface MicroloansPageProps {
+    credits: CreditInterface[];
+    news: NewsInterface[];
+    staticData: {
         chooseIntro: chooseT[],
         slideItems: StaticImageData[],
-        webloans: WebLoan[],
         offersMoth: offers[],
         loans: loanT[]
         catalogData: catalogT[]
@@ -68,23 +65,32 @@ type Props = {
     }
 }
 
-const MicroLoans = ({data}: Props) => {
+const MicroloansPage = (props: MicroloansPageProps) => {
+    const {
+        credits,
+        news,
+        staticData,
+    } = props;
+
     return (
         <PageWrapper>
-            <IntroMicroloans items={data.chooseIntro}/>
+            <IntroMicroloans items={staticData.chooseIntro}/>
             <Bonus title={'0% Первый займ бесплатно!'}/>
-            <SliderBanksCons data={data.slideItems}/>
-            <WebLoans data={data.webloans}/>
-            <OfferMoth offers={data.offersMoth}/>
-            <MicroLoansOrgs title={'Микрокредитные организации'} items={data.loans}/>
-            <CatalogItems title={'Каталог микрозаймов'} items={data.catalogData} width={'100%'}/>
-            <LatestNews/>
+            <SliderBanksCons data={staticData.slideItems}/>
+            <WebLoans credits={credits}/>
+            <CreditOfferList credits={credits} />
+            <MicroLoansOrgs title={'Микрокредитные организации'} items={staticData.loans}/>
+            <CatalogItems title={'Каталог микрозаймов'} items={staticData.catalogData} width={'100%'}/>
+            <LatestNews news={news}/>
             <Feedback title={'Отзывы '} sub={'о МФО'}/>
-            <TopBanks banks={data.banks} title={'Микрозаймы в Москве '} sub={'- ТОП 10 займов в МФО в 2023 году'}
-                      fz={36}/>
-            <FrequentQuestions title={'Важная информация'} items={data.questData}/>
+            <CreditTopBankList
+                credits={credits}
+                title={'Микрозаймы в Москве'}
+                sub={' - ТОП 10 займов в МФО в 2023 году'}
+            />
+            <FrequentQuestions title={'Важная информация'} items={staticData.questData}/>
         </PageWrapper>
     );
 };
 
-export default MicroLoans;
+export default MicroloansPage;

@@ -2,11 +2,30 @@ import React from 'react';
 import CalculatorCredits from "@/screens/CalculatorCredits/CalculatorCredits";
 import {Metadata} from "next";
 import data from "@/core/data";
+import {CreditInterface, CreditsResponseInterface, GET_CREDITS} from "@/core/api/Credits";
 
 export const metadata:Metadata = {
     title:'Кредитный калькулятор'
 }
 
-const Page = () => <CalculatorCredits data={data.CalculateCredit}/>;
+interface Data {
+    credits: CreditInterface[];
+}
 
-export default Page;
+const getData = async (): Promise<Data> => {
+    const credits: CreditsResponseInterface = (await GET_CREDITS());
+
+    return {
+        credits: credits.cards,
+    }
+}
+
+export default async function CreditsCalculator() {
+    const {
+        credits,
+    } = await getData();
+
+    return (
+        <CalculatorCredits credits={credits} staticData={data.CalculateCredit}/>
+    )
+};

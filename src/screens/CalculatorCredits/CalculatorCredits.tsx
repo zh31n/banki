@@ -1,40 +1,37 @@
 import React from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroCalculate from "@/screens/CalculatorCredits/components/IntroCalculate/IntroCalculate";
-import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
-import {StaticImageData} from "next/image";
+import CreditCalculatorBankList from "@/components/credits/CreditCalculatorBankList";
+import {CreditInterface} from "@/core/api/Credits";
 
 type ItemT = {
     title: string
     text: string
 }
-type Props = {
-    data: {
-        offers: dep[],
+interface CalculatorCreditsProps {
+    credits: CreditInterface[];
+    staticData: {
         questData: ItemT[]
     }
 }
-type dep = {
-    name: string
-    sub: string
-    stavka: string
-    time: string
-    money: string
-    img: StaticImageData
-    charcs: string[]
-    btn?: string | undefined
-    count?: string | undefined
-}
 
-const CalculatorCredits = ({data}: Props) => {
+
+const CalculatorCredits = (props: CalculatorCreditsProps) => {
+    const {
+        credits,
+        staticData,
+    } = props;
+
     return (
         <PageWrapper>
             <IntroCalculate/>
-            <OffersBanks isSelect={true} deposits={data.offers} title={'223'} sub={' предложения'} options={['По популярности']}/>
+            <CreditCalculatorBankList
+                credits={credits}
+            />
             <Feedback title={'Отзывы'} sub={' о кредитах'}/>
-            <FrequentQuestions title={'Важная информация'} items={data.questData}/>
+            <FrequentQuestions title={'Важная информация'} items={staticData.questData}/>
         </PageWrapper>
     );
 };

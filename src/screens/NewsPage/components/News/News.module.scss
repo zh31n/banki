@@ -1,4 +1,4 @@
-.main_contaifenr {
+.main_container {
   margin-top: 32px;
   display: flex;
   gap: 24px;
@@ -68,7 +68,7 @@
 }
 
 @media (max-width: 480px) {
-  .main_contaifenr {
+  .main_container {
     flex-wrap: wrap;
     gap: 20px;
     .left_container{

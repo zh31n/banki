@@ -56,7 +56,7 @@ const HomePage = ({data}: Props) => {
             <Search placeholder={"Найти необходимую услугу..."}/>
             <Banks data={data.banki}/>
             <Calculate/>
-            <OfferMoth offers={data.offersMoth} choiseItems={data.choiseOffer}/>
+            <OfferMoth offers={data.offersMoth} choiceItems={data.choiseOffer}/>
             <LatestNews/>
             <Feedback chois={data.choiseFeedback}/>
         </PageWrapper>
