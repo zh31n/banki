@@ -70,8 +70,8 @@ const navigation = {
         ],
         [
             {text: 'Обучение', link: '/investment'},
-            {text: 'Фонды', link: '/investment'},
-            {text: 'Облигации', link: '/investment'},
+            {text: 'Фонды', link: '/investment/fonds'},
+            {text: 'Облигации', link: '/investment/obligations'},
             {text: 'Аналитика', link: '/investment'},
             {text: 'Избранное', link: '/investment'},
         ]
