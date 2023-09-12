@@ -903,6 +903,7 @@ const data = {
         banksSlideItems: [ekspo, spm, psb, sber_full, tinkoff, norvik],
         specialOffers: [
             {
+                id: 1,
                 name: 'Кэшбэк 20% за страхование ипотеки',
                 img: img_2,
                 bankImg: lines,
@@ -913,6 +914,7 @@ const data = {
                 count2: '4000 руб.',
             },
             {
+                id: 2,
                 name: 'Получите 1000 рублей на топливо',
                 img: img_2,
                 bankImg: lines,
@@ -923,6 +925,7 @@ const data = {
                 count2: 'до 31.07.2023',
             },
             {
+                id: 3,
                 name: '4 000 ₽ для вашего авто',
                 img: img_2,
                 bankImg: lines,
@@ -950,12 +953,6 @@ const data = {
             {name: 'Обучение', active: false},
             {name: 'Избранное', active: false},
         ],
-        lastRecommends: [
-            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
-            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
-            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
-            {img: loco, name: 'Финам', sub: 'Добро Пожаловать. Локо', btn: 'Купить акции'},
-        ],
         bankItems: [ekspo, spm, psb, sber_full, tinkoff, norvik],
         stocks: [
             {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
@@ -977,11 +974,6 @@ const data = {
                 name: 'Доходность до 49,7%',
                 info: '120 дней бесплатного обслуживания'
             },
-        ],
-        loans: [
-            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
-            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
-            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
         ],
         questData: [
             {title: 'Подробнее', text: ''},
@@ -1640,47 +1632,10 @@ const data = {
                 count: 'Ещё 12 тарифов'
             },
         ],
-        brokerCompany: [
-            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
-            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
-            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
-        ],
         questions: [
             {title: 'Зачем нужен брокер?', text: ''},
             {title: 'За что нужно платить комиссию?', text: ''},
             {title: 'Как выбрать брокера?', text: ''},
-        ],
-        TopBrokers: [
-            {
-                title: 'Совкомбанк — Халва',
-                sub: 'Брокер',
-                comm: '0,04',
-                serv: '0'
-            },
-            {
-                title: 'Совкомбанк — Халва',
-                sub: 'Брокер',
-                comm: '0,04',
-                serv: '0'
-            },
-            {
-                title: 'Совкомбанк — Халва',
-                sub: 'Брокер',
-                comm: '0,04',
-                serv: '0'
-            },
-            {
-                title: 'Совкомбанк — Халва',
-                sub: 'Брокер',
-                comm: '0,04',
-                serv: '0'
-            },
-            {
-                title: 'Совкомбанк — Халва',
-                sub: 'Брокер',
-                comm: '0,04',
-                serv: '0'
-            },
         ],
         questionsD: [
             {title: 'Подробнее', text: ''},
@@ -1757,11 +1712,6 @@ const data = {
                 name: 'Доходность до 49,7%',
                 info: '120 дней бесплатного обслуживания'
             },
-        ],
-        loans: [
-            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
-            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
-            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
         ],
         frequentQuests: [
             {title: 'Что такое акции?', text: ''},
@@ -1853,11 +1803,6 @@ const data = {
                 name: 'Доходность до 49,7%',
                 info: '120 дней бесплатного обслуживания'
             },
-        ],
-        loans: [
-            {img: ifk, title: 'ИФК Солид', sub: 'Лицензия №488-39208-08'},
-            {img: mic1, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
-            {img: mic2, title: 'Локо-Банк', sub: 'Лицензия №488-39208-08'},
         ],
         frequentQuests: [
             {title: 'Что такое облигации?', text: ''},

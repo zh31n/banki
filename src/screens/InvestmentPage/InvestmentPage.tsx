@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import s from './InvestmentPage.module.scss';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroInvest from "@/screens/InvestmentPage/components/IntroInvest/IntroInvest";
@@ -11,8 +12,14 @@ import OffersInvest from "@/screens/InvestmentPage/components/OffersInvest/Offer
 import Mailing from "@/components/Mailing/Mailing";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import HaveQues from "@/components/HaveQues/HaveQues";
-import MicroLoansOrgs from "@/screens/MicroLoans/components/MicroLoansOrgs/MicroLoansOrgs";
+import BrokerList from "@/components/investment/BrokersList";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {useDispatch, useSelector} from "react-redux";
+import {InvestingNewsListSelector} from "@/core/store/news/selectors";
+import {investingNewsGetRequestedAction} from "@/core/store/news/actions";
+import {BrokerInterface, InvestingMarketInterface, InvestingNewsInterface} from "@/core/services/Investing";
+import {investingBrokersGetRequestedAction, investingMarketsGetRequestedAction} from "@/core/store/investing/actions";
+import {InvestingBrokersSelector, InvestingMarketsSelector} from "@/core/store/investing/selectors";
 
 type ChooseT = {
     name: string
@@ -25,23 +32,12 @@ type InvestT = {
     rate: number
     money: number
 }
-type RecomItemT = {
-    img: StaticImageData
-    name: string
-    sub: string
-    btn: string
-}
 type offerT = {
     img: StaticImageData,
     title: string,
     sub: string,
     name: string,
     info: string
-}
-type LoanT = {
-    img: StaticImageData
-    title: string
-    sub: string
 }
 type questT = {
     title: string
@@ -50,29 +46,38 @@ type questT = {
 type Props = {
     data: {
         introChoose: ChooseT[],
-        lastRecommends: RecomItemT[],
         bankItems: StaticImageData[],
         bonds: InvestT[],
         offersMoth: offerT[],
-        loans:LoanT[],
         questData:questT[]
     }
 }
 
 const InvestmentPage = ({data}: Props) => {
+    const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
+    const markets: InvestingMarketInterface[] = useSelector(InvestingMarketsSelector);
+    const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(investingNewsGetRequestedAction());
+        dispatch(investingMarketsGetRequestedAction());
+        dispatch(investingBrokersGetRequestedAction());
+    }, [])
+
     return (
         <PageWrapper>
             <IntroInvest items={data.introChoose}/>
-            <LastRecomends items={data.lastRecommends}/>
+            <LastRecomends markets={markets}/>
             <InvestInfo banks={data.bankItems}/>
             <WatchInfo title={'Мастер подбора брокерского счета'}
                        text={'Список крупнейших биржевых брокеров на российском инвестиционном рынке.'}/>
             <SoloInvest items={data.bonds}/>
             <OffersInvest items={data.offersMoth}/>
             <Mailing/>
-            <LatestNews/>
+            <LatestNews news={news}/>
             <HaveQues/>
-            <MicroLoansOrgs title={'Все брокеры'} items={data.loans}/>
+            <BrokerList title={'Все брокеры'} brokers={brokers}/>
             <FrequentQuestions title={''} items={data.questData}/>
         </PageWrapper>
     );

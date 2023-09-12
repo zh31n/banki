@@ -1,25 +1,31 @@
 import React from 'react';
 import s from './LastRecommendItem.module.scss';
-import Image, {StaticImageData} from "next/image";
+import Image from "next/image";
 import WhiteBorderBlueBtn from "@/UI/WhiteBorderBlueBtn/WhiteBorderBlueBtn";
+import {InvestingMarketInterface} from "@/core/services/Investing";
+import mockMarketLogo from "@/assets/icons/banki_icon/loco.svg";
 
-type Props = {
-    img: StaticImageData
-    name: string
-    sub: string
-    btn: string
+interface LastRecommendItemProps {
+    item: InvestingMarketInterface;
 }
-const LastRecommendItem = ({img, name, sub, btn}: Props) => {
+const LastRecommendItem = (props: LastRecommendItemProps) => {
+    const {
+        item: {
+            name,
+            description,
+        }
+    } = props;
+
     return (
         <div className={s.item}>
             <div className={s.info}>
-                <Image src={img} alt={'bank icon'}/>
+                <Image src={mockMarketLogo} alt={'bank icon'}/>
                 <div>
                     <span>{name}</span>
-                    <span>{sub}</span>
+                    <span>{description}</span>
                 </div>
             </div>
-            <div className={s.line}></div>
+            <div className={s.line} />
             <WhiteBorderBlueBtn text={'Купить акции'}/>
         </div>
     );

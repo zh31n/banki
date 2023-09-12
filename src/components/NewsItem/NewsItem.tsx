@@ -1,10 +1,11 @@
 import React from 'react';
 import s from './NewsItem.module.scss';
-import Image, {StaticImageData} from "next/image";
+import Image from "next/image";
 import smile from '@/assets/icons/Smile.svg';
+import {InvestingNewsInterface} from "@/core/services/Investing";
 
 interface NewsItemProps {
-    item: NewsItemProps;
+    item: NewsItemProps | InvestingNewsInterface;
 }
 
 const NewsItem = (props: NewsItemProps) => {

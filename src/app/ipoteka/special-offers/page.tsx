@@ -1,11 +1,12 @@
 import {Metadata} from "next";
-import SpecialIpotekaOfffersPage from "@/screens/SpecialIpotekaOfffersPage/SpecialIpotekaOfffersPage";
+import SpecialMortgageOffersPage from "@/screens/SpecialMortgageOffersPage";
 import data from "@/core/data";
+import React from "react";
 
 export const metadata: Metadata = {
   title: 'Специальные предложения',
 }
 
 export default function SpecialOffers() {
-  return <SpecialIpotekaOfffersPage data={data.SpecialOffersCards} />
+  return <SpecialMortgageOffersPage staticData={data.SpecialOffersCards} />
 }

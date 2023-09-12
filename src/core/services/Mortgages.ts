@@ -14,15 +14,15 @@ export interface GetMortgagesParams {
 
 export interface MortgageInterface {
     id: number;
+    bank_id: number;
+    max_amount: number;
     min_amount: number;
     rate: number;
     timeframe_max: number;
-    description: string;
-    max_amount: number;
-    bank_id: number;
-    type: string;
     timeframe_min: number;
+    type: string;
     name: string;
+    description: string;
     rating: number;
     monthly_payment: number;
 }

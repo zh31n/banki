@@ -4,6 +4,7 @@ import NewsItem from "@/components/NewsItem/NewsItem";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 import {NewsInterface} from "@/core/services/News";
+import {InvestingNewsInterface} from "@/core/services/Investing";
 
 interface ChoicesInterface {
     name: string;
@@ -18,7 +19,7 @@ const mockFilterItems: ChoicesInterface[] = [
     {name: 'Безопасность', active: false},
 ]
 interface LatestNewsProps {
-    news: NewsInterface[];
+    news: NewsInterface[] | InvestingNewsInterface[];
 }
 
 const LatestNews = (props: LatestNewsProps) => {
@@ -32,7 +33,8 @@ const LatestNews = (props: LatestNewsProps) => {
             <div className={s.choises_cont}>
                 <ChoiseItemsMap choiseItems={mockFilterItems} />
             </div>
-            <div className={s.news_cont}>{news.map((item) => <NewsItem key={item.id} item={item}/>)}</div>
+            <div className={s.news_cont}>{news
+                .map((item) => <NewsItem key={item.id} item={item}/>)}</div>
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все новости'} width={300}/>
             </div>

@@ -1,10 +1,11 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroMicroloans from "@/screens/MicroLoans/components/IntroMicroloans/IntroMicroloans";
 import Bonus from "@/components/Bonus/Bonus";
 import SliderBanksCons from "@/screens/ConsumerCreditsPage/Components/SliderBanksCons/SliderBanksCons";
 import WebLoans from "@/screens/MicroLoans/components/WebLoans";
-import MicroLoansOrgs from "@/screens/MicroLoans/components/MicroLoansOrgs/MicroLoansOrgs";
+import BrokerList from "@/components/investment/BrokersList";
 import CatalogItems from "@/components/Catalog/CatalogItems/CatalogItems";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
@@ -14,6 +15,12 @@ import {NewsInterface} from "@/core/services/News";
 import {CreditInterface} from "@/core/services/Credits";
 import CreditTopBankList from "@/components/credits/CreditTopBankList";
 import CreditOfferList from "@/components/credits/CreditOfferList";
+import {BrokerInterface} from "@/core/services/Investing";
+import {useDispatch, useSelector} from "react-redux";
+import {InvestingBrokersSelector} from "@/core/store/investing/selectors";
+import {investingBrokersGetRequestedAction} from "@/core/store/investing/actions";
+import {NewsListSelector} from "@/core/store/news/selectors";
+import {newsGetRequestedAction} from "@/core/store/news/actions";
 
 type chooseT = {
     name: string
@@ -29,11 +36,6 @@ type offers = {
     title1_key?: string | undefined
     title2?: string | undefined
     title2_key?: string | undefined
-}
-type loanT = {
-    img: StaticImageData
-    title: string
-    sub: string
 }
 type catalogT = {
     name: string
@@ -53,12 +55,10 @@ type ItemT = {
 }
 interface MicroloansPageProps {
     credits: CreditInterface[];
-    news: NewsInterface[];
     staticData: {
         chooseIntro: chooseT[],
         slideItems: StaticImageData[],
         offersMoth: offers[],
-        loans: loanT[]
         catalogData: catalogT[]
         banks: banksT[]
         questData: ItemT[]
@@ -68,9 +68,16 @@ interface MicroloansPageProps {
 const MicroloansPage = (props: MicroloansPageProps) => {
     const {
         credits,
-        news,
         staticData,
     } = props;
+    const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
+    const news: NewsInterface[] = useSelector(NewsListSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(investingBrokersGetRequestedAction());
+        dispatch(newsGetRequestedAction());
+    }, [])
 
     return (
         <PageWrapper>
@@ -79,7 +86,7 @@ const MicroloansPage = (props: MicroloansPageProps) => {
             <SliderBanksCons data={staticData.slideItems}/>
             <WebLoans credits={credits}/>
             <CreditOfferList credits={credits} />
-            <MicroLoansOrgs title={'Микрокредитные организации'} items={staticData.loans}/>
+            <BrokerList title={'Микрокредитные организации'} brokers={brokers}/>
             <CatalogItems title={'Каталог микрозаймов'} items={staticData.catalogData} width={'100%'}/>
             <LatestNews news={news}/>
             <Feedback title={'Отзывы '} sub={'о МФО'}/>

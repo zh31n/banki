@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroObliagtionInvest from "@/screens/ObligationsInv/components/IntroObliagtionInvest/IntroObliagtionInvest";
 import data from "@/core/data";
@@ -8,29 +9,47 @@ import OffersObligation from "@/screens/ObligationsInv/components/OffersObligati
 import s from './ObligationsInv.module.scss';
 import OffersInvest from "@/screens/InvestmentPage/components/OffersInvest/OffersInvest";
 import HaveQues from "@/components/HaveQues/HaveQues";
-import MicroLoansOrgs from "@/screens/MicroLoans/components/MicroLoansOrgs/MicroLoansOrgs";
+import BrokerList from "@/components/investment/BrokersList";
 import Mailing from "@/components/Mailing/Mailing";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopObligations from "@/screens/ObligationsInv/components/TopObligations/TopObligations";
 import LatestNews from "@/components/LatestNews/LatestNews";
+import {BrokerInterface, InvestingNewsInterface} from "@/core/services/Investing";
+import {useDispatch, useSelector} from "react-redux";
+import {InvestingNewsListSelector} from "@/core/store/news/selectors";
+import {InvestingBrokersSelector} from "@/core/store/investing/selectors";
+import {investingNewsGetRequestedAction} from "@/core/store/news/actions";
+import {investingBrokersGetRequestedAction} from "@/core/store/investing/actions";
 
 
 const ObligationsInv = () => {
+    const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
+    const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
+    const dispatch = useDispatch();
 
-    const text = 'Инвестиционная платформа №1. Большой выбор размещений,' +
-        ' 10% годовых в облигациях российских компаний, консультации профессиональных управляющих';
-    const changeTime = {
-        time: '09:48',
-        date: '23.08.2023'
-    }
+    useEffect(() => {
+        dispatch(investingNewsGetRequestedAction());
+        dispatch(investingBrokersGetRequestedAction());
+    }, [])
+
     return (
         <PageWrapper>
             <IntroObliagtionInvest items={data.ObligationsPage.chooseIntro}/>
             <StockInvCalculate chooseD={data.ObligationsPage.calc_choose_d}/>
-            <Bonus text={text} title={'ВТБ Мои Инвестиции'} height={166}/>
-            <OffersObligation changeTime={changeTime} offers={data.ObligationsPage.obligationOffers}
-                              count={'393 облигации'}
-                              options={['Доходность']}
+            <Bonus
+                text={'Инвестиционная платформа №1. Большой выбор размещений,' +
+                ' 10% годовых в облигациях российских компаний, консультации профессиональных управляющих'}
+                title={'ВТБ Мои Инвестиции'}
+                height={166}
+            />
+            <OffersObligation
+                changeTime={{
+                    time: '09:48',
+                    date: '23.08.2023'
+                }}
+                offers={data.ObligationsPage.obligationOffers}
+                count={'393 облигации'}
+                options={['Доходность']}
             />
             <div className={s.text}>
                 <p>
@@ -42,11 +61,14 @@ const ObligationsInv = () => {
             </div>
             <OffersInvest items={data.ObligationsPage.offersMoth}/>
             <HaveQues/>
-            <MicroLoansOrgs title={'Все брокеры'} items={data.ObligationsPage.loans}/>
+            <BrokerList
+                brokers={brokers}
+                title={'Все брокеры'}
+            />
             <Mailing/>
             <FrequentQuestions title={'Частые вопросы'} items={data.ObligationsPage.frequentQuests}/>
             <TopObligations obligations={data.ObligationsPage.TopObligationItems}/>
-            <LatestNews/>
+            <LatestNews news={news}/>
             <div className={s.text}>
                 <h1 className={s.title}>Информация</h1>
                 <p>

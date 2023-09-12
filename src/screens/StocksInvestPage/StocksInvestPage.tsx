@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroStockInvest from "@/screens/StocksInvestPage/components/IntroStockInvest/IntroStockInvest";
 import data from "@/core/data";
@@ -10,10 +11,24 @@ import OffersInvest from "@/screens/InvestmentPage/components/OffersInvest/Offer
 import Mailing from "@/components/Mailing/Mailing";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import HaveQues from "@/components/HaveQues/HaveQues";
-import MicroLoansOrgs from "@/screens/MicroLoans/components/MicroLoansOrgs/MicroLoansOrgs";
+import BrokerList from "@/components/investment/BrokersList";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {BrokerInterface, InvestingNewsInterface} from "@/core/services/Investing";
+import {useDispatch, useSelector} from "react-redux";
+import {InvestingNewsListSelector} from "@/core/store/news/selectors";
+import {InvestingBrokersSelector} from "@/core/store/investing/selectors";
+import {investingNewsGetRequestedAction} from "@/core/store/news/actions";
+import {investingBrokersGetRequestedAction} from "@/core/store/investing/actions";
 
 const StocksInvestPage = () => {
+    const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
+    const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(investingNewsGetRequestedAction());
+        dispatch(investingBrokersGetRequestedAction());
+    }, [])
 
     return (
         <PageWrapper>
@@ -38,10 +53,10 @@ const StocksInvestPage = () => {
             </div>
             <OffersInvest items={data.StockInvest.offersMoth}/>
             <HaveQues/>
-            <MicroLoansOrgs title={'Все брокеры'} items={data.StockInvest.loans}/>
+            <BrokerList title={'Все брокеры'} brokers={brokers}/>
             <Mailing/>
             <FrequentQuestions title={'Частые вопросы'} items={data.StockInvest.frequentQuests}/>
-            <LatestNews/>
+            <LatestNews news={news}/>
             <FrequentQuestions title={''} items={data.StockInvest.questions}/>
             <div className={s.text}>
                 <h1 className={s.title}>Информация</h1>

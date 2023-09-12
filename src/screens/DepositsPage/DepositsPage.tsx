@@ -16,7 +16,6 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import TopBanks from "@/components/TopBanks/TopBanks";
 import {DepositCardInterface} from "@/core/services/Deposits";
 import {NewsInterface} from "@/core/services/News";
-import {GetServerSideProps} from "next";
 
 type offerT = {
     name: string

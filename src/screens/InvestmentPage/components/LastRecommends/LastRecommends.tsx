@@ -2,18 +2,16 @@ import React from 'react';
 import s from './LastRecommends.module.scss';
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import LastRecommendItem from "@/screens/InvestmentPage/components/LastRecommends/LastRecommendItem/LastRecommendItem";
-import {StaticImageData} from "next/image";
+import {InvestingMarketInterface} from "@/core/services/Investing";
 
-type RecomItemT = {
-    img: StaticImageData
-    name: string
-    sub: string
-    btn: string
+interface LastRecommendsProps {
+    markets: InvestingMarketInterface[];
 }
-type Props = {
-    items: RecomItemT[]
-}
-const LastRecommends = ({items}: Props) => {
+const LastRecommends = (props: LastRecommendsProps) => {
+    const {
+        markets,
+    } = props;
+
     return (
         <div className={s.wrapper}>
             <div className={s.info}>
@@ -28,10 +26,8 @@ const LastRecommends = ({items}: Props) => {
                 <BlueBtn text={'Перейти к списку акций'} width={314}/>
             </div>
             <div className={s.items}>
-                {items.map((el, index) => <LastRecommendItem img={el.img}
-                                                             name={el.name} sub={el.sub} btn={el.btn}
-                                                             key={index}/>)
-                }
+                {markets.slice(0, 4)
+                    .map((item) => <LastRecommendItem key={item.id} item={item}/>)}
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import OurStrongsDms from "@/screens/DmsPage/components/OurStrongsDms/OurStrongsDms";
 import IntroDms from "@/screens/DmsPage/components/IntroDms/IntroDms";
@@ -6,6 +7,10 @@ import Bonus from "@/components/Bonus/Bonus";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
+import {NewsInterface} from "@/core/services/News";
+import {useDispatch, useSelector} from "react-redux";
+import {NewsListSelector} from "@/core/store/news/selectors";
+import {newsGetRequestedAction} from "@/core/store/news/actions";
 
 type ItemT = {
     title: string
@@ -18,6 +23,12 @@ type Props = {
     }
 }
 const DmsPage = ({data}: Props) => {
+    const news: NewsInterface[] = useSelector(NewsListSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(newsGetRequestedAction());
+    }, [])
     return (
         <PageWrapper>
             <IntroDms/>
@@ -25,7 +36,7 @@ const DmsPage = ({data}: Props) => {
                    title={'Кэшбэк 20% за страхование ипотеки'}
                    text={'Получите до 4000 рублей на карту'}/>
             <OurStrongsDms/>
-            <LatestNews/>
+            <LatestNews news={news}/>
             <Feedback sub={'о страховках для занятий спортом'} title={'Отзывы '}/>
             <FrequentQuestions title={'Популярные вопросы'} items={data.questData}/>
             <FrequentQuestions title={'Важная информация'} items={data.questions}/>

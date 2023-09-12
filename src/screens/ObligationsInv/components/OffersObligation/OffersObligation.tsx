@@ -6,8 +6,6 @@ import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import lines from "@/assets/icons/banki_icon/3-line.svg";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import {StaticImageData} from "next/image";
-import BrokerOffersItemsMap from "@/components/BrokerItems/BrokerOffersItemsMap/BrokerOffersItemsMap";
-import StockOfferItem from "@/screens/StocksInvestPage/components/StockOfferItem/StockOfferItem";
 import ObliagtionOfferItem from "@/screens/ObligationsInv/components/ObliagtionOfferItem/ObliagtionOfferItem";
 
 type dep = {

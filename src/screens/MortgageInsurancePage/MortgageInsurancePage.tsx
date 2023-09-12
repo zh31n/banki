@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroInsuranceMort from "@/screens/MortgageInsurancePage/components/IntroInsuranceMort/IntroInsuranceMort";
 import Bonus from "@/components/Bonus/Bonus";
@@ -9,6 +10,10 @@ import HowItWorks from "@/components/HowItWorks/HowItWorks";
 import OurStrongsMort from "@/screens/MortgageInsurancePage/components/OurStrongsMort/OurStrongsMort";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
+import {NewsInterface} from "@/core/services/News";
+import {useDispatch, useSelector} from "react-redux";
+import {NewsListSelector} from "@/core/store/news/selectors";
+import {newsGetRequestedAction} from "@/core/store/news/actions";
 
 type itemT = {
     title: string
@@ -24,6 +29,13 @@ type Props = {
     }
 }
 const MortgageInsurancePage = ({data}: Props) => {
+    const news: NewsInterface[] = useSelector(NewsListSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(newsGetRequestedAction());
+    }, [])
+
     return (
         <PageWrapper>
             <IntroInsuranceMort/>
@@ -32,7 +44,7 @@ const MortgageInsurancePage = ({data}: Props) => {
             <LastBuy/>
             <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={data.worksData}/>
             <OurStrongsMort/>
-            <LatestNews/>
+            <LatestNews news={news}/>
             <Feedback sub={'об ипотечном страховании'} title={'Отзывы '}/>
         </PageWrapper>
     );

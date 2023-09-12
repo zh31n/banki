@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroFondsInv from "@/screens/FondsInv/components/IntroFondsInv/IntroFondsInv";
 import data from "@/core/data";
@@ -11,16 +12,29 @@ import HaveQues from "@/components/HaveQues/HaveQues";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopFonds from "@/screens/FondsInv/components/TopFonds/TopFonds";
 import LatestNews from "@/components/LatestNews/LatestNews";
+import {InvestingNewsInterface} from "@/core/services/Investing";
+import {useDispatch, useSelector} from "react-redux";
+import {InvestingNewsListSelector} from "@/core/store/news/selectors";
+import {investingNewsGetRequestedAction} from "@/core/store/news/actions";
 
 const FondsInv = () => {
-    const text = 'Инвестиционная платформа №1. Большой выбор размещений,' +
-        ' 10% годовых в облигациях российских компаний, консультации профессиональных управляющих';
+    const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(investingNewsGetRequestedAction());
+    }, [])
 
     return (
         <PageWrapper>
             <IntroFondsInv items={data.FondsPage.chooseIntro}/>
             <StockInvCalculate chooseD={data.FondsPage.calc_choose_d}/>
-            <Bonus text={text} title={'ВТБ Мои Инвестиции'} height={166}/>
+            <Bonus
+                text={'Инвестиционная платформа №1. Большой выбор размещений,' +
+            ' 10% годовых в облигациях российских компаний, консультации профессиональных управляющих'}
+                title={'ВТБ Мои Инвестиции'}
+                height={166}
+            />
             <OffersFonds offers={data.FondsPage.FondsOfferItems} count={'177 предложений'}
                          options={['По доходности за год']}
             />
@@ -36,7 +50,7 @@ const FondsInv = () => {
             <HaveQues/>
             <FrequentQuestions title={'Частые вопросы'} items={data.FondsPage.frequentQuests}/>
             <TopFonds fonds={data.FondsPage.TopFondsItems}/>
-            <LatestNews/>
+            <LatestNews news={news}/>
             <div className={s.text}>
                 <h1 className={s.title}>Информация</h1>
                 <p>
