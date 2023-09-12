@@ -67,7 +67,7 @@ const InvestmentPage = ({data}: Props) => {
             <InvestInfo banks={data.bankItems}/>
             <WatchInfo title={'Мастер подбора брокерского счета'}
                        text={'Список крупнейших биржевых брокеров на российском инвестиционном рынке.'}/>
-            <SoloInvest items={data.bonds}/>
+            <SoloInvest items={data.bonds} isSub={true}/>
             <OffersInvest items={data.offersMoth}/>
             <Mailing/>
             <LatestNews/>

@@ -65,14 +65,14 @@ const navigation = {
             {text: 'С чего начать', link: '/investment'},
             {text: 'Акции', link: '/investment/stocks'},
             {text: 'Подбор брокера', link: '/investment/select-broker'},
-            {text: 'Специальные предложения', link: '/investment'},
-            {text: 'Криптовалюта', link: '/investment'},
+            {text: 'Специальные предложения', link: '/investment/special-offers'},
+            {text: 'Криптовалюта', link: '/investment/crypto'},
         ],
         [
             {text: 'Обучение', link: '/investment'},
             {text: 'Фонды', link: '/investment/fonds'},
             {text: 'Облигации', link: '/investment/obligations'},
-            {text: 'Аналитика', link: '/investment'},
+            {text: 'Аналитика', link: '/investment/analytics'},
             {text: 'Избранное', link: '/investment'},
         ]
     ],
@@ -102,4 +102,4 @@ const navigation = {
 }
 
 
-export default navigation
+export default navigation;
