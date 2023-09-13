@@ -13,7 +13,7 @@ const AssuranceBusiness = () => {
         <PageWrapper>
             <IntroAssuranceBusiness/>
             <InsuranceCompanys data={data.InsurancePage.banksSlideItems} isTitle={true}/>
-            <OffersBanks dataMap={data.AssuranceBusiness.offers} title={'Виды страхования'}/>
+            <OffersBanks cards={data.AssuranceBusiness.offers} title={'Виды страхования'}/>
             <LatestNews/>
             <Feedback sub={' о страховании юридических лиц '} title={'Отзывы'}/>
         </PageWrapper>

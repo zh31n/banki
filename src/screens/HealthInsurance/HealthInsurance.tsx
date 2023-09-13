@@ -4,7 +4,6 @@ import PageWrapper from "@/containers/PageWrapper";
 import IntroHealth from "@/screens/HealthInsurance/components/IntroHealth/IntroHealth";
 import Bonus from "@/components/Bonus/Bonus";
 import InsuranceCompanys from "@/screens/InsurancePage/components/InsuranceCompanys/InsuranceCompanys";
-import {StaticImageData} from "next/image";
 import OffersBanks from "@/screens/SpecialCardsOfffersPage/components/OffersBanks/OffersBanks";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
@@ -14,34 +13,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {NewsListSelector} from "@/core/store/news/selectors";
 import {newsGetRequestedAction} from "@/core/store/news/actions";
 
-type ItemT = {
-    name: string
-    active: boolean
-}
-type offersT = {
-    img: StaticImageData,
-    imgBank?: StaticImageData
-    name?: string
-    sub?: string
-    info?: string
-    t1?: string
-    t2?: string
-    c1?: string
-    c2?: string
-    btntxt?: string
-}
-type questT = {
-    title: string
-    text: string
-}
 type Props = {
-    data: {
-        chooseIntro: ItemT[]
-        sliderItems: StaticImageData[],
-        offersItems: offersT[],
-        questData: questT[]
-        questions: questT[]
-    }
+    data: any
 }
 
 const HealthInsurance = ({data}: Props) => {

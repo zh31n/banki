@@ -10,7 +10,6 @@ import CatalogItems from "@/components/Catalog/CatalogItems/CatalogItems";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
-import {StaticImageData} from "next/image";
 import {NewsInterface} from "@/core/services/News";
 import {CreditInterface} from "@/core/services/Credits";
 import CreditTopBankList from "@/components/credits/CreditTopBankList";
@@ -22,47 +21,9 @@ import {investingBrokersGetRequestedAction} from "@/core/store/investing/actions
 import {NewsListSelector} from "@/core/store/news/selectors";
 import {newsGetRequestedAction} from "@/core/store/news/actions";
 
-type chooseT = {
-    name: string
-    active: boolean
-}
-type offers = {
-    img: StaticImageData
-    name: string
-    subtitle: string
-    time?: number | undefined
-    year_money?: number | undefined
-    title_1?: string | undefined
-    title1_key?: string | undefined
-    title2?: string | undefined
-    title2_key?: string | undefined
-}
-type catalogT = {
-    name: string
-    img: StaticImageData
-}
-type banksT = {
-    title: string
-    sub: string
-    stavka: number
-    time: number | string
-    money: string
-    osob?: string
-}
-type ItemT = {
-    title: string
-    text: string
-}
 interface MicroloansPageProps {
     credits: CreditInterface[];
-    staticData: {
-        chooseIntro: chooseT[],
-        slideItems: StaticImageData[],
-        offersMoth: offers[],
-        catalogData: catalogT[]
-        banks: banksT[]
-        questData: ItemT[]
-    }
+    staticData: any;
 }
 
 const MicroloansPage = (props: MicroloansPageProps) => {
@@ -93,7 +54,7 @@ const MicroloansPage = (props: MicroloansPageProps) => {
             <CreditTopBankList
                 credits={credits}
                 title={'Микрозаймы в Москве'}
-                sub={' - ТОП 10 займов в МФО в 2023 году'}
+                subtitle={' - ТОП 10 займов в МФО в 2023 году'}
             />
             <FrequentQuestions title={'Важная информация'} items={staticData.questData}/>
         </PageWrapper>

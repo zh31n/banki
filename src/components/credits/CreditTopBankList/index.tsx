@@ -4,9 +4,9 @@ import {CreditInterface} from "@/core/services/Credits";
 import CreditTopBankItem from "@/components/credits/CreditTopBankItem";
 
 interface CreditTopBankListProps {
-    title?: string
-    sub?: string
-    credits: CreditInterface[]
+    title?: string;
+    subtitle?: string;
+    credits: CreditInterface[];
 }
 
 const CreditTopBankList = (props: CreditTopBankListProps) => {

@@ -5,49 +5,14 @@ import s from './SavingAccountsPage.module.scss';
 import Bonus from "@/components/Bonus/Bonus";
 import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
 import OfferMoth from "@/components/Offers/OfferMoth/OfferMoth";
-import loc_bank from "@/assets/icons/banki_icon/loco.svg";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopBanks from "@/components/TopBanks/TopBanks";
-import loco from "@/assets/icons/banki_icon/loco.svg";
-import sber from "@/assets/icons/banki_icon/sber.svg";
-import {StaticImageData} from "next/image";
-import IntroDeposits from "@/screens/DepositsPage/components/IntroDeposits/IntroDeposits";
-import absolut from "@/assets/icons/absolute_big.svg";
 import {DepositCardInterface} from "@/core/services/Deposits";
-import {NewsInterface} from "@/core/services/News";
-
-type offersT = {
-    name: string
-    subtitle: string
-    img: StaticImageData
-    time: number
-    year_money: number
-}
-type questT = {
-    title: string
-    items: ItemT[]
-}
-type banksT = {
-    title: string
-    sub: string
-    stavka: number
-    time: number
-    money: string
-    osob: string
-}
-type ItemT = {
-    title: string
-    text: string
-}
 
 interface SavingAccountsPageProps {
     deposits: DepositCardInterface[];
-    staticData: {
-        questions: questT
-        offers: offersT[]
-        banks: banksT[]
-    }
+    staticData: any;
 }
 
 const SavingAccountsPage = (props: SavingAccountsPageProps) => {

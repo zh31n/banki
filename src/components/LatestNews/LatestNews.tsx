@@ -19,12 +19,12 @@ const mockFilterItems: ChoicesInterface[] = [
     {name: 'Безопасность', active: false},
 ]
 interface LatestNewsProps {
-    news: NewsInterface[] | InvestingNewsInterface[];
+    news?: NewsInterface[] | InvestingNewsInterface[];
 }
 
 const LatestNews = (props: LatestNewsProps) => {
     const {
-        news,
+        news = [],
     } = props;
 
     return (

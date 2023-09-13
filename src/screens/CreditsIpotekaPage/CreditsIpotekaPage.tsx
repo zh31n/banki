@@ -14,7 +14,7 @@ import PageWrapper from "@/containers/PageWrapper";
 
 export default function CreditsIpotekaPage() {
     const dataMap = data.CreditsIpotekaPage.questData
-    const items = data.MortgagePage.choises;
+    const items = data.MortgagePage.choices;
     return <PageWrapper>
         <IntroMortgage items={items}/>
         <Bonus/>

@@ -23,13 +23,6 @@ const Items = (props: ItemsProps) => {
             address,
             rating,
         },
-        sub = 'Акция «Путешествий с Level.Travel» с картой UnionPay от Газпромбанка',
-        info = 'Кэшбек до 10 000 ₽ за покупку тура',
-        t1 = 'Обслуживание',
-        c1 = '0 ₽',
-        t2 = 'Кэшбек на все покупки',
-        c2 = '1,5%',
-        btntxt = 'Посмотреть',
     } = props;
 
     return (
@@ -38,19 +31,19 @@ const Items = (props: ItemsProps) => {
             <Image src={mockBankImage} alt={''} width={40} height={40} className={styles.img}/>
             <div className={styles.content_container}>
                 <p className={styles.text_main}>{name}</p>
-                <p className={styles.sub}>{sub}</p>
-                <p className={styles.blue_text}>{info}</p>
+                <p className={styles.sub}>{'Акция «Путешествий с Level.Travel» с картой UnionPay от Газпромбанка'}</p>
+                <p className={styles.blue_text}>{'Кэшбек до 10 000 ₽ за покупку тура'}</p>
                 <div className={styles.blue_text_container}>
                     <div style={{width: '88px'}}>
-                        <p className={styles.blue_text}>{t1}</p>
-                        <p className={styles.text}>{c1}</p>
+                        <p className={styles.blue_text}>{'Обслуживание'}</p>
+                        <p className={styles.text}>{'0 ₽'}</p>
                     </div>
                     <div style={{width:'112px'}}>
-                        <p className={styles.blue_text}>{t2}</p>
-                        <p className={styles.text}>{c2}</p>
+                        <p className={styles.blue_text}>{'Кэшбек на все покупки'}</p>
+                        <p className={styles.text}>{'1,5%'}</p>
                     </div>
                 </div>
-                <BlueBtn text={btntxt} width={231} height={40} fSize={16}/>
+                <BlueBtn text={'Посмотреть'} width={231} height={40} fSize={16}/>
             </div>
         </div>
     );

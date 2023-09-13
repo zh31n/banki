@@ -3,9 +3,10 @@ import s from './NewsItem.module.scss';
 import Image from "next/image";
 import smile from '@/assets/icons/Smile.svg';
 import {InvestingNewsInterface} from "@/core/services/Investing";
+import {NewsInterface} from "@/core/services/News";
 
 interface NewsItemProps {
-    item: NewsItemProps | InvestingNewsInterface;
+    item: NewsInterface | InvestingNewsInterface;
 }
 
 const NewsItem = (props: NewsItemProps) => {

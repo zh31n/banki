@@ -8,42 +8,9 @@ import PageWrapper from "@/containers/PageWrapper";
 import Stock from "@/screens/HomePage/components/Stock/Stock";
 import Slide from "@/screens/HomePage/components/Slide/Slide";
 import Banks from "@/screens/HomePage/components/Banks/Banks";
-import {StaticImageData} from "next/image";
 
-type ItemsActionT = {
-    title: string;
-    sup: string;
-};
-type bankiT = {
-    img: StaticImageData;
-    name: string;
-    rating: number;
-};
-type choiseItemsT = {
-    name: string;
-    active: boolean;
-};
-type offersT = {
-    name: string;
-    subtitle: string;
-    img: StaticImageData;
-    time: number;
-    year_money: number;
-};
-type iconsSlideT = {
-    img: StaticImageData;
-    name: string;
-    w: number;
-};
 type Props = {
-    data: {
-        iconsSlide: iconsSlideT[]
-        stock: ItemsActionT[]
-        banki: bankiT[]
-        choiseOffer: choiseItemsT[]
-        offersMoth: offersT[]
-        choiseFeedback: choiseItemsT[]
-    }
+    data: any;
 
 }
 

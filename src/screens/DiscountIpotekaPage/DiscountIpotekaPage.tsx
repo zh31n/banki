@@ -17,7 +17,7 @@ import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
 const DiscountIpotekaPage = () => {
 
     const dataMap = data.DiscountIpotekaPage.questData;
-    const chooseItems  = data.MortgagePage.choises;
+    const chooseItems  = data.MortgagePage.choices;
     const deposits = data.MortgageDiscount.deposits;
     return <PageWrapper>
         <IntroMortgageDiscount items={chooseItems}/>
