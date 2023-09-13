@@ -76,6 +76,7 @@ import sfk from '@/assets/icons/sfk_icon_stock.svg';
 import c from '@/assets/icons/banki_icon/c.svg';
 import sbi_big from '@/assets/icons/bank_icons/sbi_big.png';
 import alfa_i from '@/assets/icons/banki_icon/alfa.svg';
+import gazprom from "@/assets/icons/gasprom.svg"
 
 
 const data = {
@@ -1911,14 +1912,14 @@ const data = {
                 profit: '79,93%'
             },
         ],
-        frequentQuests:[
+        frequentQuests: [
             {title: 'Что такое фонды?', text: ''},
             {title: 'Как можно заработать на фонде?', text: ''},
             {title: 'Как купить фонды?', text: ''},
             {title: 'За что нужно платить комиссию?', text: ''},
             {title: 'Какие есть риски?', text: ''},
         ],
-        TopFondsItems:[
+        TopFondsItems: [
             {
                 title: 'Совкомбанк — Халва',
                 sub: 'Облигация',
@@ -1962,11 +1963,322 @@ const data = {
                 profit: '864,20 ₽'
             },
         ],
-        questions:[
+        questions: [
             {title: 'Паевые инвестиционные фонды (ПИФы)', text: ''},
             {title: 'Предложения', text: ''},
             {title: 'ПИФы компаний', text: ''},
             {title: 'Популярные брокерские компании', text: ''},
+        ]
+    },
+    CryptoPage: {
+        introChoose: [
+            {name: 'С чего начать', active: false},
+            {name: 'Подобрать брокера', active: false},
+            {name: 'Что купить', active: true},
+            {name: 'Аналитика', active: false},
+            {name: 'Специальные предложения', active: false},
+            {name: 'Обучение', active: false},
+        ],
+        calc_choose_d: [
+            {name: 'Все', active: false},
+            {name: 'в BNB', active: false},
+            {name: 'в BTC', active: false},
+            {name: 'в USDT', active: true},
+            {name: 'Лидеры роста', active: false},
+            {name: 'Лидеры падений', active: false},
+        ],
+        CryptoOffers: [
+            {
+                name: 'Og Fan Token',
+                sub: 'OG\\USDT',
+                img: loc_bank,
+                price: '4,99 ₮',
+                profit: '+0,97 ₮ (+24,09%)'
+            },
+            {
+                name: 'Og Fan Token',
+                sub: 'OG\\USDT',
+                img: loc_bank,
+                price: '4,99 ₮',
+                profit: '+0,97 ₮ (+24,09%)'
+            },
+            {
+                name: 'Og Fan Token',
+                sub: 'OG\\USDT',
+                img: loc_bank,
+                price: '4,99 ₮',
+                profit: '+0,97 ₮ (+24,09%)'
+            },
+            {
+                name: 'Og Fan Token',
+                sub: 'OG\\USDT',
+                img: loc_bank,
+                price: '4,99 ₮',
+                profit: '+0,97 ₮ (+24,09%)'
+            },
+            {
+                name: 'Og Fan Token',
+                sub: 'OG\\USDT',
+                img: loc_bank,
+                price: '4,99 ₮',
+                profit: '+0,97 ₮ (+24,09%)'
+            },
+            {
+                name: 'Og Fan Token',
+                sub: 'OG\\USDT',
+                img: loc_bank,
+                price: '4,99 ₮',
+                profit: '+0,97 ₮ (+24,09%)'
+            }
+        ],
+        Bonds: [
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+            {img: sfk, title: 'ИФК Солид', sub: 'KROT', rate: 629.60, money: 2083},
+        ]
+    },
+    Analytics: {
+        quoteItems: [
+            {
+                name: 'Нефть и газ',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+            {
+                name: 'Металлы и добыча',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+            {
+                name: 'Нефть и газ',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+            {
+                name: 'Нефть и газ',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+            {
+                name: 'Нефть и газ',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+            {
+                name: 'Нефть и газ',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+            {
+                name: 'Нефть и газ',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+            {
+                name: 'Нефть и газ',
+                quotes: [
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                    {title: 'Сургутнефтьгаз', count: '30,58 ₽', changes: '5,85 ₽ (+1,02%)'},
+                ]
+            },
+        ],
+        lastRecommends: [
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                recommendation: true,
+                stockName: 'Детский мир',
+                subName: 'DSKY'
+            },
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                recommendation: true,
+                stockName: 'Детский мир',
+                subName: 'DSKY'
+            },
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                recommendation: true,
+                stockName: 'Детский мир',
+                subName: 'DSKY'
+            },
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                recommendation: true,
+                stockName: 'Детский мир',
+                subName: 'DSKY'
+            },
+            {
+                name: 'РОСНАНО-8-об',
+                sub: 'РОСНАНО',
+                img: loc_bank,
+                recommendation: true,
+                stockName: 'Детский мир',
+                subName: 'DSKY'
+            },
+        ]
+    },
+    InvestSpecialOffersPage: {
+        choises: [
+            {name: 'Все', active: false},
+            {name: 'Вклады', active: false},
+            {name: 'Потребительские кредиты', active: false},
+            {name: 'Ипотека', active: false},
+            {name: 'Кредитные карты', active: false},
+            {name: 'Дебетовые карты', active: false},
+            {name: 'Инвестиции', active: true},
+            {name: 'Страхование', active: false},
+        ],
+        specialOffers: [
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Станьте первым участником бонусной программы',
+                t1: 'Бонус',
+                c1: '2 500 ₽'
+            },
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Станьте первым участником бонусной программы',
+                t1: 'Доходность, годовых',
+                c1: '15%',
+                t2: 'Сумма вложения',
+                c2: 'от 100 000 ₽'
+            },
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Станьте первым участником бонусной программы',
+                t1: 'Доход',
+                c1: '25%',
+                t2: 'Срок',
+                c2: '2 года'
+            },
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Станьте первым участником бонусной программы',
+                t1: 'Доход',
+                c1: '25%',
+                t2: 'Срок',
+                c2: '2 года'
+            },
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Станьте первым участником бонусной программы',
+                t1: 'Доход',
+                c1: '25%',
+                t2: 'Срок',
+                c2: '2 года'
+            },
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Станьте первым участником бонусной программы',
+                t1: 'Доход',
+                c1: '25%',
+                t2: 'Срок',
+                c2: '2 года'
+            },
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Станьте первым участником бонусной программы',
+                t1: 'Доход',
+                c1: '25%',
+                t2: 'Срок',
+                c2: '2 года'
+            },
+        ],
+        stockOffers: [
+            {
+                img: img_1,
+                imgBank: gazprom,
+                name: 'Финам',
+                sub: 'Акция «Финам бонус»',
+                info: 'Акция «Бонус за инвестиции»',
+                t1: 'Бонус',
+                c1: '500 ₽'
+            },
+        ]
+    },
+    ApplicationsProfile: {
+        applicationItems: [
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 1},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 2},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 0},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 0},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 0},
         ]
     }
 }

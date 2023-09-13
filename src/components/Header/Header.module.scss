@@ -11,6 +11,7 @@
   border-radius: 14px;
   border: 1px solid #D9DBDF;
   background: #FFF;
+  transition: all .3s;
 
   .logo {
     color: #121212;
@@ -27,6 +28,7 @@
     align-items: center;
     margin-left: 3rem;
     margin-right: 3rem;
+    transition: all .3s;
 
     .nav_item {
       color: #121212;
@@ -51,10 +53,44 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    transition: all .3s;
 
-    img {
+    img, svg {
+      transition: all .3s;
       cursor: pointer;
     }
+
+    .active_link {
+      svg {
+        circle {
+          stroke: #4DA7FF;
+        }
+
+        path {
+          stroke: #4DA7FF;
+        }
+      }
+    }
+
+    a {
+      transition: all .3s;
+
+      svg:hover {
+        transition: all .3s;
+
+        circle {
+          transition: all .3s;
+          stroke: #4DA7FF;
+        }
+
+        path {
+          transition: all .3s;
+          stroke: #4DA7FF;
+        }
+      }
+    }
+
+
   }
 }
 

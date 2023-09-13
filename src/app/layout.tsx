@@ -5,10 +5,10 @@ import React from "react";
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
 import {StoreProvider} from "@/core/store/provider";
 
-export const metadata: Metadata = {
-    title: "Главная",
-    description: "Главная страница банков",
-};
+// export const metadata: Metadata = {
+//     title: "Главная",
+//     description: "Главная страница банков",
+// };
 
 function RootLayout({children}: { children: React.ReactNode; }) {
     return (

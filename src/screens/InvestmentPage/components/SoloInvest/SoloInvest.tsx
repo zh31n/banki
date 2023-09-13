@@ -10,19 +10,23 @@ type InvestT = {
     sub: string
     rate: number
     money: number
+
 }
 type Props = {
     items: InvestT[]
+    isSub: boolean
+    title?: string
 }
-const SoloInvest = ({items}: Props) => {
+const SoloInvest = ({items, isSub, title}: Props) => {
     return (
         <div className={s.wrap}>
-            <div className={s.title}>Инвестируйте самостоятельно</div>
-            <div className={s.sub}>
+            {title ? <div className={s.title}>{title}</div> :
+                <div className={s.title}>Инвестируйте самостоятельно</div>}
+            {isSub && <div className={s.sub}>
                 Изучайте мир инвестиций, ищите интересные идеи и открывайте подходящий брокерский
                 счет. Получайте<br/> удовольствие от создания собственного инвестиционного портфеля и зарабатывайте на
                 нем.
-            </div>
+            </div>}
             <div className={s.cont}>
                 <div className={s.stocks}>
                     <div className={s.title}>
