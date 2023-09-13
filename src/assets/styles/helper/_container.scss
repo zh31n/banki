@@ -4,13 +4,21 @@
   margin-left: auto;
 }
 
+.profileCont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
 @media (max-width: 1220px) {
-  .container{
+  .container {
     max-width: 1024px;
   }
 }
-@media (max-width: 1025px){
-  .container{
+
+@media (max-width: 1025px) {
+  .container {
     width: 100%;
     padding: 0 10px;
   }

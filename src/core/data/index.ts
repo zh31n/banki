@@ -2676,7 +2676,7 @@ const data = {
                 c2: '2 года'
             },
         ],
-        stockOffers:[
+        stockOffers: [
             {
                 img: img_1,
                 imgBank: gazprom,
@@ -2686,6 +2686,15 @@ const data = {
                 t1: 'Бонус',
                 c1: '500 ₽'
             },
+        ]
+    },
+    ApplicationsProfile: {
+        applicationItems: [
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 1},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 2},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 0},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 0},
+            {name: 'Полис ОСАГО', sub: 'Покупка полиса ОСАГО', status: 0},
         ]
     }
 }
