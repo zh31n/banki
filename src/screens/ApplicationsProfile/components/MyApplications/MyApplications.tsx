@@ -4,8 +4,9 @@ import ApplicationItem from "@/screens/ApplicationsProfile/components/Applicatio
 
 type AppT = {
     name: string
-    sub: string
+    date: string
     status: number
+    contact:string
 }
 
 type Props = {
@@ -15,7 +16,7 @@ type Props = {
 const MyApplications = ({applications}: Props) => {
 
     const appItems = applications.map((el, index) =>
-        <ApplicationItem name={el.name} sub={el.sub} status={el.status} key={index}/>)
+        <ApplicationItem name={el.name} date={el.date} status={el.status} contact={el.contact} key={index}/>)
 
     return (
         <div>
