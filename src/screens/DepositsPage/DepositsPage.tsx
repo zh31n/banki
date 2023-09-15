@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroDeposits from "@/screens/DepositsPage/components/IntroDeposits/IntroDeposits";
 import Bonus from "@/components/Bonus/Bonus";
@@ -16,6 +17,11 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import TopBanks from "@/components/TopBanks/TopBanks";
 import {DepositCardInterface} from "@/core/services/Deposits";
 import {NewsInterface} from "@/core/services/News";
+import {useDispatch, useSelector} from "react-redux";
+import {NewsListSelector} from "@/core/store/news/selectors";
+import {newsGetRequestedAction} from "@/core/store/news/actions";
+import {depositsGetRequestedAction} from "@/core/store/deposits/actions";
+import {DepositsSelector} from "@/core/store/deposits/selectors";
 
 type offerT = {
     name: string
@@ -66,8 +72,6 @@ type banksT = {
     osob?: string
 }
 interface DepositsPageProps {
-    deposits: DepositCardInterface[];
-    news: NewsInterface[];
     staticData: {
         offersBanks: offerT[],
         PopularOffers: OfferItem[],
@@ -79,11 +83,17 @@ interface DepositsPageProps {
 }
 const DepositsPage = (props: DepositsPageProps) => {
     const {
-        deposits,
-        news,
         staticData,
     } = props;
+    const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
+    const news: NewsInterface[] = useSelector(NewsListSelector);
+    const dispatch = useDispatch();
     const bonus = deposits[0];
+
+    useEffect(() => {
+        dispatch(depositsGetRequestedAction());
+        dispatch(newsGetRequestedAction());
+    }, [])
 
     return (
         <PageWrapper>

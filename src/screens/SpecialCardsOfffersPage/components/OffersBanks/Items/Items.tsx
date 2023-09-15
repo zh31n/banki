@@ -27,7 +27,7 @@ const Items = (props: ItemsProps) => {
 
     return (
         <div className={styles.container}>
-            <Image src={image || mockOfferImage} alt={''} width={279} height={165}/>
+            <Image src={mockOfferImage} alt={''} width={279} height={165}/>
             <Image src={mockBankImage} alt={''} width={40} height={40} className={styles.img}/>
             <div className={styles.content_container}>
                 <p className={styles.text_main}>{name}</p>

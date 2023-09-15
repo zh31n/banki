@@ -1,18 +1,24 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import Wrapper from "@/containers/Wrapper";
 import Navigation from "@/screens/SelectSteps/SelectStepsFinal/Navigation/Navigation";
 import styles from './SelectStepsFinal.module.scss'
 import SelectStepsFinalCard from "@/screens/SelectSteps/SelectStepsFinal/SelectStepsFinalCard";
 import {CardInterface} from "@/core/services/Cards";
+import {useDispatch, useSelector} from "react-redux";
+import {CardsSelector} from "@/core/store/cards/selectors";
+import {cardsGetRequestedAction} from "@/core/store/cards/actions";
 
 interface SelectStepsFinalProps {
-    cards: CardInterface[];
 }
 
 const SelectStepsFinal = (props: SelectStepsFinalProps) => {
-    const {
-        cards,
-    } = props;
+    const cards: CardInterface[] = useSelector(CardsSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(cardsGetRequestedAction());
+    }, [])
 
     return (
         <Wrapper>
