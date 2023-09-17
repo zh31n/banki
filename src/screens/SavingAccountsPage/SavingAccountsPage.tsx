@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import Intro from "@/screens/SavingAccountsPage/components/Intro/Intro";
 import s from './SavingAccountsPage.module.scss';
@@ -9,18 +10,25 @@ import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
 import TopBanks from "@/components/TopBanks/TopBanks";
 import {DepositCardInterface} from "@/core/services/Deposits";
+import {useDispatch, useSelector} from "react-redux";
+import {DepositsSelector} from "@/core/store/deposits/selectors";
+import {depositsGetRequestedAction} from "@/core/store/deposits/actions";
 
 interface SavingAccountsPageProps {
-    deposits: DepositCardInterface[];
     staticData: any;
 }
 
 const SavingAccountsPage = (props: SavingAccountsPageProps) => {
     const {
-        deposits,
         staticData,
     } = props;
+    const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
+    const dispatch = useDispatch();
     const bonus = deposits[0];
+
+    useEffect(() => {
+        dispatch(depositsGetRequestedAction());
+    }, [])
 
     return (
         <PageWrapper>

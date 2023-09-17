@@ -20,22 +20,24 @@ import {InvestingBrokersSelector} from "@/core/store/investing/selectors";
 import {investingBrokersGetRequestedAction} from "@/core/store/investing/actions";
 import {NewsListSelector} from "@/core/store/news/selectors";
 import {newsGetRequestedAction} from "@/core/store/news/actions";
+import {CreditsSelector} from "@/core/store/credits/selectors";
+import {creditsGetRequestedAction} from "@/core/store/credits/actions";
 
 interface MicroloansPageProps {
-    credits: CreditInterface[];
     staticData: any;
 }
 
 const MicroloansPage = (props: MicroloansPageProps) => {
     const {
-        credits,
         staticData,
     } = props;
+    const credits: CreditInterface[] = useSelector(CreditsSelector);
     const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
     const news: NewsInterface[] = useSelector(NewsListSelector);
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(creditsGetRequestedAction());
         dispatch(investingBrokersGetRequestedAction());
         dispatch(newsGetRequestedAction());
     }, [])

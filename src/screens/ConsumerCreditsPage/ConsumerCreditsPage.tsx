@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, {useEffect} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroConsumer from "@/screens/ConsumerCreditsPage/Components/IntroConsumer/IntroConsumer";
 import Bonus from "@/components/Bonus/Bonus";
@@ -15,6 +16,11 @@ import {CreditInterface} from "@/core/services/Credits";
 import CreditBankList from "@/components/credits/CreditBankList";
 import CreditOfferList from "@/components/credits/CreditOfferList";
 import CreditTopBankList from "@/components/credits/CreditTopBankList";
+import {useDispatch, useSelector} from "react-redux";
+import {CreditsSelector} from "@/core/store/credits/selectors";
+import {creditsGetRequestedAction} from "@/core/store/credits/actions";
+import {NewsListSelector} from "@/core/store/news/selectors";
+import {newsGetRequestedAction} from "@/core/store/news/actions";
 
 type catalogT = {
     img: StaticImageData
@@ -25,8 +31,6 @@ type ItemT = {
     text: string
 }
 interface ConsumerCreditsPageProps {
-    credits: CreditInterface[];
-    news: NewsInterface[];
     staticData: {
         sliderBanks: StaticImageData[]
         catalogData: catalogT[]
@@ -36,10 +40,16 @@ interface ConsumerCreditsPageProps {
 
 const ConsumerCreditsPage = (props: ConsumerCreditsPageProps) => {
     const {
-        credits,
-        news,
         staticData,
     } = props;
+    const credits: CreditInterface[] = useSelector(CreditsSelector);
+    const news: NewsInterface[] = useSelector(NewsListSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(creditsGetRequestedAction());
+        dispatch(newsGetRequestedAction());
+    }, [])
 
     return (
         <PageWrapper>

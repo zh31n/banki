@@ -1,7 +1,8 @@
+"use client";
 import Wrapper from "@/containers/Wrapper";
 import Navigation from "@/screens/InstallmentPage/components/Navigation/Navigation";
 import OffersMonth from "@/components/OffersMonth/OffersMonth";
-import React from "react";
+import React, {useEffect} from "react";
 import Offers from "@/screens/CreditMapPage/components/Offers/Offers";
 import Mailing from "@/components/Mailing/Mailing";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
@@ -11,15 +12,21 @@ import data from "@/core/data";
 import Bonus from "@/components/Bonus/Bonus";
 import InstallmentPageAdvantages from "@/screens/InstallmentPage/components/InstallmentPageAdvantages";
 import {CardInterface} from "@/core/services/Cards";
+import {useDispatch, useSelector} from "react-redux";
+import {CardsSelector} from "@/core/store/cards/selectors";
+import {cardsGetRequestedAction} from "@/core/store/cards/actions";
 
 interface InstallmentPageProps {
-    cards: CardInterface[];
+
 }
 
 export default function InstallmentPage(props: InstallmentPageProps) {
-    const {
-        cards,
-    } = props;
+    const cards: CardInterface[] = useSelector(CardsSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(cardsGetRequestedAction());
+    }, [])
     const staticData = data.InstallmentPage;
 
     return (

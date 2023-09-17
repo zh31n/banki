@@ -1,9 +1,13 @@
+"use client";
 import Wrapper from "@/containers/Wrapper";
 import Navigation from "@/screens/SpecialCardsOfffersPage/components/Navigation/Navigation";
 import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
-import React from "react";
+import React, {useEffect} from "react";
 import OffersBanks from './components/OffersBanks/OffersBanks';
 import {CardInterface} from "@/core/services/Cards";
+import {useDispatch, useSelector} from "react-redux";
+import {CardsSelector} from "@/core/store/cards/selectors";
+import {cardsGetRequestedAction} from "@/core/store/cards/actions";
 
 type questItem = {
     title: string
@@ -11,7 +15,6 @@ type questItem = {
 }
 
 interface SpecialCardsOffersPageProps {
-    cards: CardInterface[];
     staticData: {
         questData: questItem[]
     }
@@ -19,9 +22,14 @@ interface SpecialCardsOffersPageProps {
 
 export default function SpecialCardsOffersPage(props: SpecialCardsOffersPageProps) {
     const {
-        cards,
         staticData,
     } = props;
+    const cards: CardInterface[] = useSelector(CardsSelector);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(cardsGetRequestedAction());
+    }, [])
 
     return <Wrapper>
         <Navigation/>

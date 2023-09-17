@@ -20,7 +20,7 @@ const OffersItem = (props: OffersItemProps) => {
     return (
         <div className={styles.main_container}>
             <div>
-                <Image src={item.image || cart} alt="Карта"/>
+                <Image src={cart} alt="Карта"/>
                 <div className={styles.count_cart}>
                     <p>Еще 2 карты</p>
                     <Arrow/>
