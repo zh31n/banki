@@ -8,15 +8,17 @@ import {margin} from "@mui/system";
 type InpPropsT = {
     placeholder: string
     margin?: number
-    lupa?:boolean
+    lupaSee?:boolean
+    height?:number
+    btnHidden?:boolean
 }
 
-const Search = ({placeholder,margin}: InpPropsT) => {
+const Search = ({placeholder,margin,height,btnHidden,lupaSee}: InpPropsT) => {
     return (
-        <div className={s.search} style={{margin: `${margin}px`}}>
+        <div className={s.search} style={{margin: `${margin}px`,height:`${height}px`}}>
             <Image alt={'lupa'} src={lupa} height={40} width={40}/>
             <input type="text" placeholder={placeholder}/>
-            <button>Найти</button>
+            { btnHidden ? '' : <button>Найти</button>}
         </div>
     );
 };
