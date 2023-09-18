@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, {useState} from 'react';
 import s from './Feedback.module.scss';
 import FeedbackItem from "@/components/FeedBacks/FeedbackItem/FeedbackItem";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
@@ -16,6 +17,9 @@ type ItemT = {
 }
 
 const Feedback = ({title, sub, chois}: Props) => {
+
+    const [currentChoise, setCurrentChoise] = useState('Банки');
+
     return (
         <div className={s.feedback}>
             {(!title || !sub) ? <div className={s.title}>
@@ -24,7 +28,7 @@ const Feedback = ({title, sub, chois}: Props) => {
             </div> : <TitleMarkLast title={title} sub={sub}/>
             }
             {(chois && chois.length !== 0) && <div className={s.choise_items}>
-                <ChoiseItemsMap choiseItems={chois}/>
+                <ChoiseItemsMap setActive={setCurrentChoise} currentChoise={currentChoise} choiseItems={chois}/>
             </div>}
             <div className={s.feedback_cont}>
                 <FeedbackItem/>

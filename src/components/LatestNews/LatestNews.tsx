@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, {useState} from 'react';
 import s from './LatestNews.module.scss';
 import NewsItem from "@/components/NewsItem/NewsItem";
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
@@ -26,12 +27,13 @@ const LatestNews = (props: LatestNewsProps) => {
     const {
         news = [],
     } = props;
+    const [currentChoise, setCurrentChoise] = useState('Все');
 
     return (
         <div className={s.news}>
             <div className={s.title}>Свежие <span>новости</span></div>
             <div className={s.choises_cont}>
-                <ChoiseItemsMap choiseItems={mockFilterItems} />
+                <ChoiseItemsMap currentChoise={currentChoise} setActive={setCurrentChoise} choiseItems={mockFilterItems} />
             </div>
             <div className={s.news_cont}>{news
                 .map((item) => <NewsItem key={item.id} item={item}/>)}</div>

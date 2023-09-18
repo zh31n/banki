@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React, {useState} from 'react';
 import s from './OfferMoth.module.scss';
 import arr_l from "@/assets/icons/banki_icon/Стрелка_left.svg";
 import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
@@ -18,6 +20,9 @@ type OfferMonthProps = {
 
 
 const OfferMonth = (props: OfferMonthProps) => {
+
+    const [currentChoise, setCurrentChoise] = useState('Вклады');
+
     const {
         choiceItems,
         offers,
@@ -27,7 +32,7 @@ const OfferMonth = (props: OfferMonthProps) => {
         <div className={s.offer_month}>
             <div className={s.title}>Предложения <span>месяца</span></div>
             {(choiceItems && choiceItems.length !== 0) && <div className={s.select_items}>
-                <ChoiceItemsMap choiseItems={choiceItems}/>
+                <ChoiceItemsMap setActive={setCurrentChoise} currentChoise={currentChoise} choiseItems={choiceItems}/>
             </div>}
             <div className={s.offer_cont}>
                 <Image className={s.arr} alt={'icon'} src={arr_l}/>

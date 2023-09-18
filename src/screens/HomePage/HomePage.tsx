@@ -11,7 +11,6 @@ import Banks from "@/screens/HomePage/components/Banks/Banks";
 
 type Props = {
     data: any;
-
 }
 
 
