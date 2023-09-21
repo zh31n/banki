@@ -10,7 +10,7 @@ import Text from "@/screens/BusinessPage/components/Text/Text";
 import {NewsInterface} from "@/core/services/News";
 import {useDispatch, useSelector} from "react-redux";
 import {NewsListSelector} from "@/core/store/news/selectors";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {newsGetRequestedAction} from "@/core/store/news/actions";
 import {businessCardsGetRequestedAction, businessCreditsGetRequestedAction} from "@/core/store/business/actions";
 import {BusinessCreditsSelector} from "@/core/store/business/selectors";
@@ -20,6 +20,7 @@ export default function BusinessPage(){
     const credits: BusinessCreditItemInterface[] = useSelector(BusinessCreditsSelector);
     const news: NewsInterface[] = useSelector(NewsListSelector);
     const dispatch = useDispatch();
+    const [current, setCurrent] = useState<string>('все продукты')
 
     useEffect(() => {
         dispatch(businessCreditsGetRequestedAction());
@@ -29,7 +30,7 @@ export default function BusinessPage(){
 
     return (
         <Wrapper>
-            <Navigation />
+            <Navigation current={current} setActive={setCurrent} />
             <Kassa />
             <CreditForBank />
             <Ecvaring />

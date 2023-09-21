@@ -12,10 +12,12 @@ type ItemT = {
     active: boolean
 }
 type Props = {
-    items: ItemT[]
+    items: ItemT[],
+    setActive?:  React.Dispatch<React.SetStateAction<string>>
+    current?: string
 }
 
-const IntroMortgage = ({items}: Props) => {
+const IntroMortgage = ({items,current,setActive}: Props) => {
     return (
         <div className={s.intro}>
             <div className={s.info_cont}>
@@ -33,7 +35,7 @@ const IntroMortgage = ({items}: Props) => {
                     кредит и быть уверенным в своем выборе!
                 </div>
                 <div className={s.ch_cont}>
-                    <ChoiseItemsMap choiseItems={items}/>
+                    <ChoiseItemsMap currentChoise={current} setActive={setActive} choiseItems={items}/>
                 </div>
                 <div className={s.info}>
                     <div className={s.radioCont}>

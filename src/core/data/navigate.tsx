@@ -10,7 +10,7 @@ const navigation = {
     ],
     credits: [
         [
-            {text: 'Мастер подбора кредитов', link: '/credits/autocredit'},
+            // {text: 'Мастер подбора кредитов', link: '/credits/autocredit'},
             {text: 'Потребительские кредиты', link: '/credits/consumer-credits'},
             {text: 'Рефинансирование', link: '/credits/refinancing-credits'},
             {text: 'Кредитный рейтинг', link: '/credits/rating'},
@@ -35,7 +35,7 @@ const navigation = {
     ],
     ipoteka: [
         [
-            {text: 'Мастер подбора кредитов', link: '/ipoteka'},
+            // {text: 'Мастер подбора кредитов', link: '/ipoteka'},
             {text: 'Ипотечные кредиты', link: '/ipoteka/credits'},
             {text: 'Ипотечное страхование', link: '/insurance'},
             {text: 'Спецпредложения', link: '/ipoteka/special-offers'},

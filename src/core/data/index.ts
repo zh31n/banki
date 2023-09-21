@@ -82,13 +82,13 @@ import gazprom from "@/assets/icons/gasprom.svg"
 const data = {
     HomePage: {
         iconsSlide: [
-            {name: "ОСАГО", img: osago, w: 0},
-            {name: "Подбор кредита", img: credit, w: 64},
-            {name: "Подбор карты", img: carta, w: 64},
-            {name: "Вклады", img: vklad, w: 0},
-            {name: "Займы", img: zaymi, w: 0},
-            {name: "Инвестиции", img: invest, w: 0},
-            {name: "Ипотека", img: ipoteka, w: 0},
+            {name: "Вклады", img: vklad, w: 0, link: '/deposits'},
+            {name: "Кредиты", img: credit, w: 68,link:'/credits'},
+            {name: "Подбор карты", img: carta, w: 64, link: '/cards/select-steps'},
+            {name: "Страхование", img: osago, w: 0, link: '/insurance'},
+            {name: "Инвестиции", img: invest, w: 0, link: '/investment'},
+            {name: "Ипотека", img: ipoteka, w: 0, link: '/ipoteka'},
+            {name: "Бизнес", img: zaymi, w: 0, link: '/business'},
         ],
         stock: [
             {
@@ -156,7 +156,8 @@ const data = {
             {name: "МФО", active: false},
             {name: "Страховые компании", active: false},
             {name: "Инвестиции", active: false}
-        ]
+        ],
+
     },
     SpecialOffer: {
         questions: {
@@ -2114,6 +2115,15 @@ const data = {
                 text: 'Прежде всего, современная' +
                     ' методология разработки однозначно определяет каждого участника как способного.  '
             }
+        ]
+    },
+    NewsPage: {
+        chooseIntro: [
+            {name: 'Сегодня', active: true},
+            {name: 'Накопить', active: true},
+            {name: 'Занять', active: true},
+            {name: 'Застраховать', active: true},
+            {name: 'Обезопасить', active: true},
         ]
     }
 }

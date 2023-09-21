@@ -4,7 +4,6 @@ import React, {useState} from 'react';
 import s from './QuestionItem.module.scss';
 import Image from "next/image";
 import plus from '@/assets/icons/plus.svg';
-import krestik from '@/assets/icons/crestik.svg';
 
 type Props = {
     item: {

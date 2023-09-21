@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './index.module.scss';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroMortgage from "@/screens/MortgagePage/components/IntroMortgage/IntroMortgage";
@@ -37,9 +37,9 @@ const MortgagePage = (props: MortgagePageProps) => {
     const {
         staticData,
     } = props;
+    const [current, setCurrent] = useState<string>('Ипотека');
     const mortgages: MortgageInterface[] = useSelector(MortgagesListSelector);
     const dispatch = useDispatch();
-    console.log(mortgages);
 
     useEffect(() => {
         dispatch(mortgagesGetRequestedAction());
@@ -47,7 +47,7 @@ const MortgagePage = (props: MortgagePageProps) => {
 
     return (
         <PageWrapper>
-            <IntroMortgage items={staticData.choices}/>
+            <IntroMortgage setActive={setCurrent} current={current} items={staticData.choices}/>
             <Bonus title={'Мастер подбора ипотеки'}/>
             <MortgageOfferList
                 mortgages={mortgages}

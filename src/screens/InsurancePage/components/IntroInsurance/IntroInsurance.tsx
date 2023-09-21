@@ -10,9 +10,11 @@ type ItemT = {
 }
 type Props = {
     items?: ItemT[]
+    setActive?:React.Dispatch<React.SetStateAction<string>>
+    current?:string
 }
 
-const IntroInsurance = ({items}: Props) => {
+const IntroInsurance = ({items,current,setActive}: Props) => {
     return (
         <div className={s.intro}>
             <div className={s.info_cont}>
@@ -28,7 +30,7 @@ const IntroInsurance = ({items}: Props) => {
                     он имеет ту же юридическую силу, что и бумажный.
                 </div>
                 <div className={s.ch_cont}>
-                    <ChoiseItemsMap choiseItems={items}/>
+                    <ChoiseItemsMap currentChoise={current} setActive={setActive} choiseItems={items}/>
                 </div>
                 <div className={s.infoCont}>
                     <div className={s.l}>

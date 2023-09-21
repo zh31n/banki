@@ -16,7 +16,8 @@ type Props = {
 const ChoiseItemsMap = ({choiseItems, currentChoise, setActive}: Props) => {
     return (
         <>
-            {choiseItems?.map((el, index) => <ChoiseItem name={el.name} active={currentChoise === el.name}
+            {choiseItems?.map((el, index) => <ChoiseItem name={el.name}
+                                                         active={currentChoise?.toLowerCase() === el.name.toLowerCase()}
                                                          key={index} setActive={setActive}/>)}
         </>
     );

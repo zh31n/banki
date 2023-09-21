@@ -60,6 +60,10 @@
     line-height: normal;
   }
 }
+.cont_choise{
+  display: flex;
+  gap: 8px;
+}
 @media (max-width: 480px){
   .main_container{
     height: auto;

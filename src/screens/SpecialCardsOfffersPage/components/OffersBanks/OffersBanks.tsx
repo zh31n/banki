@@ -21,8 +21,8 @@ const OffersBanks = (props: OffersBanksProps) => {
             {title ? <div className={styles.title}>{title}</div> : ''}
             <div className={styles.map_cont}>
                 {cards.map(item => <Items key={item.id} item={item}/>)}
-                <Image src={`/${image}`} alt={'asd'} height={307} width={279} className={styles.image}/>
-                <Image src={`/${image}`} alt={'asd'} height={307} width={279} className={styles.image}/>
+                <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
+                <Image src={image} alt={'asd'} height={307} width={279} className={styles.image}/>
             </div>
             <BlueBtn text={'Показать еще'} width={236} fSize={20} height={60}/>
         </div>

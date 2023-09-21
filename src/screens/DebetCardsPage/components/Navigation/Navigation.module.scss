@@ -6,7 +6,6 @@
   margin-top: 32px;
   border-radius: 14px;
   border: 1px solid #D9DBDF;
-  background: #FFF;
   background: url('../../../../assets/icons/debit_cards_img.jpg') no-repeat white right;
   background-size: 750px 376px;
 
@@ -72,6 +71,14 @@
       }
     }
   }
+}
+
+.cont{
+  margin-top: 2rem;
+  display: flex;
+  gap: 8px;
+  width: 60%;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 480px) {

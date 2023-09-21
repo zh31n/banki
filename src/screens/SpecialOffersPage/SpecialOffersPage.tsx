@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './SpecialOffersPage.module.scss';
 import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import SpecialOfferItem from "@/components/Offers/SpecialOfferItem/SpecialOfferItem";
@@ -57,14 +57,14 @@ const SpecialOffersPage = (props: SpecialOfferPageProps) => {
     } = props;
     const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
     const dispatch = useDispatch();
-
+    const [current, setCurrent] = useState<string>('все')
     useEffect(() => {
         dispatch(depositsGetRequestedAction());
     }, [])
 
     return (
         <PageWrapper>
-            <IntroSpecialOffer choises={staticData.choices}/>
+            <IntroSpecialOffer setActive={setCurrent} current={current} choises={staticData.choices}/>
             <div className={s.page_i}>
                 <div className={s.select_cont}>
                     {staticData.selectData

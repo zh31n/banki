@@ -6,7 +6,7 @@
   border: 1px solid #D9DBDF;
   background: #FFF;
   backdrop-filter: blur(9.5px);
-  overflow: hidden;
+  //overflow: hidden;
   height: 72px;
   margin-top: 2rem;
   padding: 16px 24px 16px 16px;
@@ -42,6 +42,29 @@
       font-style: normal;
       font-weight: 500;
       line-height: 86.4%; /* 15.552px */
+    }
+  }
+  .drop_down{
+    border: 1px solid #D9DBDF;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow: auto;
+    top: 75px;
+    padding: 10px;
+    left: 0;
+    right: 0;
+    //margin-top: 120px;
+    position: absolute;
+    background: white;
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    .drop_item{
+      display: block;
+
     }
   }
 }

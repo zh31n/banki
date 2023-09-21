@@ -8,9 +8,11 @@ type ItemT = {
 }
 type Props = {
     items: ItemT[]
+    current?: string
+    setActive?: React.Dispatch<React.SetStateAction<string>>
 }
 
-const IntroInvest = ({items}: Props) => {
+const IntroInvest = ({items,setActive,current}: Props) => {
     return (
         <div className={s.intro}>
             <div className={s.info_cont}>
@@ -31,7 +33,7 @@ const IntroInvest = ({items}: Props) => {
                     </p>
                 </div>
                 <div className={s.ch_cont}>
-                    <ChoiseItemsMap choiseItems={items}/>
+                    <ChoiseItemsMap setActive={setActive} currentChoise={current} choiseItems={items}/>
                 </div>
             </div>
         </div>

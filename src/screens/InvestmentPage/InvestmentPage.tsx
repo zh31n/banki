@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './InvestmentPage.module.scss';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroInvest from "@/screens/InvestmentPage/components/IntroInvest/IntroInvest";
@@ -57,6 +57,7 @@ const InvestmentPage = ({data}: Props) => {
     const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
     const markets: InvestingMarketInterface[] = useSelector(InvestingMarketsSelector);
     const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
+    const [current, setCurrent] = useState<string>('с чего начать')
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -67,7 +68,7 @@ const InvestmentPage = ({data}: Props) => {
 
     return (
         <PageWrapper>
-            <IntroInvest items={data.introChoose}/>
+            <IntroInvest setActive={setCurrent} current={current} items={data.introChoose}/>
             <LastRecomends markets={markets}/>
             <InvestInfo banks={data.bankItems}/>
             <WatchInfo title={'Мастер подбора брокерского счета'}

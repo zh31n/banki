@@ -12,9 +12,11 @@
   display: flex;
   gap: 6px;
   line-height: 86.4%;
+  flex-shrink: 0;
 }
 
 .parametr_container_active {
+  flex-shrink: 0;
   padding: 10px 16px;
   border-radius: 7px;
   border: 1px solid var(--stroke-3, #4da7ff);
@@ -31,6 +33,7 @@
 }
 
 .item {
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
 }

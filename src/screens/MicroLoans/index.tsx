@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroMicroloans from "@/screens/MicroLoans/components/IntroMicroloans/IntroMicroloans";
 import Bonus from "@/components/Bonus/Bonus";
@@ -35,6 +35,7 @@ const MicroloansPage = (props: MicroloansPageProps) => {
     const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
     const news: NewsInterface[] = useSelector(NewsListSelector);
     const dispatch = useDispatch();
+    const [current, setCurrent] = useState<string>('не важна сумма')
 
     useEffect(() => {
         dispatch(creditsGetRequestedAction());
@@ -44,7 +45,7 @@ const MicroloansPage = (props: MicroloansPageProps) => {
 
     return (
         <PageWrapper>
-            <IntroMicroloans items={staticData.chooseIntro}/>
+            <IntroMicroloans setActive={setCurrent} current={current} items={staticData.chooseIntro}/>
             <Bonus title={'0% Первый займ бесплатно!'}/>
             <SliderBanksCons data={staticData.slideItems}/>
             <WebLoans credits={credits}/>

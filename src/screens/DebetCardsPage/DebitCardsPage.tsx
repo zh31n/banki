@@ -5,7 +5,7 @@ import Bonus from "@/components/Bonus/Bonus";
 import Offers from "@/screens/CreditMapPage/components/Offers/Offers";
 import OffersMonth from "@/components/OffersMonth/OffersMonth";
 import Mailing from "@/components/Mailing/Mailing";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import LatestNews from "@/components/LatestNews/LatestNews";
 import Feedback from "@/components/FeedBacks/Feedback/Feedback";
 import Communicate from "@/components/Communicate/Communicate";
@@ -28,7 +28,7 @@ export default function DebitCardsPage(props: DebitCardsPageProps) {
     const cards: CardInterface[] = useSelector(CardsSelector);
     const news: NewsInterface[] = useSelector(NewsListSelector);
     const dispatch = useDispatch();
-
+    const [current, setCurrent] = useState<string>('все')
     useEffect(() => {
         dispatch(cardsGetRequestedAction());
         dispatch(newsGetRequestedAction());
@@ -37,7 +37,7 @@ export default function DebitCardsPage(props: DebitCardsPageProps) {
     const dataMap = data.DebitCardsPage.questData
     return (
         <Wrapper>
-            <Navigation/>
+            <Navigation setActive={setCurrent} current={current}/>
             <Bonus/>
             <Offers cards={cards}/>
             <OffersMonth/>

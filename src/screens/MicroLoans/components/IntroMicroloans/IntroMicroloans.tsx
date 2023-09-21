@@ -12,9 +12,11 @@ type ItemT = {
 }
 type Props = {
     items: ItemT[]
+    setActive?: React.Dispatch<string>
+    current?:string
 }
 
-const IntroMicroloans = ({items}: Props) => {
+const IntroMicroloans = ({items,current,setActive}: Props) => {
     return (
         <div className={s.intro}>
             <div className={s.info_cont}>
@@ -30,7 +32,7 @@ const IntroMicroloans = ({items}: Props) => {
                     <mark>Оставьте заявку на микрозайм онлайн.</mark>
                 </div>
                 <div className={s.ch_cont}>
-                    <ChoiseItemsMap choiseItems={items}/>
+                    <ChoiseItemsMap currentChoise={current} setActive={setActive} choiseItems={items}/>
                 </div>
             </div>
         </div>

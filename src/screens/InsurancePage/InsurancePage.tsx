@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './InsurancePage.module.scss';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroInsurance from "@/screens/InsurancePage/components/IntroInsurance/IntroInsurance";
@@ -49,14 +49,14 @@ type Props = {
 const InsurancePage = ({data}: Props) => {
     const news: NewsInterface[] = useSelector(NewsListSelector);
     const dispatch = useDispatch();
-
+    const [current, setCurrent] = useState<string>('осаго')
     useEffect(() => {
         dispatch(newsGetRequestedAction());
     }, [])
 
     return (
         <PageWrapper>
-            <IntroInsurance items={data.introChoose}/>
+            <IntroInsurance setActive={setCurrent} current={current} items={data.introChoose}/>
             <Bonus title={'Кэшбэк 20% за страхование ипотеки'}/>
             <InsuranceCompanys isTitle={true} data={data.banksSlideItems}/>
             <WatchInfo title={'Народный рейтинг страховых компаний'}
