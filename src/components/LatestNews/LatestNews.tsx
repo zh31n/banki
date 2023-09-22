@@ -6,6 +6,7 @@ import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 import {NewsInterface} from "@/core/services/News";
 import {InvestingNewsInterface} from "@/core/services/Investing";
+import {useTypedSelector} from "@/core/store";
 
 interface ChoicesInterface {
     name: string;
@@ -19,24 +20,36 @@ const mockFilterItems: ChoicesInterface[] = [
     {name: 'Страхование', active: false},
     {name: 'Безопасность', active: false},
 ]
+
 interface LatestNewsProps {
     news?: NewsInterface[] | InvestingNewsInterface[];
 }
 
-const LatestNews = (props: LatestNewsProps) => {
+const LatestNews = () => {
     const {
-        news = [],
-    } = props;
+        list,
+        saveList,
+        loansList,
+        insuranceList,
+        safeList
+    } = useTypedSelector(state => state.news)
+
     const [currentChoise, setCurrentChoise] = useState('Все');
 
     return (
         <div className={s.news}>
             <div className={s.title}>Свежие <span>новости</span></div>
             <div className={s.choises_cont}>
-                <ChoiseItemsMap currentChoise={currentChoise} setActive={setCurrentChoise} choiseItems={mockFilterItems} />
+                <ChoiseItemsMap currentChoise={currentChoise} setActive={setCurrentChoise}
+                                choiseItems={mockFilterItems}/>
             </div>
-            <div className={s.news_cont}>{news
-                .map((item) => <NewsItem key={item.id} item={item}/>)}</div>
+            <div className={s.news_cont}>
+                {currentChoise === 'Все' && list.map((item) => <NewsItem key={item.id} item={item}/>)}
+                {currentChoise === 'Накопления' && saveList.map((item) => <NewsItem key={item.id} item={item}/>)}
+                {currentChoise === 'Займы' && loansList.map((item) => <NewsItem key={item.id} item={item}/>)}
+                {currentChoise === 'Страхование' && insuranceList.map((item) => <NewsItem key={item.id} item={item}/>)}
+                {currentChoise === 'Безопасность' && safeList.map((item) => <NewsItem key={item.id} item={item}/>)}
+            </div>
             <div className={s.btn_cont}>
                 <BlueBtn text={'Смотреть все новости'} width={300}/>
             </div>

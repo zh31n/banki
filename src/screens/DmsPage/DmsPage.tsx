@@ -36,7 +36,7 @@ const DmsPage = ({data}: Props) => {
                    title={'Кэшбэк 20% за страхование ипотеки'}
                    text={'Получите до 4000 рублей на карту'}/>
             <OurStrongsDms/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <Feedback sub={'о страховках для занятий спортом'} title={'Отзывы '}/>
             <FrequentQuestions title={'Популярные вопросы'} items={data.questData}/>
             <FrequentQuestions title={'Важная информация'} items={data.questions}/>

@@ -44,7 +44,7 @@ export default function CreditMapPage(props: CreditMapPageProps) {
             <OffersMonth/>
             <Mailing/>
             <Compilations/>
-            <LatestNews news={news}/>
+            <LatestNews />
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о кредитных картах'}/>
             <BanksWithButton

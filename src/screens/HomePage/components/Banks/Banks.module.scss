@@ -31,11 +31,12 @@
     }
 
     .bank_map {
+      gap: 2.2rem;
       width: 730px;
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      //justify-content: space-between;
 
       .banK_mWrap {
         display: flex;

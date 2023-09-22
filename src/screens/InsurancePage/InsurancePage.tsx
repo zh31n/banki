@@ -64,7 +64,7 @@ const InsurancePage = ({data}: Props) => {
                            ' а мы ежедневно проверяем отзывы и обновляем рейтинги.'}
             />
             <SpecialOffersInsurance insuranceList={data.specialOffers}/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <Mailing/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о страховых компаниях'}/>

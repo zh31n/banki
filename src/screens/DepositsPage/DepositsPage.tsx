@@ -86,13 +86,11 @@ const DepositsPage = (props: DepositsPageProps) => {
         staticData,
     } = props;
     const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
-    const news: NewsInterface[] = useSelector(NewsListSelector);
     const dispatch = useDispatch();
     const bonus = deposits[0];
 
     useEffect(() => {
         dispatch(depositsGetRequestedAction());
-        dispatch(newsGetRequestedAction());
     }, [])
 
     return (
@@ -110,7 +108,7 @@ const DepositsPage = (props: DepositsPageProps) => {
             <PopularOffers data={staticData.PopularOffers}/>
             <OfferMonth offers={deposits}/>
             <Mailing/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <SpecialOffersDeposit deposits={deposits}/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о вкладах'}/>

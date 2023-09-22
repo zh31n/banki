@@ -41,7 +41,7 @@ const ServiceBusinessPage = () => {
             </div>
             <OffersInvest items={data.BusinessServicePage.offersMoth}/>
             <Feedback title={'Отзывы '} sub={'об РКО '}/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <FrequentQuestions title={'Частые вопросы'} items={data.BusinessServicePage.questData}/>
         </PageWrapper>
     );

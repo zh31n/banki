@@ -35,7 +35,7 @@ export default function CalculateKASCOPage(){
         <InsuranceCompanys isTitle={true} data={companies} />
         <LastBuy />
         <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap}/>
-        <LatestNews news={news}/>
+        <LatestNews />
         <Feedback sub={' об ОСАГО'} title={'Отзывы'} />
         <CalculateOSAGO />
         <OSAGORating title={'Рейтинг страховых компаний по ОСАГО '} sub={'- ТОП 10 лучших в 2023 году'} />
