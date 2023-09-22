@@ -15,7 +15,7 @@ export type ItemsActionT = {
 }
 
 interface Props {
-  data: any
+  data: { stocks: ItemsActionT[]; stock: ItemsActionT }
 }
 
 const Stock = ({ data }: Props) => {
@@ -25,21 +25,21 @@ const Stock = ({ data }: Props) => {
     sliderRef.current.swiper.slideTo(index)
   }, [])
 
-  const stockItems = data.map((el, index) => (
+  const stockItems = data.stocks.map((el, index) => (
     <StockItem
       onClick={() => {
         handle(index)
       }}
       key={index}
       title={el.title}
-      sup={el.sup}
+      sup={el.subtitle}
     />
   ))
-  const slides = data.map((el, index) => (
+  const slides = data.stocks.map((el, index) => (
     <SwiperSlide>
       <div className={s.info}>
         <div className={s.title}>{el.title}</div>
-        <div className={s.sup}>{el.sup}</div>
+        <div className={s.sup}>{el.subtitle}</div>
         <div className={s.btns}>
           <BlueBtn text={'Кнопка 1'} width={240} />
           <div className={s.btn}>Кнопка 2</div>
@@ -56,8 +56,6 @@ const Stock = ({ data }: Props) => {
           <div className={s.stock_items}>{stockItems}</div>
         </Swiper>
       </div>
-
-      <div className={s.stock_items}>{stockItems}</div>
     </div>
   )
 }
