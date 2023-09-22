@@ -58,10 +58,28 @@ const Search = (props: Props) => {
             />
             {btnHidden ? '' : <button>Найти</button>}
             {(searchVis && itemsSearch) && <div className={s.drop_down}>
-                {filteredArr.map((el, index) =>
-                    <Link href={el.link} key={index}>
-                        {el.text}
-                    </Link>
+                {filteredArr.map((el, index) => {
+                        if (el.link) {
+                            return <Link href={el.link} key={index}>
+                                {el.text}
+                            </Link>
+                        } else {
+                            return <div
+                                style={{
+                                    width: '100%',
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    padding: '10px',
+                                    borderBottom: '1px solid black',
+                                    fontSize: '14px'
+                                }}
+                            >
+                                <span>{el.name}</span>
+                                <span>рейтинг {el.rating}</span>
+                            </div>
+                        }
+                    }
                 )}
             </div>}
         </div>
