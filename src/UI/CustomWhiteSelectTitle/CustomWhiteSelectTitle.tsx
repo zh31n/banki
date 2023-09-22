@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import s from "./CustomWhiteSelectTitle.module.scss";
 
@@ -11,7 +13,7 @@ type Props = {
 
 const CustomWhiteSelectTitle = ({title, options, width,value,setValue}: Props) => {
 
-    const handleChange = e => setValue(e.target.value);
+    const handleChange = e => setValue && setValue(e.target.value);
 
     return (
         <div className={s.years} style={{width: width ? `${width}px` : ''}}>

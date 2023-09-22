@@ -4,6 +4,7 @@ import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import searchI from "@/assets/icons/search.svg";
 import BankiItem from "@/components/Banki/BankiItem/BankiItem";
 import Image, {StaticImageData} from "next/image";
+import Search from "@/UI/Search/Search";
 
 type bankiT = {
     img: StaticImageData;
@@ -31,10 +32,8 @@ const Banks = ({data}: Props) => {
                     <div className={s.banK_mWrap}>{bankiMap}</div>
                     <div className={s.nav_search}>
                         <BlueBtn text={"Весь список банков"} width={273}/>
-                        <div className={s.search}>
-                            <Image height={32} width={32} src={searchI} alt={"icon"}/>
-                            <input type="text" placeholder={"Введите название банка..."}/>
-                        </div>
+                        <Search placeholder={"Введите название банка..."} width={431} height={60} margin={0}
+                                btnHidden={true}/>
                     </div>
                 </div>
             </div>

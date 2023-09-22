@@ -6,10 +6,6 @@ import Image from "next/image";
 import lupa from '@/assets/icons/search.svg'
 import Link from "next/link";
 
-type SearchItem = {
-    text: string
-    link: string
-}
 
 type Props = {
     placeholder: string
@@ -17,15 +13,28 @@ type Props = {
     lupaSee?: boolean
     height?: number
     btnHidden?: boolean
-    itemsSearch?: SearchItem[]
+    itemsSearch?: any[]
     value?: string
     setValue?: React.Dispatch<string>
-    filterArr?:any
+    filterArr?: any
+    width?: number
 }
 
-const Search = ({placeholder, margin, height, btnHidden, lupaSee, itemsSearch, setValue, value,filterArr}: Props) => {
+const Search = (props: Props) => {
+    const {
+        placeholder,
+        margin,
+        height,
+        btnHidden,
+        lupaSee,
+        itemsSearch,
+        setValue,
+        value,
+        filterArr,
+        width
+    } = props;
     const [searchVis, setSearchVis] = useState<boolean>(false);
-    const [filteredArr, setFilteredArr] = useState<SearchItem[]>([]);
+    const [filteredArr, setFilteredArr] = useState<any[]>([]);
 
     const onChangeInp = e => setValue && setValue(e.target.value)
 
@@ -42,7 +51,7 @@ const Search = ({placeholder, margin, height, btnHidden, lupaSee, itemsSearch, s
     }
 
     return (
-        <div className={s.search} style={{margin: `${margin}px`, height: `${height}px`}}>
+        <div className={s.search} style={{margin: `${margin}px`, height: `${height}px`, width: `${width}px`}}>
             <Image alt={'lupa'} src={lupa} height={40} width={40}/>
             <input type="text" value={value} onChange={onChangeInp}
                    placeholder={placeholder}
