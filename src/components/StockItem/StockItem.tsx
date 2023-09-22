@@ -4,11 +4,12 @@ import s from './StockItem.module.scss';
 type Props = {
     title:string
     sup:string
+    onClick
 }
 
-const StockItem = ({title,sup}:Props) => {
+const StockItem = ({title,sup, onClick}:Props) => {
     return (
-        <div className={s.stock_item}>
+        <div onClick={onClick} className={s.stock_item}>
             <div className={s.title}>{title}</div>
             <div className={s.sup}>{sup}</div>
         </div>
