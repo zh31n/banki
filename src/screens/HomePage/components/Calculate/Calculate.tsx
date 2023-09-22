@@ -9,6 +9,7 @@ import MoneySelect from "@/UI/MoneySelect/MoneySelect";
 import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
 import CalcCredits from "@/screens/HomePage/components/Calculate/CalcCredits/CalcCredits";
 import CalcDeposit from "@/screens/HomePage/components/Calculate/CalcDeposit/CalcDeposit";
+import CalcMortgage from "@/screens/HomePage/components/Calculate/CalcMortgage/CalcMortgage";
 
 type choiseItemsT = {
     name: string
@@ -38,6 +39,7 @@ const Calculate = () => {
             <div className={s.choises_items}>{choiseItems}</div>
             {currentChoose === 'Кредиты' && <CalcCredits/>}
             {currentChoose === 'Вклады' && <CalcDeposit/>}
+            {currentChoose === 'Ипотека' && <CalcMortgage/>}
         </div>
     );
 };

@@ -81,7 +81,8 @@ const Search = (props: Props) => {
                         }
                     }
                 )}
-            </div>}
+            </div>
+            }
         </div>
     );
 };
