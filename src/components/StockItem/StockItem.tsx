@@ -1,5 +1,5 @@
-import React from 'react';
-import s from './StockItem.module.scss';
+import React from 'react'
+import s from './StockItem.module.scss'
 
 type Props = {
     title:string
@@ -16,4 +16,5 @@ const StockItem = ({title,sup, onClick}:Props) => {
     );
 };
 
-export default StockItem;
+
+export default StockItem
