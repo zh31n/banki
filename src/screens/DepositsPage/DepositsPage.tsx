@@ -86,13 +86,11 @@ const DepositsPage = (props: DepositsPageProps) => {
         staticData,
     } = props;
     const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
-    const news: NewsInterface[] = useSelector(NewsListSelector);
     const dispatch = useDispatch();
     const bonus = deposits[0];
 
     useEffect(() => {
         dispatch(depositsGetRequestedAction());
-        dispatch(newsGetRequestedAction());
     }, [])
 
     return (

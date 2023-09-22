@@ -7,10 +7,10 @@ import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelec
 import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 
 const CalcCredits = () => {
-    const [money, setMoney] = useState<number>(0)
+    const [money, setMoney] = useState<number>(12000)
     const [years, setYears] = useState<string>('1')
     const [pay, setPay] = useState<number>(7988)
-    const stavka = 10;
+    const stavka = 15;
     useEffect(() => {
         const procent = stavka / 100;
         const sun = procent + (procent / (1 + procent) * ((Number(years) * 12) - 1));

@@ -8,6 +8,7 @@ import BlueBtn from "@/UI/BlueBtn/BlueBtn";
 import MoneySelect from "@/UI/MoneySelect/MoneySelect";
 import CustomWhiteSelectTitle from "@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle";
 import CalcCredits from "@/screens/HomePage/components/Calculate/CalcCredits/CalcCredits";
+import CalcDeposit from "@/screens/HomePage/components/Calculate/CalcDeposit/CalcDeposit";
 
 type choiseItemsT = {
     name: string
@@ -16,13 +17,13 @@ type choiseItemsT = {
 const choises: choiseItemsT[] = [
     {name: 'Кредиты', active: true},
     {name: 'Вклады', active: false},
-    {name: 'Рефинансирование', active: false},
-    {name: 'ОСАГО', active: false},
-    {name: 'РКО', active: false},
+    // {name: 'Рефинансирование', active: false},
+    // {name: 'ОСАГО', active: false},
+    // {name: 'РКО', active: false},
     {name: 'Ипотека', active: false},
-    {name: 'Страхование ипотеки', active: false},
-    {name: 'Сбережения', active: false},
-    {name: 'Каско', active: false},
+    // {name: 'Страхование ипотеки', active: false},
+    // {name: 'Сбережения', active: false},
+    // {name: 'Каско', active: false},
 ]
 
 
@@ -35,7 +36,8 @@ const Calculate = () => {
     return (
         <div className={s.calc}>
             <div className={s.choises_items}>{choiseItems}</div>
-            <CalcCredits/>
+            {currentChoose === 'Кредиты' && <CalcCredits/>}
+            {currentChoose === 'Вклады' && <CalcDeposit/>}
         </div>
     );
 };
