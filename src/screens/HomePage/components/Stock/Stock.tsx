@@ -1,10 +1,12 @@
-import React, { useCallback, useRef } from 'react'
-import s from './Stock.module.scss'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
-import StockItem from '@/components/StockItem/StockItem'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import React, { useCallback, useRef } from 'react';
+import s from "./Stock.module.scss";
+import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import StockItem from "@/components/StockItem/StockItem";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFlip } from 'swiper/modules';
 
 // Import Swiper styles
+
 import 'swiper/css'
 
 export type ItemsActionT = {
@@ -59,5 +61,4 @@ const Stock = ({ data }: Props) => {
     </div>
   )
 }
-
-export default Stock
+export default Stock;
