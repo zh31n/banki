@@ -110,7 +110,7 @@ const DepositsPage = (props: DepositsPageProps) => {
             <PopularOffers data={staticData.PopularOffers}/>
             <OfferMonth offers={deposits}/>
             <Mailing/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <SpecialOffersDeposit deposits={deposits}/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о вкладах'}/>

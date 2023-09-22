@@ -76,7 +76,7 @@ const InvestmentPage = ({data}: Props) => {
             <SoloInvest items={data.bonds} isSub={true}/>
             <OffersInvest items={data.offersMoth}/>
             <Mailing/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <HaveQues/>
             <BrokerList title={'Все брокеры'} brokers={brokers}/>
             <FrequentQuestions title={''} items={data.questData}/>

@@ -23,7 +23,7 @@ const NewsItem = (props: NewsItemProps) => {
     return (
         <div className={s.item}>
             {image && (
-                <Image alt={'icon'} src={image}/>
+                <Image style={{marginBottom:'3rem'}} alt={'icon'} src={image}/>
             )}
             <div className={s.info}>
                 <div className={s.date}>30.06.2023</div>
@@ -33,7 +33,7 @@ const NewsItem = (props: NewsItemProps) => {
                 </span>
             </div>
             <div className={s.text}>
-                <mark>{title}</mark> {subtitle}
+                <mark>{title}:</mark> {subtitle}
             </div>
             <div className={s.subtitle}>{text}</div>
             <div className={s.line}/>
@@ -45,7 +45,7 @@ const NewsItem = (props: NewsItemProps) => {
                 </span>
             </div>
             <div className={s.text}>
-                <mark>{title}</mark> {text}
+                <mark>{title}:</mark> {text}
             </div>
         </div>
     );

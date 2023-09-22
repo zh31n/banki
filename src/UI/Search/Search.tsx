@@ -20,22 +20,26 @@ type Props = {
     itemsSearch?: SearchItem[]
     value?: string
     setValue?: React.Dispatch<string>
+    filterArr?:any
 }
 
-const Search = ({placeholder, margin, height, btnHidden, lupaSee, itemsSearch, setValue, value}: Props) => {
+const Search = ({placeholder, margin, height, btnHidden, lupaSee, itemsSearch, setValue, value,filterArr}: Props) => {
     const [searchVis, setSearchVis] = useState<boolean>(false);
     const [filteredArr, setFilteredArr] = useState<SearchItem[]>([]);
-    // const onInpFocus = () => setSearchVis(true)
-    const onChangeInp = e => setValue(e.target.value)
-    useEffect(() => {
-        if (value?.length === 0) {
-            setSearchVis(false)
-        } else {
-            setSearchVis(true)
-        }
-        const result = itemsSearch?.filter(i => i.text.toLowerCase().includes(value.toLowerCase()))
-        setFilteredArr(result);
-    }, [value]);
+
+    const onChangeInp = e => setValue && setValue(e.target.value)
+
+    {
+        itemsSearch && useEffect(() => {
+            if (value?.length === 0) {
+                setSearchVis(false)
+            } else {
+                setSearchVis(true)
+            }
+            const result = filterArr(itemsSearch)
+            setFilteredArr(result);
+        }, [value]);
+    }
 
     return (
         <div className={s.search} style={{margin: `${margin}px`, height: `${height}px`}}>

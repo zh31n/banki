@@ -36,7 +36,7 @@ export default function BusinessPage(){
             <Ecvaring />
             <Text />
             <OffersMonth />
-            <LatestNews news={news} />
+            <LatestNews  />
         </Wrapper>
     )
 }

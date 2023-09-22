@@ -68,7 +68,7 @@ const ObligationsInv = () => {
             <Mailing/>
             <FrequentQuestions title={'Частые вопросы'} items={data.ObligationsPage.frequentQuests}/>
             <TopObligations obligations={data.ObligationsPage.TopObligationItems}/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <div className={s.text}>
                 <h1 className={s.title}>Информация</h1>
                 <p>

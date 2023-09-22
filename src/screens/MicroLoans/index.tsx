@@ -52,7 +52,7 @@ const MicroloansPage = (props: MicroloansPageProps) => {
             <CreditOfferList credits={credits} />
             <BrokerList title={'Микрокредитные организации'} brokers={brokers}/>
             <CatalogItems title={'Каталог микрозаймов'} items={staticData.catalogData} width={'100%'}/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <Feedback title={'Отзывы '} sub={'о МФО'}/>
             <CreditTopBankList
                 credits={credits}

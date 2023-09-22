@@ -65,7 +65,7 @@ const ConsumerCreditsPage = (props: ConsumerCreditsPageProps) => {
             />
             <CreditOfferList credits={credits} />
             <CatalogItems title={'Каталог кредитов'} items={staticData.catalogData}/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <Mailing/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о кредитах'}/>

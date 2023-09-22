@@ -44,7 +44,7 @@ const MortgageInsurancePage = ({data}: Props) => {
             <LastBuy/>
             <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={data.worksData}/>
             <OurStrongsMort/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <Feedback sub={'об ипотечном страховании'} title={'Отзывы '}/>
         </PageWrapper>
     );

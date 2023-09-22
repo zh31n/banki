@@ -2125,7 +2125,7 @@ const data = {
             {name: 'Застраховать', active: true},
             {name: 'Обезопасить', active: true},
         ]
-    }
+    },
 }
 
 export default data;

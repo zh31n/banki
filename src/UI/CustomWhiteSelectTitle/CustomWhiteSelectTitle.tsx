@@ -5,14 +5,19 @@ type Props = {
     title?: string
     options: string[]
     width?: number
+    value?:string
+    setValue?: React.Dispatch<string>
 }
 
-const CustomWhiteSelectTitle = ({title, options, width}: Props) => {
+const CustomWhiteSelectTitle = ({title, options, width,value,setValue}: Props) => {
+
+    const handleChange = e => setValue(e.target.value);
+
     return (
         <div className={s.years} style={{width: width ? `${width}px` : ''}}>
             { title && <div>{title}</div>}
-            <select>
-                {options.map((el, index) => <option key={index}>{el}</option>)}
+            <select value={value} onChange={handleChange}>
+                {options.map((el, index) => <option value={el} key={index}>{el}</option>)}
             </select>
         </div>
     );
