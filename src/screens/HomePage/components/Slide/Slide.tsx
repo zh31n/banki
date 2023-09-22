@@ -1,34 +1,61 @@
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import s from './Slide.module.scss';
 import arr from "@/assets/icons/white_arr.svg";
 import SlideItem from "@/components/SlideItem/SlideItem";
-import Image, {StaticImageData} from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
 
 type iconsSlideT = {
     img: StaticImageData;
     name: string;
     w: number;
-    link?:string
+    link?: string
 };
 type Props = {
     data: iconsSlideT[]
 }
 
-const Slide = ({data}: Props) => {
-
-    const slideItems = data.map((el, index) => (
-        <Link href={el.link}>
-            <SlideItem width={el.w} key={index} img={el.img} name={el.name}/>
-        </Link>
-
-    ));
+const Slide = ({ data }: Props) => {
+    const sliderRef = useRef(null);
+    const [slideItems, setSlideItems] = useState([<></>])
+    useEffect(() => {
+        const slides = data.map((el, index) => (
+            <SwiperSlide>
+            <Link href={el.link}>
+                <SlideItem width={el.w} key={index} img={el.img} name={el.name} />
+            </Link>
+            </SwiperSlide>
+    
+        ));
+        setSlideItems(slides)
+    }, [])
+    const handleNext = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slideNext();
+      }, []);
 
     return (
         <div className={s.slide}>
-            {slideItems}
-            <div className={s.arr}>
-                <Image src={arr} alt={"arr"}/>
+
+            <Swiper
+                id='swiper'
+                ref={sliderRef}
+                spaceBetween={10}
+                slidesPerView={4}
+                // loop={true}
+                // loopedSlides={6}
+                freeMode={true}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+            >
+                {slideItems}
+            </Swiper>
+            <div onClick={handleNext} className={s.arr}>
+                <Image src={arr} alt={"arr"} />
             </div>
         </div>
     );
