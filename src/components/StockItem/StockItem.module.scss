@@ -2,18 +2,19 @@
   width: 280px;
   height: 100px;
   border-radius: 14px;
-  border: 1px solid #E0EAFF;
-  background: rgba(255, 255, 255, 0.60);
+  border: 1px solid #e0eaff;
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(9.5px);
   padding: 1.2rem 1rem;
-  .title{
+  cursor: pointer;
+  .title {
     color: #000;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 86.4%; /* 13.824px */
   }
-  .sup{
+  .sup {
     margin-top: 1rem;
     color: #000;
     font-size: 14px;
@@ -24,7 +25,7 @@
 }
 
 @media (max-width: 1220px) {
-  .stock_item{
+  .stock_item {
     width: 230px;
   }
 }
