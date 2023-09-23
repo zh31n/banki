@@ -26,7 +26,7 @@ const HomePage = ({ data }: Props) => {
   const [stocks, setStocks] = useState<{ cards: ItemsActionT[] }>()
   const [promo, setPromo] = useState<{ card: ItemsActionT }>()
 
-  const { serviceItems } = useTypedSelector(state => state.home)
+  const { serviceItems } = useTypedSelector((state) => state.home)
   const [searchVal, setSearchVal] = useState<string>('')
   const filterArr = (items: SearchItem[]) =>
     items.filter((i) => i.text.toLowerCase().includes(searchVal.toLowerCase()))
@@ -49,8 +49,6 @@ const HomePage = ({ data }: Props) => {
         setPromo(one)
       }
     }
-
-    console.log(allPromotions)
 
     getPromotions()
     return () => {
