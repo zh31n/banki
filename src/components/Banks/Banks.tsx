@@ -12,13 +12,13 @@ const Banks = () => {
         </div>
         <div className={styles.button}>
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-            <path d="M4.5 6H20.5M4.5 12H20.5M13.5 18H20.5" stroke="#121212" strokeWidth={2} stroke-linecap="round"
+            <path d="M4.5 6H20.5M4.5 12H20.5M13.5 18H20.5" stroke="#121212" strokeWidth={2} strokeLinecap="round"
                   stroke-linejoin="round"/>
           </svg>
           <p>По популярности</p>
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
             <path d="M19.5 9L12.5 15L10.75 13.5M5.5 9L7.83333 11" stroke="#212121" strokeWidth={1.5}
-                  stroke-linecap="round" stroke-linejoin="round"/>
+                  strokeLinecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       </div>

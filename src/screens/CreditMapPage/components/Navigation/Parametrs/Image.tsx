@@ -20,22 +20,22 @@ const Image = () => {
       <path
         d="M7.33403 4.66602L4.00071 4.66602M2.00067 4.66602L1.33398 4.66603"
         stroke="#121212"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <path
         d="M8.66602 11.334L11.9993 11.334M13.9994 11.334L14.6661 11.334"
         stroke="#121212"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <path
         d="M1.33398 11.334L4.00065 11.334"
         stroke="#121212"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <path
         d="M14.6667 4.66602L12 4.66602"
         stroke="#121212"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   );
