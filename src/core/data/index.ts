@@ -83,7 +83,7 @@ const data = {
     HomePage: {
         iconsSlide: [
             {name: "Вклады", img: vklad, w: 0, link: '/deposits'},
-            {name: "Кредиты", img: credit, w: 68,link:'/credits'},
+            {name: "Кредиты", img: credit, w: 68, link: '/credits'},
             {name: "Подбор карты", img: carta, w: 64, link: '/cards/select-steps'},
             {name: "Страхование", img: osago, w: 0, link: '/insurance'},
             {name: "Инвестиции", img: invest, w: 0, link: '/investment'},
@@ -677,11 +677,11 @@ const data = {
             },
         ],
         PopularOffers: [
-            {img: loco, title: 'Виды с онлайн-заявкой', sub: '35 предложений от 17 банков', active: false},
-            {img: loco, title: 'Накопительные счета', sub: '81 предложений от 56 банков', active: true},
-            {img: loco, title: 'Вклады на 3 мес.', sub: '468 предложений от 150 банков', active: false},
-            {img: loco, title: 'Вклады на 6 мес.', sub: '595 предложений от 159 банков', active: false},
-            {img: loco, title: 'Вклады на 1 год', sub: '722 предложений от 165 банков', active: false}
+            {img: loco, title: 'Виды с онлайн-заявкой', sub: '35 предложений от 17 банков', active: false, id: 1},
+            {img: loco, title: 'Накопительные счета', sub: '81 предложений от 56 банков', active: true, id: 2},
+            {img: loco, title: 'Вклады на 3 мес.', sub: '468 предложений от 150 банков', active: false, id: 3},
+            {img: loco, title: 'Вклады на 6 мес.', sub: '595 предложений от 159 банков', active: false, id: 4},
+            {img: loco, title: 'Вклады на 1 год', sub: '722 предложений от 165 банков', active: false, id: 5}
         ],
         offersMoth: [
             {

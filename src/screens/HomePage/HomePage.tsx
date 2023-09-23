@@ -1,7 +1,5 @@
 'use client'
 
-'use client'
-
 import React, { useEffect, useState } from 'react'
 import Search from '@/UI/Search/Search'
 import OfferMoth from '@/components/Offers/OfferMoth/OfferMoth'
@@ -12,7 +10,6 @@ import Stock, { ItemsActionT } from '@/screens/HomePage/components/Stock/Stock'
 import Slide from '@/screens/HomePage/components/Slide/Slide'
 import Banks from '@/screens/HomePage/components/Banks/Banks'
 import { useTypedSelector } from '@/core/store'
-// import async from './../../app/cards/select-steps/final/page'
 import Calculate from './components/Calculate/Calculate'
 import axios from 'axios'
 
@@ -29,7 +26,7 @@ const HomePage = ({ data }: Props) => {
   const [stocks, setStocks] = useState<{ cards: ItemsActionT[] }>()
   const [promo, setPromo] = useState<{ card: ItemsActionT }>()
 
-  const { serviceItems } = useTypedSelector((state) => state.home)
+  const { serviceItems } = useTypedSelector(state => state.home)
   const [searchVal, setSearchVal] = useState<string>('')
   const filterArr = (items: SearchItem[]) =>
     items.filter((i) => i.text.toLowerCase().includes(searchVal.toLowerCase()))

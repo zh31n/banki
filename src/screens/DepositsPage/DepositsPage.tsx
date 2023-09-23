@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import PageWrapper from "@/containers/PageWrapper";
 import IntroDeposits from "@/screens/DepositsPage/components/IntroDeposits/IntroDeposits";
 import Bonus from "@/components/Bonus/Bonus";
@@ -39,6 +39,7 @@ type OfferItem = {
     img: StaticImageData
     title: string
     sub: string
+    id: number
 }
 type OfferMoths = {
     img: StaticImageData
@@ -71,6 +72,7 @@ type banksT = {
     money: string
     osob?: string
 }
+
 interface DepositsPageProps {
     staticData: {
         offersBanks: offerT[],
@@ -81,6 +83,7 @@ interface DepositsPageProps {
         Topbanks: banksT[]
     }
 }
+
 const DepositsPage = (props: DepositsPageProps) => {
     const {
         staticData,
@@ -88,24 +91,24 @@ const DepositsPage = (props: DepositsPageProps) => {
     const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
     const dispatch = useDispatch();
     const bonus = deposits[0];
-
     useEffect(() => {
         dispatch(depositsGetRequestedAction());
     }, [])
+    const [currentOffer, setCurrentOffer] = useState<number>(1)
 
     return (
         <PageWrapper>
             <IntroDeposits/>
             {bonus && (
                 <Bonus
-                    title={`Вклад ${bonus.rate}% на ${Math.floor(bonus.timeframe_max/365)} года`}
+                    title={`Вклад ${bonus.rate}% на ${Math.floor(bonus.timeframe_max / 365)} года`}
                     text={bonus.description}
                     img={absolut}
                 />
             )}
             <OffersBanks isSelect={true} deposits={deposits} title={'943 вклада'} sub={' подобрано'}
                          options={['По популярности']}/>
-            <PopularOffers data={staticData.PopularOffers}/>
+            <PopularOffers setActive={setCurrentOffer} active={currentOffer} data={staticData.PopularOffers}/>
             <OfferMonth offers={deposits}/>
             <Mailing/>
             <LatestNews/>
