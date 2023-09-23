@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useMemo, useRef, useState } from 'react'
 import s from './OffersBanks.module.scss'
 import CustomSelect from '@/UI/CustomSelect/CustomSelect'
