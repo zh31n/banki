@@ -4,7 +4,8 @@
   cursor: pointer;
   padding: 30px;
   width: 535px;
-  max-height: 170px;
+  max-height: 80px;
+  overflow: hidden;
   border-radius: 14px;
   background: rgba(217, 231, 250, 0.40);
 
@@ -36,8 +37,26 @@
   .text {
     margin-top: 20px;
     width: 95%;
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
+}
+
+
+.image{
+  transition: all .3s;
+  transform: rotate(0deg);
+}
+
+.image_a{
+  transition: all .3s;
+  transform: rotate(180deg);
 }
 
 @media (max-width: 480px) {
