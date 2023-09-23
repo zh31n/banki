@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import s from './OffersBanks.module.scss'
 import CustomSelect from '@/UI/CustomSelect/CustomSelect'
 import lines from '@/assets/icons/banki_icon/3-line.svg'
@@ -20,7 +20,8 @@ interface OfferBanksProps {
 const OffersBanks = (props: OfferBanksProps) => {
   const { deposits, options, title, sub, isSelect } = props
   const titleScroll = useRef<HTMLDivElement>(null)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState('')
+  const [depositsLength, setDepositsLenth] = useState([])
 
   const depositsAreRolledUpAcrossBanks = useMemo(() => {
     const _depositsAreRolledUpAcrossBanks = deposits.reduce((arr, el) => {
@@ -40,8 +41,6 @@ const OffersBanks = (props: OfferBanksProps) => {
       })
     })
 
-    console.log(_depositsAreRolledUpAcrossBanks)
-
     return _depositsAreRolledUpAcrossBanks
   }, [deposits])
 
@@ -54,9 +53,10 @@ const OffersBanks = (props: OfferBanksProps) => {
     return _leaderBanks
   }, [depositsAreRolledUpAcrossBanks])
 
-  const [depositsLength, setDepositsLenth] = useState(
-    depositsAreRolledUpAcrossBanks[0].slice(0, 1)
-  )
+  useEffect(() => {
+    if (!depositsAreRolledUpAcrossBanks) return
+    setDepositsLenth(depositsAreRolledUpAcrossBanks[0].slice(0, 1))
+  }, [])
 
   const handleClick = () => {
     titleScroll.current.scrollIntoView({
@@ -65,7 +65,9 @@ const OffersBanks = (props: OfferBanksProps) => {
     setDepositsLenth((prevState) =>
       prevState.length === 1
         ? leaderBanks
-        : depositsAreRolledUpAcrossBanks[0].slice(0, 1)
+        : depositsAreRolledUpAcrossBanks
+        ? depositsAreRolledUpAcrossBanks[0].slice(0, 1)
+        : []
     )
   }
 
@@ -78,27 +80,35 @@ const OffersBanks = (props: OfferBanksProps) => {
         </span>
         {isSelect && <CustomSelect img={lines} options={options} />}
       </div>
-      <div className={s.deposit_offers}>
+      <ul className={s.deposit_offers}>
         {depositsLength.map((item, index) => {
           const arrChildren = depositsAreRolledUpAcrossBanks.find(
             (el) => el[0].bank_id === item.bank_id
           )
           return (
-            <>
+            <li key={nanoid()}>
               <DepositOfferItem
                 item={item}
                 arrChildren={arrChildren ? arrChildren.slice(1) : []}
-                key={nanoid()}
-                openChildren={() => setIsOpen(item.bank_id)}
+                openChildren={() =>
+                  setIsOpen((currentVal) =>
+                    currentVal === item.bank_id ? '' : item.bank_id
+                  )
+                }
               />
               {isOpen === arrChildren[0].bank_id &&
                 arrChildren.map((child) => (
-                  <DepositOfferItem child item={child} key={nanoid()} />
+                  <div
+                    key={nanoid()}
+                    style={{ marginTop: '2.5px', marginBottom: '2.5px' }}
+                  >
+                    <DepositOfferItem child item={child} />
+                  </div>
                 ))}
-            </>
+            </li>
           )
         })}
-      </div>
+      </ul>
       <div className={s.btn_cont}>
         <BlueBtn
           text={'Смотреть все'}

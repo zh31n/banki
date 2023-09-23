@@ -90,9 +90,11 @@ const DepositsPage = (props: DepositsPageProps) => {
   const deposits: DepositCardInterface[] = useSelector(DepositsSelector)
   const dispatch = useDispatch()
   const bonus = deposits[0]
+
   useEffect(() => {
     dispatch(depositsGetRequestedAction())
   }, [])
+
   const [currentOffer, setCurrentOffer] = useState<number>(1)
 
   return (

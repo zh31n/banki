@@ -72,7 +72,7 @@ const DepositOfferItem = (props: DepositOfferItemProps) => {
       <div className={s.down}>
         {!child && (
           <div className={s.count} onClick={() => openChildren()}>
-            Ещё {arrChildren.length} вкладов
+            Ещё {arrChildren ? arrChildren.length : 0} вкладов
             <Image src={arr_d} alt={'иконка стрелочки вниз'} />
           </div>
         )}
