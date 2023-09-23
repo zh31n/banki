@@ -38,7 +38,7 @@ const Stock = ({ data }: Props) => {
     />
   ))
   const slides = data.stocks.map((el, index) => (
-    <SwiperSlide>
+    <SwiperSlide key={index}>
       <div className={s.info}>
         <div className={s.title}>{el.title}</div>
         <div className={s.sup}>{el.subtitle}</div>

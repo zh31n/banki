@@ -52,6 +52,9 @@ const HomePage = ({ data }: Props) => {
         setPromo(one)
       }
     }
+
+    console.log(allPromotions)
+
     getPromotions()
     return () => {
       isMounted = false
