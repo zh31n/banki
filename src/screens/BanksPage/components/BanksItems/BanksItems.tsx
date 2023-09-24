@@ -28,7 +28,7 @@ const BanksItems = ({items}: Props) => {
     return (
         <div className={s.wrap}>
             <div className={s.info}>
-                Вы сможете заказать <mark>Кредитные карты в банках РФ</mark> с любым дизайном и удобном для вас
+                Вы сможете заказать <mark>Кредитные карты в банках Кыргызстана</mark> с любым дизайном и удобном для вас
                 банке.
             </div>
             <div className={s.cont}>
