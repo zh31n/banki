@@ -11,11 +11,11 @@ import mockBankImage from '@/assets/icons/banki_icon/loco.svg'
 interface DepositOfferItemProps {
   item: DepositCardInterface
   arrChildren?: []
-  openChildren?: () => void
+  openChildren?: (e) => void
   child?: boolean
 }
 
-const DepositOfferItem = (props: DepositOfferItemProps) => {
+const DepositOfferItem = React.memo((props: DepositOfferItemProps) => {
   const {
     item: {
       id,
@@ -41,7 +41,7 @@ const DepositOfferItem = (props: DepositOfferItemProps) => {
           <Image src={mockBankImage} alt={'иконка банка'} />
           <div className={s.name}>
             <div>{name}</div>
-            <span>{description}</span>
+            <p>{description}</p>
           </div>
           <div className={s.about_b}>
             <div className={s.info_item}>
@@ -71,7 +71,7 @@ const DepositOfferItem = (props: DepositOfferItemProps) => {
       </div>
       <div className={s.down}>
         {!child && (
-          <div className={s.count} onClick={() => openChildren()}>
+          <div className={s.count} onClick={(e) => openChildren(e)}>
             Ещё {arrChildren ? arrChildren.length : 0} вкладов
             <Image src={arr_d} alt={'иконка стрелочки вниз'} />
           </div>
@@ -94,6 +94,6 @@ const DepositOfferItem = (props: DepositOfferItemProps) => {
       </div>
     </div>
   )
-}
+})
 
 export default DepositOfferItem
