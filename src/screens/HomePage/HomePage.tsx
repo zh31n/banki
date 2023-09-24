@@ -34,9 +34,11 @@ const HomePage = ({ data }: Props) => {
   useEffect(() => {
     let isMounted = true
     const allPromotions = axios.get(
-      'https://vsebanki.kg/api/promotions?page=1&limit=4&sort=id&sort_type=1'
+      'http://83.220.174.249:5345/api/promotions?page=1&limit=4&sort=id&sort_type=1'
     )
-    const onePromotions = axios.get('https://vsebanki.kg/api/promotion?promo=1')
+    const onePromotions = axios.get(
+      'http://83.220.174.249:5345/api/promotion?promo=1'
+    )
     const getPromotions = async () => {
       const [all, one]: any = await Promise.all([
         allPromotions,
