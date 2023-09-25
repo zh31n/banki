@@ -17,7 +17,7 @@ const Navigation = () => {
       <div className={styles.main_text_container}>
         <div className={styles.main_text_cont}>
           <p>Ипотека</p>
-          <p className={styles.blue_text}>в Москве</p>
+          <p className={styles.blue_text}>в Бишкеке</p>
         </div>
         <div className={styles.little_text}>
           На (НАЗВАНИЕ СЕРВИСА) можно с легкостью подобрать ипотечный кредит и

@@ -1,7 +1,7 @@
-import React from 'react';
-import CreditsPage from "@/screens/CreditsPage/CreditsPage";
-import data from "@/core/data";
+import React from 'react'
+import CreditsPage from '@/screens/CreditsPage/CreditsPage'
+import data from '@/core/data'
 
-const Page = () => <CreditsPage data={data.CreditsPage}/>
+const Page = () => <CreditsPage data={data.CreditsPage} />
 
-export default Page;
+export default Page

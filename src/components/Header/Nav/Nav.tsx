@@ -76,7 +76,6 @@ const Nav = ({
       </div>
     )
   })
-
   const BusunesMap = navigate.business.map((el, index) => {
     return (
       <div key={index} className={styles.column}>
@@ -88,7 +87,6 @@ const Nav = ({
       </div>
     )
   })
-
   const NewsMap = navigate.news.map((el, index) => {
     return (
       <div key={index} className={styles.column}>
