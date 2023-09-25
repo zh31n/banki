@@ -1,20 +1,56 @@
-import React from 'react';
-import s from "./SliderBanksCons.module.scss";
-import BankImgItemSlideMap from "@/components/Banki/BankiImg/BankImgItemSlideMap/BankImgItemSlideMap";
-import arr_r from "@/assets/icons/banki_icon/Стрелка_right.svg";
-import Image, {StaticImageData} from "next/image";
+'use client'
+
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import s from './SliderBanksCons.module.scss'
+import arr_r from '@/assets/icons/banki_icon/Стрелка_right.svg'
+import Image, { StaticImageData } from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import BankImgItemSlide from '@/components/Banki/BankiImg/BankImgItemSlide/BankImgItemSlide'
+import { nanoid } from 'nanoid'
 
 type Props = {
-    data: StaticImageData[]
+  data: StaticImageData[]
 }
 
-const SliderBanksCons = ({data}:Props) => {
-    return (
-        <div className={s.slider}>
-            <BankImgItemSlideMap images={data}/>
-            <Image src={arr_r} className={s.arr} alt={'стрелка вправо'}/>
-        </div>
-    );
-};
+const SliderBanksCons = ({ data }: Props) => {
+  const sliderRef = useRef(null)
+  const [slideItems, setSlideItems] = useState([<div key={nanoid()}></div>])
 
-export default SliderBanksCons;
+  useEffect(() => {
+    const slides = data.map((el, index) => (
+      <SwiperSlide key={index}>
+        <BankImgItemSlide img={el} />
+      </SwiperSlide>
+    ))
+    setSlideItems(slides)
+  }, [])
+
+  const handleNext = () => {
+    if (!sliderRef.current) return
+    sliderRef.current.swiper.slideNext()
+  }
+
+  return (
+    <div className={s.slider}>
+      <Swiper
+        id="swiperBanksCons"
+        ref={sliderRef}
+        spaceBetween={10}
+        slidesPerView={7}
+        loop={true}
+      >
+        {slideItems}
+      </Swiper>
+
+      <Image
+        src={arr_r}
+        className={s.arr}
+        alt={'стрелка вправо'}
+        onClick={() => handleNext()}
+      />
+    </div>
+  )
+}
+
+export default SliderBanksCons

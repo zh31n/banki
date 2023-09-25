@@ -19,7 +19,7 @@ interface CreditBankListProps {
 const CreditBankList = (props: CreditBankListProps) => {
   const { credits, options, title, sub, isSelect } = props
   const [loansLength, setLoansLenth] = useState([])
-  const titleScroll = useRef<HTMLDivElement>(null)
+  const titleScroll = useRef<HTMLUListElement>(null)
   const [isOpen, setIsOpen] = useState<(number | string)[]>([])
   const [higthDepositItem, setHigthDepositItem] = useState(0)
   const [sortValue, setSortValue] = useState('По процентной ставке')
@@ -100,7 +100,9 @@ const CreditBankList = (props: CreditBankListProps) => {
     setSortValue(e.currentTarget.value)
   }
 
-  function sortOffer(criterion: 'rate' | 'rating' | 'min_amount') {
+  function sortOffer(
+    criterion: 'max_procent' | 'max_amount' | 'timeframe_max'
+  ) {
     loansCurtailedByBanks.map((bankOf: oneOfferConsumerCreditsT[]) => {
       return bankOf.sort((x, y) => {
         return y[criterion] - x[criterion]
@@ -118,13 +120,13 @@ const CreditBankList = (props: CreditBankListProps) => {
     if (sortValue === '') return
     switch (sortValue) {
       case 'По процентной ставке':
-        sortOffer('rate')
+        sortOffer('max_procent')
         break
-      case 'По рейтингу банка':
-        sortOffer('rating')
+      case 'По максимальной сумме':
+        sortOffer('max_amount')
         break
-      case 'По максимальному взносу':
-        sortOffer('min_amount')
+      case 'По максимальному сроку':
+        sortOffer('timeframe_max')
         break
     }
   }, [sortValue])
@@ -144,7 +146,7 @@ const CreditBankList = (props: CreditBankListProps) => {
           />
         )}
       </div>
-      <div className={s.deposit_offers} ref={titleScroll}>
+      <ul className={s.deposit_offers} ref={titleScroll}>
         {loansLength.map((item) => {
           const arrChildren = loansCurtailedByBanks.find(
             (el: oneOfferConsumerCreditsT[]) =>
@@ -152,10 +154,9 @@ const CreditBankList = (props: CreditBankListProps) => {
           )
 
           return (
-            <>
+            <li key={nanoid()}>
               <CreditBankItem
                 item={item}
-                key={nanoid()}
                 arrChildren={arrChildren.length > 1 && arrChildren.slice(1)}
                 openChildren={(e) => handleOpenChildren(e, item)}
               />
@@ -179,10 +180,10 @@ const CreditBankList = (props: CreditBankListProps) => {
                   </li>
                 ))}
               </ul>
-            </>
+            </li>
           )
         })}
-      </div>
+      </ul>
       <div className={s.btn_cont}>
         <BlueBtn
           text={'Смотреть все'}

@@ -78,13 +78,13 @@ const ConsumerCreditsPage = (props: ConsumerCreditsPageProps) => {
         title={consumerCredits.length}
         options={[
           'По процентной ставке',
-          'По рейтингу банка',
-          'По максимальному взносу',
+          'По максимальной сумме',
+          'По максимальному сроку',
         ]}
       />
       <CreditOfferList credits={[]} />
       <CatalogItems title={'Каталог кредитов'} items={staticData.catalogData} />
-      {/* <LatestNews /> */}
+      <LatestNews />
       <Mailing />
       <Communicate />
       <Feedback title={'Отзывы '} sub={'о кредитах'} />

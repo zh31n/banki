@@ -1,54 +1,54 @@
-import React from 'react';
-import s from './NewsItem.module.scss';
-import Image from "next/image";
-import smile from '@/assets/icons/Smile.svg';
-import {InvestingNewsInterface} from "@/core/services/Investing";
-import {NewsInterface} from "@/core/services/News";
+import React from 'react'
+import s from './NewsItem.module.scss'
+import Image from 'next/image'
+import smile from '@/assets/icons/Smile.svg'
+import { InvestingNewsInterface } from '@/core/services/Investing'
+import { NewsInterface } from '@/core/services/News'
 
 interface NewsItemProps {
-    item: NewsInterface | InvestingNewsInterface;
+  item: NewsInterface | InvestingNewsInterface
 }
 
 const NewsItem = (props: NewsItemProps) => {
-    const {
-        item: {
-            title,
-            text,
-            image,
-            id,
-            subtitle,
-        },
-    } = props;
+  const {
+    item: { title, text, image, id, subtitle },
+  } = props
 
-    return (
-        <div className={s.item}>
-            {image && (
-                <Image style={{marginBottom:'3rem'}} alt={'icon'} src={image}/>
-            )}
-            <div className={s.info}>
-                <div className={s.date}>30.06.2023</div>
-                <span>
-                    <Image src={smile} alt={'smile'}/>
-                    <div>{124242}</div>
-                </span>
-            </div>
-            <div className={s.text}>
-                <mark>{title}:</mark> {subtitle}
-            </div>
-            <div className={s.subtitle}>{text}</div>
-            <div className={s.line}/>
-            <div className={s.info} style={{marginTop: '1rem'}}>
-                <div className={s.date}>30.06.2023</div>
-                <span>
-                    <Image src={smile} alt={'smile'}/>
-                    <div>{124242}</div>
-                </span>
-            </div>
-            <div className={s.text}>
-                <mark>{title}:</mark> {text}
-            </div>
-        </div>
-    );
-};
+  return (
+    <div className={s.item}>
+      {/* {image && (
+        <Image
+          style={{ marginBottom: '3rem' }}
+          alt={'icon'}
+          src={image}
+          width={100}
+          height={100}
+        />
+      )} */}
+      <div className={s.info}>
+        <div className={s.date}>30.06.2023</div>
+        <span>
+          <Image src={smile} alt={'smile'} width={100} />
+          <div>{124242}</div>
+        </span>
+      </div>
+      <div className={s.text}>
+        <mark>{title}:</mark> {subtitle}
+      </div>
+      <div className={s.subtitle}>{text}</div>
+      <div className={s.line} />
+      <div className={s.info} style={{ marginTop: '1rem' }}>
+        <div className={s.date}>30.06.2023</div>
+        <span>
+          <Image src={smile} alt={'smile'} width={100} />
+          <div>{124242}</div>
+        </span>
+      </div>
+      <div className={s.text}>
+        <mark>{title}:</mark> {text}
+      </div>
+    </div>
+  )
+}
 
-export default NewsItem;
+export default NewsItem

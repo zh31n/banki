@@ -1,46 +1,57 @@
-"use client";
-import React, {useEffect} from 'react';
-import PageWrapper from "@/containers/PageWrapper";
-import IntroCalculate from "@/screens/CalculatorCredits/components/IntroCalculate/IntroCalculate";
-import Feedback from "@/components/FeedBacks/Feedback/Feedback";
-import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
-import CreditCalculatorBankList from "@/components/credits/CreditCalculatorBankList";
-import {CreditInterface} from "@/core/services/Credits";
-import {useDispatch, useSelector} from "react-redux";
-import {creditsGetRequestedAction} from "@/core/store/credits/actions";
-import {CreditsSelector} from "@/core/store/credits/selectors";
+'use client'
+import React, { useEffect } from 'react'
+import PageWrapper from '@/containers/PageWrapper'
+import IntroCalculate from '@/screens/CalculatorCredits/components/IntroCalculate/IntroCalculate'
+import Feedback from '@/components/FeedBacks/Feedback/Feedback'
+import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions'
+import CreditCalculatorBankList from '@/components/credits/CreditCalculatorBankList'
+import { CreditInterface } from '@/core/services/Credits'
+import { useDispatch, useSelector } from 'react-redux'
+import { creditsGetRequestedAction } from '@/core/store/credits/actions'
+import { CreditsSelector } from '@/core/store/credits/selectors'
+import CreditBankList from '@/components/credits/CreditBankList'
 
 type ItemT = {
-    title: string
-    text: string
+  title: string
+  text: string
 }
 interface CalculatorCreditsProps {
-    staticData: {
-        questData: ItemT[]
-    }
+  staticData: {
+    questData: ItemT[]
+  }
+  allOffers?: any
 }
 
 const CalculatorCredits = (props: CalculatorCreditsProps) => {
-    const {
-        staticData,
-    } = props;
-    const credits: CreditInterface[] = useSelector(CreditsSelector);
-    const dispatch = useDispatch();
+  const { staticData, allOffers } = props
+  const credits: CreditInterface[] = useSelector(CreditsSelector)
+  const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(creditsGetRequestedAction());
-    }, [])
+  useEffect(() => {
+    dispatch(creditsGetRequestedAction())
+  }, [])
 
-    return (
-        <PageWrapper>
-            <IntroCalculate/>
-            <CreditCalculatorBankList
-                credits={credits}
-            />
-            <Feedback title={'Отзывы'} sub={' о кредитах'}/>
-            <FrequentQuestions title={'Важная информация'} items={staticData.questData}/>
-        </PageWrapper>
-    );
-};
+  return (
+    <PageWrapper>
+      <IntroCalculate />
+      <CreditBankList
+        credits={allOffers}
+        isSelect={true}
+        sub={' предложений'}
+        title={allOffers.length}
+        options={[
+          'По процентной ставке',
+          'По максимальной сумме',
+          'По максимальному сроку',
+        ]}
+      />
+      <Feedback title={'Отзывы'} sub={' о кредитах'} />
+      <FrequentQuestions
+        title={'Важная информация'}
+        items={staticData.questData}
+      />
+    </PageWrapper>
+  )
+}
 
-export default CalculatorCredits;
+export default CalculatorCredits
