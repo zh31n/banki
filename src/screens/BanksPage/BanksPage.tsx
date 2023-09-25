@@ -27,7 +27,7 @@ type Props = {
 const BanksPage = ({data}: Props) => {
     return (
         <PageWrapper>
-            <IntroBanks/>
+            <IntroBanks banksItems={data.banksItems}/>
             <InfoBanks/>
             <BanksItems items={data.banksItems}/>
         </PageWrapper>

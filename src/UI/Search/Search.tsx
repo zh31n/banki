@@ -63,7 +63,7 @@ const Search = (props: Props) => {
                             return <Link href={el.link} key={index}>
                                 {el.text}
                             </Link>
-                        } else {
+                        } {
                             return <div
                                 style={{
                                     width: '100%',
@@ -75,8 +75,8 @@ const Search = (props: Props) => {
                                     fontSize: '14px'
                                 }}
                             >
-                                <span>{el.name}</span>
-                                <span>рейтинг {el.rating}</span>
+                                <span>{el.name || el.title}</span>
+                                {el.rating && <span>рейтинг {el.rating}</span>}
                             </div>
                         }
                     }
