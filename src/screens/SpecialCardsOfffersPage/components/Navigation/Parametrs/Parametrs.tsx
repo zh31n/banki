@@ -1,47 +1,29 @@
 import React from "react";
 import styles from "./Parametrs.module.scss";
 import ParametrsItem from "./ParametrsItem/ParametrsItem";
+import Link from "next/link";
 
-type Props = {};
+type ItemT = {
+    link?: string
+    name: string
+    active: boolean
+}
+type Props = {
+    data?: ItemT[]
+};
 
 const Parametrs = (props: Props) => {
-  const data = [
-    {
-      text: "Все",
-      active: false,
-    },
-    {
-      text: "Вклады",
-      active: false,
-    },
-    {
-      text: "Ипотека",
-      active: false,
-    },
-    {
-      text: "Кредитные карты",
-      active: false,
-    },
-    {
-      text: "Дебетовые карты",
-      active: true,
-    },
-    {
-      text: "Инвестиции",
-      active: false,
-    }, {
-      text: "Страхование",
-      active: false,
-    },
-  ];
+    const {data} = props;
 
-  return (
-    <div className={styles.main_container}>
-      {data.map(el => (
-        <ParametrsItem text={el.text} active={el.active}/>
-      ))}
-    </div>
-  );
+    return (
+        <div className={styles.main_container}>
+            {data?.map((el, index) => (
+                <Link href={el.link} key={index}>
+                    <ParametrsItem text={el.name} active={el.active}/>
+                </Link>
+            ))}
+        </div>
+    );
 };
 
 export default Parametrs;

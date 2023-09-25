@@ -195,14 +195,12 @@ const data = {
       ],
     },
     choices: [
-      { name: 'Все', active: true },
-      { name: 'Вклады', active: false },
-      { name: 'Потребительские кредиты', active: false },
-      { name: 'Ипотека', active: false },
-      { name: 'Кредитные карты', active: false },
-      { name: 'Дебетовые карты', active: false },
-      { name: 'Инвестиции', active: false },
-      { name: 'Страхование', active: false },
+      // {name: 'Все', active: true, link: ''},
+      { name: 'Вклады', active: true, link: '/deposits/special-offers' },
+      { name: 'Ипотека', active: false, link: '/ipoteka/special-offers' },
+      { name: 'Карты', active: false, link: '/cards/special-offers' },
+      { name: 'Инвестиции', active: false, link: '/investment/special-offers' },
+      { name: 'Страхование', active: false, link: '/insurance/special-offers' },
     ],
     selectData: [
       { img: ruble, options: ['Любая валюта'] },
@@ -6057,14 +6055,11 @@ const data = {
   },
   InvestSpecialOffersPage: {
     choises: [
-      { name: 'Все', active: false },
-      { name: 'Вклады', active: false },
-      { name: 'Потребительские кредиты', active: false },
-      { name: 'Ипотека', active: false },
-      { name: 'Кредитные карты', active: false },
-      { name: 'Дебетовые карты', active: false },
-      { name: 'Инвестиции', active: true },
-      { name: 'Страхование', active: false },
+      // {name: 'Все', active: false, link: ''},
+      { name: 'Вклады', active: false, link: '/deposits/special-offers' },
+      { name: 'Ипотека', active: false, link: '/ipoteka/special-offers' },
+      { name: 'Карты', active: false, link: '/cards/special-offers' },
+      { name: 'Инвестиции', active: true, link: '/investment/special-offers' },
     ],
     specialOffers: [
       {
@@ -6238,6 +6233,20 @@ const data = {
       { name: 'Обезопасить', active: true },
     ],
   },
+  MortgageSpecialIntro: [
+    // {name: 'Все', active: false, link: ''},
+    { name: 'Вклады', active: false, link: '/deposits/special-offers' },
+    { name: 'Ипотека', active: true, link: '/ipoteka/special-offers' },
+    { name: 'Карты', active: false, link: '/cards/special-offers' },
+    { name: 'Инвестиции', active: false, link: '/investment/special-offers' },
+  ],
+  CardsSpecialIntro: [
+    // {name: 'Все', active: false, link: ''},
+    { name: 'Вклады', active: false, link: '/deposits/special-offers' },
+    { name: 'Ипотека', active: false, link: '/ipoteka/special-offers' },
+    { name: 'Карты', active: true, link: '/cards/special-offers' },
+    { name: 'Инвестиции', active: false, link: '/investment/special-offers' },
+  ],
 }
 
 export default data
