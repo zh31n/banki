@@ -2,11 +2,13 @@ import React from 'react';
 import s from "./IntroSpecialOffer.module.scss";
 import ChoiseItem from "@/components/Choise/ChoiseItem/ChoiseItem";
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
+import Link from "next/link";
 
 
 type choisesT = {
     name: string
     active: boolean
+    link?: string
 }
 type Props = {
     choises: choisesT[],
@@ -27,7 +29,11 @@ const IntroSpecialOffer = ({choises, current, setActive}: Props) => {
                     Специальные <mark>предложения</mark>
                 </div>
                 <div className={s.choiseItems}>
-                    <ChoiseItemsMap currentChoise={current} setActive={setActive} choiseItems={choises}/>
+                    {choises.map((el, index) =>
+                        <Link key={index} href={el.link}>
+                            <ChoiseItem name={el.name} active={el.active}/>
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Navigation.module.scss'
 import Parametrs from "@/screens/SpecialCardsOfffersPage/components/Navigation/Parametrs/Parametrs";
+import data from "@/core/data";
 
-const Navigation = () => {
+const Navigation = ({data}) => {
   return (
     <div className={styles.main_container}>
       <div className={styles.nav_container}>
@@ -16,7 +17,7 @@ const Navigation = () => {
         <p className={styles.text}>Специальные</p>
         <p className={styles.blue_text}>предложения</p>
       </div>
-      <Parametrs/>
+      <Parametrs data={data}/>
     </div>
   );
 };

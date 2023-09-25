@@ -9,6 +9,7 @@ import {MortgageInterface} from "@/core/services/Mortgages";
 import {useDispatch, useSelector} from "react-redux";
 import {MortgagesListSelector} from "@/core/store/mortgages/selectors";
 import {mortgagesGetRequestedAction} from "@/core/store/mortgages/actions";
+import data from "@/core/data";
 
 type questItem = {
     title: string
@@ -33,7 +34,7 @@ export default function SpecialMortgageOffersPage(props: SpecialMortgageOffersPa
 
     return (
         <Wrapper>
-            <Navigation/>
+            <Navigation data={data.MortgageSpecialIntro}/>
             <MortgageSpecialList mortgages={mortgages} />
             <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
         </Wrapper>
