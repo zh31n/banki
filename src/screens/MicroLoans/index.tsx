@@ -50,9 +50,12 @@ const MicroloansPage = (props: MicroloansPageProps) => {
       />
       <Bonus title={'0% Первый займ бесплатно!'} />
       <SliderBanksCons data={staticData.slideItems} />
-      <WebLoans credits={credits} />
+      <WebLoans credits={staticData.microLoansBanks} />
       <CreditOfferList credits={credits} />
-      <BrokerList title={'Микрокредитные организации'} brokers={brokers} />
+      <BrokerList
+        title={'Микрокредитные организации'}
+        brokers={staticData.microLoansBanks}
+      />
       <CatalogItems
         title={'Каталог микрозаймов'}
         items={staticData.catalogData}
