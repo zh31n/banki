@@ -12,7 +12,7 @@ const Navigation = () => {
       </div>
       <div className={styles.text_container}>
         <div className={styles.main_text_container}>
-          Кредитные карты с рассрочкой <mark> в Москве </mark>
+          Кредитные карты с рассрочкой <mark> в Бишкеке </mark>
         </div>
         <div className={styles.text_cont}>
           <p className={styles.text}>
