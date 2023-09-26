@@ -5,9 +5,8 @@ import StockItem from "@/components/StockItem/StockItem";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFlip } from 'swiper/modules';
 
-// Import Swiper styles
-
 import 'swiper/css'
+
 
 export type ItemsActionT = {
   id: number
@@ -16,8 +15,9 @@ export type ItemsActionT = {
   title: string
 }
 
+
 interface Props {
-  data: { stocks: ItemsActionT[]; stock: ItemsActionT }
+ data: { stocks: ItemsActionT[]; stock: ItemsActionT }
 }
 
 const Stock = ({ data }: Props) => {
