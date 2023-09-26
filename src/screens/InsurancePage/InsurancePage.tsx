@@ -44,21 +44,22 @@ type Props = {
         banksSlideItems: StaticImageData[],
         specialOffers: OfferI[],
         questData: questT[]
-    }
+    },
+    SearchItems?:any[]
 }
-const InsurancePage = ({data}: Props) => {
-    const news: NewsInterface[] = useSelector(NewsListSelector);
+const InsurancePage = ({data,SearchItems}: Props) => {
     const dispatch = useDispatch();
     const [current, setCurrent] = useState<string>('осаго')
+
     useEffect(() => {
-        dispatch(newsGetRequestedAction());
+        // dispatch(newsGetRequestedAction());
     }, [])
 
     return (
         <PageWrapper>
             <IntroInsurance setActive={setCurrent} current={current} items={data.introChoose}/>
             <Bonus title={'Кэшбэк 20% за страхование ипотеки'}/>
-            <InsuranceCompanys isTitle={true} data={data.banksSlideItems}/>
+            <InsuranceCompanys isTitle={true} searchItems={SearchItems} data={data.banksSlideItems} />
             <WatchInfo title={'Народный рейтинг страховых компаний'}
                        text={'Будьте уверенны в своем выборе: клиенты делятся опытом,' +
                            ' а мы ежедневно проверяем отзывы и обновляем рейтинги.'}

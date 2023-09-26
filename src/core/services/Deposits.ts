@@ -21,6 +21,10 @@ export interface DepositCardInterface {
   rating?: number
   timeframe_max?: number
   timeframe_min?: number
+  title_1?: string,
+  count1?: string,
+  title_2?: string,
+  count2?: string
 }
 
 export interface DepositsResponseInterface extends ApiResponseInterface {

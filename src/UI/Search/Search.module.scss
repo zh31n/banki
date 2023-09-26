@@ -62,6 +62,7 @@
     display: flex;
     gap: 5px;
     flex-direction: column;
+    z-index: 1 !important;
     .drop_item{
       display: block;
 

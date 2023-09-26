@@ -1,7 +1,11 @@
 import React from 'react';
 import InsurancePage from "@/screens/InsurancePage/InsurancePage";
 import data from "@/core/data";
+import {Metadata} from "next";
 
-const Page = () => <InsurancePage data={data.InsurancePage}/>
+export const metadata: Metadata = {
+    title: 'Страхование'
+}
+const Page = () => <InsurancePage data={data.InsurancePage} SearchItems={data.InsuranceCompanysMass}/>
 
 export default Page;

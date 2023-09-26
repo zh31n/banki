@@ -19,7 +19,7 @@ const SliderBanksCons = ({ data }: Props) => {
 
   useEffect(() => {
     const slides = data.map((el, index) => (
-      <SwiperSlide key={index}>
+      <SwiperSlide style={{zIndex:'-1'}} key={index}>
         <BankImgItemSlide img={el} />
       </SwiperSlide>
     ))
@@ -36,9 +36,10 @@ const SliderBanksCons = ({ data }: Props) => {
       <Swiper
         id="swiperBanksCons"
         ref={sliderRef}
-        spaceBetween={10}
-        slidesPerView={7}
+        spaceBetween={20}
+        slidesPerView={6}
         loop={true}
+        style={{zIndex:'-1'}}
       >
         {slideItems}
       </Swiper>

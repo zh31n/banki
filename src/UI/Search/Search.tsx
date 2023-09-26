@@ -58,12 +58,16 @@ const Search = (props: Props) => {
             />
             {btnHidden ? '' : <button>Найти</button>}
             {(searchVis && itemsSearch) && <div className={s.drop_down}>
-                {filteredArr.map((el, index) => {
+                {filteredArr?.map((el, index) => {
                         if (el.link) {
                             return <Link href={el.link} key={index}>
-                                {el.text}
+                                {el.text || el.name}
                             </Link>
-                        } {
+                        } else if (el.a) {
+                            return <a target={'_blank'} href={el.a} key={index}>
+                                {el.name}
+                            </a>
+                        } else {
                             return <div
                                 style={{
                                     width: '100%',
