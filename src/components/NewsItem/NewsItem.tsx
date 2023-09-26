@@ -28,7 +28,7 @@ const NewsItem = (props: NewsItemProps) => {
       <div className={s.info}>
         <div className={s.date}>30.06.2023</div>
         <span>
-          <Image src={smile} alt={'smile'} width={100} />
+          <Image src={smile} alt={'smile'} width={14} height={14} />
           <div>{124242}</div>
         </span>
       </div>
@@ -40,7 +40,7 @@ const NewsItem = (props: NewsItemProps) => {
       <div className={s.info} style={{ marginTop: '1rem' }}>
         <div className={s.date}>30.06.2023</div>
         <span>
-          <Image src={smile} alt={'smile'} width={100} />
+          <Image src={smile} alt={'smile'} width={14} height={14} />
           <div>{124242}</div>
         </span>
       </div>

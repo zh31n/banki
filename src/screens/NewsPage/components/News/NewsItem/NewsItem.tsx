@@ -26,7 +26,7 @@ const NewsItem = (props: NewsItemProps) => {
             <div className={s.info}>
                 <div className={s.date}>30.06.2023</div>
                 <span>
-                    <Image src={smile} alt={'smile'}/>
+                    <Image src={smile} style={{width:'14px',height:'14px'}} alt={'smile'}/>
                     <div>124242</div>
                 </span>
             </div>
