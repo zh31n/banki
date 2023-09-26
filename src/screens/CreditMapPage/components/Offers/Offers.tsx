@@ -7,10 +7,10 @@ import OfferItem from '../OffersItem/OffersItem';
 import { creditCardT } from '../../CreditMapPage';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import { nanoid } from 'nanoid';
-import { debitCardT } from '@/screens/DebetCardsPage/DebitCardsPage';
 
 interface OffersProps {
-  cards: creditCardT[] | debitCardT[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  cards: any[];
 }
 
 const Offers = ({ cards }: OffersProps) => {

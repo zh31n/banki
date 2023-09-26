@@ -9,6 +9,7 @@ import { cardsGetRequestedAction } from '@/core/store/cards/actions';
 // import data from '@/core/data/index';
 import { creditCardT } from '../CreditMapPage/CreditMapPage';
 import { creditCards } from '@/core/data/cards/credit_cards';
+import data from '@/core/data';
 
 type questItem = {
   title: string;
@@ -34,7 +35,7 @@ export default function SpecialCardsOffersPage(props: SpecialCardsOffersPageProp
 
   return (
     <Wrapper>
-      <Navigation />
+      <Navigation data={data.SpecialOffersCards.choises} />
       <OffersBanks cards={staticCards} />
       <FrequentQuestions title={'Частые вопросы'} items={staticData.questData} />
     </Wrapper>
