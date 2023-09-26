@@ -16,5 +16,4 @@ const StockItem = ({title,sup, onClick}:Props) => {
     );
 };
 
-
 export default StockItem
