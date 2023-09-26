@@ -1,91 +1,84 @@
-'use client'
+'use client';
 
-import React, { useCallback, useEffect, useMemo, useState, useRef } from 'react'
-import styles from './Offers.module.scss'
-import Image from './Image'
-import OfferItem from '../OffersItem/OffersItem'
-import { creditCardT } from '../../CreditMapPage'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
-import { nanoid } from 'nanoid'
-import { debitCardT } from '@/screens/DebetCardsPage/DebitCardsPage'
+import React, { useCallback, useEffect, useMemo, useState, useRef } from 'react';
+import styles from './Offers.module.scss';
+import Image from './Image';
+import OfferItem from '../OffersItem/OffersItem';
+import { creditCardT } from '../../CreditMapPage';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
+import { nanoid } from 'nanoid';
+import { debitCardT } from '@/screens/DebetCardsPage/DebitCardsPage';
 
 interface OffersProps {
-  cards: creditCardT[] | debitCardT[]
+  cards: creditCardT[] | debitCardT[];
 }
 
 const Offers = ({ cards }: OffersProps) => {
-  const [cardsLength, setCardsLenth] = useState([])
-  const titleScroll = useRef<HTMLDivElement>(null)
-  const [isOpen, setIsOpen] = useState<(number | string)[]>([])
-  const [higthItems, setHigthItems] = useState(0)
+  const [cardsLength, setCardsLenth] = useState([]);
+  const titleScroll = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState<(number | string)[]>([]);
+  const [higthItems, setHigthItems] = useState(0);
 
   const cardsAreRolledIntoBanks = useMemo(() => {
     const _cardsAreRolledIntoBanks = cards.reduce((arr, el) => {
-      const avilable = arr.find((bank) => bank[0].bank_name === el.bank_name)
+      const avilable = arr.find((bank) => bank[0].bank_name === el.bank_name);
       if (avilable) {
-        avilable.push(el)
+        avilable.push(el);
       } else {
-        let nevArr = [el]
-        arr.push(nevArr)
+        const nevArr = [el];
+        arr.push(nevArr);
       }
-      return arr
-    }, [])
+      return arr;
+    }, []);
 
     _cardsAreRolledIntoBanks.map((el) => {
       return el.map((elem) => {
-        return (elem.length = el.length)
-      })
-    })
+        return (elem.length = el.length);
+      });
+    });
 
-    return _cardsAreRolledIntoBanks
-  }, [cards])
+    return _cardsAreRolledIntoBanks;
+  }, [cards]);
 
   const leaderBanks = useMemo(() => {
     const _leaderBanks = cardsAreRolledIntoBanks.reduce((arr, el) => {
-      arr.push(el[0])
-      return arr
-    }, [])
+      arr.push(el[0]);
+      return arr;
+    }, []);
 
-    return _leaderBanks
-  }, [cardsAreRolledIntoBanks])
+    return _leaderBanks;
+  }, [cardsAreRolledIntoBanks]);
 
   useEffect(() => {
-    if (!leaderBanks) return
-    setCardsLenth(leaderBanks.slice(0, 4))
-  }, [])
+    if (!leaderBanks) return;
+    setCardsLenth(leaderBanks.slice(0, 4));
+  }, []);
 
   const handleClick = () => {
     titleScroll.current.scrollIntoView({
       behavior: 'smooth',
-    })
-    setCardsLenth((prevState) =>
-      prevState.length === 4 ? leaderBanks : leaderBanks.slice(0, 4)
-    )
-  }
+    });
+    setCardsLenth((prevState) => (prevState.length === 4 ? leaderBanks : leaderBanks.slice(0, 4)));
+  };
 
   const handleOpenChildren = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>, item: creditCardT) => {
-      setHigthItems(
-        e.currentTarget.parentElement.parentElement.getBoundingClientRect()
-          .height
-      )
-      const presence = isOpen.find((el) => el === item.bank_name)
+      setHigthItems(e.currentTarget.parentElement.parentElement.getBoundingClientRect().height);
+      const presence = isOpen.find((el) => el === item.bank_name);
       if (!presence) {
-        setIsOpen((currentVal) => [...currentVal, item.bank_name])
+        setIsOpen((currentVal) => [...currentVal, item.bank_name]);
       } else {
-        setIsOpen((currentVal) =>
-          currentVal.filter((el) => el !== item.bank_name)
-        )
+        setIsOpen((currentVal) => currentVal.filter((el) => el !== item.bank_name));
       }
     },
-    [isOpen]
-  )
+    [isOpen],
+  );
 
   const presenceClassName = (item: creditCardT) => {
-    const presence = isOpen.find((el) => el === item.bank_name)
+    const presence = isOpen.find((el) => el === item.bank_name);
 
-    return presence ? true : false
-  }
+    return presence ? true : false;
+  };
 
   return (
     <div className={styles.main_container} ref={titleScroll}>
@@ -101,9 +94,7 @@ const Offers = ({ cards }: OffersProps) => {
       </div>
       <ul className={styles.deposit_offers}>
         {cardsLength.map((item) => {
-          const arrChildren = cardsAreRolledIntoBanks.find(
-            (el) => el[0].bank_name === item.bank_name
-          )
+          const arrChildren = cardsAreRolledIntoBanks.find((el) => el[0].bank_name === item.bank_name);
           return (
             <li key={nanoid()}>
               <OfferItem
@@ -115,36 +106,26 @@ const Offers = ({ cards }: OffersProps) => {
                 className={styles.deposit_offers_children}
                 style={{
                   height: presenceClassName(item)
-                    ? `${
-                        (arrChildren.length - 1) * higthItems +
-                        (arrChildren.length - 1) * 15
-                      }px`
+                    ? `${(arrChildren.length - 1) * higthItems + (arrChildren.length - 1) * 15}px`
                     : '0',
                 }}
               >
                 {arrChildren.slice(1).map((child: creditCardT) => (
-                  <li
-                    key={nanoid()}
-                    style={{ marginTop: '2.5px', marginBottom: '2.5px' }}
-                  >
+                  <li key={nanoid()} style={{ marginTop: '2.5px', marginBottom: '2.5px' }}>
                     <OfferItem child item={child} />
                   </li>
                 ))}
               </ul>
             </li>
-          )
+          );
         })}
       </ul>
 
       <div className={styles.btn_cont}>
-        <BlueBtn
-          text={'Смотреть все'}
-          width={235}
-          onClick={() => handleClick()}
-        />
+        <BlueBtn text={'Смотреть все'} width={235} onClick={() => handleClick()} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Offers
+export default Offers;

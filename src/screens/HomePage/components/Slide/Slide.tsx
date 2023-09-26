@@ -1,27 +1,27 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
-import s from './Slide.module.scss'
-import arr from '@/assets/icons/white_arr.svg'
-import SlideItem from '@/components/SlideItem/SlideItem'
-import Image, { StaticImageData } from 'next/image'
-import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import s from './Slide.module.scss';
+import arr from '@/assets/icons/white_arr.svg';
+import SlideItem from '@/components/SlideItem/SlideItem';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css'
+import 'swiper/css';
 
 type iconsSlideT = {
-  img: StaticImageData
-  name: string
-  w: number
-  link?: string
-}
+  img: StaticImageData;
+  name: string;
+  w: number;
+  link?: string;
+};
 type Props = {
-  data: iconsSlideT[]
-}
+  data: iconsSlideT[];
+};
 
 const Slide = ({ data }: Props) => {
-  const sliderRef = useRef(null)
-  const [slideItems, setSlideItems] = useState([<></>])
+  const sliderRef = useRef(null);
+  const [slideItems, setSlideItems] = useState<React.JSX.Element[]>();
   useEffect(() => {
     const slides = data.map((el, index) => (
       <SwiperSlide key={index}>
@@ -29,18 +29,18 @@ const Slide = ({ data }: Props) => {
           <SlideItem width={el.w} key={index} img={el.img} name={el.name} />
         </Link>
       </SwiperSlide>
-    ))
-    setSlideItems(slides)
-  }, [])
+    ));
+    setSlideItems(slides);
+  }, []);
   const handleNext = useCallback(() => {
-    if (!sliderRef.current) return
-    sliderRef.current.swiper.slideNext()
-  }, [])
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
 
   return (
     <div className={s.slide}>
       <Swiper
-        id="swiper"
+        id='swiper'
         ref={sliderRef}
         spaceBetween={10}
         slidesPerView={3}
@@ -54,7 +54,7 @@ const Slide = ({ data }: Props) => {
         <Image src={arr} alt={'arr'} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Slide
+export default Slide;

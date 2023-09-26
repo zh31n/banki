@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface PayloadWithCallback {
-    callback?: (data?: any) => void;
-    errorCallback?: (data?: any) => void;
+  callback?: (data?: any) => void;
+  errorCallback?: (data?: any) => void;
 }
 
 export interface DefaultAction<PayloadType> {
-    type: string;
-    payload?: PayloadType;
+  type: string;
+  payload?: PayloadType;
 }

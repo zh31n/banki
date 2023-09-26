@@ -1,17 +1,16 @@
-import React from 'react'
-import styles from './BankCardItem.module.scss'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
-import { CardInterface } from '@/core/services/Cards'
-import { creditCardT } from '@/screens/CreditMapPage/CreditMapPage'
+import React from 'react';
+import styles from './BankCardItem.module.scss';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
+import { creditCardT } from '@/screens/CreditMapPage/CreditMapPage';
 
 interface BankCardItemProps {
-  item: creditCardT
+  item: creditCardT;
 }
 
 const BankCardItem = (props: BankCardItemProps) => {
   const {
     item: { bank_name, name },
-  } = props
+  } = props;
 
   return (
     <div className={styles.main_container}>
@@ -33,7 +32,7 @@ const BankCardItem = (props: BankCardItemProps) => {
       </div>
       <BlueBtn text={'Оформить'} width={180} height={60} fSize={20} />
     </div>
-  )
-}
+  );
+};
 
-export default BankCardItem
+export default BankCardItem;

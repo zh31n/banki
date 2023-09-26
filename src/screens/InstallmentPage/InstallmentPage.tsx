@@ -8,26 +8,23 @@ import Mailing from '@/components/Mailing/Mailing';
 import Feedback from '@/components/FeedBacks/Feedback/Feedback';
 import BanksWithButton from '@/components/BanksWithButton/BanksWithButton';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import data from '@/core/data';
+import data from '@/core/data/index';
 import Bonus from '@/components/Bonus/Bonus';
 import InstallmentPageAdvantages from '@/screens/InstallmentPage/components/InstallmentPageAdvantages';
-import { CardInterface } from '@/core/services/Cards';
-import { useDispatch, useSelector } from 'react-redux';
-import { CardsSelector } from '@/core/store/cards/selectors';
+import { useDispatch } from 'react-redux';
 import { cardsGetRequestedAction } from '@/core/store/cards/actions';
 import { creditCardT } from '../CreditMapPage/CreditMapPage';
+import { creditCards } from '@/core/data/cards/credit_cards';
 
-interface InstallmentPageProps {}
-
-export default function InstallmentPage(props: InstallmentPageProps) {
-  const cards: CardInterface[] = useSelector(CardsSelector);
+export default function InstallmentPage() {
+  // const cards: CardInterface[] = useSelector(CardsSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(cardsGetRequestedAction());
   }, []);
   const staticData = data.InstallmentPage;
-  const staticCards: creditCardT[] = data.CreditCardsPage.creditCards;
+  const staticCards: creditCardT[] = creditCards;
 
   return (
     <Wrapper>

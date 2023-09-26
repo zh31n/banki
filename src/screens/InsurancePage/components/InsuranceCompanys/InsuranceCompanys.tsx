@@ -1,22 +1,38 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import s from './InsuranceCompanys.module.scss';
-import Search from "@/UI/Search/Search";
-import SliderBanksCons from "@/screens/ConsumerCreditsPage/Components/SliderBanksCons/SliderBanksCons";
-import {StaticImageData} from "next/image";
+import Search from '@/UI/Search/Search';
+import SliderBanksCons from '@/screens/ConsumerCreditsPage/Components/SliderBanksCons/SliderBanksCons';
+import { StaticImageData } from 'next/image';
 
 type Props = {
-    data: StaticImageData[]
-    title?: string
-    isTitle: boolean
-}
-const InsuranceCompanys = ({data, title, isTitle}: Props) => {
-    return (
-        <div className={s.wrapper}>
-            {isTitle ? <div className={s.title}>{title || 'Страховые компании'}</div> : ''}
-            <Search placeholder={'Введите название компании'}/>
-            <SliderBanksCons data={data}/>
-        </div>
-    );
+  data: StaticImageData[];
+  title?: string;
+  isTitle: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchItems?: any[];
+};
+const InsuranceCompanys = ({ data, title, isTitle, searchItems }: Props) => {
+  console.log(searchItems);
+  const [search, setSearch] = useState<string>('');
+  const filterArr = (items) => {
+    return items.filter((i) => i.name.toLowerCase().includes(search.toLowerCase()));
+  };
+  return (
+    <div className={s.wrapper}>
+      {isTitle ? <div className={s.title}>{title || 'Страховые компании'}</div> : ''}
+      <Search
+        placeholder={'Введите название компании'}
+        filterArr={filterArr}
+        btnHidden={true}
+        value={search}
+        setValue={setSearch}
+        itemsSearch={searchItems}
+      />
+      <SliderBanksCons data={data} />
+    </div>
+  );
 };
 
 export default InsuranceCompanys;

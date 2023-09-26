@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
-import React, { useEffect } from 'react'
-import s from './index.module.scss'
-import WebLoanItem from '@/screens/MicroLoans/components/WebLoanItem'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
-import { CreditInterface } from '@/core/services/Credits'
-import { nanoid } from 'nanoid'
+import React from 'react';
+import s from './index.module.scss';
+import WebLoanItem from '@/screens/MicroLoans/components/WebLoanItem';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
+import { CreditInterface } from '@/core/services/Credits';
+import { nanoid } from 'nanoid';
 
 interface WebLoansProps {
-  credits: CreditInterface[]
+  credits: CreditInterface[];
 }
 
 const WebLoans = (props: WebLoansProps) => {
-  const { credits } = props
+  const { credits } = props;
 
   return (
     <div className={s.loans}>
@@ -23,7 +23,7 @@ const WebLoans = (props: WebLoansProps) => {
       </div>
       <BlueBtn text={'Показать ещё'} width={236} height={60} />
     </div>
-  )
-}
+  );
+};
 
-export default WebLoans
+export default WebLoans;

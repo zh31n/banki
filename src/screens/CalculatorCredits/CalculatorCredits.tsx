@@ -1,35 +1,33 @@
-'use client'
-import React, { useEffect } from 'react'
-import PageWrapper from '@/containers/PageWrapper'
-import IntroCalculate from '@/screens/CalculatorCredits/components/IntroCalculate/IntroCalculate'
-import Feedback from '@/components/FeedBacks/Feedback/Feedback'
-import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions'
-import CreditCalculatorBankList from '@/components/credits/CreditCalculatorBankList'
-import { CreditInterface } from '@/core/services/Credits'
-import { useDispatch, useSelector } from 'react-redux'
-import { creditsGetRequestedAction } from '@/core/store/credits/actions'
-import { CreditsSelector } from '@/core/store/credits/selectors'
-import CreditBankList from '@/components/credits/CreditBankList'
+'use client';
+import React, { useEffect } from 'react';
+import PageWrapper from '@/containers/PageWrapper';
+import IntroCalculate from '@/screens/CalculatorCredits/components/IntroCalculate/IntroCalculate';
+import Feedback from '@/components/FeedBacks/Feedback/Feedback';
+import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
+import { useDispatch } from 'react-redux';
+import { creditsGetRequestedAction } from '@/core/store/credits/actions';
+import CreditBankList from '@/components/credits/CreditBankList';
 
 type ItemT = {
-  title: string
-  text: string
-}
+  title: string;
+  text: string;
+};
 interface CalculatorCreditsProps {
   staticData: {
-    questData: ItemT[]
-  }
-  allOffers?: any
+    questData: ItemT[];
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  allOffers?: any;
 }
 
 const CalculatorCredits = (props: CalculatorCreditsProps) => {
-  const { staticData, allOffers } = props
-  const credits: CreditInterface[] = useSelector(CreditsSelector)
-  const dispatch = useDispatch()
+  const { staticData, allOffers } = props;
+  // const credits: CreditInterface[] = useSelector(CreditsSelector);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(creditsGetRequestedAction())
-  }, [])
+    dispatch(creditsGetRequestedAction());
+  }, []);
 
   return (
     <PageWrapper>
@@ -39,19 +37,12 @@ const CalculatorCredits = (props: CalculatorCreditsProps) => {
         isSelect={true}
         sub={' предложений'}
         title={allOffers.length}
-        options={[
-          'По процентной ставке',
-          'По максимальной сумме',
-          'По максимальному сроку',
-        ]}
+        options={['По процентной ставке', 'По максимальной сумме', 'По максимальному сроку']}
       />
       <Feedback title={'Отзывы'} sub={' о кредитах'} />
-      <FrequentQuestions
-        title={'Важная информация'}
-        items={staticData.questData}
-      />
+      <FrequentQuestions title={'Важная информация'} items={staticData.questData} />
     </PageWrapper>
-  )
-}
+  );
+};
 
-export default CalculatorCredits
+export default CalculatorCredits;

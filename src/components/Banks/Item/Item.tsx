@@ -55,7 +55,7 @@ const Item = () => {
       <div className={styles.button_container}>
         <div className={styles.warning}>
           <svg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19' fill='none'>
-            <g clip-path='url(#clip0_261_12569)'>
+            <g clipPath='url(#clip0_261_12569)'>
               <path d='M9.5 5.40039V10.0004' stroke='#4DA7FF' strokeWidth='1.15' strokeLinecap='round' />
               <circle cx='9.50104' cy='12.2999' r='0.766667' fill='#4DA7FF' />
               <path

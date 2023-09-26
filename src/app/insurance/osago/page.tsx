@@ -1,10 +1,11 @@
-import {Metadata} from "next";
-import InsuranceOSAGOPage from "@/screens/InsuranceOSAGO/InsuranceOSAGOPage";
+import React from 'react';
+import { Metadata } from 'next';
+import InsuranceOSAGOPage from '@/screens/InsuranceOSAGO/InsuranceOSAGOPage';
 
 export const metadata: Metadata = {
-    title: 'ОСАГО'
-}
+  title: 'ОСАГО',
+};
 
-export default function InsuranceOsago(){
-    return <InsuranceOSAGOPage />
+export default function InsuranceOsago() {
+  return <InsuranceOSAGOPage />;
 }

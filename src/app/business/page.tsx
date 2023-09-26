@@ -1,13 +1,11 @@
-import BusinessPage from "@/screens/BusinessPage/BusinessPage";
-import {Metadata} from "next";
-
-
+import React from 'react';
+import BusinessPage from '@/screens/BusinessPage/BusinessPage';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Бизнес'
-}
+  title: 'Бизнес',
+};
 
-
-export default function Business(){
-    return <BusinessPage />
+export default function Business() {
+  return <BusinessPage />;
 }

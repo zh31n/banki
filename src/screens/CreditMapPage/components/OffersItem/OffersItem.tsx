@@ -1,28 +1,27 @@
-import React from 'react'
-import styles from './OffersItem.module.scss'
-import cart from '../../../../assets/icons/card.png'
-import Arrow from './Image'
-import CheckImage from '@/screens/CreditMapPage/components/OffersItem/CheckImage'
-import Image from 'next/image'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
-import warningImg from '@/assets/icons/warning_icon.png'
-import { CardInterface } from '@/core/services/Cards'
-import { creditCardT } from '../../CreditMapPage'
+import React from 'react';
+import styles from './OffersItem.module.scss';
+import cart from '../../../../assets/icons/card.png';
+import Arrow from './Image';
+import CheckImage from '@/screens/CreditMapPage/components/OffersItem/CheckImage';
+import Image from 'next/image';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
+import warningImg from '@/assets/icons/warning_icon.png';
+import { creditCardT } from '../../CreditMapPage';
 
 interface OffersItemProps {
-  item: creditCardT
-  arrChildren?: []
-  openChildren?: (e) => void
-  child?: boolean
+  item: creditCardT;
+  arrChildren?: [];
+  openChildren?: (e) => void;
+  child?: boolean;
 }
 
 const OffersItem = (props: OffersItemProps) => {
-  const { item, arrChildren, openChildren, child } = props
+  const { item, arrChildren, openChildren, child } = props;
 
   return (
     <div className={styles.main_container}>
       <div>
-        <Image src={cart} alt="Карта" />
+        <Image src={cart} alt='Карта' />
         {!child && arrChildren.length > 0 && (
           <div className={styles.count_cart} onClick={(e) => openChildren(e)}>
             <p>Еще {arrChildren ? arrChildren.length : 0} карты</p>
@@ -50,12 +49,8 @@ const OffersItem = (props: OffersItemProps) => {
           </div>
         </div>
         <div className={styles.bottom_container}>
-          <div className={styles.bottom_container_active_container}>
-            Партнер раздела
-          </div>
-          <div className={styles.bottom_container_container}>
-            Партнер раздела
-          </div>
+          <div className={styles.bottom_container_active_container}>Партнер раздела</div>
+          <div className={styles.bottom_container_container}>Партнер раздела</div>
           <div className={styles.bottom_container_container}>На любые цели</div>
         </div>
       </div>
@@ -72,7 +67,7 @@ const OffersItem = (props: OffersItemProps) => {
         <BlueBtn text={'Оформить карту'} width={222} height={60} fSize={20} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OffersItem
+export default OffersItem;

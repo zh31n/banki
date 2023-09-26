@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './BanksWithButton.module.scss';
 import BankCardItem from '@/components/BanksWithButton/BankCardItem/BankCardItem';
-import { CardInterface } from '@/core/services/Cards';
 import { creditCardT } from '@/screens/CreditMapPage/CreditMapPage';
 import { debitCardT } from '@/screens/DebetCardsPage/DebitCardsPage';
 import { nanoid } from 'nanoid';

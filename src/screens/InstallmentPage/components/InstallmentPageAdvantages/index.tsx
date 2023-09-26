@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.module.scss';
-import BankImgItemSlide from '@/components/Banki/BankiImg/BankImgItemSlide/BankImgItemSlide';
-import data from '@/core/data';
-import { nanoid } from 'nanoid';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import arr_r from '@/assets/icons/banki_icon/Стрелка_right.svg';
 import Image from 'next/image';

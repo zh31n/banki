@@ -37,6 +37,11 @@
       font-weight: 600;
       line-height: normal;
       cursor: pointer;
+      transition: all .3s;
+      &:hover{
+        color: #4DA7FF;
+        transition: all .3s;
+      }
     }
 
     .nav_item_active {
@@ -45,6 +50,9 @@
       font-style: normal;
       font-weight: 600;
       line-height: normal;
+      cursor: pointer;
+      transition: all .3s;
+
     }
   }
 
