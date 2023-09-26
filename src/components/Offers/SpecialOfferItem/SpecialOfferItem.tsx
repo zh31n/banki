@@ -38,7 +38,7 @@ const SpecialOfferItem = (props: SpecialOfferItemProps) => {
                 <div className={s.name}>{name}</div>
                 {/*TODO wait for api bonus*/}
                 <div className={s.bonus} style={{height: '12px'}}>Бонус 500 ₽ за вклад</div>
-                <div className={s.line}></div>
+                <div className={s.line}/>
                 <div className={s.info_more}>
                     <div className={s.info_item}>
                         <div className={s.title}>{title_1 || 'Ставка'}</div>

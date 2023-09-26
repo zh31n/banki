@@ -11,17 +11,18 @@ type Props = {
     setValue?: React.Dispatch<string>
     current?: string
 }
-const CustomCheckboxAround = ({type, checked, handleChecked, value, setValue, current}: Props) => {
+const CustomCheckboxAround = ({type = 'checkbox', checked, handleChecked, value, setValue, current}: Props) => {
 
-    const hadleChange = () => {
-        type === 'checkbox' ? handleChecked(!checked) : setValue(value)
-    }
+    const hadleChange = () => handleChecked(!checked);
+    const setVal = () => setValue(value);
 
     return (
         <>
-            <input type={type || 'checkbox'} checked={checked || value === current}
-                   onChange={hadleChange}
-                   className={s.inp}/>
+            <input type={type || 'checkbox'}
+                   checked={type === 'checkbox' ? checked : value === current}
+                   onChange={type === 'checkbox' ? hadleChange : setVal}
+                   className={s.inp}
+            />
         </>
     );
 };
