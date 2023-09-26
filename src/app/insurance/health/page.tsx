@@ -1,12 +1,12 @@
 import React from 'react';
-import HealthInsurance from "@/screens/HealthInsurance/HealthInsurance";
-import data from "@/core/data";
-import {Metadata} from "next";
+import HealthInsurance from '@/screens/HealthInsurance/HealthInsurance';
+import data from '@/core/data/index';
+import { Metadata } from 'next';
 
-export const metadata:Metadata = {
-    title:'Жизнь и здоровье'
-}
+export const metadata: Metadata = {
+  title: 'Жизнь и здоровье',
+};
 
-const Page = () => <HealthInsurance data={data.HealthInsurance}/>
+const Page = () => <HealthInsurance data={data.HealthInsurance} />;
 
 export default Page;

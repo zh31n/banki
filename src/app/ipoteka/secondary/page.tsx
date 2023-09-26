@@ -1,10 +1,11 @@
-import IpotekaSecondaryPage from "@/screens/IpotekaSecondaryPage/IpotekaSecondaryPage";
-import {Metadata} from "next";
+import React from 'react';
+import IpotekaSecondaryPage from '@/screens/IpotekaSecondaryPage/IpotekaSecondaryPage';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Вторичное жилье',
-}
+  title: 'Вторичное жилье',
+};
 
-export default function SecondaryIpoteka(){
-    return <IpotekaSecondaryPage />
+export default function SecondaryIpoteka() {
+  return <IpotekaSecondaryPage />;
 }

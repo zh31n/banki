@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './CalculateOSAGE.module.scss'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
+import React from 'react';
+import styles from './CalculateOSAGE.module.scss';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 
 const CalculateOSAGO = () => {
   return (
@@ -14,17 +14,8 @@ const CalculateOSAGO = () => {
         <input className={styles.input} placeholder={'Город регистрации'} />
         <p className={styles.text}>Автомобиль</p>
         <div className={styles.input_container}>
-          <input
-            className={styles.input}
-            placeholder={'Город регистрации'}
-            style={{ width: '327px' }}
-          />
-          <input
-            className={styles.input}
-            placeholder={'Модель'}
-            style={{ width: '212px' }}
-            disabled={true}
-          />
+          <input className={styles.input} placeholder={'Город регистрации'} style={{ width: '327px' }} />
+          <input className={styles.input} placeholder={'Модель'} style={{ width: '212px' }} disabled={true} />
           <input
             className={styles.input}
             placeholder={'Год выпуска'}
@@ -61,36 +52,24 @@ const CalculateOSAGO = () => {
               <p className={styles.grey_text}>Сколько лет без ДТП (КБМ)</p>
               <p className={styles.text}>0 лет - КБМ 1.17</p>
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
-              viewBox="0 0 17 17"
-              fill="none"
-            >
+            <svg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 17 17' fill='none'>
               <path
-                d="M12.6966 6.65039L8.02995 10.6504L6.86328 9.65039M3.36328 6.65039L4.91884 7.98372"
-                stroke="#212121"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                stroke-linejoin="round"
+                d='M12.6966 6.65039L8.02995 10.6504L6.86328 9.65039M3.36328 6.65039L4.91884 7.98372'
+                stroke='#212121'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               />
             </svg>
           </div>
         </div>
         <p className={styles.text_little}>
-          КБМ влияет на цену полиса и учитывает историю ДТП по собственной вине
-          водителя
+          КБМ влияет на цену полиса и учитывает историю ДТП по собственной вине водителя
         </p>
       </div>
-      <BlueBtn
-        text={'Расчитать стоимость'}
-        width={295}
-        height={60}
-        fSize={20}
-      />
+      <BlueBtn text={'Расчитать стоимость'} width={295} height={60} fSize={20} />
     </div>
-  )
-}
+  );
+};
 
-export default CalculateOSAGO
+export default CalculateOSAGO;

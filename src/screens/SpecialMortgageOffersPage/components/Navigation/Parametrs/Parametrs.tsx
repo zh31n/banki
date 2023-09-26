@@ -1,44 +1,44 @@
-import React from "react";
-import styles from "./Parametrs.module.scss";
-import ParametrsItem from "./ParametrsItem/ParametrsItem";
+import React from 'react';
+import styles from './Parametrs.module.scss';
+import ParametrsItem from './ParametrsItem/ParametrsItem';
+import { nanoid } from 'nanoid';
 
-type Props = {};
-
-const Parametrs = (props: Props) => {
+const Parametrs = () => {
   const data = [
     {
-      text: "Все",
+      text: 'Все',
       active: false,
     },
     {
-      text: "Вклады",
+      text: 'Вклады',
       active: false,
     },
     {
-      text: "Ипотека",
+      text: 'Ипотека',
       active: false,
     },
     {
-      text: "Кредитные карты",
+      text: 'Кредитные карты',
       active: false,
     },
     {
-      text: "Дебетовые карты",
+      text: 'Дебетовые карты',
       active: true,
     },
     {
-      text: "Инвестиции",
+      text: 'Инвестиции',
       active: false,
-    }, {
-      text: "Страхование",
+    },
+    {
+      text: 'Страхование',
       active: false,
     },
   ];
 
   return (
     <div className={styles.main_container}>
-      {data.map(el => (
-        <ParametrsItem text={el.text} active={el.active}/>
+      {data.map((el) => (
+        <ParametrsItem key={nanoid()} text={el.text} active={el.active} />
       ))}
     </div>
   );

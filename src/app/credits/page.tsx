@@ -1,11 +1,11 @@
-import React from 'react'
-import CreditsPage from '@/screens/CreditsPage/CreditsPage'
-import data from '@/core/data'
-import {Metadata} from "next";
+import React from 'react';
+import CreditsPage from '@/screens/CreditsPage/CreditsPage';
+import data from '@/core/data/index';
+import { Metadata } from 'next';
 
-export const metadata:Metadata = {
-    title:'Кредиты'
-}
-const Page = () => <CreditsPage data={data.CreditsPage} />
+export const metadata: Metadata = {
+  title: 'Кредиты',
+};
+const Page = () => <CreditsPage data={data.CreditsPage} />;
 
-export default Page
+export default Page;

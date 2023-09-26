@@ -1,18 +1,18 @@
-import React from 'react'
-import s from './NewsItem.module.scss'
-import Image from 'next/image'
-import smile from '@/assets/icons/Smile.svg'
-import { InvestingNewsInterface } from '@/core/services/Investing'
-import { NewsInterface } from '@/core/services/News'
+import React from 'react';
+import s from './NewsItem.module.scss';
+import Image from 'next/image';
+import smile from '@/assets/icons/Smile.svg';
+import { InvestingNewsInterface } from '@/core/services/Investing';
+import { NewsInterface } from '@/core/services/News';
 
 interface NewsItemProps {
-  item: NewsInterface | InvestingNewsInterface
+  item: NewsInterface | InvestingNewsInterface;
 }
 
 const NewsItem = (props: NewsItemProps) => {
   const {
-    item: { title, text, image, id, subtitle },
-  } = props
+    item: { title, text, subtitle },
+  } = props;
 
   return (
     <div className={s.item}>
@@ -48,7 +48,7 @@ const NewsItem = (props: NewsItemProps) => {
         <mark>{title}:</mark> {text}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsItem
+export default NewsItem;

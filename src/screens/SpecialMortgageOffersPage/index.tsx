@@ -1,42 +1,39 @@
-"use client";
+'use client';
 
-import Wrapper from "@/containers/Wrapper";
-import Navigation from "@/screens/SpecialCardsOfffersPage/components/Navigation/Navigation";
-import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
-import React, {useEffect} from "react";
-import MortgageSpecialList from "@/components/mortgages/MortgageSpecialList";
-import {MortgageInterface} from "@/core/services/Mortgages";
-import {useDispatch, useSelector} from "react-redux";
-import {MortgagesListSelector} from "@/core/store/mortgages/selectors";
-import {mortgagesGetRequestedAction} from "@/core/store/mortgages/actions";
-import data from "@/core/data";
+import Wrapper from '@/containers/Wrapper';
+import Navigation from '@/screens/SpecialCardsOfffersPage/components/Navigation/Navigation';
+import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
+import React, { useEffect } from 'react';
+import MortgageSpecialList from '@/components/mortgages/MortgageSpecialList';
+import { MortgageInterface } from '@/core/services/Mortgages';
+import { useDispatch, useSelector } from 'react-redux';
+import { MortgagesListSelector } from '@/core/store/mortgages/selectors';
+import { mortgagesGetRequestedAction } from '@/core/store/mortgages/actions';
+import data from '@/core/data/index';
 
 type questItem = {
-    title: string
-    text: string
-}
+  title: string;
+  text: string;
+};
 interface SpecialMortgageOffersPageProps {
-    staticData: {
-        questData: questItem[]
-    }
-
+  staticData: {
+    questData: questItem[];
+  };
 }
 export default function SpecialMortgageOffersPage(props: SpecialMortgageOffersPageProps) {
-    const {
-        staticData,
-    } = props;
-    const mortgages: MortgageInterface[] = useSelector(MortgagesListSelector);
-    const dispatch = useDispatch();
+  const { staticData } = props;
+  const mortgages: MortgageInterface[] = useSelector(MortgagesListSelector);
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(mortgagesGetRequestedAction());
-    }, [])
+  useEffect(() => {
+    dispatch(mortgagesGetRequestedAction());
+  }, []);
 
-    return (
-        <Wrapper>
-            <Navigation data={data.MortgageSpecialIntro}/>
-            <MortgageSpecialList mortgages={mortgages} />
-            <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <Navigation data={data.MortgageSpecialIntro} />
+      <MortgageSpecialList mortgages={mortgages} />
+      <FrequentQuestions title={'Частые вопросы'} items={staticData.questData} />
+    </Wrapper>
+  );
 }

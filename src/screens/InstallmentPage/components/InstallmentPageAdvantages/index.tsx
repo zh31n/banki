@@ -1,32 +1,46 @@
-import React from 'react';
-import styles from './index.module.scss'
+import React, { useEffect, useRef, useState } from 'react';
+import styles from './index.module.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import arr_r from '@/assets/icons/banki_icon/Стрелка_right.svg';
+import Image from 'next/image';
+import 'swiper/css';
 
 interface InstallmentPageAdvantagesProps {
-    advantages: {
-        title: string;
-        text: string;
-    }[];
+  advantages: {
+    title: string;
+    text: string;
+  }[];
 }
 
-const InstallmentPageAdvantages = (props: InstallmentPageAdvantagesProps) => {
-    const {
-        advantages,
-    } = props;
+const InstallmentPageAdvantages = ({ advantages }: InstallmentPageAdvantagesProps) => {
+  const sliderRef = useRef(null);
+  const [slideItems, setSlideItems] = useState<React.JSX.Element[]>();
 
-    return (
-        <div className={styles.container}>
-            {advantages.map(el => <div>
-                <p className={styles.bold_text}>{el.title}</p>
-                <p className={styles.text}>{el.text}</p>
-            </div>)}
-            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="44" viewBox="0 0 43 44" fill="none">
-                <circle cx="21.5" cy="22" r="21.5" fill="#7BBEFF"/>
-                <path
-                    d="M8 20.5C7.44772 20.5 7 20.9477 7 21.5C7 22.0523 7.44772 22.5 8 22.5V20.5ZM32.7071 22.2071C33.0976 21.8166 33.0976 21.1834 32.7071 20.7929L26.3431 14.4289C25.9526 14.0384 25.3195 14.0384 24.9289 14.4289C24.5384 14.8195 24.5384 15.4526 24.9289 15.8431L30.5858 21.5L24.9289 27.1569C24.5384 27.5474 24.5384 28.1805 24.9289 28.5711C25.3195 28.9616 25.9526 28.9616 26.3431 28.5711L32.7071 22.2071ZM8 22.5H32V20.5H8V22.5Z"
-                    fill="white"/>
-            </svg>
+  useEffect(() => {
+    const slides = advantages.map((el, index) => (
+      <SwiperSlide key={index}>
+        <div className={styles.card}>
+          <p className={styles.bold_text}>{el.title}</p>
+          <p className={styles.text}>{el.text}</p>
         </div>
-    );
+      </SwiperSlide>
+    ));
+    setSlideItems(slides);
+  }, []);
+
+  const handleNext = () => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  };
+
+  return (
+    <div className={styles.slider}>
+      <Swiper id='swiperAdvantages' ref={sliderRef} spaceBetween={10} slidesPerView={4} loop={true}>
+        {slideItems}
+      </Swiper>
+      <Image src={arr_r} className={styles.arr} alt={'стрелка вправо'} onClick={() => handleNext()} />
+    </div>
+  );
 };
 
 export default InstallmentPageAdvantages;
