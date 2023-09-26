@@ -1,7 +1,7 @@
 .main_container {
   border-radius: 14px;
   background: white;
-  border: 1px solid #D9DBDF;
+  border: 1px solid #d9dbdf;
   position: fixed;
   top: 20px;
   margin-top: 80px;
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
   gap: 100px;
-
+  z-index: 2;
 
   .column {
     display: flex;
@@ -21,7 +21,7 @@
 }
 
 .link {
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
   color: var(--main, #121212);
   font-family: Raleway, sans-serif;
   font-size: 16px;
@@ -32,11 +32,11 @@
 
   &:hover {
     color: #4da7ff;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out 0.3s;
   }
 }
-@media (max-width: 1220px){
-  .main_container{
+@media (max-width: 1220px) {
+  .main_container {
     width: 1024px;
   }
 }

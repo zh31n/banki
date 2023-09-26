@@ -23,6 +23,10 @@ const SpecialOfferItem = (props: SpecialOfferItemProps) => {
             timeframe_min,
             timeframe_max,
             description,
+            count2,
+            count1,
+            title_2,
+            title_1
         }
     } = props;
 
@@ -34,16 +38,18 @@ const SpecialOfferItem = (props: SpecialOfferItemProps) => {
                 <div className={s.name}>{name}</div>
                 {/*TODO wait for api bonus*/}
                 <div className={s.bonus} style={{height: '12px'}}>Бонус 500 ₽ за вклад</div>
-                <div className={s.line}></div>
+                <div className={s.line}/>
                 <div className={s.info_more}>
                     <div className={s.info_item}>
-                        <div className={s.title}>Ставка</div>
-                        <span>{`до ${rate}%`}</span>
+                        <div className={s.title}>{title_1 || 'Ставка'}</div>
+                        <span>{count1 || `до ${rate}%`}</span>
                     </div>
-                    <div className={s.info_item}>
-                        <div className={s.title}>Срок</div>
-                        <span>{`${timeframe_min} - ${timeframe_max} дней`}</span>
-                    </div>
+                    {(count2 || timeframe_min || timeframe_max) &&
+                        <div className={s.info_item}>
+                            <div className={s.title}>{title_2 || 'Срок'}</div>
+                            <span>{count2 || `${timeframe_min} - ${timeframe_max} дней`}</span>
+                        </div>
+                    }
                 </div>
                 <BlueBtn text={'Посмотреть'} width={230} height={40} fSize={16}/>
             </div>

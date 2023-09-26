@@ -31,7 +31,7 @@ const HealthInsurance = ({data}: Props) => {
             <Bonus title={'Кэшбэк 20% за страхование ипотеки'} text={'Получите до 4000 рублей на карту'}/>
             <InsuranceCompanys isTitle={true} data={data.sliderItems}/>
             <OffersBanks cards={data.offersItems}/>
-            <LatestNews news={news}/>
+            <LatestNews />
             <Feedback sub={' о страховании жизни'} title={'Отзывы'}/>
             <FrequentQuestions title={'Популярные вопросы'} items={data.questData}/>
             <FrequentQuestions title={'Важная информация'} items={data.questions}/>

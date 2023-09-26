@@ -1,36 +1,42 @@
 /* ВКЛАДЫ */
-import {Api} from "./api";
-import {ApiResponseInterface} from "./interface";
+import { Api } from './api'
+import { ApiResponseInterface } from './interface'
 
-const DEPOSITS_API_URL = 'deposits';
+const DEPOSITS_API_URL = 'deposits'
 
 export interface GetDepositsParams {
-    amount?: number;
-    bank?: string;
-    timeframe?: number;
+  amount?: number
+  bank?: string
+  timeframe?: number
 }
 
 export interface DepositCardInterface {
-    id: number;
-    bank_id: number;
-    name: string;
-    rating: number;
-    rate: number;
-    min_amount: number;
-    max_amount: number;
-    timeframe_min: number;
-    timeframe_max: number;
-    description: string;
+  bank_id: number | string
+  description?: string
+  id: number
+  max_amount?: number
+  min_amount?: number
+  name: string
+  rate?: number
+  rating?: number
+  timeframe_max?: number
+  timeframe_min?: number
+  title_1?: string,
+  count1?: string,
+  title_2?: string,
+  count2?: string
 }
 
 export interface DepositsResponseInterface extends ApiResponseInterface {
-    cards: DepositCardInterface[];
+  cards: DepositCardInterface[]
 }
 
-export const GET_DEPOSITS = (params: GetDepositsParams = {}): Promise<DepositsResponseInterface> => {
-    return Api.get<any, DepositsResponseInterface>(`${DEPOSITS_API_URL}`, {
-        params: {
-            ...params,
-        }
-    });
-};
+export const GET_DEPOSITS = (
+  params: GetDepositsParams = {}
+): Promise<DepositsResponseInterface> => {
+  return Api.get<any, DepositsResponseInterface>(`${DEPOSITS_API_URL}`, {
+    params: {
+      ...params,
+    },
+  })
+}

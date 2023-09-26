@@ -1,32 +1,34 @@
-import React from 'react';
-import s from './index.module.scss';
-import {CreditInterface} from "@/core/services/Credits";
-import CreditTopBankItem from "@/components/credits/CreditTopBankItem";
+import React from 'react'
+import s from './index.module.scss'
+import { CreditInterface } from '@/core/services/Credits'
+import CreditTopBankItem from '@/components/credits/CreditTopBankItem'
 
 interface CreditTopBankListProps {
-    title?: string;
-    subtitle?: string;
-    credits: CreditInterface[];
+  title?: string
+  subtitle?: string
+  credits: CreditInterface[]
 }
 
 const CreditTopBankList = (props: CreditTopBankListProps) => {
-    const {
-        title = 'Потребительские кредиты в Москве',
-        subtitle = ' - ТОП 10 банков в 2023 году',
-        credits,
-    } = props;
+  const {
+    title = 'Потребительские кредиты в Бишкеке',
+    subtitle = ' - ТОП 10 банков в 2023 году',
+    credits,
+  } = props
 
-    return (
-        <div className={s.wrapper}>
-            <div className={s.title}>
-                <mark>{title}</mark>
-                {subtitle}
-            </div>
-            <div className={s.banks_items}>
-                {credits.map((item, index) => <CreditTopBankItem key={index} item={item}/>)}
-            </div>
-        </div>
-    );
-};
+  return (
+    <div className={s.wrapper}>
+      <div className={s.title}>
+        <mark>{title}</mark>
+        {subtitle}
+      </div>
+      <div className={s.banks_items}>
+        {credits.map((item, index) => (
+          <CreditTopBankItem key={index} item={item} />
+        ))}
+      </div>
+    </div>
+  )
+}
 
-export default CreditTopBankList;
+export default CreditTopBankList

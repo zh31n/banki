@@ -1,11 +1,11 @@
-import React from 'react';
-import {Metadata} from "next";
-import BanksPage from "@/screens/BanksPage/BanksPage";
-import data from "@/core/data";
+import React from 'react'
+import { Metadata } from 'next'
+import BanksPage from '@/screens/BanksPage/BanksPage'
+import data from '@/core/data'
 
 export const metadata: Metadata = {
-    title: 'Банки России'
+  title: 'Банки Кыргызстане',
 }
-const Page = () => <BanksPage data={data.BanksPage}/>
+const Page = () => <BanksPage data={data.BanksPage} />
 
-export default Page;
+export default Page

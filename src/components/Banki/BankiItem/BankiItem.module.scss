@@ -11,6 +11,10 @@
 
   .info {
     div {
+      width: 130px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       color: #000;
       font-variant-numeric: lining-nums proportional-nums;
       font-size: 17.362px;

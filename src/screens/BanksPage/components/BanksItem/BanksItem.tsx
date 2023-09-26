@@ -33,7 +33,7 @@ const BanksItem = ({chars, m1, m2, title, sub, img,}: Props) => {
             </div>
             <div className={s.btn}>
                 <span>
-                    <mark>{m1} место</mark>  по России<br/><mark>{m2} место</mark>
+                    <mark>{m1} место</mark>  по Кыргызстану<br/><mark>{m2} место</mark>
                 </span>
                 <BlueBtn text={'Задать вопрос'} width={220}/>
             </div>

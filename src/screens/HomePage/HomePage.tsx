@@ -1,8 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Search from '@/UI/Search/Search'
-import Calculate from '@/components/Calculate/Calculate'
 import OfferMoth from '@/components/Offers/OfferMoth/OfferMoth'
 import LatestNews from '@/components/LatestNews/LatestNews'
 import Feedback from '@/components/FeedBacks/Feedback/Feedback'
@@ -11,43 +10,64 @@ import Stock, { ItemsActionT } from '@/screens/HomePage/components/Stock/Stock'
 import Slide from '@/screens/HomePage/components/Slide/Slide'
 import Banks from '@/screens/HomePage/components/Banks/Banks'
 import { useTypedSelector } from '@/core/store'
-import async from './../../app/cards/select-steps/final/page'
+import Calculate from './components/Calculate/Calculate'
+import axios from 'axios'
 
-async function getStocks(): Promise<{ cards: ItemsActionT[] }> {
-  const res = await fetch(
-    `https://vsebanki.kg/api/promotions?page=1&limit=4&sort=id&sort_type=1`
-  ).then((data) => data.json())
-  return res
-}
-
-async function getStock(): Promise<{ card: ItemsActionT }> {
-  const res = await fetch(`https://vsebanki.kg/api/promotion?promo=1`).then(
-    (data) => data.json()
-  )
-
-  return res
+type SearchItem = {
+  text: string
+  link: string
 }
 
 type Props = {
   data: any
 }
 
-const HomePage = async ({ data }: Props) => {
-  // @ts-ignore
-  const items = useTypedSelector((state) => state.home.serviceItems)
-  const [searchVal, setSearchVal] = useState<string>('')
-  const stocksData = getStocks()
-  const promoData = getStock()
-  const [stocks, promo] = await Promise.all([stocksData, promoData])
+const HomePage = ({ data }: Props) => {
+  const [stocks, setStocks] = useState<{ cards: ItemsActionT[] }>()
+  const [promo, setPromo] = useState<{ card: ItemsActionT }>()
 
+  const { serviceItems } = useTypedSelector((state) => state.home)
+  const [searchVal, setSearchVal] = useState<string>('')
+  const filterArr = (items: SearchItem[]) =>
+    items.filter((i) => i.text.toLowerCase().includes(searchVal.toLowerCase()))
+
+  useEffect(() => {
+    let isMounted = true
+    const allPromotions = axios.get(
+      'http://83.220.174.249:5345/api/promotions?page=1&limit=4&sort=id&sort_type=1'
+    )
+    const onePromotions = axios.get(
+      'http://83.220.174.249:5345/api/promotion?promo=1'
+    )
+    const getPromotions = async () => {
+      const [all, one]: any = await Promise.all([
+        allPromotions,
+        onePromotions,
+      ]).then((val) => {
+        return [val[0].data, val[1].data]
+      })
+      if (isMounted) {
+        setStocks(all)
+        setPromo(one)
+      }
+    }
+
+    getPromotions()
+    return () => {
+      isMounted = false
+    }
+  }, [])
   return (
     <PageWrapper>
-      <Stock data={{ stocks: stocks.cards, stock: promo.card }} />
+      {stocks && promo && (
+        <Stock data={{ stocks: stocks.cards, stock: promo.card }} />
+      )}
       <Slide data={data.iconsSlide} />
       <Search
         setValue={setSearchVal}
         value={searchVal}
-        itemsSearch={items}
+        filterArr={filterArr}
+        itemsSearch={serviceItems}
         placeholder={'Найти необходимую услугу...'}
       />
       <Banks data={data.banki} />

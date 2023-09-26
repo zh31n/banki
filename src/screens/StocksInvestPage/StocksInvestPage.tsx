@@ -56,7 +56,7 @@ const StocksInvestPage = () => {
             <BrokerList title={'Все брокеры'} brokers={brokers}/>
             <Mailing/>
             <FrequentQuestions title={'Частые вопросы'} items={data.StockInvest.frequentQuests}/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <FrequentQuestions title={''} items={data.StockInvest.questions}/>
             <div className={s.text}>
                 <h1 className={s.title}>Информация</h1>

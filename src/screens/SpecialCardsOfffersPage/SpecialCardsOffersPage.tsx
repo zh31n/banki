@@ -8,6 +8,7 @@ import {CardInterface} from "@/core/services/Cards";
 import {useDispatch, useSelector} from "react-redux";
 import {CardsSelector} from "@/core/store/cards/selectors";
 import {cardsGetRequestedAction} from "@/core/store/cards/actions";
+import data from "@/core/data";
 
 type questItem = {
     title: string
@@ -32,7 +33,7 @@ export default function SpecialCardsOffersPage(props: SpecialCardsOffersPageProp
     }, [])
 
     return <Wrapper>
-        <Navigation/>
+        <Navigation data={data.CardsSpecialIntro}/>
         <OffersBanks cards={cards}/>
         <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
     </Wrapper>

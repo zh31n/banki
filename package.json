@@ -19,8 +19,10 @@
     "@uidotdev/usehooks": "^2.2.0",
     "autoprefixer": "^10.4.14",
     "axios": "^1.5.0",
+    "classnames": "^2.3.2",
     "debug": "^4.3.4",
     "jiti": "^1.19.3",
+    "nanoid": "^5.0.1",
     "next": "13.4.12",
     "next-auth": "^4.22.5",
     "postcss": "^8.4.27",
@@ -30,6 +32,7 @@
     "redux": "^4.2.1",
     "redux-saga": "^1.2.3",
     "sass": "^1.64.2",
+    "swiper": "^10.3.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {

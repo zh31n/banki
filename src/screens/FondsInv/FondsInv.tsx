@@ -50,7 +50,7 @@ const FondsInv = () => {
             <HaveQues/>
             <FrequentQuestions title={'Частые вопросы'} items={data.FondsPage.frequentQuests}/>
             <TopFonds fonds={data.FondsPage.TopFondsItems}/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <div className={s.text}>
                 <h1 className={s.title}>Информация</h1>
                 <p>

@@ -43,7 +43,7 @@ export default function DebitCardsPage(props: DebitCardsPageProps) {
             <OffersMonth/>
             <Mailing/>
             <Compilations/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о дебетовых картах'}/>
             <FrequentQuestions title={'Важная информация'} items={dataMap}/>

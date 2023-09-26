@@ -1,44 +1,43 @@
-"use client";
-import React, {useEffect} from 'react';
-import PageWrapper from "@/containers/PageWrapper";
-import IntroDeposits from "@/screens/DepositsPage/components/IntroDeposits/IntroDeposits";
-import Bonus from "@/components/Bonus/Bonus";
-import absolut from '@/assets/icons/absolute_big.svg';
-import {StaticImageData} from "next/image";
-import OffersBanks from "@/components/Offers/OffersBanks/OffersBanks";
-import PopularOffers from "@/screens/DepositsPage/components/PopularOffers/PopularOffers";
-import OfferMonth from "@/components/Offers/OfferMoth/OfferMoth";
-import Mailing from "@/components/Mailing/Mailing";
-import LatestNews from "@/components/LatestNews/LatestNews";
-import SpecialOffersDeposit from "@/screens/DepositsPage/components/SpecialOffersDeposit/SpecialOffersDeposit";
-import Communicate from "@/components/Communicate/Communicate";
-import Feedback from "@/components/FeedBacks/Feedback/Feedback";
-import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions";
-import TopBanks from "@/components/TopBanks/TopBanks";
-import {DepositCardInterface} from "@/core/services/Deposits";
-import {NewsInterface} from "@/core/services/News";
-import {useDispatch, useSelector} from "react-redux";
-import {NewsListSelector} from "@/core/store/news/selectors";
-import {newsGetRequestedAction} from "@/core/store/news/actions";
-import {depositsGetRequestedAction} from "@/core/store/deposits/actions";
-import {DepositsSelector} from "@/core/store/deposits/selectors";
+'use client'
+import React, {useEffect, useState} from 'react'
+import PageWrapper from '@/containers/PageWrapper'
+import IntroDeposits from '@/screens/DepositsPage/components/IntroDeposits/IntroDeposits'
+import Bonus from '@/components/Bonus/Bonus'
+import absolut from '@/assets/icons/absolute_big.svg'
+import {StaticImageData} from 'next/image'
+import OffersBanks from '@/components/Offers/OffersBanks/OffersBanks'
+import PopularOffers from '@/screens/DepositsPage/components/PopularOffers/PopularOffers'
+import OfferMonth from '@/components/Offers/OfferMoth/OfferMoth'
+import Mailing from '@/components/Mailing/Mailing'
+import LatestNews from '@/components/LatestNews/LatestNews'
+import SpecialOffersDeposit from '@/screens/DepositsPage/components/SpecialOffersDeposit/SpecialOffersDeposit'
+import Communicate from '@/components/Communicate/Communicate'
+import Feedback from '@/components/FeedBacks/Feedback/Feedback'
+import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions'
+import TopBanks from '@/components/TopBanks/TopBanks'
+import {DepositCardInterface} from '@/core/services/Deposits'
+import {useDispatch, useSelector} from 'react-redux'
+import {depositsGetRequestedAction} from '@/core/store/deposits/actions'
+import {DepositsSelector} from '@/core/store/deposits/selectors'
 
-type offerT = {
+export type offerT = {
+    bank_id: number | string
+    description?: string
+    id: number
+    max_amount?: number
+    min_amount?: number
     name: string
-    sub: string
-    stavka: string
-    time: string
-    money: string
-    img: StaticImageData
-    charcs: string[]
-    btn?: string | undefined
-    count?: string | undefined
+    rate?: number
+    rating?: number
+    timeframe_max?: number
+    timeframe_min?: number
 }
 type OfferItem = {
     active: boolean
     img: StaticImageData
     title: string
     sub: string
+    id: number
 }
 type OfferMoths = {
     img: StaticImageData
@@ -71,53 +70,71 @@ type banksT = {
     money: string
     osob?: string
 }
+
 interface DepositsPageProps {
     staticData: {
-        offersBanks: offerT[],
-        PopularOffers: OfferItem[],
-        offersMoth: OfferMoths[],
-        questData: quesT[],
+        offersBanks: offerT[]
+        PopularOffers: OfferItem[]
+        offersMoth: OfferMoths[]
+        questData: quesT[]
         specialOffers: offerI[]
         Topbanks: banksT[]
     }
 }
+
 const DepositsPage = (props: DepositsPageProps) => {
-    const {
-        staticData,
-    } = props;
-    const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
-    const news: NewsInterface[] = useSelector(NewsListSelector);
-    const dispatch = useDispatch();
-    const bonus = deposits[0];
+    const {staticData} = props
+    const deposits: DepositCardInterface[] = useSelector(DepositsSelector)
+    const dispatch = useDispatch()
+    const bonus = deposits[0]
 
     useEffect(() => {
-        dispatch(depositsGetRequestedAction());
-        dispatch(newsGetRequestedAction());
+        dispatch(depositsGetRequestedAction())
     }, [])
+
+    const [currentOffer, setCurrentOffer] = useState<number>(1)
 
     return (
         <PageWrapper>
             <IntroDeposits/>
             {bonus && (
                 <Bonus
-                    title={`Вклад ${bonus.rate}% на ${Math.floor(bonus.timeframe_max/365)} года`}
+                    title={`Вклад ${bonus.rate}% на ${Math.floor(
+                        bonus.timeframe_max / 365
+                    )} года`}
                     text={bonus.description}
                     img={absolut}
                 />
             )}
-            <OffersBanks isSelect={true} deposits={deposits} title={'943 вклада'} sub={' подобрано'}
-                         options={['По популярности']}/>
-            <PopularOffers data={staticData.PopularOffers}/>
+            <OffersBanks
+                isSelect={true}
+                deposits={staticData.offersBanks}
+                title={`${staticData.offersBanks.length} вклада`}
+                sub={' подобрано'}
+                options={[
+                    'По процентной ставке',
+                    'По рейтингу банка',
+                    'По максимальному взносу',
+                ]}
+            />
+            <PopularOffers
+                setActive={setCurrentOffer}
+                active={currentOffer}
+                data={staticData.PopularOffers}
+            />
             <OfferMonth offers={deposits}/>
             <Mailing/>
-            <LatestNews news={news}/>
+            <LatestNews/>
             <SpecialOffersDeposit deposits={deposits}/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о вкладах'}/>
-            <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
+            <FrequentQuestions
+                title={'Частые вопросы'}
+                items={staticData.questData}
+            />
             <TopBanks banks={deposits}/>
         </PageWrapper>
-    );
-};
+    )
+}
 
-export default DepositsPage;
+export default DepositsPage

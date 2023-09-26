@@ -5,12 +5,24 @@ import s from './CustomCheckboxAround.module.scss';
 
 type Props = {
     type?: string
-    checked:boolean
+    checked?: boolean,
+    handleChecked?: React.Dispatch<boolean>
+    value?: string
+    setValue?: React.Dispatch<string>
+    current?: string
 }
-const CustomCheckboxAround = ({type,checked}: Props) => {
+const CustomCheckboxAround = ({type = 'checkbox', checked, handleChecked, value, setValue, current}: Props) => {
+
+    const hadleChange = () => handleChecked(!checked);
+    const setVal = () => setValue(value);
+
     return (
         <>
-            <input type={type ? type : 'checkbox'} checked={checked} onChange={() => {}} className={s.inp}/>
+            <input type={type || 'checkbox'}
+                   checked={type === 'checkbox' ? checked : value === current}
+                   onChange={type === 'checkbox' ? hadleChange : setVal}
+                   className={s.inp}
+            />
         </>
     );
 };
