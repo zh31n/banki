@@ -4,8 +4,6 @@ import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import StockItem from '@/components/StockItem/StockItem';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-
 import 'swiper/css';
 
 export type ItemsActionT = {
