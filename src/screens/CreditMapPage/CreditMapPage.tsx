@@ -21,6 +21,18 @@ import { NewsListSelector } from '@/core/store/news/selectors'
 import { cardsGetRequestedAction } from '@/core/store/cards/actions'
 import { newsGetRequestedAction } from '@/core/store/news/actions'
 
+export type creditCardT = {
+  bank_name: string
+  name: string
+  type: string
+  currency: string
+  limit: number
+  grace_period: number
+  rate: number
+  service_1_year: number
+  follow_up_service: number
+}
+
 interface CreditMapPageProps {}
 
 export default function CreditMapPage(props: CreditMapPageProps) {
@@ -33,12 +45,13 @@ export default function CreditMapPage(props: CreditMapPageProps) {
     dispatch(newsGetRequestedAction())
   }, [])
   const staticData = data.CreditCardsPage
+  const staticCards: creditCardT[] = data.CreditCardsPage.creditCards
 
   return (
     <Wrapper>
       <Navigation />
       <Bonus />
-      <Offers cards={cards} />
+      <Offers cards={staticCards} />
       <OffersMonth />
       <Mailing />
       <Compilations />
@@ -46,7 +59,7 @@ export default function CreditMapPage(props: CreditMapPageProps) {
       <Communicate />
       <Feedback title={'Отзывы '} sub={'о кредитных картах'} />
       <BanksWithButton
-        cards={cards}
+        cards={staticCards}
         text={'Кредитные карты в Бишкеке '}
         sub_value={'- ТОП 10 лучших в 2023 году'}
       />

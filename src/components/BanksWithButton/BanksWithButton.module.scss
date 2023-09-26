@@ -8,7 +8,7 @@
   .text_container {
     mark {
       background: transparent;
-      color: var(--blu-main, #4DA7FF);
+      color: var(--blu-main, #4da7ff);
       font-variant-numeric: lining-nums proportional-nums;
       font-family: Raleway, serif;
       font-style: normal;
@@ -31,6 +31,7 @@
 .items_container {
   margin-top: 40px;
   display: flex;
+  flex-direction: column;
   width: 100%;
   gap: 8px;
 }

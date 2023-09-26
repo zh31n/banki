@@ -9,6 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {CardsSelector} from "@/core/store/cards/selectors";
 import {cardsGetRequestedAction} from "@/core/store/cards/actions";
 import data from "@/core/data";
+import { creditCardT } from '../CreditMapPage/CreditMapPage';
 
 type questItem = {
     title: string
@@ -28,13 +29,18 @@ export default function SpecialCardsOffersPage(props: SpecialCardsOffersPageProp
     const cards: CardInterface[] = useSelector(CardsSelector);
     const dispatch = useDispatch();
 
+      const staticCards: creditCardT[] = data.CreditCardsPage.creditCards;
+
+
     useEffect(() => {
         dispatch(cardsGetRequestedAction());
     }, [])
 
-    return <Wrapper>
-        <Navigation data={data.CardsSpecialIntro}/>
-        <OffersBanks cards={cards}/>
-        <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
-    </Wrapper>
+    return (
+      <Wrapper>
+        <Navigation data={data.CardsSpecialIntro} />
+        <OffersBanks cards={staticCards} />
+        <FrequentQuestions title={'Частые вопросы'} items={staticData.questData} />
+      </Wrapper>
+    );
 }
