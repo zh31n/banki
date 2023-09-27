@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroConsumer from '@/screens/ConsumerCreditsPage/Components/IntroConsumer/IntroConsumer';
 import Bonus from '@/components/Bonus/Bonus';
@@ -15,10 +15,8 @@ import { CreditInterface } from '@/core/services/Credits';
 import CreditBankList from '@/components/credits/CreditBankList';
 import CreditOfferList from '@/components/credits/CreditOfferList';
 import CreditTopBankList from '@/components/credits/CreditTopBankList';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { CreditsSelector } from '@/core/store/credits/selectors';
-import { creditsGetRequestedAction } from '@/core/store/credits/actions';
-import { newsGetRequestedAction } from '@/core/store/news/actions';
 
 export type oneOfferConsumerCreditsT = {
   bank_name: string;
@@ -53,12 +51,12 @@ const ConsumerCreditsPage = (props: ConsumerCreditsPageProps) => {
   const { staticData } = props;
   const credits: CreditInterface[] = useSelector(CreditsSelector);
   // const news: NewsInterface[] = useSelector(NewsListSelector)
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(creditsGetRequestedAction());
-    dispatch(newsGetRequestedAction());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(creditsGetRequestedAction());
+  //   dispatch(newsGetRequestedAction());
+  // }, []);
 
   const consumerCredits = staticData.creditsAll.filter((credit) => credit.type === 'Потребительский');
 
