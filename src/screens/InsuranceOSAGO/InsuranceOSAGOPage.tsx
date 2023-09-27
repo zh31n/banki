@@ -12,15 +12,13 @@ import CalculateOSAGO from '@/components/CalculateOSAGO/CalculateOSAGO';
 import InsuranceCompanys from '@/screens/InsurancePage/components/InsuranceCompanys/InsuranceCompanys';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroInsuranceOsago from '@/screens/InsuranceOSAGO/components/IntroInsuranceOsago/IntroInsuranceOsago';
-import { useDispatch } from 'react-redux';
-import { newsGetRequestedAction } from '@/core/store/news/actions';
 
 export default function InsuranceOSAGOPage() {
   const dataMap = data.OSAGO.worksData;
   const question = data.OSAGO.favouritesQuestion;
   const info = data.OSAGO.info;
   // const news: NewsInterface[] = useSelector(NewsListSelector);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     // dispatch(newsGetRequestedAction());
@@ -29,7 +27,11 @@ export default function InsuranceOSAGOPage() {
   return (
     <PageWrapper>
       <IntroInsuranceOsago />
-      <InsuranceCompanys isTitle={true} searchItems={data.InsuranceCompanysMass} data={data.InsurancePage.banksSlideItems} />
+      <InsuranceCompanys
+        isTitle={true}
+        searchItems={data.InsuranceCompanysMass}
+        data={data.InsurancePage.banksSlideItems}
+      />
       <LastBuy />
       <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap} />
       <LatestNews />
