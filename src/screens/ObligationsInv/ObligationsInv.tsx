@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroObliagtionInvest from '@/screens/ObligationsInv/components/IntroObliagtionInvest/IntroObliagtionInvest';
 import data from '@/core/data/index';
@@ -14,21 +14,12 @@ import Mailing from '@/components/Mailing/Mailing';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
 import TopObligations from '@/screens/ObligationsInv/components/TopObligations/TopObligations';
 import LatestNews from '@/components/LatestNews/LatestNews';
-import { BrokerInterface } from '@/core/services/Investing';
-import { useDispatch, useSelector } from 'react-redux';
-import { InvestingBrokersSelector } from '@/core/store/investing/selectors';
-import { investingNewsGetRequestedAction } from '@/core/store/news/actions';
-import { investingBrokersGetRequestedAction } from '@/core/store/investing/actions';
+import { brokersData } from '@/core/data/investment/brokers';
+import { obligationData } from '@/core/data/investment/obligation';
 
 const ObligationsInv = () => {
-  // const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
-  const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(investingNewsGetRequestedAction());
-    dispatch(investingBrokersGetRequestedAction());
-  }, []);
+  const brokers = brokersData;
+  const obligation = obligationData;
 
   return (
     <PageWrapper>
@@ -44,12 +35,12 @@ const ObligationsInv = () => {
       />
       <OffersObligation
         changeTime={{
-          time: '09:48',
-          date: '23.08.2023',
+          time: new Date().toLocaleTimeString().slice(0, 5),
+          date: new Date().toLocaleDateString(),
         }}
-        offers={data.ObligationsPage.obligationOffers}
-        count={'393 облигации'}
-        options={['Доходность']}
+        offers={obligation}
+        count={`${obligation.length} облигации`}
+        options={['Доходность по возрастанию', 'Доходность по убыванию']}
       />
       <div className={s.text}>
         <p>
@@ -64,7 +55,7 @@ const ObligationsInv = () => {
       <BrokerList brokers={brokers} title={'Все брокеры'} />
       <Mailing />
       <FrequentQuestions title={'Частые вопросы'} items={data.ObligationsPage.frequentQuests} />
-      <TopObligations obligations={data.ObligationsPage.TopObligationItems} />
+      <TopObligations obligations={obligation} />
       <LatestNews />
       <div className={s.text}>
         <h1 className={s.title}>Информация</h1>

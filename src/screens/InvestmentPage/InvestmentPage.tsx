@@ -15,12 +15,10 @@ import BrokerList from '@/components/investment/BrokersList';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
 import { useDispatch, useSelector } from 'react-redux';
 import { investingNewsGetRequestedAction } from '@/core/store/news/actions';
-import { BrokerInterface, InvestingMarketInterface } from '@/core/services/Investing';
-import {
-  investingBrokersGetRequestedAction,
-  investingMarketsGetRequestedAction,
-} from '@/core/store/investing/actions';
-import { InvestingBrokersSelector, InvestingMarketsSelector } from '@/core/store/investing/selectors';
+import { InvestingMarketInterface } from '@/core/services/Investing';
+import { investingMarketsGetRequestedAction } from '@/core/store/investing/actions';
+import { InvestingMarketsSelector } from '@/core/store/investing/selectors';
+import { brokersData } from '@/core/data/investment/brokers';
 
 type ChooseT = {
   name: string;
@@ -55,18 +53,16 @@ type Props = {
 };
 
 const InvestmentPage = ({ data }: Props) => {
-  //   const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
   const markets: InvestingMarketInterface[] = useSelector(InvestingMarketsSelector);
-  const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
   const [current, setCurrent] = useState<string>('с чего начать');
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(investingNewsGetRequestedAction());
     dispatch(investingMarketsGetRequestedAction());
-    dispatch(investingBrokersGetRequestedAction());
   }, []);
 
+  const brokers = brokersData;
   return (
     <PageWrapper>
       <IntroInvest setActive={setCurrent} current={current} items={data.introChoose} />

@@ -8,6 +8,8 @@ import { BrokerInterface } from '@/core/services/Investing';
 import { nanoid } from 'nanoid';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import 'swiper/css';
+
 interface BrokerListProps {
   title: string;
   brokers: BrokerInterface[];
@@ -42,19 +44,10 @@ const BrokerList = (props: BrokerListProps) => {
       <div className={s.title}>{title}</div>
       <div className={s.item_cont}>
         <Image alt={'стрелка влево'} className={s.arr} src={arr_l} onClick={() => handlePrev()} />
-
         <Swiper id='swiperBbrokers' ref={sliderRef} spaceBetween={10} slidesPerView={3} loop={true}>
           {slideItems}
         </Swiper>
-
         <Image src={arr_r} className={s.arr} alt={'стрелка вправо'} onClick={() => handleNext()} />
-
-        {/* <div className={s.wrap}>
-          {brokers.slice(0, 15).map((item) => (
-            <BrokerItem item={item} key={nanoid()} />
-          ))}
-        </div>
-        <Image alt={'arrow'} className={s.arr} src={arr_r} /> */}
       </div>
     </div>
   );

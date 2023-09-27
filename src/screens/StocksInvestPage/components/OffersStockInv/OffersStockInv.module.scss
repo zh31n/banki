@@ -4,8 +4,7 @@
 
   .title {
     display: flex;
-    justify-content: flex-start;
-    gap: 20px;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     margin-top: 2rem;
@@ -14,7 +13,7 @@
     span {
       mark {
         background: transparent;
-        color: #4DA7FF;
+        color: #4da7ff;
       }
 
       color: #121212;
@@ -30,6 +29,9 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    overflow: hidden;
+    transition: height 1s ease-in-out;
   }
 
   .btn_cont {
