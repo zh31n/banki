@@ -7,8 +7,6 @@ import Bonus from '@/components/Bonus/Bonus';
 import LatestNews from '@/components/LatestNews/LatestNews';
 import Feedback from '@/components/FeedBacks/Feedback/Feedback';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import { useDispatch } from 'react-redux';
-import { newsGetRequestedAction } from '@/core/store/news/actions';
 
 type ItemT = {
   title: string;
@@ -22,7 +20,7 @@ type Props = {
 };
 const DmsPage = ({ data }: Props) => {
   // const news: NewsInterface[] = useSelector(NewsListSelector);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     // dispatch(newsGetRequestedAction());
