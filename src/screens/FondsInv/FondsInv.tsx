@@ -1,27 +1,21 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroFondsInv from '@/screens/FondsInv/components/IntroFondsInv/IntroFondsInv';
 import data from '@/core/data/index';
 import StockInvCalculate from '@/screens/StocksInvestPage/components/StockInvCalculate/StockInvCalculate';
 import Bonus from '@/components/Bonus/Bonus';
-import OffersFonds from '@/screens/FondsInv/components/OffersFonds/OffersFonds';
 import s from './FondsInv.module.scss';
 import Mailing from '@/components/Mailing/Mailing';
 import HaveQues from '@/components/HaveQues/HaveQues';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
 import TopFonds from '@/screens/FondsInv/components/TopFonds/TopFonds';
 import LatestNews from '@/components/LatestNews/LatestNews';
-import { useDispatch } from 'react-redux';
-import { investingNewsGetRequestedAction } from '@/core/store/news/actions';
+import OffersObligation from '../ObligationsInv/components/OffersObligation/OffersObligation';
+import { obligationData } from '@/core/data/investment/obligation';
 
 const FondsInv = () => {
-  // const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(investingNewsGetRequestedAction());
-  }, []);
+  const obligation = obligationData;
 
   return (
     <PageWrapper>
@@ -35,11 +29,21 @@ const FondsInv = () => {
         title={'ВТБ Мои Инвестиции'}
         height={166}
       />
-      <OffersFonds
+      <OffersObligation
+        changeTime={{
+          time: new Date().toLocaleTimeString().slice(0, 5),
+          date: new Date().toLocaleDateString(),
+        }}
+        offers={obligation}
+        count={`${obligation.length} фондов`}
+        options={['Доходность по возрастанию', 'Доходность по убыванию']}
+      />
+
+      {/* <OffersFonds
         offers={data.FondsPage.FondsOfferItems}
         count={'177 предложений'}
         options={['По доходности за год']}
-      />
+      /> */}
       <div className={s.text}>
         <p>
           Данные предоставлены ЗАО «Интерфакс». Данные предоставляются исключительно для целей ознакомления и

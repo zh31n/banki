@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroStockInvest from '@/screens/StocksInvestPage/components/IntroStockInvest/IntroStockInvest';
 import data from '@/core/data/index';
@@ -13,21 +13,12 @@ import LatestNews from '@/components/LatestNews/LatestNews';
 import HaveQues from '@/components/HaveQues/HaveQues';
 import BrokerList from '@/components/investment/BrokersList';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import { BrokerInterface } from '@/core/services/Investing';
-import { useDispatch, useSelector } from 'react-redux';
-import { InvestingBrokersSelector } from '@/core/store/investing/selectors';
-import { investingNewsGetRequestedAction } from '@/core/store/news/actions';
-import { investingBrokersGetRequestedAction } from '@/core/store/investing/actions';
+import { brokersData } from '@/core/data/investment/brokers';
+import { stockData } from '@/core/data/investment/stock';
 
 const StocksInvestPage = () => {
-  // const news: InvestingNewsInterface[] = useSelector(InvestingNewsListSelector);
-  const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(investingNewsGetRequestedAction());
-    dispatch(investingBrokersGetRequestedAction());
-  }, []);
+  const brokers = brokersData;
+  const stock = stockData;
 
   return (
     <PageWrapper>
@@ -42,9 +33,9 @@ const StocksInvestPage = () => {
         height={166}
       />
       <OffersStockInv
-        offers={data.StockInvest.stockOffersItem}
+        offers={stock}
         count={927}
-        options={['Изменение цены, за месяц']}
+        options={['По убыванию цены за акцию', 'По возрастанию цены за акцию']}
         isSelect={true}
       />
       <div className={s.text}>

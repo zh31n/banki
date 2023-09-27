@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroSelectBrokerInv from '@/screens/SelectBrokerInv/components/IntroSelectBrokerInv/IntroSelectBrokerInv';
 import data from '@/core/data/index';
@@ -8,20 +8,12 @@ import Bonus from '@/components/Bonus/Bonus';
 import BrokerList from '@/components/investment/BrokersList';
 import HaveQues from '@/components/HaveQues/HaveQues';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import { BrokerInterface } from '@/core/services/Investing';
-import { useDispatch, useSelector } from 'react-redux';
-import { InvestingBrokersSelector } from '@/core/store/investing/selectors';
-import { investingBrokersGetRequestedAction } from '@/core/store/investing/actions';
 import BrokerOffers from '@/components/investment/BrokerOffers';
 import TopBrokers from '@/components/investment/TopBrokers';
+import { brokersData } from '@/core/data/investment/brokers';
 
 const SelectBrokerInv = () => {
-  const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(investingBrokersGetRequestedAction());
-  }, []);
+  const brokers = brokersData;
 
   return (
     <PageWrapper>
