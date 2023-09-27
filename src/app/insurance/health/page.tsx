@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   title: 'Жизнь и здоровье',
 };
 
-const Page = () => <HealthInsurance data={data.HealthInsurance} />;
+const Page = () => <HealthInsurance data={data.HealthInsurance} items={data.InsuranceCompanysMass}/>;
 
 export default Page;

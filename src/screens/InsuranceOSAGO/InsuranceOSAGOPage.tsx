@@ -23,13 +23,13 @@ export default function InsuranceOSAGOPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(newsGetRequestedAction());
+    // dispatch(newsGetRequestedAction());
   }, []);
 
   return (
     <PageWrapper>
       <IntroInsuranceOsago />
-      <InsuranceCompanys isTitle={true} data={data.InsurancePage.banksSlideItems} />
+      <InsuranceCompanys isTitle={true} searchItems={data.InsuranceCompanysMass} data={data.InsurancePage.banksSlideItems} />
       <LastBuy />
       <HowItWorks title={'Как оформить полис '} sub={'для ипотеки онлайн'} items={dataMap} />
       <LatestNews />

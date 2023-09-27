@@ -13,6 +13,7 @@ export type ItemsActionT = {
   title: string;
 };
 
+
 interface Props {
   data: { stocks: ItemsActionT[]; stock: ItemsActionT };
 }
@@ -58,4 +59,5 @@ const Stock = ({ data }: Props) => {
     </div>
   );
 };
+
 export default Stock;

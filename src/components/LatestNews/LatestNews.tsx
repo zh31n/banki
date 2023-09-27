@@ -22,7 +22,7 @@ const mockFilterItems: ChoicesInterface[] = [
 const LatestNews = () => {
   const { list, saveList, loansList, insuranceList, safeList } = useTypedSelector((state) => state.news);
 
-  const [currentChoise, setCurrentChoise] = useState('Накопления');
+  const [currentChoise, setCurrentChoise] = useState('Все');
 
   return (
     <div className={s.news}>

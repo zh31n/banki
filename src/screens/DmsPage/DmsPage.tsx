@@ -25,7 +25,7 @@ const DmsPage = ({ data }: Props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(newsGetRequestedAction());
+    // dispatch(newsGetRequestedAction());
   }, []);
   return (
     <PageWrapper>
