@@ -24,9 +24,7 @@ export default function BusinessPage() {
   const [current, setCurrent] = useState<string>('все продукты');
 
   useEffect(() => {
-    dispatch(businessCreditsGetRequestedAction());
-    dispatch(businessCardsGetRequestedAction());
-    dispatch(newsGetRequestedAction());
+
   }, []);
 
   return (

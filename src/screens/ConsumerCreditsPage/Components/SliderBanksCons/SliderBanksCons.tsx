@@ -37,7 +37,7 @@ const SliderBanksCons = ({data}: Props) => {
 
                 id='swiperBanksCons'
                 ref={sliderRef}
-                spaceBetween={20}
+                spaceBetween={5}
                 slidesPerView={6}
                 loop={true}
                 style={{zIndex: '-1'}}
