@@ -31,15 +31,6 @@
     gap: 5px;
   }
 
-  .deposit_offers_children {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    overflow: hidden;
-    transition: height 1s ease-in-out;
-  }
-
   .btn_cont {
     display: flex;
     justify-content: center;
