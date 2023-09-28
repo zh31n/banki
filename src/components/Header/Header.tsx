@@ -18,6 +18,9 @@ type navItemsT = {
 const Header = () => {
   const pathName = usePathname();
   const [currentPage, setCurrentPage] = useState<string>('');
+  const [currentLink, setCurrentLink] = useState<string>('');
+  const [vis, setVis] = useState<boolean>(false);
+
   useEffect(() => {
     const pa = pathName.split('/');
     setCurrentPage(pa[1]);
@@ -27,8 +30,7 @@ const Header = () => {
     setCurrentLink(name);
     name === 'Ещё' ? setVis(false) : setVis(true);
   };
-  const [currentLink, setCurrentLink] = useState<string>('');
-  const [vis, setVis] = useState<boolean>(false);
+
   const navItems: navItemsT[] = [
     { name: 'Вклады', id: 1, link: 'deposits' },
     { name: 'Кредиты', id: 2, link: 'credits' },
@@ -55,7 +57,7 @@ const Header = () => {
   return (
     <div className='container'>
       <header className={s.header}>
-        <Link href={'/'}>
+        <Link href={'/'} onClick={() => setVis(false)}>
           <div className={s.logo}>Логотип</div>
         </Link>
         <nav className={s.nav}>{navMap}</nav>
