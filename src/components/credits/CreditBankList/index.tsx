@@ -1,26 +1,27 @@
-import React, { useEffect, useMemo, useState, useRef, useCallback } from 'react';
+'use client';
+
+import React, { useEffect, useMemo, useState, useRef } from 'react';
 import s from './index.module.scss';
 import CustomSelect from '@/UI/CustomSelect/CustomSelect';
 import lines from '@/assets/icons/banki_icon/3-line.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import CreditBankItem from '@/components/credits/CreditBankItem';
+// import CreditBankItem from '@/components/credits/CreditBankItem';
 import { oneOfferConsumerCreditsT } from '@/screens/ConsumerCreditsPage/ConsumerCreditsPage';
 import { nanoid } from 'nanoid';
+import ItemAndChildren from '../ItemAndChildren';
 
 interface CreditBankListProps {
   credits: oneOfferConsumerCreditsT[];
   title: string | number;
   sub: string;
-  options: string[];
-  isSelect: boolean;
+  options?: string[];
+  isSelect?: boolean;
 }
 
 const CreditBankList = (props: CreditBankListProps) => {
   const { credits, options, title, sub, isSelect } = props;
   const [loansLength, setLoansLenth] = useState([]);
   const titleScroll = useRef<HTMLUListElement>(null);
-  const [isOpen, setIsOpen] = useState<(number | string)[]>([]);
-  const [higthDepositItem, setHigthDepositItem] = useState(0);
   const [sortValue, setSortValue] = useState('По процентной ставке');
 
   const loansCurtailedByBanks = useMemo(() => {
@@ -37,7 +38,7 @@ const CreditBankList = (props: CreditBankListProps) => {
 
     _loansCurtailedByBanks.map((el) => {
       return el.map((elem) => {
-        return (elem.length = el.length);
+        return { ...elem, length: el.length };
       });
     });
 
@@ -63,25 +64,6 @@ const CreditBankList = (props: CreditBankListProps) => {
       behavior: 'smooth',
     });
     setLoansLenth((prevState) => (prevState.length === 4 ? leaderBanks : leaderBanks.slice(0, 4)));
-  };
-
-  const handleOpenChildren = useCallback(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>, item: oneOfferConsumerCreditsT) => {
-      setHigthDepositItem(e.currentTarget.parentElement.parentElement.getBoundingClientRect().height);
-      const presence = isOpen.find((el) => el === item.bank_name);
-      if (!presence) {
-        setIsOpen((currentVal) => [...currentVal, item.bank_name]);
-      } else {
-        setIsOpen((currentVal) => currentVal.filter((el) => el !== item.bank_name));
-      }
-    },
-    [isOpen],
-  );
-
-  const presenceClassName = (item: oneOfferConsumerCreditsT) => {
-    const presence = isOpen.find((el) => el === item.bank_name);
-
-    return presence ? true : false;
   };
 
   const sortOffers = (e: React.MouseEvent<HTMLSelectElement, MouseEvent>) => {
@@ -135,25 +117,7 @@ const CreditBankList = (props: CreditBankListProps) => {
 
           return (
             <li key={nanoid()}>
-              <CreditBankItem
-                item={item}
-                arrChildren={arrChildren.length > 1 && arrChildren.slice(1)}
-                openChildren={(e) => handleOpenChildren(e, item)}
-              />
-              <ul
-                className={s.deposit_offers_children}
-                style={{
-                  height: presenceClassName(item)
-                    ? `${(arrChildren.length - 1) * higthDepositItem + (arrChildren.length - 1) * 10}px`
-                    : '0',
-                }}
-              >
-                {arrChildren.slice(1).map((child: oneOfferConsumerCreditsT) => (
-                  <li key={nanoid()} style={{ marginTop: '2.5px', marginBottom: '2.5px' }}>
-                    <CreditBankItem child item={child} />
-                  </li>
-                ))}
-              </ul>
+              <ItemAndChildren item={item} arr={arrChildren} />
             </li>
           );
         })}
@@ -165,4 +129,4 @@ const CreditBankList = (props: CreditBankListProps) => {
   );
 };
 
-export default CreditBankList;
+export default React.memo(CreditBankList);

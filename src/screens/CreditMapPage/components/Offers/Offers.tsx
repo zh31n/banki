@@ -1,12 +1,12 @@
 'use client';
 
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Offers.module.scss';
 import Image from './Image';
 import OfferItem from '../OffersItem/OffersItem';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import {nanoid} from 'nanoid';
-import {CreditCardT} from "@/models/Cards/Cards";
+import { nanoid } from 'nanoid';
+import { CreditCardT } from '@/models/Cards/Cards';
 
 interface OffersProps {
   cards: any[];
@@ -32,7 +32,7 @@ const Offers = ({ cards }: OffersProps) => {
 
     _cardsAreRolledIntoBanks.map((el) => {
       return el.map((elem) => {
-        return (elem.length = el.length);
+        return { ...elem, length: el.length };
       });
     });
 

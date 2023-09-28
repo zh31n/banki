@@ -11,7 +11,7 @@ import Slide from '@/screens/HomePage/components/Slide/Slide';
 import Banks from '@/screens/HomePage/components/Banks/Banks';
 import Calculate from './components/Calculate/Calculate';
 import axios from 'axios';
-import {useTypedSelector} from "@/hooks/redux";
+import { useTypedSelector } from '@/hooks/redux';
 
 type SearchItem = {
   text: string;
@@ -31,13 +31,11 @@ const HomePage = ({ data }: Props) => {
   const [searchVal, setSearchVal] = useState<string>('');
   const filterArr = (items: SearchItem[]) =>
     items.filter((i) => i.text.toLowerCase().includes(searchVal.toLowerCase()));
-
+  //
   useEffect(() => {
     let isMounted = true;
-    const allPromotions = axios.get(
-      'http://83.220.174.249:5345/api/promotions?page=1&limit=4&sort=id&sort_type=1',
-    );
-    const onePromotions = axios.get('http://83.220.174.249:5345/api/promotion?promo=1');
+    const allPromotions = axios.get('https://vsebanki.kg/api/promotions?page=1&limit=4&sort=id&sort_type=1');
+    const onePromotions = axios.get('https://vsebanki.kg/api/promotion?promo=1');
     const getPromotions = async () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const [all, one]: any = await Promise.all([allPromotions, onePromotions]).then((val) => {

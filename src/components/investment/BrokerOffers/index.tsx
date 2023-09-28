@@ -23,7 +23,6 @@ const BrokerOffers = (props: BrokerOffersProps) => {
     if (!firstOffer.current) return 175;
     return firstOffer.current.getBoundingClientRect().height;
   }, [firstOffer.current]);
-  console.log(heightItem);
 
   const handleClick = () => {
     setIsOpen(!isOpen);

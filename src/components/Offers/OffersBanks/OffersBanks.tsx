@@ -134,14 +134,12 @@ const OffersBanks = (props: OfferBanksProps) => {
         {depositsLength.map((item) => {
           const arrChildren = depositsAreRolledUpAcrossBanks.find((el) => el[0].bank_id === item.bank_id);
           return (
-            <>
-              <li key={nanoid()}>
-                <DepositOfferItem
-                  item={item}
-                  arrChildren={arrChildren ? arrChildren.slice(1) : []}
-                  openChildren={(e) => handleOpenChildren(e, item)}
-                />
-              </li>
+            <li key={nanoid()}>
+              <DepositOfferItem
+                item={item}
+                arrChildren={arrChildren ? arrChildren.slice(1) : []}
+                openChildren={(e) => handleOpenChildren(e, item)}
+              />
               <ul
                 className={classNames(s.deposit_offers_children)}
                 style={{
@@ -156,7 +154,7 @@ const OffersBanks = (props: OfferBanksProps) => {
                   </li>
                 ))}
               </ul>
-            </>
+            </li>
           );
         })}
       </ul>

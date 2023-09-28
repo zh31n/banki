@@ -61,7 +61,7 @@ const CreditBankItem = (props: CreditBankItemProps) => {
       <div className={s.down}>
         {!child && (
           <div className={s.count} onClick={(e) => openChildren(e)}>
-            {arrChildren.length && `Ещё ${arrChildren.length} предложений`}
+            {arrChildren.length - 2 > 0 && `Ещё ${arrChildren.length - 1} предложений`}
             <Image src={arr_d} alt={'иконка стрелочки вниз'} />
           </div>
         )}
@@ -76,4 +76,4 @@ const CreditBankItem = (props: CreditBankItemProps) => {
   );
 };
 
-export default CreditBankItem;
+export default React.memo(CreditBankItem);
