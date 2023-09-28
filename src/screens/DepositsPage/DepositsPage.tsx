@@ -15,10 +15,6 @@ import Communicate from '@/components/Communicate/Communicate'
 import Feedback from '@/components/FeedBacks/Feedback/Feedback'
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions'
 import TopBanks from '@/components/TopBanks/TopBanks'
-import {DepositCardInterface} from '@/core/services/Deposits'
-import {useDispatch, useSelector} from 'react-redux'
-import {depositsGetRequestedAction} from '@/core/store/deposits/actions'
-import {DepositsSelector} from '@/core/store/deposits/selectors'
 
 export type offerT = {
     bank_id: number | string
@@ -84,12 +80,9 @@ interface DepositsPageProps {
 
 const DepositsPage = (props: DepositsPageProps) => {
     const {staticData} = props
-    const deposits: DepositCardInterface[] = useSelector(DepositsSelector)
-    const dispatch = useDispatch()
-    const bonus = deposits[0]
 
     useEffect(() => {
-        dispatch(depositsGetRequestedAction())
+
     }, [])
 
     const [currentOffer, setCurrentOffer] = useState<number>(1)
@@ -97,15 +90,7 @@ const DepositsPage = (props: DepositsPageProps) => {
     return (
         <PageWrapper>
             <IntroDeposits/>
-            {bonus && (
-                <Bonus
-                    title={`Вклад ${bonus.rate}% на ${Math.floor(
-                        bonus.timeframe_max / 365
-                    )} года`}
-                    text={bonus.description}
-                    img={absolut}
-                />
-            )}
+            <Bonus img={absolut}/>
             <OffersBanks
                 isSelect={true}
                 deposits={staticData.offersBanks}
@@ -122,17 +107,17 @@ const DepositsPage = (props: DepositsPageProps) => {
                 active={currentOffer}
                 data={staticData.PopularOffers}
             />
-            <OfferMonth offers={deposits}/>
+            <OfferMonth offers={[]}/>
             <Mailing/>
             <LatestNews/>
-            <SpecialOffersDeposit deposits={deposits}/>
+            <SpecialOffersDeposit deposits={[]}/>
             <Communicate/>
             <Feedback title={'Отзывы '} sub={'о вкладах'}/>
             <FrequentQuestions
                 title={'Частые вопросы'}
                 items={staticData.questData}
             />
-            <TopBanks banks={deposits}/>
+            <TopBanks banks={[]}/>
         </PageWrapper>
     )
 }

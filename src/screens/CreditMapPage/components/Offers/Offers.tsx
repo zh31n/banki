@@ -1,15 +1,14 @@
 'use client';
 
-import React, { useCallback, useEffect, useMemo, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Offers.module.scss';
 import Image from './Image';
 import OfferItem from '../OffersItem/OffersItem';
-import { creditCardT } from '../../CreditMapPage';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import { nanoid } from 'nanoid';
+import { CreditCardT } from '@/models/Cards/Cards';
 
 interface OffersProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   cards: any[];
 }
 
@@ -33,7 +32,7 @@ const Offers = ({ cards }: OffersProps) => {
 
     _cardsAreRolledIntoBanks.map((el) => {
       return el.map((elem) => {
-        return (elem.length = el.length);
+        return { ...elem, length: el.length };
       });
     });
 
@@ -62,7 +61,7 @@ const Offers = ({ cards }: OffersProps) => {
   };
 
   const handleOpenChildren = useCallback(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>, item: creditCardT) => {
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>, item: CreditCardT) => {
       setHigthItems(e.currentTarget.parentElement.parentElement.getBoundingClientRect().height);
       const presence = isOpen.find((el) => el === item.bank_name);
       if (!presence) {
@@ -74,7 +73,7 @@ const Offers = ({ cards }: OffersProps) => {
     [isOpen],
   );
 
-  const presenceClassName = (item: creditCardT) => {
+  const presenceClassName = (item: CreditCardT) => {
     const presence = isOpen.find((el) => el === item.bank_name);
 
     return presence ? true : false;
@@ -110,7 +109,7 @@ const Offers = ({ cards }: OffersProps) => {
                     : '0',
                 }}
               >
-                {arrChildren.slice(1).map((child: creditCardT) => (
+                {arrChildren.slice(1).map((child: CreditCardT) => (
                   <li key={nanoid()} style={{ marginTop: '2.5px', marginBottom: '2.5px' }}>
                     <OfferItem child item={child} />
                   </li>

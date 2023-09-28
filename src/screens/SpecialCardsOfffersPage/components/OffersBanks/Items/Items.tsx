@@ -4,10 +4,10 @@ import Image from 'next/image';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import mockOfferImage from '@/assets/icons/offer_img1.png';
 import mockBankImage from '@/assets/icons/gasprom.svg';
-import { creditCardT } from '@/screens/CreditMapPage/CreditMapPage';
+import {CreditCardT} from "@/models/Cards/Cards";
 
 interface ItemsProps {
-  item: creditCardT;
+  item: CreditCardT;
 }
 
 const Items = ({ item }: ItemsProps) => {

@@ -1,21 +1,11 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Wrapper from '@/containers/Wrapper';
 import Navigation from '@/screens/SelectSteps/SelectStepsFinal/Navigation/Navigation';
 import styles from './SelectStepsFinal.module.scss';
 import SelectStepsFinalCard from '@/screens/SelectSteps/SelectStepsFinal/SelectStepsFinalCard';
-import { CardInterface } from '@/core/services/Cards';
-import { useDispatch, useSelector } from 'react-redux';
-import { CardsSelector } from '@/core/store/cards/selectors';
-import { cardsGetRequestedAction } from '@/core/store/cards/actions';
 
 const SelectStepsFinal = () => {
-  const cards: CardInterface[] = useSelector(CardsSelector);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(cardsGetRequestedAction());
-  }, []);
 
   return (
     <Wrapper>
@@ -42,7 +32,7 @@ const SelectStepsFinal = () => {
         </svg>
       </div>
       <div className={styles.items_container}>
-        {cards.map((card) => (
+        {[].map((card) => (
           <SelectStepsFinalCard key={card.id} card={card} />
         ))}
       </div>

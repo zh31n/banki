@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React, {useState} from 'react';
 import s from './IntroSlipBusiness.module.scss';
 import ChoiseItemsMap from "@/components/Choise/ChoiseItemsMap/ChoiseItemsMap";
 
@@ -11,6 +13,9 @@ type Props = {
 }
 
 const IntroSlipBusiness = ({items}: Props) => {
+
+    const [currentChose, setCurrentChose] = useState<string>('Все продукты')
+
     return (
         <div className={s.intro}>
             <div className={s.info_cont}>
@@ -21,7 +26,7 @@ const IntroSlipBusiness = ({items}: Props) => {
                     <mark>Дебетовые бизнес карты</mark>
                 </div>
                 <div className={s.ch_cont}>
-                    <ChoiseItemsMap choiseItems={items}/>
+                    <ChoiseItemsMap currentChoise={currentChose} setActive={setCurrentChose} choiseItems={items}/>
                 </div>
             </div>
         </div>

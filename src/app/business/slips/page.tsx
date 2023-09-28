@@ -3,8 +3,8 @@ import {Metadata} from "next";
 import SlipsBusinessPage from "@/screens/SlipsBusinessPage/SlipsBusinessPage";
 
 
-export const metadata:Metadata = {
-    title:''
+export const metadata: Metadata = {
+    title: 'Дебетовые бизенес-карты'
 }
 
 const Page = () => <SlipsBusinessPage/>;

@@ -38,7 +38,7 @@ const CreditBankList = (props: CreditBankListProps) => {
 
     _loansCurtailedByBanks.map((el) => {
       return el.map((elem) => {
-        return (elem.length = el.length);
+        return { ...elem, length: el.length };
       });
     });
 

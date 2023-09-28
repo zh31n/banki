@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from './BanksWithButton.module.scss';
 import BankCardItem from '@/components/BanksWithButton/BankCardItem/BankCardItem';
-import { creditCardT } from '@/screens/CreditMapPage/CreditMapPage';
-import { debitCardT } from '@/screens/DebetCardsPage/DebitCardsPage';
-import { nanoid } from 'nanoid';
+import {nanoid} from 'nanoid';
+import {CreditCardT, DebitCardT} from '@/models/Cards/Cards'
 
 interface BanksWithButtonProps {
   text: string;
   sub_value: string;
-  cards: creditCardT[] | debitCardT[];
+  cards: CreditCardT[] | DebitCardT[];
 }
 
 const BanksWithButton = (props: BanksWithButtonProps) => {
