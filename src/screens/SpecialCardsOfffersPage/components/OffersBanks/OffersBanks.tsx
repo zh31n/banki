@@ -2,12 +2,11 @@ import React from 'react';
 import styles from './OffersBanks.module.scss';
 import Items from '@/screens/SpecialCardsOfffersPage/components/OffersBanks/Items/Items';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import {creditCardT} from '@/screens/CreditMapPage/CreditMapPage';
 import {nanoid} from 'nanoid';
+import {CreditCardT} from "@/models/Cards/Cards";
 
 interface OffersBanksProps {
-    // @ts-ignore
-    cards: creditCardT[];
+    cards: CreditCardT[];
     title?: string;
 }
 

@@ -1,9 +1,9 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroInvest from '@/screens/InvestmentPage/components/IntroInvest/IntroInvest';
 import LastRecomends from '@/screens/InvestmentPage/components/LastRecommends/LastRecommends';
-import { StaticImageData } from 'next/image';
+import {StaticImageData} from 'next/image';
 import InvestInfo from '@/screens/InvestmentPage/components/InvestInfo/InvestInfo';
 import WatchInfo from '@/components/WatchInfo/WatchInfo';
 import SoloInvest from '@/screens/InvestmentPage/components/SoloInvest/SoloInvest';
@@ -13,12 +13,7 @@ import LatestNews from '@/components/LatestNews/LatestNews';
 import HaveQues from '@/components/HaveQues/HaveQues';
 import BrokerList from '@/components/investment/BrokersList';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import { useDispatch, useSelector } from 'react-redux';
-import { investingNewsGetRequestedAction } from '@/core/store/news/actions';
-import { InvestingMarketInterface } from '@/core/services/Investing';
-import { investingMarketsGetRequestedAction } from '@/core/store/investing/actions';
-import { InvestingMarketsSelector } from '@/core/store/investing/selectors';
-import { brokersData } from '@/core/data/investment/brokers';
+import {brokersData} from '@/core/data/investment/brokers';
 
 type ChooseT = {
   name: string;
@@ -53,20 +48,17 @@ type Props = {
 };
 
 const InvestmentPage = ({ data }: Props) => {
-  const markets: InvestingMarketInterface[] = useSelector(InvestingMarketsSelector);
   const [current, setCurrent] = useState<string>('с чего начать');
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(investingNewsGetRequestedAction());
-    dispatch(investingMarketsGetRequestedAction());
+
   }, []);
 
   const brokers = brokersData;
   return (
     <PageWrapper>
       <IntroInvest setActive={setCurrent} current={current} items={data.introChoose} />
-      <LastRecomends markets={markets} />
+      <LastRecomends markets={[]} />
       <InvestInfo banks={data.bankItems} />
       <WatchInfo
         title={'Мастер подбора брокерского счета'}

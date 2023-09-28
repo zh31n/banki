@@ -6,10 +6,10 @@ import CheckImage from '@/screens/CreditMapPage/components/OffersItem/CheckImage
 import Image from 'next/image';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import warningImg from '@/assets/icons/warning_icon.png';
-import { creditCardT } from '../../CreditMapPage';
+import {CreditCardT} from "@/models/Cards/Cards";
 
 interface OffersItemProps {
-  item: creditCardT;
+  item: CreditCardT;
   arrChildren?: [];
   openChildren?: (e) => void;
   child?: boolean;

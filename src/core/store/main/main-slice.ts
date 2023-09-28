@@ -1,6 +1,16 @@
+import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {
-    serviceItems:[
+type serviceCompanysT = {
+    text: string
+    link: string
+}
+
+interface InitialStateI {
+    serviceItems: serviceCompanysT[]
+}
+
+const initialState: InitialStateI = {
+    serviceItems: [
         {text: 'Вклады', link: '/deposits'},
         {text: 'Микрозаймы', link: '/credits/microloans'},
         {text: 'Накопительные счета', link: '/deposits/saving-accounts'},
@@ -27,14 +37,10 @@ const initialState = {
     ]
 }
 
-const HomePageReducer = (state = initialState,action) => {
- switch (action.type) {
-     default:{
-         return state;
-     }
- }
-}
+export const HomeSlice = createSlice({
+    name: 'home',
+    initialState,
+    reducers: {}
+})
 
-
-
-export default HomePageReducer;
+export default HomeSlice.reducer;

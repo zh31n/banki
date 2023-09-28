@@ -7,17 +7,13 @@ import InsuranceCompanys from '@/screens/InsurancePage/components/InsuranceCompa
 import data from '@/core/data/index';
 import LatestNews from '@/components/LatestNews/LatestNews';
 import Feedback from '@/components/FeedBacks/Feedback/Feedback';
-import {useDispatch} from 'react-redux';
-import OffersBanks from "@/screens/SpecialCardsOfffersPage/components/OffersBanks/OffersBanks";
 
 const AssuranceBusiness = () => {
-    const dispatch = useDispatch();
 
     useEffect(() => {
 
     }, []);
 
-    // @ts-ignore
     return (
         <PageWrapper>
             <IntroAssuranceBusiness/>

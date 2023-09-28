@@ -2,7 +2,7 @@
 import Wrapper from '@/containers/Wrapper';
 import Navigation from '@/screens/InstallmentPage/components/Navigation/Navigation';
 import OffersMonth from '@/components/OffersMonth/OffersMonth';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Offers from '@/screens/CreditMapPage/components/Offers/Offers';
 import Mailing from '@/components/Mailing/Mailing';
 import Feedback from '@/components/FeedBacks/Feedback/Feedback';
@@ -11,20 +11,13 @@ import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions'
 import data from '@/core/data/index';
 import Bonus from '@/components/Bonus/Bonus';
 import InstallmentPageAdvantages from '@/screens/InstallmentPage/components/InstallmentPageAdvantages';
-import { useDispatch } from 'react-redux';
-import { cardsGetRequestedAction } from '@/core/store/cards/actions';
-import { creditCardT } from '../CreditMapPage/CreditMapPage';
-import { creditCards } from '@/core/data/cards/credit_cards';
+import {creditCards} from '@/core/data/cards/credit_cards';
+import {CreditCardT} from "@/models/Cards/Cards";
 
 export default function InstallmentPage() {
-  // const cards: CardInterface[] = useSelector(CardsSelector);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(cardsGetRequestedAction());
-  }, []);
   const staticData = data.InstallmentPage;
-  const staticCards: creditCardT[] = creditCards;
+  const staticCards: CreditCardT[] = creditCards;
 
   return (
     <Wrapper>

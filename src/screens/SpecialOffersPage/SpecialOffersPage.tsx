@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import s from './SpecialOffersPage.module.scss';
 import CustomSelect from "@/UI/CustomSelect/CustomSelect";
 import SpecialOfferItem from "@/components/Offers/SpecialOfferItem/SpecialOfferItem";
@@ -8,10 +8,6 @@ import FrequentQuestions from "@/components/FrequentQuestions/FrequentQuestions"
 import PageWrapper from "@/containers/PageWrapper";
 import IntroSpecialOffer from "@/screens/SpecialOffersPage/components/IntroSpecialOffer/IntroSpecialOffer";
 import {StaticImageData} from "next/image";
-import {DepositCardInterface} from "@/core/services/Deposits";
-import {useDispatch, useSelector} from "react-redux";
-import {DepositsSelector} from "@/core/store/deposits/selectors";
-import {depositsGetRequestedAction} from "@/core/store/deposits/actions";
 
 type choisesT = {
     name: string
@@ -55,12 +51,8 @@ const SpecialOffersPage = (props: SpecialOfferPageProps) => {
     const {
         staticData,
     } = props;
-    const deposits: DepositCardInterface[] = useSelector(DepositsSelector);
-    const dispatch = useDispatch();
     const [current, setCurrent] = useState<string>('все')
-    useEffect(() => {
-        dispatch(depositsGetRequestedAction());
-    }, [])
+
 
     return (
         <PageWrapper>
@@ -77,7 +69,7 @@ const SpecialOffersPage = (props: SpecialOfferPageProps) => {
                         ))}
                 </div>
                 <div className={s.offers_item_cont}>
-                    {deposits.map((item) => {
+                    {[].map((item) => {
                         return (
                             <SpecialOfferItem item={item} key={item.id}/>
                         )

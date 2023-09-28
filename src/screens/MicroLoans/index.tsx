@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroMicroloans from '@/screens/MicroLoans/components/IntroMicroloans/IntroMicroloans';
 import Bonus from '@/components/Bonus/Bonus';
@@ -10,32 +10,19 @@ import CatalogItems from '@/components/Catalog/CatalogItems/CatalogItems';
 import LatestNews from '@/components/LatestNews/LatestNews';
 import Feedback from '@/components/FeedBacks/Feedback/Feedback';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import { CreditInterface } from '@/core/services/Credits';
 import CreditTopBankList from '@/components/credits/CreditTopBankList';
 import CreditOfferList from '@/components/credits/CreditOfferList';
-import { useDispatch, useSelector } from 'react-redux';
-import { investingBrokersGetRequestedAction } from '@/core/store/investing/actions';
-import { newsGetRequestedAction } from '@/core/store/news/actions';
-import { CreditsSelector } from '@/core/store/credits/selectors';
-import { creditsGetRequestedAction } from '@/core/store/credits/actions';
 
 interface MicroloansPageProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   staticData: any;
 }
 
 const MicroloansPage = (props: MicroloansPageProps) => {
   const { staticData } = props;
-  const credits: CreditInterface[] = useSelector(CreditsSelector);
-  // const brokers: BrokerInterface[] = useSelector(InvestingBrokersSelector)
-  // const news: NewsInterface[] = useSelector(NewsListSelector)
-  const dispatch = useDispatch();
   const [current, setCurrent] = useState<string>('не важна сумма');
 
   useEffect(() => {
-    dispatch(creditsGetRequestedAction());
-    dispatch(investingBrokersGetRequestedAction());
-    dispatch(newsGetRequestedAction());
+
   }, []);
 
   return (
@@ -44,13 +31,13 @@ const MicroloansPage = (props: MicroloansPageProps) => {
       <Bonus title={'0% Первый займ бесплатно!'} />
       <SliderBanksCons data={staticData.slideItems} />
       <WebLoans credits={staticData.microLoansBanks} />
-      <CreditOfferList credits={credits} />
+      <CreditOfferList credits={[]} />
       <BrokerList title={'Микрокредитные организации'} brokers={staticData.microLoansBanks} />
       <CatalogItems title={'Каталог микрозаймов'} items={staticData.catalogData} width={'100%'} />
       <LatestNews />
       <Feedback title={'Отзывы '} sub={'о МФО'} />
       <CreditTopBankList
-        credits={credits}
+        credits={[]}
         title={'Микрозаймы в Бишкеке'}
         subtitle={' - ТОП 10 займов в МФО в 2023 году'}
       />

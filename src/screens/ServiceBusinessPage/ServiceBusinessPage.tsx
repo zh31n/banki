@@ -11,12 +11,8 @@ import Feedback from '@/components/FeedBacks/Feedback/Feedback';
 import LatestNews from '@/components/LatestNews/LatestNews';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
 import DepositOfferItem from '@/components/Deposit/DepositOfferItem/DepositOfferItem';
-import {useDispatch} from 'react-redux';
-import {businessCreditsGetRequestedAction} from '@/core/store/business/actions';
-import {newsGetRequestedAction} from '@/core/store/news/actions';
 
 const ServiceBusinessPage = () => {
-    const dispatch = useDispatch();
 
     useEffect(() => {
 

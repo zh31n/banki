@@ -3,24 +3,30 @@
 import Wrapper from '@/containers/Wrapper';
 import Navigation from '@/screens/NewsPage/components/Navigation/Navigation';
 import News from '@/screens/NewsPage/components/News/News';
-import { NewsInterface } from '@/core/services/News';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { NewsListSelector } from '@/core/store/news/selectors';
-import { newsGetRequestedAction } from '@/core/store/news/actions';
+import React, {useEffect, useState} from 'react';
+import {useTypedSelector} from "@/hooks/redux";
 
 export default function NewsPage() {
-  const news: NewsInterface[] = useSelector(NewsListSelector);
-  const dispatch = useDispatch();
-  const [current, setCurrent] = useState<string>('сегодня');
-  useEffect(() => {
-    dispatch(newsGetRequestedAction());
-  }, []);
+    const {
+        list,
+        safeList,
+        loansList,
+        insuranceList,
+        saveList
+    } = useTypedSelector(state => state.news)
+    const [current, setCurrent] = useState<string>('Сегодня');
+    useEffect(() => {
 
-  return (
-    <Wrapper>
-      <Navigation setCurrent={setCurrent} current={current} />
-      <News news={news} />
-    </Wrapper>
-  );
+    }, []);
+
+    return (
+        <Wrapper>
+            <Navigation setCurrent={setCurrent} current={current}/>
+            {current === 'Сегодня' && <News news={list}/>}
+            {current === 'Накопить' && <News news={safeList}/>}
+            {current === 'Занять' && <News news={loansList}/>}
+            {current === 'Застраховать' && <News news={insuranceList}/>}
+            {current === 'Обезопасить' && <News news={saveList}/>}
+        </Wrapper>
+    );
 }

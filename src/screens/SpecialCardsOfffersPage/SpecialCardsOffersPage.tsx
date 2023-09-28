@@ -2,42 +2,32 @@
 import Wrapper from '@/containers/Wrapper';
 import Navigation from '@/screens/SpecialCardsOfffersPage/components/Navigation/Navigation';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import React, { useEffect } from 'react';
+import React from 'react';
 import OffersBanks from './components/OffersBanks/OffersBanks';
-import { useDispatch } from 'react-redux';
-import { cardsGetRequestedAction } from '@/core/store/cards/actions';
-// import data from '@/core/data/index';
-import { creditCardT } from '../CreditMapPage/CreditMapPage';
-import { creditCards } from '@/core/data/cards/credit_cards';
+import {creditCards} from '@/core/data/cards/credit_cards';
 import data from '@/core/data';
+import {CreditCardT} from "@/models/Cards/Cards";
 
 type questItem = {
-  title: string;
-  text: string;
+    title: string;
+    text: string;
 };
 
 interface SpecialCardsOffersPageProps {
-  staticData: {
-    questData: questItem[];
-  };
+    staticData: {
+        questData: questItem[];
+    };
 }
 
 export default function SpecialCardsOffersPage(props: SpecialCardsOffersPageProps) {
-  const { staticData } = props;
-  // const cards: CardInterface[] = useSelector(CardsSelector);
-  const dispatch = useDispatch();
+    const {staticData} = props;
+    const staticCards: CreditCardT[] = creditCards;
 
-  const staticCards: creditCardT[] = creditCards;
-
-  useEffect(() => {
-    dispatch(cardsGetRequestedAction());
-  }, []);
-
-  return (
-    <Wrapper>
-      <Navigation data={data.SpecialOffersCards.choises} />
-      <OffersBanks cards={staticCards} />
-      <FrequentQuestions title={'Частые вопросы'} items={staticData.questData} />
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <Navigation data={data.SpecialOffersCards.choises}/>
+            <OffersBanks cards={staticCards}/>
+            <FrequentQuestions title={'Частые вопросы'} items={staticData.questData}/>
+        </Wrapper>
+    );
 }

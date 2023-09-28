@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './BankCardItem.module.scss';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import { creditCardT } from '@/screens/CreditMapPage/CreditMapPage';
+import {CreditCardT} from "@/models/Cards/Cards";
+
 
 interface BankCardItemProps {
-  item: creditCardT;
+  item: CreditCardT;
 }
 
 const BankCardItem = (props: BankCardItemProps) => {

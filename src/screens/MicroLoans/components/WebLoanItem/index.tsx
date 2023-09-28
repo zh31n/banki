@@ -16,12 +16,10 @@ const WebLoanItem = (props: WebLoanItemProps) => {
     const {
         item: {
             name,
-            description,
             min_amount,
             max_amount,
             timeframe_min,
             timeframe_max,
-            rate,
         }
     } = props;
 
@@ -31,7 +29,7 @@ const WebLoanItem = (props: WebLoanItemProps) => {
                 <Image alt={''} src={sq}/>
                 <div className={s.info}>
                     <div className={s.title}>{name}</div>
-                    <div className={s.sub}>{description}</div>
+                    <div className={s.sub}>{'description'}</div>
                     <div className={s.star}>
                         <Image alt={'star'} src={star}/>
                         4,3
@@ -50,7 +48,7 @@ const WebLoanItem = (props: WebLoanItemProps) => {
                 </div>
                 <div>
                     <span>Ставка</span>
-                    <span>{rate}%</span>
+                    <span>{'rate'}%</span>
                 </div>
             </div>
             <div className={s.line}></div>

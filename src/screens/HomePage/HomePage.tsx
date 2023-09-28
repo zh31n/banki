@@ -9,9 +9,9 @@ import PageWrapper from '@/containers/PageWrapper';
 import Stock, { ItemsActionT } from '@/screens/HomePage/components/Stock/Stock';
 import Slide from '@/screens/HomePage/components/Slide/Slide';
 import Banks from '@/screens/HomePage/components/Banks/Banks';
-import { useTypedSelector } from '@/core/store';
 import Calculate from './components/Calculate/Calculate';
 import axios from 'axios';
+import {useTypedSelector} from "@/hooks/redux";
 
 type SearchItem = {
   text: string;
