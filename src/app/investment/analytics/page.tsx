@@ -1,11 +1,11 @@
 import React from 'react';
-import {Metadata} from "next";
-import AnalyticsInv from "@/screens/AnalyticsInv/AnalyticsInv";
+import { Metadata } from 'next';
+import AnalyticsInv from '@/screens/AnalyticsInv/AnalyticsInv';
 
-export const metadata:Metadata = {
-    title:'Аналитика'
-}
+export const metadata: Metadata = {
+  title: 'Аналитика',
+};
 
-const Page = () => <AnalyticsInv/>;
+const Page = () => <AnalyticsInv />;
 
 export default Page;

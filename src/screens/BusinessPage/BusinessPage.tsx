@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Wrapper from '@/containers/Wrapper';
 import OffersMonth from '@/components/OffersMonth/OffersMonth';
 import LatestNews from '@/components/LatestNews/LatestNews';
@@ -11,19 +11,18 @@ import CreditForBank from '@/screens/BusinessPage/components/CreditForBank/Credi
 import Text from '@/screens/BusinessPage/components/Text/Text';
 
 export default function BusinessPage() {
-    const [current, setCurrent] = useState<string>('все продукты');
-    // const {slideItems} = useTypedSelector(state => state.business)
+  const [current, setCurrent] = useState<string>('все продукты');
+  // const {slideItems} = useTypedSelector(state => state.business)
 
-
-    return (
-        <Wrapper>
-            <Navigation current={current} setActive={setCurrent}/>
-            <Kassa/>
-            <CreditForBank/>
-            <Ecvaring/>
-            <Text/>
-            <OffersMonth/>
-            <LatestNews/>
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Navigation current={current} setActive={setCurrent} />
+      <Kassa />
+      <CreditForBank />
+      <Ecvaring />
+      <Text />
+      <OffersMonth />
+      <LatestNews />
+    </Wrapper>
+  );
 }

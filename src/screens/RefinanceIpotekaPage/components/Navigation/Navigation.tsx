@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './Navigation.module.scss'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
+import React from 'react';
+import styles from './Navigation.module.scss';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 
 const Navigation = () => {
   return (
@@ -17,14 +17,13 @@ const Navigation = () => {
           Рефинансирование ипотечного кредита <span>в Бишкеке</span>
         </div>
         <p className={styles.little_text}>
-          Получите одобрение ипотеки и самую выгодную ставку. Заполните анкету,
-          чтобы получить предложения банков и отправить заявку на одобрение в
-          один клик.
+          Получите одобрение ипотеки и самую выгодную ставку. Заполните анкету, чтобы получить предложения
+          банков и отправить заявку на одобрение в один клик.
         </p>
       </div>
       <BlueBtn text={'Заполните анкету'} width={251} height={60} fSize={20} />
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

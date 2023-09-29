@@ -6,7 +6,6 @@ import styles from './SelectStepsFinal.module.scss';
 import SelectStepsFinalCard from '@/screens/SelectSteps/SelectStepsFinal/SelectStepsFinalCard';
 
 const SelectStepsFinal = () => {
-
   return (
     <Wrapper>
       <Navigation />

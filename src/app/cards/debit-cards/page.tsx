@@ -1,11 +1,11 @@
-import {Metadata} from "next";
-import DebitCardsPage from "@/screens/DebetCardsPage/DebitCardsPage";
-import React from "react";
+import { Metadata } from 'next';
+import DebitCardsPage from '@/screens/DebetCardsPage/DebitCardsPage';
+import React from 'react';
 
 export const metadata: Metadata = {
-    title: 'Дебетовые карты'
-}
+  title: 'Дебетовые карты',
+};
 
 export default async function DebitCards() {
-    return <DebitCardsPage/>
+  return <DebitCardsPage />;
 }

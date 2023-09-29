@@ -1,5 +1,5 @@
 'use client';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroCalculate from '@/screens/CalculatorCredits/components/IntroCalculate/IntroCalculate';
 import Feedback from '@/components/FeedBacks/Feedback/Feedback';
@@ -19,9 +19,7 @@ interface CalculatorCreditsProps {
 
 const CalculatorCredits = (props: CalculatorCreditsProps) => {
   const { staticData, allOffers } = props;
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <PageWrapper>

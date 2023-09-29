@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './Navigation.module.scss'
-import Parametrs from './Parametrs/Parametrs'
+import React from 'react';
+import styles from './Navigation.module.scss';
+import Parametrs from './Parametrs/Parametrs';
 
 const Navigation = () => {
   return (
@@ -13,13 +13,13 @@ const Navigation = () => {
           Кредитные карты <mark>в Бишкеке</mark>
         </div>
         <div className={styles.bottom_container}>
-          В данном разделе можно найти предложения банков, сравнить условия,
-          изучить отзывы и оформить онлайн-заявку.
+          В данном разделе можно найти предложения банков, сравнить условия, изучить отзывы и оформить
+          онлайн-заявку.
         </div>
         <Parametrs />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

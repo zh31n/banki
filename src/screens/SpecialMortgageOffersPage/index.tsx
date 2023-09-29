@@ -3,7 +3,7 @@
 import Wrapper from '@/containers/Wrapper';
 import Navigation from '@/screens/SpecialCardsOfffersPage/components/Navigation/Navigation';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import MortgageSpecialList from '@/components/mortgages/MortgageSpecialList';
 import data from '@/core/data/index';
 
@@ -19,9 +19,7 @@ interface SpecialMortgageOffersPageProps {
 export default function SpecialMortgageOffersPage(props: SpecialMortgageOffersPageProps) {
   const { staticData } = props;
 
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <Wrapper>

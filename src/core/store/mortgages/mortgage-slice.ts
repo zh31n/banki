@@ -1,15 +1,13 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
+interface InitialStateI {}
 
-interface InitialStateI {
-}
-
-const initialState: InitialStateI = {}
+const initialState: InitialStateI = {};
 
 export const mortgageSlice = createSlice({
-    name: 'mortgage',
-    initialState,
-    reducers: {}
-})
+  name: 'mortgage',
+  initialState,
+  reducers: {},
+});
 
 export default mortgageSlice.reducer;

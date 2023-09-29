@@ -11,11 +11,10 @@ import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions'
 import data from '@/core/data/index';
 import Bonus from '@/components/Bonus/Bonus';
 import InstallmentPageAdvantages from '@/screens/InstallmentPage/components/InstallmentPageAdvantages';
-import {creditCards} from '@/core/data/cards/credit_cards';
-import {CreditCardT} from "@/models/Cards/Cards";
+import { creditCards } from '@/core/data/cards/credit_cards';
+import { CreditCardT } from '@/models/Cards/Cards';
 
 export default function InstallmentPage() {
-
   const staticData = data.InstallmentPage;
   const staticCards: CreditCardT[] = creditCards;
 

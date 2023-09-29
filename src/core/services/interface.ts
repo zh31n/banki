@@ -1,5 +1,5 @@
 export interface ApiResponseInterface {
-    result?: boolean;
-    len?: number;
-    error?: string;
+  result?: boolean;
+  len?: number;
+  error?: string;
 }

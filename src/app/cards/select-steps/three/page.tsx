@@ -1,6 +1,6 @@
 import React from 'react';
-import SelectStepThree from "@/screens/SelectSteps/SelectStepThree/SelectStepThree";
+import SelectStepThree from '@/screens/SelectSteps/SelectStepThree/SelectStepThree';
 
-const Page = () => <SelectStepThree/>
+const Page = () => <SelectStepThree />;
 
 export default Page;

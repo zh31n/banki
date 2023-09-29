@@ -1,5 +1,5 @@
 'use client';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import PageWrapper from '@/containers/PageWrapper';
 import IntroMicroloans from '@/screens/MicroLoans/components/IntroMicroloans/IntroMicroloans';
 import Bonus from '@/components/Bonus/Bonus';
@@ -21,9 +21,7 @@ const MicroloansPage = (props: MicroloansPageProps) => {
   const { staticData } = props;
   const [current, setCurrent] = useState<string>('не важна сумма');
 
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <PageWrapper>

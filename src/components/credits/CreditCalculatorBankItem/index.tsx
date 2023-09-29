@@ -13,7 +13,7 @@ interface CreditCalculatorBankItemProps {
 
 const CreditCalculatorBankItem = (props: CreditCalculatorBankItemProps) => {
   const {
-    item: { name, min_amount }
+    item: { name, min_amount },
   } = props;
 
   return (

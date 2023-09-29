@@ -11,22 +11,26 @@ import Feedback from '@/components/FeedBacks/Feedback/Feedback';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
 
 const SlipsBusinessPage = () => {
-    return (
-        <PageWrapper>
-            <IntroSlipBusiness items={data.BusinessServicePage.introChoose}/>
-            <SlipsBanksSlider items={data.SlipsBanksPage.sliderItems}/>
-            <InsuranceCompanys searchItems={data.InsuranceCompanysMass} data={data.InsurancePage.banksSlideItems} isTitle={false}/>
-            <Bonus
-                title={'Откройте счет для бизнеса бесплатно'}
-                text={'Полгода со скидкой 50% на пакет услуг “Самое важное” и “Все включено” для новых клиентов'}
-                height={166}
-            />
-            <OffersInvest items={data.BusinessServicePage.offersMoth}/>
-            <Mailing/>
-            <Feedback title={'Отзывы'} sub={' о дебетовых картах'}/>
-            <FrequentQuestions title={'Частые вопросы'} items={data.SlipsBanksPage.questData}/>
-        </PageWrapper>
-    );
+  return (
+    <PageWrapper>
+      <IntroSlipBusiness items={data.BusinessServicePage.introChoose} />
+      <SlipsBanksSlider items={data.SlipsBanksPage.sliderItems} />
+      <InsuranceCompanys
+        searchItems={data.InsuranceCompanysMass}
+        data={data.InsurancePage.banksSlideItems}
+        isTitle={false}
+      />
+      <Bonus
+        title={'Откройте счет для бизнеса бесплатно'}
+        text={'Полгода со скидкой 50% на пакет услуг “Самое важное” и “Все включено” для новых клиентов'}
+        height={166}
+      />
+      <OffersInvest items={data.BusinessServicePage.offersMoth} />
+      <Mailing />
+      <Feedback title={'Отзывы'} sub={' о дебетовых картах'} />
+      <FrequentQuestions title={'Частые вопросы'} items={data.SlipsBanksPage.questData} />
+    </PageWrapper>
+  );
 };
 
 export default SlipsBusinessPage;

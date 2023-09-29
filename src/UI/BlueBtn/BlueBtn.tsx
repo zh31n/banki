@@ -1,12 +1,12 @@
-import React from 'react'
-import s from './BlueBtn.module.scss'
+import React from 'react';
+import s from './BlueBtn.module.scss';
 
 interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  text: string
-  width: number
-  height?: number
-  fSize?: number
-  count?: number
+  text: string;
+  width: number;
+  height?: number;
+  fSize?: number;
+  count?: number;
 }
 
 const BlueBtn = ({ text, width, height, fSize, count, onClick }: Props) => {
@@ -23,7 +23,7 @@ const BlueBtn = ({ text, width, height, fSize, count, onClick }: Props) => {
       {text}
       {count && <span>{count}</span>}
     </button>
-  )
-}
+  );
+};
 
-export default BlueBtn
+export default BlueBtn;

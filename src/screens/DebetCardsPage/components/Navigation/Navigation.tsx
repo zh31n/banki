@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './Navigation.module.scss'
-import ParametrsItem from '@/screens/DebetCardsPage/components/Navigation/Parametrs/ParametrsItem/ParametrsItem'
-import ChoiseItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap'
+import React from 'react';
+import styles from './Navigation.module.scss';
+import ParametrsItem from '@/screens/DebetCardsPage/components/Navigation/Parametrs/ParametrsItem/ParametrsItem';
+import ChoiseItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap';
 
 const data = [
   {
@@ -32,11 +32,11 @@ const data = [
     name: 'Транспорт и АЗС',
     active: false,
   },
-]
+];
 type Props = {
-  setActive?: React.Dispatch<string>
-  current?: string
-}
+  setActive?: React.Dispatch<string>;
+  current?: string;
+};
 
 const Navigation = ({ current, setActive }: Props) => {
   return (
@@ -50,21 +50,17 @@ const Navigation = ({ current, setActive }: Props) => {
         </div>
         <div className={styles.little_text_cont}>
           <p>
-            На (НАЗВАНИЕ СЕРВИСА) есть 859 банковских карт от 202 банков. Также
-            на сайте вы найдете специальные предложения по дебетовым картам.
+            На (НАЗВАНИЕ СЕРВИСА) есть 859 банковских карт от 202 банков. Также на сайте вы найдете
+            специальные предложения по дебетовым картам.
           </p>
         </div>
       </div>
       <div className={styles.cont}>
-        <ChoiseItemsMap
-          choiseItems={data}
-          currentChoise={current}
-          setActive={setActive}
-        />
-        <ParametrsItem text="Все параметры" active={false} icon={true} />
+        <ChoiseItemsMap choiseItems={data} currentChoise={current} setActive={setActive} />
+        <ParametrsItem text='Все параметры' active={false} icon={true} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

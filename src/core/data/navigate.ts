@@ -36,7 +36,7 @@ const navigation = {
   ],
   ipoteka: [
     [
-      {text: 'Мастер подбора кредитов', link: '/ipoteka/offers'},
+      { text: 'Мастер подбора кредитов', link: '/ipoteka/offers' },
       { text: 'Ипотечные кредиты', link: '/ipoteka/credits' },
       { text: 'Ипотечное страхование', link: '/insurance' },
       { text: 'Спецпредложения', link: '/ipoteka/special-offers' },
@@ -100,6 +100,6 @@ const navigation = {
       { text: 'Банковский словарь', link: '/news' },
     ],
   ],
-}
+};
 
-export default navigation
+export default navigation;
