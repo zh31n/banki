@@ -2,11 +2,11 @@ import React from 'react';
 import s from './LastRecommendItem.module.scss';
 import Image from 'next/image';
 import WhiteBorderBlueBtn from '@/UI/WhiteBorderBlueBtn/WhiteBorderBlueBtn';
-import { InvestingMarketInterface } from '@/core/services/Investing';
 import mockMarketLogo from '@/assets/icons/banki_icon/loco.svg';
+import {MarketItemT} from "@/models/Investment/Investment";
 
 interface LastRecommendItemProps {
-  item: InvestingMarketInterface;
+  item: MarketItemT;
 }
 const LastRecommendItem = (props: LastRecommendItemProps) => {
   const {

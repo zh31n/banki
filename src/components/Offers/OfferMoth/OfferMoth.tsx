@@ -7,7 +7,7 @@ import arr_r from '@/assets/icons/banki_icon/Стрелка_right.svg';
 import Image from 'next/image';
 import ChoiceItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap';
 import OfferItem from '@/components/Offers/OfferItem/OfferItem';
-import { DepositCardInterface } from '@/core/services/Deposits';
+import {DepositCardInterface} from "@/models/Deposit/Deposit";
 
 type ItemT = {
   name: string;

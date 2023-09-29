@@ -4,15 +4,14 @@ import Image from 'next/image';
 import arr_l from '@/assets/icons/banki_icon/Стрелка_left.svg';
 import arr_r from '@/assets/icons/banki_icon/Стрелка_right.svg';
 import BrokerItem from '@/components/investment/BrokerItem';
-import { BrokerInterface } from '@/core/services/Investing';
 import { nanoid } from 'nanoid';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
+import {BrokerItemT} from "@/models/Investment/Investment";
 
 interface BrokerListProps {
   title: string;
-  brokers: BrokerInterface[];
+  brokers: BrokerItemT[];
 }
 
 const BrokerList = (props: BrokerListProps) => {

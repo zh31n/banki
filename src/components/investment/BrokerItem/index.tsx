@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './index.module.scss';
 import Image from 'next/image';
-import { BrokerInterface } from '@/core/services/Investing';
+import { BrokerItemT } from "@/models/Investment/Investment";
 import mockBrokerImage from '@/assets/icons/banki_icon/ifk_solid.svg';
 
 interface BrokerItemProps {
-  item: BrokerInterface;
+  item: BrokerItemT;
 }
 
 const BrokerItem = (props: BrokerItemProps) => {

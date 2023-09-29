@@ -19,78 +19,32 @@ export type DebitCardT = {
     service_1_year: number;
     follow_up_service: number;
 };
-export type BusinessCardsT = {
-    license: number;
-    id: number;
-    form?: any;
-    address: string;
-    region: string;
-    since?: any;
-    image: string;
-    name: string;
-    phones: string;
-    rating: number;
-}
-export type BusinessCardsResponseT = {
-    cards: BusinessCardsT[],
-    result: boolean
-    len: number
-}
 
-export interface BusinessCardItemResponseT {
-    card: BusinessCardItemT;
-    result: boolean;
-}
-
-export interface BusinessCardItemT {
+export type CardItemT = {
     price: number;
     id: number;
     cashback: number;
-    min_amount: string;
-    rate: number;
-    timeframe_max: string;
-    description: string;
-    max_points: number;
+    max_amount?: any;
+    timeframe_min?: any;
+    name: string;
     bank_id: number;
     type: string;
-    max_amount: string;
-    timeframe_min: string;
-    name: string;
+    max_points: number;
+    min_amount?: any;
+    rate: number;
+    timeframe_max?: any;
+    description: string;
     rating: number;
 }
 
-export interface BusinessCreditsResponseT {
-    cards: BusinessCreditItemT[];
+export type CardItemsResponseT = {
+    cards: CardItemT[];
     result: boolean;
     len: number;
 }
-
-export interface BusinessCreditItemT {
-    id: number;
-    bank_id: number;
-    min_amount: number;
-    rate: number;
-    timeframe_max: number;
-    description: string;
-    type: string;
-    max_amount: number;
-    timeframe_min: number;
-    name: string;
-    rating: number;
+export interface CardItemResposeT {
+    card: CardItemT
+    result:boolean
 }
 
-export interface BusinessCreditItemResponseT {
-    card: BusinessCreditItemT,
-    result: boolean
-}
-//
-//   bank_name: string;
-//   name: string;
-//   type: string;
-//   currency: string;
-//   interest_on_balance: number;
-//   cash_back: number;
-//   service_1_year: number;
-//   follow_up_service: number;
-// };
 

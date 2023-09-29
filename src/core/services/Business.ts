@@ -1,11 +1,11 @@
 import instance from "@/core/services/index";
+import {getBusinessCardsI, getBusinessCreditsI} from "@/models/Services";
 import {
     BusinessCardItemResponseT,
     BusinessCardsResponseT,
     BusinessCreditItemResponseT,
     BusinessCreditsResponseT
-} from "@/models/Cards/Cards";
-import {getBusinessCardsI, getBusinessCreditsI} from "@/models/Services";
+} from "@/models/business/Business";
 
 
 const BusinessApi = {

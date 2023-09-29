@@ -1,86 +1,32 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* ИНВЕСТИЦИИ */
-import { Api } from './api';
-import { ApiResponseInterface } from './interface';
+import instance from "@/core/services/index";
+import {getBrokers, getInvestNewsI, getMarketsI} from "@/models/Services";
+import {
+    BrokerItemResponseT,
+    BrokersResponseT,
+    InvestMarketsResponseT,
+    InvestNewsItemResponseT,
+    InvestNewsResponseT, TariffItemResponseT
+} from "@/models/Investment/Investment";
 
-const INVESTING_API_URL = 'investing';
-const INVESTING_MARKETS_API_URL = 'markets';
-const INVESTING_BROKERS_API_URL = 'brokers';
-
-export interface GetInvestingNewsParams {
-  search?: string;
-}
-
-export interface InvestingNewsInterface {
-  id: number;
-  title: string;
-  subtitle: string;
-  text: string;
-  image: string;
-}
-
-export interface InvestingNewsResponseInterface extends ApiResponseInterface {
-  cards: InvestingNewsInterface[];
-}
-
-export const GET_INVESTING_NEWS = (
-  params: GetInvestingNewsParams = {},
-): Promise<InvestingNewsResponseInterface> => {
-  return Api.get<any, InvestingNewsResponseInterface>(`${INVESTING_API_URL}/news`, {
-    params: {
-      ...params,
+const InvestingApi = {
+    getInvestmentNews({page, sort, sort_type, limit}: getInvestNewsI) {
+        return instance.get<InvestNewsResponseT>(`investing/news?page=${page}&limit=${limit}&sort=${sort}&sort_type=${sort_type}`)
     },
-  });
-};
-
-export interface GetInvestingMarketsParams {
-  search?: string;
-}
-
-export interface InvestingMarketInterface {
-  id: number;
-  name: string;
-  description: string;
-}
-
-export interface InvestingMarketsResponseInterface extends ApiResponseInterface {
-  markets: InvestingMarketInterface[];
-}
-
-export const GET_INVESTING_MARKETS = (
-  params: GetInvestingMarketsParams = {},
-): Promise<InvestingMarketsResponseInterface> => {
-  return Api.get<any, InvestingMarketsResponseInterface>(`${INVESTING_MARKETS_API_URL}`, {
-    params: {
-      ...params,
+    getInvestmentNewsItem({newId}: { newId: number }) {
+        return instance.get<InvestNewsItemResponseT>(`investing/new?new=${newId}`)
     },
-  });
-};
-
-export interface GetBrokersParams {
-  search?: string;
-}
-
-export interface BrokerInterface {
-  market: number;
-  image: string;
-  bank_id: number;
-  link: string;
-  license: string;
-  id: number;
-  name: string;
-  description: string;
-  rating: number;
-}
-
-export interface BrokersResponseInterface extends ApiResponseInterface {
-  brokers: BrokerInterface[];
-}
-
-export const GET_BROKERS = (params: GetBrokersParams = {}): Promise<BrokersResponseInterface> => {
-  return Api.get<any, BrokersResponseInterface>(`${INVESTING_BROKERS_API_URL}`, {
-    params: {
-      ...params,
+    getMarkets({sort, sort_type, limit, page, search}: getMarketsI) {
+        return instance.get<InvestMarketsResponseT>(`markets?page=${page}&search=${search}&limit=${limit}&sort=${sort}&sort_type=${sort_type}`)
     },
-  });
-};
+    getBrokers({sort_type, sort, page, limit, search, market}: getBrokers) {
+        return instance.get<BrokersResponseT>(`brokers?page=${page}&limit=${limit}&sort=${sort}&sort_type=${sort_type}&market=${market}&search=${search}`)
+    },
+    getBroker({brokerId}: { brokerId: number }) {
+        return instance.get<BrokerItemResponseT>(`broker?broker=${brokerId}`)
+    },
+    getTariff({tariffId}: { tariffId: number }) {
+        return instance.get<TariffItemResponseT>(`tariff?tariff=${tariffId}`)
+    }
+}
+
+export default InvestingApi;
