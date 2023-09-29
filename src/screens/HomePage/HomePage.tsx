@@ -31,11 +31,13 @@ const HomePage = ({ data }: Props) => {
   const [searchVal, setSearchVal] = useState<string>('');
   const filterArr = (items: SearchItem[]) =>
     items.filter((i) => i.text.toLowerCase().includes(searchVal.toLowerCase()));
-  //
+
   useEffect(() => {
     let isMounted = true;
-    const allPromotions = axios.get('https://vsebanki.kg/api/promotions?page=1&limit=4&sort=id&sort_type=1');
-    const onePromotions = axios.get('https://vsebanki.kg/api/promotion?promo=1');
+    const allPromotions = axios.get(
+      ' https://api.vsebanki.kg/api/promotions?page=1&limit=4&sort=id&sort_type=1',
+    );
+    const onePromotions = axios.get(' https://api.vsebanki.kg/api/promotion?promo=1');
     const getPromotions = async () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const [all, one]: any = await Promise.all([allPromotions, onePromotions]).then((val) => {

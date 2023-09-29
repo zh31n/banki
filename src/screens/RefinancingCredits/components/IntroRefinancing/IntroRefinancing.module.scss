@@ -79,6 +79,17 @@
 
 }
 
+.modal {
+  display: flex;
+  gap: 15px;
+
+  .modalItem{
+    display: flex;flex-direction: column;  gap: 15px;
+
+  }
+}
+
+
 @media (max-width: 480px) {
   .intro {
     background: none;

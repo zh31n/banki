@@ -18,7 +18,7 @@ const CustomInputTitle = ({ title, width, place, colorTitle, setValue, value }: 
   return (
     <div className={s.years} style={{ width: `${width}px` }}>
       <div style={{ color: `${colorTitle}` }}>{title}</div>
-      <input type='text' placeholder={place} onChange={handleChange} value={value} />
+      <input type='text' placeholder={place} onChange={handleChange} defaultValue={value} />
     </div>
   );
 };
