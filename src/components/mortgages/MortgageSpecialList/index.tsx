@@ -4,10 +4,10 @@ import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import Image from 'next/image';
 import image from '@/assets/icons/image.png';
 import MortgageSpecialItem from 'src/components/mortgages/MortgageSpecialItem';
-import { MortgageInterface } from 'src/core/services/Mortgages';
+import {MortgageItemT} from "@/models/Mortgages/Mortgages";
 
 interface MortgageSpecialListProps {
-  mortgages: MortgageInterface[];
+  mortgages: MortgageItemT[];
 }
 
 const MortgageSpecialList = (props: MortgageSpecialListProps) => {

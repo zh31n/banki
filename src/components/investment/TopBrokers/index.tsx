@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './index.module.scss';
 import TopBrokerItem from '@/components/investment/TopBrokerItem';
-import { BrokerInterface } from '@/core/services/Investing';
+import {BrokerItemT} from "@/models/Investment/Investment";
 
 interface TopBrokersProps {
   title?: string;
   subtitle?: string;
-  brokers: BrokerInterface[];
+  brokers: BrokerItemT[];
 }
 
 const TopBrokers = (props: TopBrokersProps) => {

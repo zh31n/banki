@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './TopBankItem.module.scss';
-import { DepositCardInterface } from '@/core/services/Deposits';
+import {DepositCardInterface} from "@/models/Deposit/Deposit";
 
 interface TopBankItemProps {
   item: DepositCardInterface;

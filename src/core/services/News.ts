@@ -1,31 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* НОВОСТИ */
-import { Api } from './api';
-import { ApiResponseInterface } from './interface';
-import { StaticImageData } from 'next/image';
+import instance from "@/core/services/index";
+import {NewItemReponseT, NewsResponseT} from "@/models/News/News";
+import {getNews} from "@/models/Services";
 
-const NEWS_API_URL = 'news';
 
-export interface GetNewsParams {
-  search?: string;
-}
-
-export interface NewsInterface {
-  title: string;
-  text: string;
-  id: number;
-  image?: StaticImageData;
-  subtitle: string;
-}
-
-export interface NewsResponseInterface extends ApiResponseInterface {
-  cards: NewsInterface[];
-}
-
-export const GET_NEWS = (params: GetNewsParams = {}): Promise<NewsResponseInterface> => {
-  return Api.get<any, NewsResponseInterface>(`${NEWS_API_URL}`, {
-    params: {
-      ...params,
+const NewsApi = {
+    getNews({search, page, sort, sort_type, limit}: getNews) {
+        return instance.get<NewsResponseT>(`news?page=${page}&limit=${limit}&sort=${sort}&sort_type=${sort_type}`)
     },
-  });
-};
+    getNewItem({newId}: { newId: number }) {
+        return instance.get<NewItemReponseT>(`new?new=${newId}`)
+    }
+}
+
+export default NewsApi;

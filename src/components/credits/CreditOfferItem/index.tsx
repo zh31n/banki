@@ -2,10 +2,11 @@ import React from 'react';
 import s from './index.module.scss';
 import Image from 'next/image';
 import mockBankIcon from '@/assets/icons/banki_icon/loco.svg';
-import { CreditInterface } from '@/core/services/Credits';
+import {CreditItemT} from "@/models/Credits/Credits";
+
 
 interface CreditOfferItemProps {
-  item: CreditInterface;
+  item: CreditItemT;
 }
 
 const CreditOfferItem = (props: CreditOfferItemProps) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './index.module.scss';
-import { CreditInterface } from '@/core/services/Credits';
+import {CreditItemT} from "@/models/Credits/Credits";
 
 interface CreditTopBankItemProps {
-  item: CreditInterface;
+  item: CreditItemT;
 }
 
 const CreditTopBankItem = (props: CreditTopBankItemProps) => {
