@@ -1,14 +1,14 @@
-import React from 'react'
-import s from './IntroSelectBrokerInv.module.scss'
-import ChoiseItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap'
+import React from 'react';
+import s from './IntroSelectBrokerInv.module.scss';
+import ChoiseItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap';
 
 type ItemT = {
-  name: string
-  active: boolean
-}
+  name: string;
+  active: boolean;
+};
 type Props = {
-  items: ItemT[]
-}
+  items: ItemT[];
+};
 
 const IntroSelectBrokerInv = ({ items }: Props) => {
   return (
@@ -25,12 +25,10 @@ const IntroSelectBrokerInv = ({ items }: Props) => {
         </div>
         <div className={s.sub}>
           <p>
-            В этом разделе представлена подробная актуальная на 03.09.2023
-            информация о крупнейших брокерах Кыргызстане. Рейтинги и отзывы
-            реальных пользователей, которые уже открыли брокерский счет и на
-            своем опыте оценили операторов фондового рынка по качеству сервиса,
-            надежности и удобству приложений. Комиссия за сделку указана при
-            торговле ценными бумагами на Московской бирже.
+            В этом разделе представлена подробная актуальная на 03.09.2023 информация о крупнейших брокерах
+            Кыргызстане. Рейтинги и отзывы реальных пользователей, которые уже открыли брокерский счет и на
+            своем опыте оценили операторов фондового рынка по качеству сервиса, надежности и удобству
+            приложений. Комиссия за сделку указана при торговле ценными бумагами на Московской бирже.
           </p>
         </div>
         <div className={s.ch_cont}>
@@ -38,7 +36,7 @@ const IntroSelectBrokerInv = ({ items }: Props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default IntroSelectBrokerInv
+export default IntroSelectBrokerInv;

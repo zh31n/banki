@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './Navigation.module.scss'
-import BlueBtn from "@/UI/BlueBtn/BlueBtn";
+import styles from './Navigation.module.scss';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 
 const Navigation = () => {
   return (
@@ -21,7 +21,7 @@ const Navigation = () => {
           <p className={styles.main_text}>Введите госномер — данные заполнятся автоматически</p>
           <div className={styles.text_container}>
             <input placeholder={'Гос номер'} />
-            <BlueBtn text={'Рассчитать'} width={173} height={60} fSize={20}/>
+            <BlueBtn text={'Рассчитать'} width={173} height={60} fSize={20} />
           </div>
         </div>
       </div>

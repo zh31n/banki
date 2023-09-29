@@ -1,19 +1,13 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-interface initialStateI {
+interface initialStateI {}
 
-}
-
-const initialState:initialStateI = {
-
-}
+const initialState: initialStateI = {};
 
 export const creditsSlice = createSlice({
-    name:'credits',
-    initialState,
-    reducers:{
-
-    }
-})
+  name: 'credits',
+  initialState,
+  reducers: {},
+});
 
 export default creditsSlice.reducer;

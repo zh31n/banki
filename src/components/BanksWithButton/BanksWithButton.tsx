@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './BanksWithButton.module.scss';
 import BankCardItem from '@/components/BanksWithButton/BankCardItem/BankCardItem';
-import {nanoid} from 'nanoid';
-import {CreditCardT, DebitCardT} from '@/models/Cards/Cards'
+import { nanoid } from 'nanoid';
+import { CreditCardT, DebitCardT } from '@/models/Cards/Cards';
 
 interface BanksWithButtonProps {
   text: string;

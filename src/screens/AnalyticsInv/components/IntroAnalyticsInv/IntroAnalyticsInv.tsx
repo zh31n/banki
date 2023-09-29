@@ -1,14 +1,14 @@
-import React from 'react'
-import s from './IntroAnalyticsInv.module.scss'
-import ChoiseItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap'
+import React from 'react';
+import s from './IntroAnalyticsInv.module.scss';
+import ChoiseItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap';
 
 type ItemT = {
-  name: string
-  active: boolean
-}
+  name: string;
+  active: boolean;
+};
 type Props = {
-  items: ItemT[]
-}
+  items: ItemT[];
+};
 
 const IntroAnalyticsInv = ({ items }: Props) => {
   return (
@@ -22,11 +22,10 @@ const IntroAnalyticsInv = ({ items }: Props) => {
         </div>
         <div className={s.sub}>
           <p>
-            Актуальные аналитические обзоры, оценки экономической ситуации в
-            Кыргызстане и мире, рекомендации по российским и зарубежным акциям и
-            облигациям, валютам и сырью от ведущих брокерских компаний и банков,
-            а также последние исследования и прогнозы от экспертов Банки.ру.
-            Все, что нужно для грамотного инвестирования.
+            Актуальные аналитические обзоры, оценки экономической ситуации в Кыргызстане и мире, рекомендации
+            по российским и зарубежным акциям и облигациям, валютам и сырью от ведущих брокерских компаний и
+            банков, а также последние исследования и прогнозы от экспертов Банки.ру. Все, что нужно для
+            грамотного инвестирования.
           </p>
         </div>
         <div className={s.ch_cont}>
@@ -34,7 +33,7 @@ const IntroAnalyticsInv = ({ items }: Props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default IntroAnalyticsInv
+export default IntroAnalyticsInv;

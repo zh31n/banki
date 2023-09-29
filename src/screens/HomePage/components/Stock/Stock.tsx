@@ -13,7 +13,6 @@ export type ItemsActionT = {
   title: string;
 };
 
-
 interface Props {
   data: { stocks: ItemsActionT[]; stock: ItemsActionT };
 }

@@ -6,7 +6,7 @@ import CheckImage from '@/screens/CreditMapPage/components/OffersItem/CheckImage
 import Image from 'next/image';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import warningImg from '@/assets/icons/warning_icon.png';
-import {CreditCardT} from "@/models/Cards/Cards";
+import { CreditCardT } from '@/models/Cards/Cards';
 
 interface OffersItemProps {
   item: CreditCardT;

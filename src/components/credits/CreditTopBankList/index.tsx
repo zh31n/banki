@@ -1,12 +1,12 @@
-import React from 'react'
-import s from './index.module.scss'
-import { CreditInterface } from '@/core/services/Credits'
-import CreditTopBankItem from '@/components/credits/CreditTopBankItem'
+import React from 'react';
+import s from './index.module.scss';
+import { CreditInterface } from '@/core/services/Credits';
+import CreditTopBankItem from '@/components/credits/CreditTopBankItem';
 
 interface CreditTopBankListProps {
-  title?: string
-  subtitle?: string
-  credits: CreditInterface[]
+  title?: string;
+  subtitle?: string;
+  credits: CreditInterface[];
 }
 
 const CreditTopBankList = (props: CreditTopBankListProps) => {
@@ -14,7 +14,7 @@ const CreditTopBankList = (props: CreditTopBankListProps) => {
     title = 'Потребительские кредиты в Бишкеке',
     subtitle = ' - ТОП 10 банков в 2023 году',
     credits,
-  } = props
+  } = props;
 
   return (
     <div className={s.wrapper}>
@@ -28,7 +28,7 @@ const CreditTopBankList = (props: CreditTopBankListProps) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CreditTopBankList
+export default CreditTopBankList;

@@ -9,15 +9,12 @@ import CalculateOSAGO from '@/components/CalculateOSAGO/CalculateOSAGO';
 import OSAGORating from '@/components/OSAGORating/OSAGORating';
 import FrequentQuestions from '@/components/FrequentQuestions/FrequentQuestions';
 import Question from '@/components/Question/Question';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Navigation from '@/screens/CalculateKASCOPage/components/Navigation/Navigation';
 import InsuranceCompanys from '@/screens/InsurancePage/components/InsuranceCompanys/InsuranceCompanys';
 
 export default function CalculateKASCOPage() {
-
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   const dataMap = data.OSAGO.worksData;
   const question = data.OSAGO.favouritesQuestion;

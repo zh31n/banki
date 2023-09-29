@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './Navigation.module.scss'
-import BlueBtn from '@/UI/BlueBtn/BlueBtn'
+import React from 'react';
+import styles from './Navigation.module.scss';
+import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 
 const Navigation = () => {
   return (
@@ -18,14 +18,13 @@ const Navigation = () => {
           <br /> <span>в Бишкеке</span>
         </p>
         <p className={styles.little_text}>
-          Получите одобрение ипотеки и самую выгодную ставку. <br /> Заполните
-          анкету, чтобы получить предложения банков и отправить заявку <br /> на
-          одобрение в один клик.
+          Получите одобрение ипотеки и самую выгодную ставку. <br /> Заполните анкету, чтобы получить
+          предложения банков и отправить заявку <br /> на одобрение в один клик.
         </p>
       </div>
       <BlueBtn text={'Заполнить анкету'} width={251} fSize={20} height={60} />
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
