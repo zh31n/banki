@@ -3,11 +3,11 @@ import s from './index.module.scss';
 import CustomSelect from '@/UI/CustomSelect/CustomSelect';
 import lines from '@/assets/icons/banki_icon/3-line.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import { MortgageInterface } from '@/core/services/Mortgages';
 import MortgageOfferItem from '@/components/mortgages/MortgageOfferItem';
+import {MortgageItemT} from "@/models/Mortgages/Mortgages";
 
 interface MortgageOfferListProps {
-  mortgages: MortgageInterface[];
+  mortgages: MortgageItemT[];
   title?: string;
   subtitle?: string;
   options?: string[];

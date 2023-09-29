@@ -3,11 +3,11 @@ import s from './index.module.scss';
 import Image from 'next/image';
 import dang_i from '@/assets/icons/banki_icon/Danger_i.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import { BrokerInterface } from '@/core/services/Investing';
 import mockBankImage from '@/assets/icons/banki_icon/loco.svg';
+import {BrokerItemT} from "@/models/Investment/Investment";
 
 interface BrokerOfferItemProps {
-  item: BrokerInterface;
+  item: BrokerItemT;
 }
 
 const BrokerOfferItem = (props: BrokerOfferItemProps) => {

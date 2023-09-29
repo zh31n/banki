@@ -2,10 +2,10 @@ import React from 'react';
 import s from './LastRecommends.module.scss';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import LastRecommendItem from '@/screens/InvestmentPage/components/LastRecommends/LastRecommendItem/LastRecommendItem';
-import { InvestingMarketInterface } from '@/core/services/Investing';
+import {MarketItemT} from "@/models/Investment/Investment";
 
 interface LastRecommendsProps {
-  markets: InvestingMarketInterface[];
+  markets: MarketItemT[];
 }
 const LastRecommends = (props: LastRecommendsProps) => {
   const { markets } = props;

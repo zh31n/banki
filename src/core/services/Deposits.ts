@@ -1,41 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* ВКЛАДЫ */
-import { Api } from './api';
-import { ApiResponseInterface } from './interface';
+import instance from "@/core/services/index";
+import {getDepositsI} from "@/models/Services";
+import {DepositItemResponseT, DepositsResponseT} from "@/models/Deposit/Deposit";
 
-const DEPOSITS_API_URL = 'deposits';
 
-export interface GetDepositsParams {
-  amount?: number;
-  bank?: string;
-  timeframe?: number;
-}
-
-export interface DepositCardInterface {
-  bank_id: number | string;
-  description?: string;
-  id: number;
-  max_amount?: number;
-  min_amount?: number;
-  name: string;
-  rate?: number;
-  rating?: number;
-  timeframe_max?: number;
-  timeframe_min?: number;
-  title_1?: string;
-  count1?: string;
-  title_2?: string;
-  count2?: string;
-}
-
-export interface DepositsResponseInterface extends ApiResponseInterface {
-  cards: DepositCardInterface[];
-}
-
-export const GET_DEPOSITS = (params: GetDepositsParams = {}): Promise<DepositsResponseInterface> => {
-  return Api.get<any, DepositsResponseInterface>(`${DEPOSITS_API_URL}`, {
-    params: {
-      ...params,
+const DepositsApi = {
+    getDeposits({bank, timeframe, page, sort, sort_type, limit, amount}: getDepositsI) {
+        return instance.get<DepositsResponseT>(`deposits?amount=${amount}&timeframe=${timeframe}&bank=${bank}&page=${page}&limit=${limit}&sort=${sort}&sort_type=${sort_type}`)
     },
-  });
-};
+    getDeposit({depositId}: { depositId: number }) {
+        return instance.get<DepositItemResponseT>(`deposit?deposit=${depositId}`)
+    }
+}
+
+export default DepositsApi;

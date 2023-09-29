@@ -1,14 +1,18 @@
-/* КРЕДИТЫ */
+import instance from "@/core/services/index";
+import {CreditResponseT, CreditsResponseT} from "@/models/Credits/Credits";
+import {getBusinessCreditsI} from "@/models/Services";
 
-export interface CreditInterface {
-  id?: number;
-  bank_name: string;
-  name: string;
-  type: string;
-  min_procent: number;
-  max_procent: number;
-  min_amount: number;
-  max_amount: number;
-  timeframe_min: number;
-  timeframe_max: number;
+
+const CreditsApi = {
+    getCredits({amount, timeframe, page, limit, sort, sort_type}: getBusinessCreditsI) {
+        return instance.get<CreditsResponseT>(`credits?amount=${amount}&timeframe=${timeframe}&page=${page}&limit=${limit}&sort=${sort}&sort_type=${sort_type}`)
+    },
+    getCredit({creditId}: { creditId?: number }) {
+        return instance.get<CreditResponseT>(`credit?credit=${creditId}`)
+    }
 }
+
+
+export default CreditsApi;
+
+

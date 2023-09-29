@@ -1,14 +1,14 @@
 'use client';
-import React, { useMemo, useRef, useState } from 'react';
+import React, {useMemo, useRef, useState} from 'react';
 import s from './index.module.scss';
 import CustomSelect from '@/UI/CustomSelect/CustomSelect';
 import lines from '@/assets/icons/banki_icon/3-line.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import BrokerOfferItem from '@/components/investment/BrokerOfferItem';
-import { BrokerInterface } from '@/core/services/Investing';
+import {BrokerItemT} from "@/models/Investment/Investment";
 
 interface BrokerOffersProps {
-  brokers: BrokerInterface[];
+  brokers: BrokerItemT[];
   title: string;
   options?: string[];
   isSelect?: boolean;

@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './index.module.scss';
-import { CreditInterface } from '@/core/services/Credits';
 import CreditTopBankItem from '@/components/credits/CreditTopBankItem';
+import {CreditItemT} from "@/models/Credits/Credits";
 
 interface CreditTopBankListProps {
   title?: string;
   subtitle?: string;
-  credits: CreditInterface[];
+  credits: CreditItemT[];
 }
 
 const CreditTopBankList = (props: CreditTopBankListProps) => {

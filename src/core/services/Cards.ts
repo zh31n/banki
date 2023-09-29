@@ -1,35 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* КАРТЫ */
-import { Api } from './api';
-import { ApiResponseInterface } from './interface';
+import instance from "@/core/services/index";
+import {getCardsI} from "@/models/Services";
+import {CardItemResposeT, CardItemsResponseT} from "@/models/Cards/Cards";
 
-const CARDS_API_URL = 'cards';
 
-export interface GetCardsParams {
-  bank?: number;
-  type?: string;
-}
-
-export interface CardInterface {
-  region: number;
-  since: number;
-  image?: string;
-  name: string;
-  license: number;
-  id: number;
-  form: string;
-  address: string;
-  rating: number;
-}
-
-export interface CardsResponseInterface extends ApiResponseInterface {
-  cards: CardInterface[];
-}
-
-export const GET_CARDS = (params: GetCardsParams = {}): Promise<CardsResponseInterface> => {
-  return Api.get<any, CardsResponseInterface>(`${CARDS_API_URL}`, {
-    params: {
-      ...params,
+const CardsApi = {
+    getCards({bank, page, limit, sort, sort_type}: getCardsI) {
+        return instance.get<CardItemsResponseT>(`cards?bank=${bank}&page=${page}&limit=${limit}&sort=${sort}&sort_type=${sort_type}`)
     },
-  });
-};
+    getCard({card}: { card: number }) {
+        return instance.get<CardItemResposeT>(`card?card=${card}`)
+    },
+}
+
+export default CardsApi;
