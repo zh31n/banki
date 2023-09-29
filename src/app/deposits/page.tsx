@@ -1,13 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import data from '@/core/data/index';
-import { Loader } from '@/components/Loader';
-import dynamic from 'next/dynamic';
-
-const DepositsPage = dynamic(() => import('@/screens/DepositsPage/DepositsPage'), {
-  ssr: false,
-  loading: () => <Loader />,
-});
+import DepositsPage from '@/screens/DepositsPage/DepositsPage';
 
 export const metadata: Metadata = {
   title: 'Вклады',

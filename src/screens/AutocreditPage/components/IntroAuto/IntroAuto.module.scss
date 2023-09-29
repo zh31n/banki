@@ -56,6 +56,30 @@
     }
   }
 }
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+      .calc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 24px 16px;
+      // margin-top: 2rem;
+      // width: 810px;
+      // height: 175px;
+      // border-radius: 14px;
+      // border: 1px solid #4DA7FF;
+      // background: rgba(217, 231, 250, 0.40);
+      // backdrop-filter: blur(9.973308563232422px);
+    }
+
+}
+
+
+
 @media (max-width: 480px) {
   .intro {
     background: none;
