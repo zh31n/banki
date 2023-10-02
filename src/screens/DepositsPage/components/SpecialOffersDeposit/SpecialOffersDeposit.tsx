@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './SpecialOffersDeposit.module.scss';
 import SpecialOfferItem from '@/components/Offers/SpecialOfferItem/SpecialOfferItem';
-import {DepositCardInterface} from "@/models/Deposit/Deposit";
+import { DepositCardInterface } from '@/models/Deposit/Deposit';
 
 interface SpecialOffersDepositProps {
   deposits: DepositCardInterface[];

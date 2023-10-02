@@ -4,7 +4,7 @@ import Image from 'next/image';
 import gazprom from '@/assets/icons/gasprom.svg';
 import loco from '@/assets/icons/banki_icon/loco.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import {MortgageItemT} from "@/models/Mortgages/Mortgages";
+import { MortgageItemT } from '@/models/Mortgages/Mortgages';
 
 interface MortgageSpecialItemProps {
   item: MortgageItemT;

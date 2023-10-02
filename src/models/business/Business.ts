@@ -14,12 +14,12 @@ export type BusinessCardsT = {
   name: string;
   phones: string;
   rating: number;
-}
+};
 export type BusinessCardsResponseT = {
-  cards: BusinessCardsT[],
-  result: boolean
-  len: number
-}
+  cards: BusinessCardsT[];
+  result: boolean;
+  len: number;
+};
 
 export interface BusinessCardItemResponseT {
   card: BusinessCardItemT;
@@ -64,6 +64,6 @@ export interface BusinessCreditItemT {
 }
 
 export interface BusinessCreditItemResponseT {
-  card: BusinessCreditItemT,
-  result: boolean
+  card: BusinessCreditItemT;
+  result: boolean;
 }

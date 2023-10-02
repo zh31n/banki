@@ -2,8 +2,7 @@ import React from 'react';
 import s from './index.module.scss';
 import Image from 'next/image';
 import mockBankIcon from '@/assets/icons/banki_icon/loco.svg';
-import {CreditItemT} from "@/models/Credits/Credits";
-
+import { CreditItemT } from '@/models/Credits/Credits';
 
 interface CreditOfferItemProps {
   item: CreditItemT;

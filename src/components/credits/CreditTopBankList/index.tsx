@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './index.module.scss';
 import CreditTopBankItem from '@/components/credits/CreditTopBankItem';
-import {CreditItemT} from "@/models/Credits/Credits";
+import { CreditItemT } from '@/models/Credits/Credits';
 
 interface CreditTopBankListProps {
   title?: string;

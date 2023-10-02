@@ -4,7 +4,7 @@ import CustomSelect from '@/UI/CustomSelect/CustomSelect';
 import lines from '@/assets/icons/banki_icon/3-line.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import MortgageOfferItem from '@/components/mortgages/MortgageOfferItem';
-import {MortgageItemT} from "@/models/Mortgages/Mortgages";
+import { MortgageItemT } from '@/models/Mortgages/Mortgages';
 
 interface MortgageOfferListProps {
   mortgages: MortgageItemT[];

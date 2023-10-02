@@ -2,8 +2,8 @@ import React from 'react';
 import s from './NewsItem.module.scss';
 import Image from 'next/image';
 import smile from '@/assets/icons/Smile.svg';
-import {InvestmentNewsItemT} from "@/models/Investment/Investment";
-import {NewsInterface} from "@/models/News/News";
+import { InvestmentNewsItemT } from '@/models/Investment/Investment';
+import { NewsInterface } from '@/models/News/News';
 
 interface NewsItemProps {
   item: NewsInterface | InvestmentNewsItemT;

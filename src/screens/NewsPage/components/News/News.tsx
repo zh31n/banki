@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './News.module.scss';
 import NewsItem from '@/screens/NewsPage/components/News/NewsItem/NewsItem';
-import {NewsInterface, NewsItemT} from "@/models/News/News";
+import { NewsInterface } from '@/models/News/News';
 
 interface NewsProps {
   news: NewsInterface[];

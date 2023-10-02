@@ -3,7 +3,7 @@ import s from './LastRecommendItem.module.scss';
 import Image from 'next/image';
 import WhiteBorderBlueBtn from '@/UI/WhiteBorderBlueBtn/WhiteBorderBlueBtn';
 import mockMarketLogo from '@/assets/icons/banki_icon/loco.svg';
-import {MarketItemT} from "@/models/Investment/Investment";
+import { MarketItemT } from '@/models/Investment/Investment';
 
 interface LastRecommendItemProps {
   item: MarketItemT;

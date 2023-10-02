@@ -6,7 +6,7 @@ import dang_i from '@/assets/icons/banki_icon/Danger_i.svg';
 import arr_d from '@/assets/icons/Arrow_d.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import mockBankImage from '@/assets/icons/banki_icon/loco.svg';
-import {MortgageItemT} from "@/models/Mortgages/Mortgages";
+import { MortgageItemT } from '@/models/Mortgages/Mortgages';
 
 interface MortgageOfferItemProps {
   item: MortgageItemT;

@@ -7,7 +7,7 @@ import BrokerItem from '@/components/investment/BrokerItem';
 import { nanoid } from 'nanoid';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import {BrokerItemT} from "@/models/Investment/Investment";
+import { BrokerItemT } from '@/models/Investment/Investment';
 
 interface BrokerListProps {
   title: string;

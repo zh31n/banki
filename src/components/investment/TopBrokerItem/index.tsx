@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './index.module.scss';
-import {BrokerItemT} from "@/models/Investment/Investment";
+import { BrokerItemT } from '@/models/Investment/Investment';
 
 interface TopBrokerItemProps {
   item: BrokerItemT;

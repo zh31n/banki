@@ -6,7 +6,7 @@ import star from '@/assets/icons/yellow_star.svg';
 import BlueLikeBtn from '@/UI/BlueLikeBtn/BlueLikeBtn';
 import warn from '@/assets/icons/warning_icon.svg';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import {CreditItemT} from "@/models/Credits/Credits";
+import { CreditItemT } from '@/models/Credits/Credits';
 
 interface WebLoanItemProps {
   item: CreditItemT;

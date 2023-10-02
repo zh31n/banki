@@ -5,7 +5,7 @@ import arr_r from '@/assets/icons/banki_icon/Стрелка_right.svg';
 import Image from 'next/image';
 import ChoiceItemsMap from '@/components/Choise/ChoiseItemsMap/ChoiseItemsMap';
 import CreditOfferItem from '@/components/credits/CreditOfferItem';
-import {CreditItemT} from "@/models/Credits/Credits";
+import { CreditItemT } from '@/models/Credits/Credits';
 
 type ItemT = {
   name: string;

@@ -4,8 +4,8 @@ import React from 'react';
 import s from './index.module.scss';
 import WebLoanItem from '@/screens/MicroLoans/components/WebLoanItem';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
-import {nanoid} from 'nanoid';
-import {CreditItemT} from "@/models/Credits/Credits";
+import { nanoid } from 'nanoid';
+import { CreditItemT } from '@/models/Credits/Credits';
 
 interface WebLoansProps {
   credits: CreditItemT[];
