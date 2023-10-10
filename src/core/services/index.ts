@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://83.220.174.249:5345/api/',
+  // baseURL: 'https://83.220.174.249:5345/api/',
+  baseURL: 'https://api.vsebanki.kg/api',
   withCredentials: true,
   headers: {
     'Access-Control-Allow-Origin': '*',

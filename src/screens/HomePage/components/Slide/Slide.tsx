@@ -43,7 +43,7 @@ const Slide = ({ data }: Props) => {
         id='swiper'
         ref={sliderRef}
         spaceBetween={10}
-        slidesPerView={3}
+        slidesPerView={5}
         loop={true}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}

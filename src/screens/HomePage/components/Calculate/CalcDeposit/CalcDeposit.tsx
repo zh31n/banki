@@ -6,7 +6,11 @@ import MoneySelect from '@/UI/MoneySelect/MoneySelect';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import CustomInputTitle from '@/UI/CustomInputTitle/CustomInputTitle';
 
-const CalcDeposit = () => {
+type Props = {
+  currency?:string;
+  setCurrency?: React.Dispatch<string>;
+}
+const CalcDeposit = ({currency,setCurrency}:Props) => {
   const [money, setMoney] = useState<number>(200000);
   const [days, setDays] = useState<number>(365);
   const [pay, setPay] = useState<number>(0);
@@ -19,7 +23,7 @@ const CalcDeposit = () => {
   return (
     <div className={s.calc_i}>
       <div className={s.calc_inps}>
-        <MoneySelect value={money} setValue={setMoney} />
+        <MoneySelect currency={currency} setCurrency={setCurrency} value={money} setValue={setMoney} />
         <div className={s.stavka}>
           <span>Ставка :</span>
           <span>От {stavka}%</span>
@@ -27,7 +31,7 @@ const CalcDeposit = () => {
         <CustomInputTitle value={days} setValue={setDays} title={'Срок в днях'} />
         <div className={s.stavka}>
           <span>Профит :</span>
-          <span>{pay} ₽</span>
+          <span>{pay} {currency}</span>
         </div>
       </div>
       <BlueBtn text={'Подобрать вклад'} width={840} />

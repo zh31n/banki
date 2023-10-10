@@ -6,11 +6,22 @@ import MoneySelect from '@/UI/MoneySelect/MoneySelect';
 import CustomWhiteSelectTitle from '@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 
-const CalcCredits = () => {
+
+type Props = {
+  currency?:string;
+  setCurrency?: React.Dispatch<string>;
+}
+
+const CalcCredits = ({currency,setCurrency}:Props) => {
+
+
+
   const [money, setMoney] = useState<number>(12000);
   const [years, setYears] = useState<string>('1');
   const [pay, setPay] = useState<number>(7988);
   const stavka = 15;
+
+
   useEffect(() => {
     const procent = stavka / 100;
     const sun = procent + (procent / (1 + procent)) * (Number(years) * 12 - 1);
@@ -22,7 +33,7 @@ const CalcCredits = () => {
   return (
     <div className={s.calc_i}>
       <div className={s.calc_inps}>
-        <MoneySelect value={money} setValue={setMoney} />
+        <MoneySelect currency={currency} setCurrency={setCurrency} value={money} setValue={setMoney} />
         <div className={s.stavka}>
           <span>Ставка:</span>
           <span>От {stavka}%</span>
@@ -35,7 +46,7 @@ const CalcCredits = () => {
         />
         <div className={s.stavka}>
           <span>Платеж:</span>
-          <span>{pay} ₽</span>
+          <span>{pay} {currency}</span>
         </div>
       </div>
       <BlueBtn text={'Подобрать кредит'} width={840} />

@@ -6,6 +6,7 @@ import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import BankiItem from '@/components/Banki/BankiItem/BankiItem';
 import { StaticImageData } from 'next/image';
 import Search from '@/UI/Search/Search';
+import Link from "next/link";
 
 type bankiT = {
   img: StaticImageData;
@@ -32,7 +33,9 @@ const Banks = ({ data }: Props) => {
         <div className={s.bank_map}>
           <div className={s.banK_mWrap}>{bankiMap}</div>
           <div className={s.nav_search}>
-            <BlueBtn text={'Весь список банков'} width={273} />
+            <Link href={'/banks'}>
+              <BlueBtn text={'Весь список банков'} width={273} />
+            </Link>
             <Search
               setValue={setSearchName}
               value={searchName}
