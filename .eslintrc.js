@@ -28,7 +28,7 @@ module.exports = {
   plugins: ['@typescript-eslint', '@next/eslint-plugin-next', 'react', 'prettier'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
-    'prettier/prettier': ['error'],
+    "prettier/prettier": ["error", { endOfLine: "off" }],
   },
   settings: {
     react: {
