@@ -29,6 +29,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
     "prettier/prettier": ["error",{ tabWidth: 4 }],
+    "@typescript-eslint/no-unused-vars" : "off"
   },
   settings: {
     react: {
