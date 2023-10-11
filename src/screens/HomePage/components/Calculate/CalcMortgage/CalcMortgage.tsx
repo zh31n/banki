@@ -5,6 +5,7 @@ import s from './CalcMortgage.module.scss';
 import MoneySelect from '@/UI/MoneySelect/MoneySelect';
 import CustomWhiteSelectTitle from '@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
+import Link from "next/link";
 
 type Props = {
     currency?: string;
@@ -59,7 +60,9 @@ const CalcMortgage = ({currency, setCurrency}: Props) => {
                     <span>{economy} {currency}</span>
                 </div>
             </div>
-            <BlueBtn text={'Подобрать кредит'} width={840}/>
+            <Link href={'/ipoteka'}>
+                <BlueBtn text={'Подобрать кредит'} width={840}/>
+            </Link>
         </div>
     );
 };

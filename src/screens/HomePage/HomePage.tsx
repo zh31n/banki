@@ -11,7 +11,11 @@ import Slide from '@/screens/HomePage/components/Slide/Slide';
 import Banks from '@/screens/HomePage/components/Banks/Banks';
 import Calculate from './components/Calculate/Calculate';
 import axios from 'axios';
-import {useTypedSelector} from '@/hooks/redux';
+import {useTypedDispatch, useTypedSelector} from '@/hooks/redux';
+import {useDispatch} from "react-redux";
+import {getBanksThunk} from "@/core/store/home/home-slice";
+import {AppStore} from "@/core/store/store";
+
 
 type SearchItem = {
     text: string;
@@ -24,20 +28,31 @@ type Props = {
 };
 
 const HomePage = ({data}: Props) => {
+    const dispatch = useDispatch();
+
+
     const [stocks, setStocks] = useState<{ cards: ItemsActionT[] }>();
     const [promo, setPromo] = useState<{ card: ItemsActionT }>();
 
     const {serviceItems} = useTypedSelector((state) => state.home);
     const [searchVal, setSearchVal] = useState<string>('');
+
+    const {banksItems} = useTypedSelector(state => state.home)
+
     const filterArr = (items: SearchItem[]) =>
         items.filter((i) => i.text.toLowerCase().includes(searchVal.toLowerCase()));
 
     useEffect(() => {
+
+
         let isMounted = true;
+
         const allPromotions = axios.get(
             ' https://api.vsebanki.kg/api/promotions?page=1&limit=4&sort=id&sort_type=1',
         );
+
         const onePromotions = axios.get(' https://api.vsebanki.kg/api/promotion?promo=1');
+
         const getPromotions = async () => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const [all, one]: any = await Promise.all([allPromotions, onePromotions]).then((val) => {
@@ -53,7 +68,16 @@ const HomePage = ({data}: Props) => {
         return () => {
             isMounted = false;
         };
+
+
     }, []);
+
+    useEffect(() => {
+        //@ts-ignore
+        dispatch(getBanksThunk(1,10,1,'id'))
+    }, []);
+
+
     return (
         <PageWrapper>
             {stocks && promo && <Stock data={{stocks: stocks.cards, stock: promo.card}}/>}
@@ -65,7 +89,7 @@ const HomePage = ({data}: Props) => {
                 itemsSearch={serviceItems}
                 placeholder={'Найти необходимую услугу...'}
             />
-            <Banks data={data.banki}/>
+            <Banks data={banksItems}/>
             <Calculate/>
             <OfferMoth offers={data.offersMoth} choiceItems={data.choiseOffer}/>
             <LatestNews/>

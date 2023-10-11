@@ -5,6 +5,7 @@ import s from './CalcCredits.module.scss';
 import MoneySelect from '@/UI/MoneySelect/MoneySelect';
 import CustomWhiteSelectTitle from '@/UI/CustomWhiteSelectTitle/CustomWhiteSelectTitle';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
+import Link from "next/link";
 
 
 type Props = {
@@ -36,7 +37,7 @@ const CalcCredits = ({currency,setCurrency}:Props) => {
         <MoneySelect currency={currency} setCurrency={setCurrency} value={money} setValue={setMoney} />
         <div className={s.stavka}>
           <span>Ставка:</span>
-          <span>От {stavka}%</span>
+          <span>{stavka}%</span>
         </div>
         <CustomWhiteSelectTitle
           value={years}
@@ -49,7 +50,9 @@ const CalcCredits = ({currency,setCurrency}:Props) => {
           <span>{pay} {currency}</span>
         </div>
       </div>
-      <BlueBtn text={'Подобрать кредит'} width={840} />
+      <Link href={'/credits'}>
+        <BlueBtn text={'Подобрать кредит'} width={840} />
+      </Link>
     </div>
   );
 };

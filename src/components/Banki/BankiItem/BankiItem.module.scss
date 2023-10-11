@@ -1,5 +1,5 @@
 .bank_item {
-  width: 232px;
+  width: 350px;
   height: 70px;
   display: flex;
   padding: 17px 26px 17px 17px;
@@ -8,10 +8,13 @@
   border-radius: 16px;
   border: 1px solid #D9DBDF;
   background: #FFF;
-
+  img{
+    width: 57px;
+    height: 36px;
+  }
   .info {
     div {
-      width: 130px;
+      width: 230px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;

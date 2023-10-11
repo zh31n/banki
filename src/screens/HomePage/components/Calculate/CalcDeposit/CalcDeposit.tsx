@@ -5,6 +5,7 @@ import s from './CalcDeposit.module.scss';
 import MoneySelect from '@/UI/MoneySelect/MoneySelect';
 import BlueBtn from '@/UI/BlueBtn/BlueBtn';
 import CustomInputTitle from '@/UI/CustomInputTitle/CustomInputTitle';
+import Link from "next/link";
 
 type Props = {
   currency?:string;
@@ -34,7 +35,9 @@ const CalcDeposit = ({currency,setCurrency}:Props) => {
           <span>{pay} {currency}</span>
         </div>
       </div>
-      <BlueBtn text={'Подобрать вклад'} width={840} />
+      <Link href={'/deposits'}>
+        <BlueBtn text={'Подобрать вклад'} width={840} />
+      </Link>
     </div>
   );
 };

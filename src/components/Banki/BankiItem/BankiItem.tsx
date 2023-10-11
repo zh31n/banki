@@ -3,7 +3,7 @@ import s from './BankiItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
 
 type bankiPropsT = {
-  img: StaticImageData;
+  img: string;
   name: string;
   rating: number;
 };
@@ -11,7 +11,7 @@ type bankiPropsT = {
 const BankiItem = ({ img, name, rating }: bankiPropsT) => {
   return (
     <div className={s.bank_item}>
-      <Image src={img} alt={'sbi'} />
+      <Image width={100} height={100} src={img} alt={'sbi'} />
       <div className={s.info}>
         <div>{name}</div>
         <span>Рейтинг: {rating}</span>
