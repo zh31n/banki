@@ -8,6 +8,7 @@ import searchImg from '@/assets/icons/search.svg';
 import Nav from '@/components/Header/Nav/Nav';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import logo from '@/assets/icons/logo.png';
 
 type navItemsT = {
   name: string;
@@ -58,7 +59,8 @@ const Header = () => {
     <div className='container'>
       <header className={s.header}>
         <Link href={'/'} onClick={() => setVis(false)}>
-          <div className={s.logo}>Логотип</div>
+          {/*<div className={s.logo}>Логотип</div>*/}
+          <Image src={logo} className={s.logo} alt={'logo'}/>
         </Link>
         <nav className={s.nav}>{navMap}</nav>
         <nav className={s.icons}>

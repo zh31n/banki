@@ -14,11 +14,8 @@
   transition: all .3s;
 
   .logo {
-    color: #121212;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    width: 120px;
+    object-fit: contain;
   }
 
   .nav {
