@@ -18,11 +18,11 @@ const CalcDeposit = ({currency, setCurrency}: Props) => {
     const [stavka, setStavka] = useState<number>(22);
     useEffect(() => {
         if (currency === 'руб') {
-            setStavka(13)
+            setStavka(10)
         } else if (currency === 'долл') {
             setStavka(10)
         } else {
-            setStavka(22);
+            setStavka(20);
         }
         const result = Math.round((money * stavka * days) / 365 / 100);
         setPay(result);

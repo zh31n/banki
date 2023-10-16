@@ -23,7 +23,13 @@ const CalcCredits = ({currency, setCurrency}: Props) => {
 
 
     useEffect(() => {
-
+        if (currency === 'руб') {
+            setStavka(13)
+        } else if (currency === 'долл') {
+            setStavka(10)
+        } else {
+            setStavka(15);
+        }
         const procent = stavka / 100;
         const sun = procent + (procent / (1 + procent)) * (Number(years) * 12 - 1);
         const sum = money * sun;
