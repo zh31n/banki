@@ -71,6 +71,7 @@
     border: none;
     padding: 1rem;
     .info {
+      width: 100%;
       margin-top: 1rem;
       margin-left: 0;
       display: flex;
@@ -80,6 +81,7 @@
 
       .title {
         text-align: center;
+        font-size: 30px;
       }
       .sup{
         text-align: center;
