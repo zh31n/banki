@@ -15,6 +15,7 @@ import {useTypedDispatch, useTypedSelector} from '@/hooks/redux';
 import {useDispatch} from "react-redux";
 import {getBanksThunk, getPromotionsThunk} from "@/core/store/home/home-slice";
 import {AppStore} from "@/core/store/store";
+import s from './HomePage.module.scss';
 
 
 type SearchItem = {
@@ -53,6 +54,7 @@ const HomePage = ({data}: Props) => {
 
     return (
         <PageWrapper>
+            <h1 className={s.title}>Главный маркетплейс финансовых услуг Кыргызстана</h1>
             {promotions && <Stock promotions={promotions}/>}
             <Slide data={data.iconsSlide}/>
             <Search

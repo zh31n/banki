@@ -41,19 +41,24 @@ const Stock = ({promotions}: Props) => {
                 <div className={s.title}>{el.title}</div>
                 <div className={s.sup}>{el.subtitle}</div>
                 <div className={s.btns}>
-                    { el.subtitle.includes('кредит') &&
+                    { el.title.toLowerCase().includes('кредит') &&
                         <Link href={'/credits'}>
                             <BlueBtn text={'Подобрать кредит'} width={240}/>
                         </Link>
                     }
-                    { el.subtitle.includes('заявку') &&
-                        <Link href={'/'}>
+                    { el.title.toLowerCase().includes('ипотека') &&
+                        <Link href={'/ipoteka'}>
                             <BlueBtn text={'Подать заявку'} width={240}/>
                         </Link>
                     }
-                    { el.subtitle.includes('карт') &&
+                    { el.title.toLowerCase().includes('карт') &&
                         <Link href={'/cards/select-cards'}>
-                            <BlueBtn text={'Подать карту'} width={240}/>
+                            <BlueBtn text={'Подобрать карту'} width={240}/>
+                        </Link>
+                    }
+                    { el.title.toLowerCase().includes('вклады') &&
+                        <Link href={'/cards/select-cards'}>
+                            <BlueBtn text={'Подобрать вклад'} width={240}/>
                         </Link>
                     }
                     {/*<div className={s.btn}>Кнопка 2</div>*/}
