@@ -12,6 +12,7 @@ interface InitialStateI {
     serviceItems: serviceCompanysT[];
     error: string,
     banksItems: BankT[]
+    promotions: any[]
 }
 
 
@@ -42,7 +43,8 @@ const initialState: InitialStateI = {
         {text: 'Страхование бизнеса', link: '/business/assurance'},
     ],
     error: '',
-    banksItems: []
+    banksItems: [],
+    promotions: []
 };
 
 
@@ -51,6 +53,15 @@ export const getBanksThunk = createAsyncThunk(
     async ({page = 1, limit = 100, sort_type = 1, sort = 'id'}: getAllBanksT) => {
         const response = await BanksApi.getBanks(page, limit, sort_type, sort)
         return response.data.banks;
+    }
+)
+
+export const getPromotionsThunk = createAsyncThunk(
+    'getPromotions',
+    async () => {
+        const response = await BanksApi.getPromotions()
+        const cards = response.data.cards.slice(0, 4);
+        return cards;
     }
 )
 
@@ -67,6 +78,10 @@ export const HomeSlice = createSlice({
 
             .addCase(getBanksThunk.rejected, (state, action) => {
                 state.error = action.payload as string;
+            })
+
+            .addCase(getPromotionsThunk.fulfilled, (state, action) => {
+                state.promotions = [...action.payload];
             })
     }
 });

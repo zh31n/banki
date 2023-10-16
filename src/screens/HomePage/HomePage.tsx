@@ -13,7 +13,7 @@ import Calculate from './components/Calculate/Calculate';
 import axios from 'axios';
 import {useTypedDispatch, useTypedSelector} from '@/hooks/redux';
 import {useDispatch} from "react-redux";
-import {getBanksThunk} from "@/core/store/home/home-slice";
+import {getBanksThunk, getPromotionsThunk} from "@/core/store/home/home-slice";
 import {AppStore} from "@/core/store/store";
 
 
@@ -30,57 +30,30 @@ type Props = {
 const HomePage = ({data}: Props) => {
     const dispatch = useDispatch();
 
-
-    const [stocks, setStocks] = useState<{ cards: ItemsActionT[] }>();
-    const [promo, setPromo] = useState<{ card: ItemsActionT }>();
-
     const {serviceItems} = useTypedSelector((state) => state.home);
     const [searchVal, setSearchVal] = useState<string>('');
 
     const {banksItems} = useTypedSelector(state => state.home)
-
+    const {promotions} = useTypedSelector(state => state.home);
     const filterArr = (items: SearchItem[]) =>
         items.filter((i) => i.text.toLowerCase().includes(searchVal.toLowerCase()));
 
     useEffect(() => {
 
-
-        let isMounted = true;
-
-        const allPromotions = axios.get(
-            ' https://api.vsebanki.kg/api/promotions?page=1&limit=4&sort=id&sort_type=1',
-        );
-
-        const onePromotions = axios.get(' https://api.vsebanki.kg/api/promotion?promo=1');
-
-        const getPromotions = async () => {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const [all, one]: any = await Promise.all([allPromotions, onePromotions]).then((val) => {
-                return [val[0].data, val[1].data];
-            });
-            if (isMounted) {
-                setStocks(all);
-                setPromo(one);
-            }
-        };
-
-        getPromotions();
-        return () => {
-            isMounted = false;
-        };
-
-
     }, []);
 
     useEffect(() => {
         //@ts-ignore
-        dispatch(getBanksThunk(1,10,1,'id'))
+        dispatch(getBanksThunk(1, 10, 1, 'id'))
+        //@ts-ignore
+        dispatch(getPromotionsThunk());
     }, []);
+
 
 
     return (
         <PageWrapper>
-            {stocks && promo && <Stock data={{stocks: stocks.cards, stock: promo.card}}/>}
+            {promotions && <Stock promotions={promotions}/>}
             <Slide data={data.iconsSlide}/>
             <Search
                 setValue={setSearchVal}
