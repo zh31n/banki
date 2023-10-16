@@ -5,6 +5,7 @@ import StockItem from '@/components/StockItem/StockItem';
 import {Swiper, SwiperSlide} from 'swiper/react';
 
 import 'swiper/css';
+import Link from "next/link";
 
 export type ItemsActionT = {
     id: number;
@@ -40,8 +41,22 @@ const Stock = ({promotions}: Props) => {
                 <div className={s.title}>{el.title}</div>
                 <div className={s.sup}>{el.subtitle}</div>
                 <div className={s.btns}>
-                    <BlueBtn text={'Кнопка 1'} width={240}/>
-                    <div className={s.btn}>Кнопка 2</div>
+                    { el.subtitle.includes('кредит') &&
+                        <Link href={'/credits'}>
+                            <BlueBtn text={'Подобрать кредит'} width={240}/>
+                        </Link>
+                    }
+                    { el.subtitle.includes('заявку') &&
+                        <Link href={'/'}>
+                            <BlueBtn text={'Подать заявку'} width={240}/>
+                        </Link>
+                    }
+                    { el.subtitle.includes('карт') &&
+                        <Link href={'/cards/select-cards'}>
+                            <BlueBtn text={'Подать карту'} width={240}/>
+                        </Link>
+                    }
+                    {/*<div className={s.btn}>Кнопка 2</div>*/}
                 </div>
             </div>
         </SwiperSlide>

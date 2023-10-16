@@ -24,9 +24,9 @@ const MoneySelect = ({width, value, setValue, title, setCurrency, currency}: Pro
             </div>
             <div className={s.select}>
                 <select value={currency} onChange={setCurrentCurrency}>
-                    <option value='c'>с</option>
-                    <option value='₽'>₽</option>
-                    <option value='$'>$</option>
+                    <option value='сом'>сом</option>
+                    <option value='руб'>руб</option>
+                    <option value='долл'>долл</option>
                 </select>
             </div>
         </div>

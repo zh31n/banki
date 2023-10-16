@@ -11,7 +11,7 @@ import {BankT} from "@/models/Banks/banks";
 
 const Banks = ({data}: Props) => {
 
-    const viewBanks = data.slice(0,10)
+    const viewBanks = data.slice(0, 10)
 
     const bankiMap = viewBanks.map((el, index) => (
         <Link href={`/banks/${el.id}`}>

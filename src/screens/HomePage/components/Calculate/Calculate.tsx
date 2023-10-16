@@ -31,7 +31,7 @@ const Calculate = () => {
         <ChoiseItem key={index} name={el.name} setActive={setCurrentChoose} active={currentChoose === el.name}/>
     ));
 
-    const [currentCurrency, setCurrentCurrency] = useState('c');
+    const [currentCurrency, setCurrentCurrency] = useState('cом');
 
     return (
         <div className={s.calc}>
